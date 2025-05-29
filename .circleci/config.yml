@@ -8,6 +8,14 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Debug - List directory contents
+          command: |
+            pwd
+            ls -la
+            find . -name "package.json" -type f
+            find . -name "pnpm-lock.yaml" -type f
+
       - restore_cache:
           name: Restore pnpm cache
           keys:
@@ -26,7 +34,6 @@ jobs:
           name: Install dependencies
           working_directory: ~/ineiah/frontend
           command: |
-            ls -la
             pnpm config set store-dir .pnpm-store
             pnpm install
 
