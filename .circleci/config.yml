@@ -4,13 +4,9 @@ jobs:
   build:
     docker:
       - image: cimg/node:18.17
-    working_directory: ~/ineiah/frontend
+    working_directory: ~/repo
     steps:
       - checkout
-
-      # - run:
-      #     name: Move to correct subdirectory
-      #     command: cd ineiah/frontend && mv * ~/ineiah/frontend || true
 
       - restore_cache:
           name: Restore pnpm cache
@@ -28,20 +24,25 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: pnpm install
+          working_directory: ~/repo/ineiah/frontend
+          command: |
+            pnpm config set store-dir .pnpm-store
+            pnpm install
 
       - save_cache:
           name: Save pnpm cache
-          key: pnpm-cache-{{ checksum "pnpm-lock.yaml" }}
+          key: pnpm-cache-{{ checksum "ineiah/frontend/pnpm-lock.yaml" }}
           paths:
             - .pnpm-store
 
       - run:
           name: Run tests
+          working_directory: ~/repo/ineiah/frontend
           command: pnpm run test
 
       - run:
           name: Build project
+          working_directory: ~/repo/ineiah/frontend
           command: pnpm run build
 
 workflows:
