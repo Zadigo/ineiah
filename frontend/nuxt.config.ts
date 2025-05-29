@@ -253,10 +253,10 @@ export default defineNuxtConfig({
   //   storage: {
   //     redis: {
   //       driver: 'redis',
-  //       host: '127.0.0.1',
+  //       host: process.env.NUXT_REDIS_HOST,
   //       port: 6379,
   //       username: '',
-  //       password: 'django-local-testing'
+  //       password: process.env.NUXT_REDIS_PASSWORD
   //     }
   //   }
   // }

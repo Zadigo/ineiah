@@ -1,75 +1,33 @@
-# Nuxt Minimal Starter
-
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install dependencies:
+## Nuxt environment variables
 
 ```bash
-# npm
-npm install
+# Firebase
 
-# pnpm
-pnpm install
+NUXT_FIREBASE_API_KEY=...
 
-# yarn
-yarn install
+NUXT_FIREBASE_AUTH_DOMAIN=...
 
-# bun
-bun install
+NUXT_FIREBASE_DB_URL=...
+
+NUXT_FIREBASE_STORAGE_BUCKET=...
+
+NUXT_FIREBASE_APP_ID=...
+
+NUXT_FIREBASE_MEASUREMENT_ID=...
+
+NUXT_FIREBASE_MESSAGE_SENDER_ID=...
+
+NUXT_FIREBASE_PROJECT_ID=...
+
+# Stripe
+
+NUXT_STRIPE_TEST_SECRET_KEY=...
+
+NUXT_STRIPE_TEST_PUBLISHABLE_KEY=...
+
+# Stripe
+
+NUXT_REDIS_HOST=...
+
+NUXT_REDIS_PASSWORD=...
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
