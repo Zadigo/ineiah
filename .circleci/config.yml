@@ -19,7 +19,7 @@ jobs:
       - restore_cache:
           name: Restore pnpm cache
           keys:
-            - pnpm-cache-{{ checksum "pnpm-lock.yaml" }}
+            - pnpm-cache-{{ checksum "frontend/pnpm-lock.yaml" }}
             - pnpm-cache-
 
       - run:
@@ -32,25 +32,25 @@ jobs:
 
       - run:
           name: Install dependencies
-          working_directory: ~/ineiah/frontend
+          working_directory: ~/frontend
           command: |
             pnpm config set store-dir .pnpm-store
             pnpm install
 
       - save_cache:
           name: Save pnpm cache
-          key: pnpm-cache-{{ checksum "ineiah/frontend/pnpm-lock.yaml" }}
+          key: pnpm-cache-{{ checksum "frontend/pnpm-lock.yaml" }}
           paths:
             - .pnpm-store
 
       - run:
           name: Run tests
-          working_directory: ~/repo/ineiah/frontend
+          working_directory: ~/frontend
           command: pnpm run test
 
       - run:
           name: Build project
-          working_directory: ~/repo/ineiah/frontend
+          working_directory: ~/frontend
           command: pnpm run build
 
 workflows:
