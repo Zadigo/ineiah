@@ -138,6 +138,9 @@ importers:
       vitest:
         specifier: ^3.1.4
         version: 3.1.4(@types/node@22.15.23)(@vitest/ui@3.1.4)(happy-dom@17.5.6)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.30.1)(sass-embedded@1.89.0)(terser@5.40.0)(yaml@2.8.0)
+      vue-router-mock:
+        specifier: ^1.1.0
+        version: 1.1.0(vue-router@4.5.1(vue@3.5.15(typescript@5.8.3)))(vue@3.5.15(typescript@5.8.3))
 
 packages:
 
@@ -6474,6 +6477,12 @@ packages:
     engines: {node: '>= 16'}
     peerDependencies:
       vue: ^3.0.0
+
+  vue-router-mock@1.1.0:
+    resolution: {integrity: sha512-RhKhxkiZh2zB2eRkzfcCILQQ0ZUc0tk7CE2ZC1PGJYi5GOU+2QQAGHtTCgb8V4B/OPm9ws+X5Q9SQB5vyTXxBQ==}
+    peerDependencies:
+      vue: ^3.2.23
+      vue-router: ^4.0.12
 
   vue-router@4.5.1:
     resolution: {integrity: sha512-ogAF3P97NPm8fJsE4by9dwSYtDwXIY1nFY9T6DyQnGHd1E2Da94w9JIolpe42LJGIl0DwOHBi8TcRPlPGwbTtw==}
@@ -14007,6 +14016,11 @@ snapshots:
       '@intlify/shared': 10.0.7
       '@vue/devtools-api': 6.6.4
       vue: 3.5.15(typescript@5.8.3)
+
+  vue-router-mock@1.1.0(vue-router@4.5.1(vue@3.5.15(typescript@5.8.3)))(vue@3.5.15(typescript@5.8.3)):
+    dependencies:
+      vue: 3.5.15(typescript@5.8.3)
+      vue-router: 4.5.1(vue@3.5.15(typescript@5.8.3))
 
   vue-router@4.5.1(vue@3.5.15(typescript@5.8.3)):
     dependencies:
