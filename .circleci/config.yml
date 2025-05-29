@@ -8,9 +8,9 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Move to correct subdirectory
-          command: cd ineiah/frontend && mv * ~/ineiah/frontend || true
+      # - run:
+      #     name: Move to correct subdirectory
+      #     command: cd ineiah/frontend && mv * ~/ineiah/frontend || true
 
       - restore_cache:
           name: Restore pnpm cache
