@@ -1,7 +1,19 @@
 <template>
-  <div>
-    Nuxt
-  </div>
+  <section id="faq">
+    <BaseJumbotron src="/hero/hair4.jpg" lead="FAQ" subtitle="Nous répondons à vos questions" />
+
+    <div class="px-5 md:px-10 my-10">
+      <div class="max-w-3xl mx-auto">
+        <ShadCard>
+          <ShadCardContent>
+            <h3 class="uppercase text-2xl font-semibold">
+              Rendez-vous & Réservations
+            </h3>
+          </ShadCardContent>
+        </ShadCard>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
