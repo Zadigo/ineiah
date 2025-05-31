@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ 'bg-transparent shadow-md': !showBackground, 'bg-brand shadow-md': showBackground }" class="fixed w-full z-50 md:py-2">
+  <nav :class="{ 'bg-transparent': !showBackground, 'bg-brand shadow-md': showBackground }" class="fixed w-full z-50 md:py-2 transition-all ease-in-out">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -35,6 +35,10 @@
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
             <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-500">
+              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-white hover:text-brand-500">
+                Accueil
+              </NuxtLinkLocale>
+
               <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-white hover:text-brand-500">
                 Prestations
               </NuxtLinkLocale>
@@ -56,10 +60,12 @@ const { y } = useScroll(window)
 const showBackground = ref<boolean>(false)
 
 watch(y, (value) => {
-  if (value >= 147) {
+  if (value >= 100) {
     showBackground.value = true
   } else {
     showBackground.value = false
   }
 })
+
+// const isMobile = inject<boolean>('isMobile')
 </script>

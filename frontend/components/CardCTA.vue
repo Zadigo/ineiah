@@ -1,8 +1,8 @@
 <template>
   <ShadCard class="text-white bg-cover" style="background-image:url('/hero/hair7.jpg')">
-    <ShadCardContent class="p-20">
+    <ShadCardContent class="p-8 md:p-20">
       <div class="flex-col justify-center mx-auto text-center max-w-7xl">
-        <h2 class="text-7xl text-shadow-brand-500 font-bold mb-5 font-title">
+        <h2 class="text-5xl md:text-7xl text-shadow-brand-500 font-bold mb-5 font-title">
           <slot name="title">
             Prête à se sublimer
           </slot>
@@ -40,4 +40,6 @@ withDefaults(
     id: 'tel-offer-section'
   }
 )
+
+const isMobile = inject<boolean>('isMobile')
 </script>

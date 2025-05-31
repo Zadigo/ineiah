@@ -41,6 +41,8 @@
 <script setup lang="ts">
 const showIndicatorPhrase = ref<boolean>(false)
 const showServiceDetails = ref<boolean>(false)
+
+const isMobile = inject<boolean>('isMobile')
 </script>
 
 <style lang="scss" scoped>
