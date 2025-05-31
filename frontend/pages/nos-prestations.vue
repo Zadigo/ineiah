@@ -3,7 +3,11 @@
     <BaseJumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
 
     <div class="px-10">
-      <div class="border-lg">
+      <ServicesSection />
+      <ServicesSection />
+      <ServicesSection />
+
+      <div class="my-10">
         <ShadCard class="text-white bg-cover" style="background-image:url('/hero/hair7.jpg')">
           <ShadCardContent class="p-20">
             <div class="flex-col justify-center mx-auto text-center max-w-7xl">
@@ -18,10 +22,10 @@
                 Ducimus nisi accusamus necessitatibus veritatis, nulla quia unde nesciunt nihil rerum
               </p>
 
-              <ShadButton size="xl" class="rounded-full mt-10" as-child>
-                <NuxtLinkLocale to="/notre-histoire">
+              <ShadButton id="tel-offer-section" size="xl" class="rounded-full mt-10" as-child>
+                <a href="tel:+33">
                   Obtenir mon moment plaisir
-                </NuxtLinkLocale>
+                </a>
               </ShadButton>
             </div>
           </ShadCardContent>

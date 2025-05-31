@@ -1,9 +1,9 @@
 <template>
-  <ShadCard>
+  <ShadCard class="bg-brand/20">
     <ShadCardContent>
       <div class="flex-col text-center md:flex-row md:justify-around md:gap-20 md:items-center">
         <div class="md:w-lg">
-          <NuxtImg src="/hero/hair6.jpg" class="rounded-md" />
+          <NuxtImg src="/hero/hair8.jpg" class="rounded-md" />
         </div>
 
         <div class=" mt-5 md:mt-0 md:max-w-lg has-[p]:space-y-3">

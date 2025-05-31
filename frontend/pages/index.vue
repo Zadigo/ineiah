@@ -7,8 +7,8 @@
         <p class="text-2xl font-normal">This is a sublead that we should be using</p>
 
         <div class="flex justify-center items-center space-x-5">
-          <ShadButton variant="outline" size="xl" class="rounded-full mt-5" as-child>
-            <NuxtLinkLocale to="/notre-histoire">
+          <ShadButton id="link-offer-hero" variant="outline" size="xl" class="rounded-full mt-5" as-child>
+            <NuxtLinkLocale to="/nos-prestations">
               Prestations
             </NuxtLinkLocale>
           </ShadButton>
