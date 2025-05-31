@@ -73,13 +73,13 @@ export default defineNuxtConfig({
     display: 'swap',
     families: {
       Ubuntu: {
-        wght: [200, 700]
+        wght: [300, 700]
       },
       Roboto: {
         wght: [200, 700]
       },
-      'Playfair Display': {
-        wght: [400, 400]
+      'Kreon': {
+        wght: [300, 700]
       }
     }
   },

@@ -48,6 +48,10 @@
   --color-brand-500: oklch(0.2324 0.0572 8.48);
   --color-secondary: oklch(0.7784 0.059 149.59);
   --color-primary: var(--color-brand-500);
+
+  --font-sans: 'Ubuntu';
+  --font-title: 'Kreon';
+
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
   @keyframes accordion-down {

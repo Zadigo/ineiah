@@ -10,8 +10,8 @@
         <!-- mt-5 md:mt-0 md:max-w-lg has-[p]:space-y-3 -->
         <div class="flex justify-center items-center">
           <div>
-            <h3 class="font-semibold text-4xl mb-5 text-brand-500">
-              Une expertise façonnée par l'experience
+            <h3 class="font-semibold text-5xl mb-5 text-brand-500 font-title leading-15">
+              Une <span class="italic text-brand-200">expertise</span> façonnée par l'experience
             </h3>
             
             <p>

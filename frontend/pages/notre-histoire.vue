@@ -17,7 +17,7 @@
       <StoryCard class="shadow-none" />
 
       <div class="mt-10">
-        <CardCTA />
+        <CardCTA id="tel-story" />
       </div>
     </div>
   </section>
