@@ -6,7 +6,7 @@
         <h1 class="text-6xl md:text-7xl font-bold mb-5">Sublime ta singularité</h1>
         <p class="text-2xl font-normal">This is a sublead that we should be using</p>
 
-        <div class="flex justify-center items-center space-x-5">
+        <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
           <ShadButton id="link-offer-hero" variant="outline" size="xl" class="rounded-full mt-5" as-child>
             <NuxtLinkLocale to="/nos-prestations">
               Prestations
@@ -24,8 +24,8 @@
     </div>
 
     <!-- Intermediate-1 -->
-    <div class="p-15">
-      <div class="grid grid-cols-2 gap-10">
+    <div class="p-5 md:p-15">
+      <div class="grid grid-rows-2 auto-rows-min md:grid-cols-2 md:grid-rows-none gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
           <NuxtImg src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
         </div>

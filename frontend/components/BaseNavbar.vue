@@ -1,10 +1,10 @@
 <template>
-  <nav class="bg-transparent shadow-md fixed w-full py-2">
+  <nav :class="{ 'bg-transparent shadow-md': !showBackground, 'bg-brand shadow-md': showBackground }" class="fixed w-full z-50 md:py-2">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand/50 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -33,38 +33,33 @@
             </NuxtLinkLocale>
           </div>
 
-          <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
-              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:text-brand-500">Prestations</NuxtLinkLocale>
-              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:text-brand-500">Notre histoire</NuxtLinkLocale>
+          <div class="hidden sm:ml-6 sm:block md:mx-auto">
+            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-500">
+              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-white hover:text-brand-500">
+                Prestations
+              </NuxtLinkLocale>
+
+              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-white hover:text-brand-500">
+                Notre histoire
+              </NuxtLinkLocale>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu">
-      <div class="space-y-1 px-2 pt-2 pb-3">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-      </div>
-    </div>
-
-    {{ x }}
   </nav>
 </template>
 
 <script setup lang="ts">
-const { x } = useScroll(window, { behavior: 'smooth' })
+const { y } = useScroll(window)
 
-watch(x, (value) => {
-  if (value) {
-    console.log(value)
+const showBackground = ref<boolean>(false)
+
+watch(y, (value) => {
+  if (value >= 147) {
+    showBackground.value = true
+  } else {
+    showBackground.value = false
   }
 })
 </script>

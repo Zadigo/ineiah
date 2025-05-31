@@ -27,7 +27,7 @@
         </div>
       </div>
       
-      <CardCTA class="mt-15">
+      <CardCTA id="tel-faq-section" class="mt-15">
         <template #title>
           Des questions ?
         </template>
