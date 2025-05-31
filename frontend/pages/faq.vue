@@ -4,29 +4,48 @@
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
-        <ShadCard class="bg-brand/20">
-          <ShadCardContent>
-            <h3 class="uppercase text-2xl font-semibold text-brand-500">
-              Rendez-vous & Réservations
-            </h3>
-          </ShadCardContent>
-        </ShadCard>
+        <div class="space-y-5">
+          <ShadCard v-for="section in faqList" :key="section.title" class="bg-brand/20 shadow-none">
+            <ShadCardContent>
+              <h3 class="uppercase text-2xl font-semibold text-brand-500">
+                {{ section.title }}
+              </h3>
+
+              <ShadAccordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
+                <ShadAccordionItem v-for="item in section.questions" :key="item.question" :value="item.question">
+                  <ShadAccordionTrigger class="text-brand-500 bg-brand-400/30 px-3 text-md cursor-pointer">
+                    {{ item.question }}
+                  </ShadAccordionTrigger>
+
+                  <ShadAccordionContent class="px-3">
+                    {{ item.answer }}
+                  </ShadAccordionContent>
+                </ShadAccordionItem>
+              </ShadAccordion>
+            </ShadCardContent>
+          </ShadCard>
+        </div>
       </div>
+      
+      <CardCTA class="mt-15">
+        <template #title>
+          Des questions ?
+        </template>
+
+        <template #default>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptatem voluptate beatae rerum quod sed nulla facere ab, mollitia cum voluptatum id expedita ex rem numquam ipsa ad fugiat illum.
+        </template>
+
+        <template #action>
+          Nous contacter
+        </template>
+      </CardCTA>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const faqs = [
-  {
-    question: 'What is Nuxt?',
-    answer: 'Nuxt is a Vue.js framework for building universal applications.'
-  },
-  {
-    question: 'How does Schema.org help SEO?',
-    answer: 'Schema.org provides structured data that helps search engines understand your content.'
-  }
-]
+import { faqList } from '~/data'
 
 const i18n = useI18n()
 
@@ -57,15 +76,19 @@ useHead({
   ]
 })
 
+const questionsList = computed(() => {
+  return faqList.map(x => [...x.questions]).flat()
+})
+
 useSchemaOrg([
   {
     '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
+    mainEntity: questionsList.value.map(item => ({
       '@type': 'Question',
-      name: faq.question,
+      name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer
+        text: item.answer
       }
     }))
   }
