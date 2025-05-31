@@ -88,7 +88,9 @@
 
     <!-- Brands -->
     <div class="my-5 md:p-10">
-      <h3 class="text-center text-2xl font-bold mb-5 md:mb-0" >Nos marques</h3>
+      <h3 class="text-center text-2xl font-bold text-shadow-brand-500 mb-5 md:mb-0" >
+        Nos marques
+      </h3>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
         <HeroBrand />

@@ -1,7 +1,34 @@
 <template>
-  <div>
-    Nuxt
-  </div>
+  <section id="prestation">
+    <BaseJumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
+
+    <div class="px-10">
+      <div class="border-lg">
+        <ShadCard class="text-white bg-cover" style="background-image:url('/hero/hair7.jpg')">
+          <ShadCardContent class="p-20">
+            <div class="flex-col justify-center mx-auto text-center max-w-7xl">
+              <h2 class="text-7xl text-shadow-brand-500 font-bold mb-5">
+                Prête à se sublimer
+              </h2>
+
+              <p class="text-light max-w-lg mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Ducimus nisi accusamus necessitatibus veritatis, nulla quia unde nesciunt nihil rerum
+                Ducimus nisi accusamus necessitatibus veritatis, nulla quia unde nesciunt nihil rerum
+                Ducimus nisi accusamus necessitatibus veritatis, nulla quia unde nesciunt nihil rerum
+              </p>
+
+              <ShadButton size="xl" class="rounded-full mt-10" as-child>
+                <NuxtLinkLocale to="/notre-histoire">
+                  Obtenir mon moment plaisir
+                </NuxtLinkLocale>
+              </ShadButton>
+            </div>
+          </ShadCardContent>
+        </ShadCard>
+      </div>      
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
