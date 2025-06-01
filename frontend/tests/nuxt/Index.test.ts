@@ -10,6 +10,13 @@ vi.mock('#app', () => {
   }
 })
 
+vi.mock('vue-i18n', () => ({
+  useI18n: () => ({
+    t: (key: string) => key,
+    locale: { value: 'en' }
+  })
+}))
+
 describe('Index page', () => {
   let wrapper: VueWrapper
   let router

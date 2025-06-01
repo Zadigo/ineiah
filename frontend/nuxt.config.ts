@@ -1,5 +1,6 @@
-import tailwindcss from '@tailwindcss/vite'
 import { defineOrganization } from 'nuxt-schema-org/schema'
+
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -256,17 +257,22 @@ export default defineNuxtConfig({
         analytics_storage: 'denied'
       }]
     ]
-  }
+  },
 
-  // nitro: {
-  //   storage: {
-  //     redis: {
-  //       driver: 'redis',
-  //       host: process.env.NUXT_REDIS_HOST,
-  //       port: 6379,
-  //       username: '',
-  //       password: process.env.NUXT_REDIS_PASSWORD
-  //     }
-  //   }
-  // }
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'esnext'
+      }
+    }
+    // storage: {
+    //   redis: {
+    //     driver: 'redis',
+    //     host: process.env.NUXT_REDIS_HOST,
+    //     port: 6379,
+    //     username: '',
+    //     password: process.env.NUXT_REDIS_PASSWORD
+    //   }
+    // }
+  }
 })

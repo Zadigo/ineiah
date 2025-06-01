@@ -24,7 +24,7 @@ export const footer: FooterSection = {
       links: [
         {
           name: 'Contact',
-          to: '/'
+          to: '/contact'
         },
         {
           name: 'FAQ',
