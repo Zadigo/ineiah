@@ -1,8 +1,11 @@
 <template>
   <section id="site">
     <ClientOnly>
-      <BaseNavbar />
+      <header>
+        <BaseNavbar />
+      </header>
     </ClientOnly>
+
     <slot />
 
     <BaseReassurance />
@@ -12,4 +15,7 @@
 </template>
 
 <script setup lang="ts">
+const { y } = useScroll(window)
+
+provide('scrollLevel', y)
 </script>
