@@ -36,11 +36,11 @@ export const footer: FooterSection = {
         },
         {
           name: 'Politique de confidentialité',
-          to: '/confidentialite'
+          to: '/legal/confidentialite'
         },
         {
           name: 'Mentions légales',
-          to: '/mentions-legales'
+          to: '/legal/mentions-legales'
         }
       ]
     },

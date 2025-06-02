@@ -1,9 +1,9 @@
 <template>
-  <div class="font-sans bg-brand/20">
+  <section class="font-sans bg-brand/20">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

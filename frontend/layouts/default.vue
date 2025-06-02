@@ -1,15 +1,14 @@
 <template>
   <section id="site">
     <ClientOnly>
-      <header>
-        <BaseNavbar />
-      </header>
+      <BaseNavbar />
     </ClientOnly>
 
-    <slot />
+    <div id="main">
+      <slot />
+    </div>
 
     <BaseReassurance />
-
     <BaseFooter />
   </section>
 </template>

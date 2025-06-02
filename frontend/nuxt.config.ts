@@ -9,11 +9,11 @@ export default defineNuxtConfig({
   
   ssr: true,
   routeRules: {
-    '/': { ssr: true },
-    '/faq': { ssr: true },
-    '/nos-prestations': { ssr: true },
-    '/notre-histoire': { ssr: true },
-    '/legal/**': { ssr: true }
+    '/': { swr: 16*60 },
+    '/faq': { swr: 30*60 },
+    '/nos-prestations': { swr: 15*60 },
+    '/notre-histoire': { swr: 60*60 },
+    '/legal/**': { swr: 60*60 }
   },
 
   css: ['~/assets/css/tailwind.css'],
@@ -160,7 +160,7 @@ export default defineNuxtConfig({
         '@type': 'Person',
         name: 'Natasha Mory',
         jobTitle: 'Founder & CEO',
-        description: 'Natasha Mory is a certified hair stylist and wellness expert with over 10 years of experience in the beauty industry.',
+        description: 'Natasha Morel is a certified hair stylist and wellness expert with over 10 years of experience in the beauty industry.',
         image: 'https://yourdomain.com/images/founder-natasha.jpg',
         url: 'https://yourdomain.com/about',
         sameAs: [
@@ -264,15 +264,15 @@ export default defineNuxtConfig({
       options: {
         target: 'esnext'
       }
+    },
+    storage: {
+      redis: {
+        driver: 'redis',
+        host: process.env.NUXT_REDIS_HOST,
+        port: 6379,
+        username: '',
+        password: process.env.NUXT_REDIS_PASSWORD
+      }
     }
-    // storage: {
-    //   redis: {
-    //     driver: 'redis',
-    //     host: process.env.NUXT_REDIS_HOST,
-    //     port: 6379,
-    //     username: '',
-    //     password: process.env.NUXT_REDIS_PASSWORD
-    //   }
-    // }
   }
 })
