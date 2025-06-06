@@ -11,7 +11,9 @@
     "test": "npx vitest run",
     "test:vi": "npx vitest watch",
     "test:nuxt": "npx vitest run --project nuxt",
-    "test:unit": "npx vitest run --project unit"
+    "test:unit": "npx vitest run --project unit",
+    "upload:images": "aws s3 sync ./images s3://$S3_BUCKET/images/ --acl public-read",
+    "deploy": "npm run upload:images && npm run generate"
   },
   "dependencies": {
     "@nuxt/eslint": "1.4.1",

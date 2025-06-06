@@ -8,15 +8,21 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   
   ssr: true,
+
+  site: {
+    url: process.env.NUXT_SITE_URL || 'http://localhost:3000'
+  },
+
   routeRules: {
     '/': { swr: 16*60 },
     '/faq': { swr: 30*60 },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { swr: 60*60 },
-    '/legal/**': { swr: 60*60 }
+    '/legal/**': { prerender: true }
   },
 
   css: ['~/assets/css/tailwind.css'],
+
   vite: {
     plugins: [
       tailwindcss()
@@ -42,7 +48,10 @@ export default defineNuxtConfig({
       stripeLocale: 'fr',
 
       // What's App
-      whatsAppUrl: process.env.NUXT_WHATS_APP_URL
+      whatsAppUrl: process.env.NUXT_WHATS_APP_URL,
+
+      // Cloudfront
+      cdnBaseUrl: process.env.NUXT_CLOUDFRONT_URL || ''
     }
   },
 

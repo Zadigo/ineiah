@@ -1,6 +1,14 @@
 ## Nuxt environment variables
 
 ```bash
+NUXT_SITE_URL=
+
+NUXT_SITE_NAME=
+
+NUXT_SITE_ENV="staging"
+
+NUXT_REDIS_HOST=
+
 # Firebase
 
 NUXT_FIREBASE_API_KEY=...
