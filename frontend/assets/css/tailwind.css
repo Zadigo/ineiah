@@ -42,7 +42,20 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --color-brand: oklch(0.7287 0.0452 3.76);
+  /* Color brand palette Brown */
+  --color-brand-brown-50: oklch(0.969 0.0025 345.21);
+  --color-brand-brown-100: oklch(0.9079 0.0056 3.35);
+  --color-brand-brown-200: oklch(0.8437 0.0104 2.04);
+  --color-brand-brown-300: oklch(0.7816 0.0154 1.67);
+  --color-brand-brown-400: oklch(0.7172 0.0192 4.73);
+  --color-brand-brown-500: oklch(57.205% 0.02972 3.29);
+  --color-brand-brown-600: oklch(0.5169 0.0264 4.54);
+  --color-brand-brown-700: oklch(0.4487 0.0221 1.22);
+  --color-brand-brown-800: oklch(0.3074 0.0133 10.3);
+  --color-brand-brown-900: oklch(0.2283 0.008 4.12);
+
+  /* Color brand palette Pink */
+  --color-brand: oklch(72.873% 0.04517 3.652);
   --color-brand-200: oklch(0.6156 0.0328 5.1);
   --color-brand-300: oklch(0.4437 0.0535 3.99);
   --color-brand-400: oklch(0.293 0.0532 5.86);
