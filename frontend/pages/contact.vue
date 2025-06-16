@@ -4,7 +4,7 @@
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-4xl mx-auto">
-        <ShadCard class="bg-brand-500/30 shadow-none">
+        <ShadCard class="bg-brand-pink-500/30 shadow-none">
           <ShadCardContent>
             <div class="space-y-2">
               <div class="flex justify-between gap-2 mb-2">
@@ -23,13 +23,13 @@
         </ShadCard>
 
         <div class="grid grid-rows-2 gap-2 md:grid-rows-none md:grid-cols-2 md:gap-8">
-          <ShadCard class="mt-5 bg-brand-500/30 shadow-none">
+          <ShadCard class="mt-5 bg-brand-pink-500/30 shadow-none">
             <ShadCardContent>
               <NuxtImg src="/map.jpg" class="rounded-lg" />
             </ShadCardContent>
           </ShadCard>
 
-          <ShadCard class="mt-5 bg-brand-500/30 shadow-none">
+          <ShadCard class="mt-5 bg-brand-pink-500/30 shadow-none">
             <ShadCardContent>
               <p class="font-bold uppercase text-brand-500">Natasha Morel</p>
               <p>1 rue de Paris, 59000, Lille</p>

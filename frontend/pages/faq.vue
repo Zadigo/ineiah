@@ -5,7 +5,7 @@
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
         <div class="space-y-5">
-          <ShadCard v-for="section in faqList" :key="section.title" class="bg-brand-500/20 shadow-none">
+          <ShadCard v-for="section in faqList" :key="section.title" class="bg-brand-pink-500/20 shadow-none">
             <ShadCardContent>
               <h3 class="uppercase text-2xl font-semibold text-brand-500">
                 {{ section.title }}
@@ -13,7 +13,7 @@
 
               <ShadAccordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
                 <ShadAccordionItem v-for="item in section.questions" :key="item.question" :value="item.question">
-                  <ShadAccordionTrigger class="text-brand-800 bg-brand-400/30 px-3 text-md cursor-pointer">
+                  <ShadAccordionTrigger class="text-brand-800 bg-brand-pink-400/30 px-3 text-md cursor-pointer">
                     {{ item.question }}
                   </ShadAccordionTrigger>
 
