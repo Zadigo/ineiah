@@ -2,7 +2,7 @@
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15">
     <!-- Hero -->
     <div ref="heroEl" class="w-full h-[98vh] bg-center bg-no-repeat bg-cover flex items-center">
-      <div id="lead" class="md:max-w-5xl md:mx-auto text-left md:text-center text-white p-5 md:p-10">
+      <div id="lead" class="md:max-w-5xl md:mx-auto text-left md:text-center text-brand-brown-50 p-5 md:p-10">
         <h1 class="text-6xl md:text-7xl font-bold mb-5 animate animate-fade-up">Sublime ta singularité</h1>
         <p class="text-2xl font-normal">This is a sublead that we should be using</p>
 
@@ -32,7 +32,7 @@
         
         <div class="flex flex-col justify-center">
           <h2 ref="intermediateOneEl" class="text-5xl font-bold brand-500 mb-10 text-brand-brown-500 font-title leading-15">
-            Plus q'un salon, une <span class="text-brand-brown-600">expérience</span> de vie
+            Plus q'un salon, une <span class="text-brand-brown-800">expérience</span> de vie
           </h2>
 
           <p>

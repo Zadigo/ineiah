@@ -1,6 +1,6 @@
 <template>
   <div ref="heroEl" class="w-full h-[60vh] bg-center bg-no-repeat bg-cover flex items-center md:items-end">
-    <div id="lead" class="text-left text-white p-5 md:p-10">
+    <div id="lead" class="text-left text-brand-brown-50 p-5 md:p-10">
       <h1 class="text-6xl md:text-7xl font-bold mb-5">{{ lead }}</h1>
       <p class="text-2xl font-normal">
         {{ subtitle }}

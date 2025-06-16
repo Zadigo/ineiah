@@ -34,16 +34,16 @@
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
-            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-brown-200">
-              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-100 hover:text-brand-brown-200">
+            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-brown-200 has-[a]:transition-all has-[a]:ease-in-out">
+              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
                 Accueil
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-100 hover:text-brand-brown-200">
+              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
                 Prestations
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-100 hover:text-brand-brown-200">
+              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
                 Notre histoire
               </NuxtLinkLocale>
             </div>
