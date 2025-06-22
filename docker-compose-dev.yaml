@@ -1,8 +1,3 @@
-volumes:
-  PostgresData:
-  RedisData:
-  GrafanaStorage:
-
 networks:
   ineiah_network:
     driver: bridge
@@ -19,10 +14,12 @@ services:
       - traefik.http.routers.ineiah.entrypoints=websecure
       - traefik.http.routers.ineiah.rule=Host(`dev-client.gency313.fr`)
       - traefik.http.routers.ineiah.tls=true
-      - traefik.http.routers.ineiah.tls.certresolver=staging
+      - traefik.http.routers.ineiah.tls.certresolver=production
       - traefik.http.services.ineiah-service.loadbalancer.server.port=3000
       - traefik.http.routers.ineiah.middlewares=https-redirect
       - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
       - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+    # ports:
+    #   - 3000:3000
     networks:
       - ineiah_network
