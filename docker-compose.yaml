@@ -1,35 +1,187 @@
+volumes:
+  PostgresData:
+  RedisData:
+  GrafanaStorage:
+
+networks:
+  ineiah_network:
+    driver: bridge
+
 services:
-  app:
+  ineiah:
     build: ./frontend
+    container_name: app_ineiah
     labels:
-      - traefik
-    env_file:
-      - docker/environment/nuxt.env
-      - docker/environment/redis.env
+      - traefik.enable=true
+      - traefik.http.routers.ineiah.entrypoints=websecure
+      - traefik.http.routers.ineiah.rule=Host(`ineiah.fr`)
+      - traefik.http.routers.ineiah.tls=true
+      - traefik.http.routers.ineiah.tls.certresolver=staging
+      - traefik.http.services.ineiah-service.loadbalancer.server.port=3000
+      - traefik.http.routers.ineiah.middlewares=https-redirect
+      - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+    # ports:
+    #   - 3000:3000
     depends_on:
       - redis
-      - django
+    networks:
+      - ineiah_network
 
-  django:
-    build: ./hair_backend
+  memcache:
+    image: memcached
+    container_name: app_memcache
+    ports:
+      - 11211:11211
+    restart: always
+    networks:
+      - ineiah_network
+
+  uptimekuma:
+    image: louislam/uptime-kuma
+    container_name: app_uptime_kuma
     labels:
-      - traefik
-    env_file:
-      - docker/environment/django.env
-    depends_on:
-      - db
+      - traefik.enable=true
+      - traefik.http.routers.uptimekuma.entrypoints=websecure
+      - traefik.http.routers.uptimekuma.rule=Host(`uptimekuma.gency313.fr`)
+      - traefik.http.routers.uptimekuma.tls=true
+      - traefik.http.routers.uptimekuma.tls.certresolver=staging
+      - traefik.http.services.uptimekuma-service.loadbalancer.server.port=80
+      - traefik.http.routers.uptimekuma.middlewares=https-redirect
+      - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+    restart: always
+    # environment:
+    #   - UPTIME_KUMA_SSL_KEY=/etc/letsencrypt/live/gency313.fr/privkey.pem
+    #   - UPTIME_KUMA_SSL_CERT=/etc/letsencrypt/live/gency313.fr/cert.pem
+    ports:
+      - 3001:3001
+    volumes:
+      - ~/var/uptime-kuma:/app/data
+      - ~/var/letsencrypt:/etc/letsencrypt/:ro
+      - ~/../../var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - ineiah_network
 
   db:
-    build: postgres:latest
-    env_file:
-      - docker/environment/postgres.env
+    build: ./docker/database
+    container_name: app_database
+    env_file: ./docker/environment/postgres.env
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - PostgresData:/var/lib/postgresql/data/
+    networks:
+      - ineiah_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h localhost -U $$DB_USER -d $$DB_NAME"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
   pgadmin:
-    build: pgadmin:latest
-    env_file:
-      - docker/environment/pgadmin.env
+    image: dpage/pgadmin4
+    container_name: app_pgadmin
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.pgadmin.entrypoints=websecure
+      - traefik.http.routers.pgadmin.rule=Host(`pgadmin.gency313.fr`)
+      - traefik.http.routers.pgadmin.tls=true
+      - traefik.http.routers.pgadmin.tls.certresolver=production
+      - traefik.http.services.pgadmin-service.loadbalancer.server.port=80
+      - traefik.http.routers.pgadmin.middlewares=https-redirect
+      - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+    ports:
+      - 5050:80
+    env_file: 
+      - ./docker/environment/pgadmin.env
+    # volumes:
+    #   - ~/var/letsencrypt:/etc/letsencrypt/:ro
+    networks:
+      - ineiah_network
 
   redis:
-    build: redis:latest
+    build: ./docker/redis
+    container_name: app_redis
+    # https://stackoverflow.com/questions/68461172/docker-compose-redis-password-via-environment-variable
+    ports:
+      - 6379:6000
+    restart: always
+    volumes:
+      - RedisData:/data
+      - ~/var/redis.log:/data/redis.log:rw
+      - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
+    networks:
+      - ineiah_network
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: app_rabbitmq
     env_file:
-      - docker/environment/redis.env
+      - ./docker/environment/rabbit.env
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - ineiah_network
+
+  n8n:
+    image: n8nio/n8n:1.86.1 # FIXME: Keep the 1.86.1 because latest versions cause connection lost error
+    container_name: app_n8n
+    restart: always
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.n8n.entrypoints=websecure
+      - traefik.http.routers.n8n.rule=Host(`n8n.gency313.fr`)
+      - traefik.http.routers.n8n.tls=true
+      - traefik.http.routers.n8n.tls.certresolver=production
+      - traefik.http.services.n8n-service.loadbalancer.server.port=5678
+      - traefik.http.routers.n8n.middlewares=https-redirect
+      - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+      - traefik.http.middlewares.n8n.headers.browserXSSFilter=true
+      - traefik.http.middlewares.n8n.headers.contentTypeNosniff=true
+    env_file:
+      - ./docker/environment/automation.env
+      - ./docker/environment/secure_automation.env
+    volumes:
+      - ~/var/n8n_data:/home/node/.n8n
+      - ~/var/local-files:/files
+    networks:
+      - ineiah_network
+
+  proxy:
+    image: traefik:v3.1
+    labels:
+      - "--certificatesresolvers.staging.acme.httpchallenge=true"
+      - "--certificatesresolvers.staging.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.staging.acme.storage=/letsencrypt/acme.json"
+      # - "--certificatesresolvers.staging.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.staging.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./docker/traefik:/etc/traefik
+      - ~/var/letsencrypt:/letsencrypt
+      - ~/var/traefik_access.log:/var/log/traefik_access.log
+      - ~/var/traefik.log:/var/log/traefik.log
+      # - ./docker/traefik/tls.yml:/etc/traefik/dynamic/tls.yml      
+    networks:
+      - ineiah_network
+
+  whoami:
+    image: stefanscherer/whoami
+    # image: traefik/whoami
+    labels:
+      # - traefik.http.routers.whoami.tls=true
+      # - traefik.http.routers.whoami.entrypoints=web
+      - traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)
+      - traefik.http.services.whoami-service.loadbalancer.server.port=8080
+      - "--certificatesresolvers.staging.acme.storage=/letsencrypt/acme.json"
+    networks:
+      - ineiah_network
