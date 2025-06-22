@@ -1,6 +1,9 @@
 networks:
   ineiah_network:
     driver: bridge
+  myprosite_network:
+    external: true
+    name: myprosite_myprosite_network  
 
 services:
   ineiah:
@@ -23,3 +26,4 @@ services:
     #   - 3000:3000
     networks:
       - ineiah_network
+      - myprosite_network
