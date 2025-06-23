@@ -70,6 +70,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/test-utils',
+    '@nuxt/test-utils/module',
     '@nuxt/scripts',
     '@nuxt/ui',
     '@pinia/nuxt',

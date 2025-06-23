@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test": "npx vitest run",
+    "test": "vitest run",
     "test:vi": "npx vitest watch",
     "test:nuxt": "npx vitest run --project nuxt",
     "test:unit": "npx vitest run --project unit",
