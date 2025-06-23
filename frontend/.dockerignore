@@ -20,6 +20,8 @@
 !middleware/
 !store/
 !static/
+!data/
+!i18n/
 
 # Ignore node_modules and build artifacts
 node_modules/
