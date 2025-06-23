@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { swr: 60*60 },
     // '/legal/**': { prerender: true }
-    '/legal/**': { ssr: true }
+    '/legal/**': { swr: true }
   },
 
   css: ['~/assets/css/tailwind.css'],

@@ -1,7 +1,7 @@
-import { fileURLToPath } from 'node:url'
+// import { fileURLToPath } from 'node:url'
 import { defineWorkspace } from 'vitest/config'
 
-const rootDir = fileURLToPath(new URL('.', import.meta.url))
+// const rootDir = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineWorkspace([
   // {
