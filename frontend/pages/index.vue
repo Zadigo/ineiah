@@ -174,5 +174,4 @@ useHead({
     }
   ]
 })
-
 </script>
