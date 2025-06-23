@@ -298,5 +298,15 @@ export default defineNuxtConfig({
         password: process.env.NUXT_REDIS_PASSWORD
       }
     }
+  },
+
+  // Add this alias configuration
+  alias: {
+    'vue': 'vue/dist/vue.esm-bundler.js',
+  },
+
+  // Add this build configuration
+  build: {
+    transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
   }
 })
