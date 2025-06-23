@@ -13,7 +13,7 @@
       </div>
     </ShadCardContent>
 
-    <ShadCardContent class="service h-[300px] w-[300px] overflow-x-hidden text-wrap text-lightp p-8 text-sm bg-brand/50 rounded-lg" v-else>
+    <ShadCardContent class="service h-[300px] w-[300px] overflow-x-hidden text-wrap text-lightp p-8 text-sm bg-brand-pink-500/50 rounded-lg" v-else>
       <p class="mb-5 font-light">
         Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, 
         qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de 
@@ -28,7 +28,7 @@
         <li class="list-disc list-inside">Coiffage (brushing ou séchage naturel)</li>
       </ul>
 
-      <ShadButton class="mt-3 rounded-full" size="sm" as-child>
+      <ShadButton id="tel-service-xyz" class="mt-3 rounded-full" size="sm" as-child>
         <a href="tel:+33">
           <Icon name="fa-solid:phone" />
           Réserver

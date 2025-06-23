@@ -1,6 +1,6 @@
 <template>
   <div class="my-5">
-    <h2 class="font-bold text-4xl px-4 mb-7 text-brand-500">
+    <h2 class="font-bold text-4xl px-4 mb-7 text-brand-pink-800">
       Coupes
     </h2>
 

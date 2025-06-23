@@ -3,7 +3,7 @@
     <BaseJumbotron src="/hero/hair4.jpg" lead="Notre histoire" subtitle="Découvrez tout ou partie de notre histoire" />
 
     <!-- Quote -->
-    <div class="p-10 md:p-20 bg-brand text-brand-500/80 w-full text-center">
+    <div class="p-10 md:p-20 bg-brand-pink-500 text-brand-pink-800/80 w-full text-center">
       <h1 class="text-2xl md:text-4xl max-w-4xl md:mx-auto font-bold space-x-2 md:space-x-5">
         <Icon name="fa-solid:quote-left" />
         <span>Hairstudio by Anissa c'est avant tout une histoire de passion et d'humanité !</span>
@@ -39,9 +39,9 @@ defineOgImageComponent('NuxtSeo', {
 
 useSeoMeta({
   title: titles[i18n.locale.value],
-  description: 'Some simple decription',
+  description: 'Sublime ta singularité',
   titleTemplate: "%s | La beauté d'Inéïah",
-  ogImage: 'http://example.com/image.jpg'
+  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 
 useHead({

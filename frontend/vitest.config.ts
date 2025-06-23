@@ -1,14 +1,13 @@
-import { defineVitestConfig } from '@nuxt/test-utils/config'
+import { defineConfig } from 'vitest/config'
 
-export default defineVitestConfig({
+export default defineConfig({
   test: {
     globals: true,
     environment: 'nuxt',
-    include: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
-  },
-  resolve: {
-    alias: {
-      '~': new URL('./', import.meta.url).pathname
-    }
+    // environmentOptions: {
+    //   nuxt: {
+    //     rootDir: './'
+    //   }
+    // }
   }
 })

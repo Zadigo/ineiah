@@ -5,15 +5,15 @@
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
         <div class="space-y-5">
-          <ShadCard v-for="section in faqList" :key="section.title" class="bg-brand/20 shadow-none">
+          <ShadCard v-for="section in faqList" :key="section.title" class="bg-brand-pink-500/20 shadow-none">
             <ShadCardContent>
-              <h3 class="uppercase text-2xl font-semibold text-brand-500">
+              <h3 :id="`faq-${section.id}`" class="uppercase text-2xl font-semibold text-brand-500">
                 {{ section.title }}
               </h3>
 
               <ShadAccordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
-                <ShadAccordionItem v-for="item in section.questions" :key="item.question" :value="item.question">
-                  <ShadAccordionTrigger class="text-brand-500 bg-brand-400/30 px-3 text-md cursor-pointer">
+                <ShadAccordionItem v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
+                  <ShadAccordionTrigger :id="`faq-${section.id}-${i}`" class="text-brand-800 bg-brand-pink-400/30 px-3 text-md cursor-pointer">
                     {{ item.question }}
                   </ShadAccordionTrigger>
 
@@ -62,18 +62,9 @@ defineOgImageComponent('NuxtSeo', {
 
 useSeoMeta({
   title: titles[i18n.locale.value],
-  description: 'Some simple decription',
+  description: 'Sublime ta singularité',
   titleTemplate: "%s | La beauté d'Inéïah",
-  ogImage: 'http://example.com/image.jpg'
-})
-
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: 'https://example.com/'
-    }
-  ]
+  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 
 const questionsList = computed(() => {

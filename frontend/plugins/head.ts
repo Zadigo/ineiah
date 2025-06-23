@@ -5,6 +5,6 @@ export default defineNuxtPlugin(() => {
   const head = injectHead()
 
   head.use(InferSeoMetaPlugin({
-    ogTitle: title => title.replace(' - My Site', '')
+    ogTitle: title => title?.replace(' - My Site', '') || ''
   }))
 })

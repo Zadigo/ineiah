@@ -4,12 +4,14 @@ export interface Question {
 }
 
 export interface FAQSection {
+  id: string
   title: string
   questions: Question[]
 }
 
 export const faqList: FAQSection[] = [
   {
+    id: 'reservations',
     title: 'Rendez-Vous & Réservations',
     questions: [
       {
@@ -31,6 +33,7 @@ export const faqList: FAQSection[] = [
     ]
   },
   {
+    id: 'payment',
     title: 'Paiement & Acompte',
     questions: [
       {
@@ -48,6 +51,7 @@ export const faqList: FAQSection[] = [
     ]
   },
   {
+    id: 'preparation',
     title: 'Préparation au rendez-vous',
     questions: [
       {
@@ -61,6 +65,7 @@ export const faqList: FAQSection[] = [
     ]
   },
   {
+    id: 'age-restrictions',
     title: "Conditions d'âge",
     questions: [
       {

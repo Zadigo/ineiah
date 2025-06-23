@@ -31,8 +31,8 @@
         </div>
         
         <div class="flex flex-col justify-center">
-          <h2 class="text-5xl font-bold brand-500 mb-10 text-brand-500 font-title leading-15">
-            Plus q'un salon, une <span class="text-brand-200">expérience</span> de vie
+          <h2 ref="intermediateOneEl" class="text-5xl font-bold brand-500 mb-10 text-brand-pink-500 font-title leading-15">
+            Plus q'un salon, une <span class="text-brand-pink-600">expérience</span> de vie
           </h2>
 
           <p>
@@ -50,7 +50,7 @@
           </p>
 
           <div>
-            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5 bg-brand-500" as-child>
+            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5 bg-brand-pink-800" as-child>
               <a href="tel:+33">
                 <Icon name="fa-solid:phone" />
                 Je veux me faire belle
@@ -62,10 +62,10 @@
     </div>
 
     <!-- Intermediate-2 -->
-    <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min brand-500 mt-10 bg-brand">
+    <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min brand-500 mt-10 bg-brand-pink-500">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
-          <h2 class="text-3xl font-bold mb-4 md:text-5xl text-brand-500 font-title leading-15">
+          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-brand-pink-800 font-title leading-10 md:leading-15">
             L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
           </h2>
           
@@ -84,13 +84,13 @@
       </div>
       
       <div class="h-auto">
-        <NuxtImg src="/hero/hair1.jpg" class="aspect-square object-cover" alt="" />
+        <NuxtImg src="/hero/vert1.jpeg" class="aspect-square object-cover" alt="" />
       </div>
     </div>
 
     <!-- Brands -->
     <div class="my-5 md:p-10">
-      <h3 class="text-center text-2xl font-bold text-brand-500 mb-5 md:mb-0" >
+      <h3 class="text-center text-2xl font-bold text-brand-pink-500 mb-5 md:mb-0" >
         Nos marques
       </h3>
 
@@ -121,7 +121,36 @@ const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }
 
+const animateText = ref(false)
 const heroEl = useTemplateRef('heroEl')
+const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
+const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
+
+useIntersectionObserver(intermediateOneEl, ([entry]) => {
+    if (entry?.isIntersecting) {
+      animateText.value = true
+      intermediateOneEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
+    } else {
+      animateText.value = false
+      intermediateOneEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
+    }
+  }
+)
+
+useIntersectionObserver(intermediateTwoEl, ([entry]) => {
+    if (entry?.isIntersecting) {
+      intermediateTwoEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
+    } else {
+      intermediateTwoEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
+    }
+  }
+)
+
+onMounted(() => {
+  if (heroEl.value) {
+    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
+  }
+})
 
 defineOgImageComponent('NuxtSeo', {
   title: 'Hello OG Image 👋',
@@ -132,9 +161,9 @@ defineOgImageComponent('NuxtSeo', {
 
 useSeoMeta({
   title: titles[i18n.locale.value],
-  description: 'Some simple decription',
+  description: 'Sublime ta singularité',
   titleTemplate: "%s | La beauté d'Inéïah",
-  ogImage: 'http://example.com/image.jpg'
+  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 
 useHead({
@@ -146,9 +175,4 @@ useHead({
   ]
 })
 
-onMounted(() => {
-  if (heroEl.value) {
-    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
-  }
-})
 </script>

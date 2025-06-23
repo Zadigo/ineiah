@@ -1,10 +1,10 @@
 <template>
-  <nav :class="{ 'bg-transparent': !showBackground, 'bg-brand shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
+  <nav :class="{ 'bg-transparent': !showBackground, 'bg-brand-pink-500 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-400 hover:bg-brand-400 hover:text-brand focus:ring-2 focus:ring-brand focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-pink-700 hover:bg-brand-pink-400 hover:text-brand-pink focus:ring-2 focus:ring-brand focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -29,25 +29,32 @@
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex shrink-0 items-center">
             <NuxtLinkLocale to="/">
-              <NuxtImg class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+              <NuxtImg class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
             </NuxtLinkLocale>
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
-            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-500">
-              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-white hover:text-brand-500">
+            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-pink-200">
+              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-100 hover:text-brand-pink-200">
                 Accueil
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-white hover:text-brand-500">
+              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-100 hover:text-brand-pink-200">
                 Prestations
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-white hover:text-brand-500">
+              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-100 hover:text-brand-pink-200">
                 Notre histoire
               </NuxtLinkLocale>
             </div>
           </div>
+
+          <ShadButton id="tel-navbar" class="rounded-full" as-child>
+            <a href="tel:">
+              <Icon name="fa-solid:phone" />
+              Nous appeller
+            </a>
+          </ShadButton>
         </div>
       </div>
     </div>
@@ -55,6 +62,8 @@
 </template>
 
 <script setup lang="ts">
+import { businessDetails } from '~/data'
+
 const emit = defineEmits<{
   'mobile-menu': []
 }>()

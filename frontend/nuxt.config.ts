@@ -38,6 +38,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      prodDomain: process.env.NUXT_SITE_URL || 'http://localhost:3000',
+      
       // Firebase
       firebaseApiKey: process.env.NUXT_FIREBASE_API_KEY,
       firebaseAuthDomain: process.env.NUXT_FIREBASE_AUTH_DOMAIN,
@@ -68,6 +70,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/test-utils',
+    '@nuxt/test-utils/module',
     '@nuxt/scripts',
     '@nuxt/ui',
     '@pinia/nuxt',
@@ -295,5 +298,15 @@ export default defineNuxtConfig({
         password: process.env.NUXT_REDIS_PASSWORD
       }
     }
+  },
+
+  // Add this alias configuration
+  alias: {
+    'vue': 'vue/dist/vue.esm-bundler.js',
+  },
+
+  // Add this build configuration
+  build: {
+    transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
   }
 })

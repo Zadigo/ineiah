@@ -65,7 +65,7 @@ export const footer: FooterSection = {
       icon: 'facebook-f'
     },
     {
-      name: 'Facebook',
+      name: 'Instagram',
       url: 'https://www.instagram.com/ineiah/',
       icon: 'instagram'
     },

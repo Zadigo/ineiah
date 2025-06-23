@@ -1,8 +1,35 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-/* @import "tailwindcss-animate"; */
 
 @custom-variant dark (&:is(.dark *));
+
+/* 
+ * Color palette: Brown, Pink
+ */
+@theme {
+  --color-brand-brown-50: oklch(0.969 0.0025 345.21);
+  --color-brand-brown-100: oklch(0.9079 0.0056 3.35);
+  --color-brand-brown-200: oklch(0.8437 0.0104 2.04);
+  --color-brand-brown-300: oklch(0.7816 0.0154 1.67);
+  --color-brand-brown-400: oklch(0.7172 0.0192 4.73);
+  --color-brand-brown-500: oklch(57.205% 0.02972 3.29);
+  --color-brand-brown-600: oklch(0.5169 0.0264 4.54);
+  --color-brand-brown-700: oklch(0.4487 0.0221 1.22);
+  --color-brand-brown-800: oklch(0.3074 0.0133 10.3);
+  --color-brand-brown-900: oklch(0.2283 0.008 4.12);
+
+  --color-brand-pink-100: oklch(0.9705 0.0045 360);
+  --color-brand-pink-200: oklch(0.9088 0.0148 1.58);
+  --color-brand-pink-300: oklch(0.8485 0.0245 1.44);
+  --color-brand-pink-400: oklch(0.7872 0.0344 3.89);
+  --color-brand-pink-500: oklch(72.873% 0.04517 3.652);
+  --color-brand-pink-600: oklch(0.4437 0.0535 3.99);
+  --color-brand-pink-700: oklch(0.293 0.0532 5.86);
+  --color-brand-pink-800: oklch(0.2324 0.0572 8.48);
+  --color-brand-pink-900: oklch(23.237% 0.05716 8.458);
+  --color-brand-pink-secondary-500: oklch(0.7784 0.059 149.59);
+  --color-brand-pink-secondary-800: oklch(0.2359 0.0277 148.69);
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -42,16 +69,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --color-brand: oklch(0.7287 0.0452 3.76);
-  --color-brand-200: oklch(0.6156 0.0328 5.1);
-  --color-brand-300: oklch(0.4437 0.0535 3.99);
-  --color-brand-400: oklch(0.293 0.0532 5.86);
-  --color-brand-500: oklch(0.2324 0.0572 8.48);
-  --color-secondary: oklch(0.7784 0.059 149.59);
-  --color-primary: var(--color-brand-500);
-
-  --font-sans: 'Ubuntu';
-  --font-title: 'Kreon';
+  --font-sans: 'Ubuntu', sans-serif;
+  --font-title: 'Kreon', sans-serif;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -76,19 +95,19 @@
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: var(--color-brand-pink-800);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: var(--color-brand-pink-800);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --popover-foreground: var(--color-brand-pink-800);
+  --primary: var(--color-brand-pink-800);
+  --primary-foreground: var(--color-brand-pink-100);
+  --secondary: var(--color-brand-pink-secondary-500);
+  --secondary-foreground: var(--color-brand-pink-secondary-800);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  /* --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0); */
+  --accent: var(--color-brand-pink-400);
+  --accent-foreground: var(--color-brand-pink-800);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
@@ -101,11 +120,11 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-foreground: var(--color-brand-pink-800);
+  --sidebar-primary: var(--color-brand-pink-800);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-accent-foreground: var(--color-brand-pink-800);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
