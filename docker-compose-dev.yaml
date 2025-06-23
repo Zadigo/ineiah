@@ -12,9 +12,8 @@ services:
   ineiah:
     build: ./frontend
     container_name: app_ineiah
-    environment:
-      - NUXT_REDIS_HOST=redis
-      - NUXT_REDIS_PASSWORD=django-local-testing
+    env_file:
+      - ./docker/environment/vite.env
     labels:
       - traefik.enable=true
       - traefik.http.routers.ineiah.entrypoints=websecure
