@@ -76,6 +76,9 @@ const email = ref<string>('')
 const telephone = ref<string>('')
 const message = ref<string>('')
 
+/**
+ * Handles sending a message using N8N backend
+ */
 function handleSendMessage() {
   $fetch('/contact', {
     baseURL: 'https://example.com',

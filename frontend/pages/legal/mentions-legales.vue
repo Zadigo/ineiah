@@ -113,4 +113,15 @@
 
 <script setup lang="ts">
 import { businessDetails } from '~/data/constants/business'
+
+const titles: Record<string, string> = {
+  fr: 'Mentions légales'
+}
+
+useSeoMeta({
+  title: titles[i18n.locale.value],
+  description: 'Sublime ta singularité',
+  titleTemplate: "%s | La beauté d'Inéïah",
+  ogImage: 'http://example.com/image.jpg'
+})
 </script>
