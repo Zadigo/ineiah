@@ -126,25 +126,29 @@ const heroEl = useTemplateRef('heroEl')
 const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
 const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
 
-useIntersectionObserver(intermediateOneEl, ([entry]) => {
-    if (entry?.isIntersecting) {
-      animateText.value = true
-      intermediateOneEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
-    } else {
-      animateText.value = false
-      intermediateOneEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
-    }
-  }
-)
-
-useIntersectionObserver(intermediateTwoEl, ([entry]) => {
-    if (entry?.isIntersecting) {
-      intermediateTwoEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
-    } else {
-      intermediateTwoEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
-    }
-  }
-)
+if (import.meta.client) {
+  onMounted(() => {
+    useIntersectionObserver(intermediateOneEl, ([entry]) => {
+        if (entry?.isIntersecting) {
+          animateText.value = true
+          intermediateOneEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
+        } else {
+          animateText.value = false
+          intermediateOneEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
+        }
+      }
+    )
+    
+    useIntersectionObserver(intermediateTwoEl, ([entry]) => {
+        if (entry?.isIntersecting) {
+          intermediateTwoEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
+        } else {
+          intermediateTwoEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
+        }
+      }
+    )
+  })
+}
 
 onMounted(() => {
   if (heroEl.value) {

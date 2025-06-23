@@ -10,7 +10,8 @@ const titles: Record<string, string> = {
 }
 
 useSeoMeta({
-  title: titles[i18n.locale.value],
+  // title: titles[i18n.locale.value],
+  title: titles.fr,
   description: 'Sublime ta singularité',
   titleTemplate: "%s | La beauté d'Inéïah",
   ogImage: 'http://example.com/image.jpg'
