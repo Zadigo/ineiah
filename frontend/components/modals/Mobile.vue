@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { mobileLinks } from '~/data';
+import { mobileLinks } from '~/data'
 
 const props = defineProps<{
   modelValue: boolean
