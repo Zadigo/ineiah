@@ -15,7 +15,7 @@ export default defineNuxtPlugin(nuxtApp => {
       if (binding.arg === 'right') {
         baseTokens.push('slide-in-from-right-5')
       }
-      console.log(binding)
+
       if (binding.value) {
         el.classList.add(...baseTokens)
       } else {

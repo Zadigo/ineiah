@@ -19,9 +19,9 @@ export default defineNuxtConfig({
     }
   },
 
-  alias: {
-    'vue': 'vue/dist/vue.esm-bundler.js'
-  },
+  // alias: {
+  //   'vue': 'vue/dist/vue.esm-bundler.js'
+  // },
 
   routeRules: {
     '/': { swr: 16*60 },
@@ -115,6 +115,10 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     lazy: true,
     vueI18n: './i18n.config.ts',
+    bundle: {
+      // TODO: Remove on next major i18n update
+      optimizeTranslationDirective: false
+    },
     // experimental: {
     //   localeDetector: 'i18n/locale_detector.ts'
     // },
