@@ -40,6 +40,4 @@ withDefaults(
     id: 'tel-offer-section'
   }
 )
-
-const isMobile = inject<boolean>('isMobile')
 </script>

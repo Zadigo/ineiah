@@ -121,8 +121,8 @@ const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }
 
-const animateText = ref(false)
-const heroEl = useTemplateRef('heroEl')
+const animateText = ref<boolean>(false)
+const heroEl = useTemplateRef<HTMLElement>('heroEl')
 const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
 const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
 
@@ -156,12 +156,12 @@ onMounted(() => {
   }
 })
 
-defineOgImageComponent('NuxtSeo', {
-  title: 'Hello OG Image 👋',
-  description: 'Look at me in dark mode',
-  theme: '#ff0000',
-  colorMode: 'dark',
-})
+// defineOgImageComponent('NuxtSeo', {
+//   title: 'Hello OG Image 👋',
+//   description: 'Look at me in dark mode',
+//   theme: '#ff0000',
+//   colorMode: 'dark',
+// })
 
 useSeoMeta({
   // title: titles[i18n.locale.value],

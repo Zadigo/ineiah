@@ -53,12 +53,12 @@ const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }
 
-defineOgImageComponent('NuxtSeo', {
-  title: 'Hello OG Image 👋',
-  description: 'Look at me in dark mode',
-  theme: '#ff0000',
-  colorMode: 'dark',
-})
+// defineOgImageComponent('NuxtSeo', {
+//   title: 'Hello OG Image 👋',
+//   description: 'Look at me in dark mode',
+//   theme: '#ff0000',
+//   colorMode: 'dark',
+// })
 
 useSeoMeta({
   // title: titles[i18n.locale.value],

@@ -73,7 +73,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/icon',
-    '@nuxt/test-utils',
     '@nuxt/test-utils/module',
     '@nuxt/scripts',
     '@nuxt/ui',
@@ -81,12 +80,13 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@nuxtjs/google-fonts',
+    // '@sentry/nuxt/module,'
+    '@vueuse/nuxt',
     'pinia-plugin-persistedstate',
     'shadcn-nuxt',
-    '@vueuse/nuxt',
     'nuxt-gtag',
     'nuxt-schema-org',
-    '@sentry/nuxt/module'
+    'nuxt-og-image'
   ],
 
   shadcn: {
@@ -321,6 +321,9 @@ export default defineNuxtConfig({
   },
 
   sentry: {
+    disabled: process.env.NODE_ENV === 'test',
+    disableClientSide: process.env.NODE_ENV === 'test',
+    disableServerSide: process.env.NODE_ENV === 'test',
     sourceMapsUploadOptions: {
       org: 'jpm-holdings',
       project: 'dev-client'

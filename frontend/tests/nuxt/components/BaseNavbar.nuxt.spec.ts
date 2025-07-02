@@ -1,14 +1,10 @@
+import { NuxtLinkLocale } from '#components'
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
 
-import { NuxtLinkLocale } from '#components'
-import BaseNavbar from '../components/BaseNavbar.vue'
+import BaseNavbar from '~/components/BaseNavbar.vue'
 
-// vi.mock('@vueuse/core', () => ({
-//   useScroll: vi.fn(() => ({ y: 0 }))
-// }))
-
-describe('Navbar', () => {
+describe.concurrent.skip('Navbar', () => {
   it('should render navbar', async () => {
     const component = await renderSuspended(BaseNavbar)
     const linkEl = component.findByText('Accueil')

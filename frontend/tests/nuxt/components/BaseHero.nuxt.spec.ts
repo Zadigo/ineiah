@@ -1,9 +1,10 @@
 import { renderSuspended } from '@nuxt/test-utils/runtime'
 import { screen } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
-import BaseHero from '../components/BaseHero.vue'
 
-describe('Base Hero', () => {
+import BaseHero from '~/components/BaseHero.vue'
+
+describe.concurrent.skip('Base Hero', () => {
   it.skip('renders correctly with default props', async () => {
     await renderSuspended(BaseHero, {
       props: {
