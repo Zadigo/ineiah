@@ -19,6 +19,8 @@
 </template>
 
 <script setup lang="ts">
+import { useScroll } from '@vueuse/core'
+
 const scrollLevel = ref<number>(0)
 provide('scrollLevel', scrollLevel)
 

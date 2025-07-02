@@ -14,6 +14,7 @@
 </template>
 
 <script setup lang="ts">
+import { useVModel } from '@vueuse/core'
 import { mobileLinks } from '~/data'
 
 const props = defineProps<{

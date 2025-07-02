@@ -62,6 +62,7 @@
 </template>
 
 <script setup lang="ts">
+import { useScroll } from '@vueuse/core'
 import { businessDetails } from '~/data'
 
 const emit = defineEmits<{

@@ -143,6 +143,7 @@ useHead({
 </script>
 
 <script setup lang="ts">
+import { useIntersectionObserver } from '@vueuse/core'
 import { businessDetails } from '~/data'
 
 // const i18n = useI18n()
