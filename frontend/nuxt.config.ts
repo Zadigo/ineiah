@@ -82,7 +82,8 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     'nuxt-gtag',
     'nuxt-schema-org',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    '@nuxtjs/tailwindcss'
   ],
 
   shadcn: {
