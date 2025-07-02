@@ -112,56 +112,10 @@
   </section>
 </template>
 
-<script setup lang="ts">
-import { businessDetails } from '~/data'
-
-// const i18n = useI18n()
-
+<script lang="ts">
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }
-
-const animateText = ref<boolean>(false)
-const heroEl = useTemplateRef<HTMLElement>('heroEl')
-const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
-const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
-
-if (import.meta.client) {
-  onMounted(() => {
-    useIntersectionObserver(intermediateOneEl, ([entry]) => {
-        if (entry?.isIntersecting) {
-          animateText.value = true
-          intermediateOneEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
-        } else {
-          animateText.value = false
-          intermediateOneEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
-        }
-      }
-    )
-    
-    useIntersectionObserver(intermediateTwoEl, ([entry]) => {
-        if (entry?.isIntersecting) {
-          intermediateTwoEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
-        } else {
-          intermediateTwoEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
-        }
-      }
-    )
-  })
-}
-
-onMounted(() => {
-  if (heroEl.value) {
-    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
-  }
-})
-
-// defineOgImageComponent('NuxtSeo', {
-//   title: 'Hello OG Image 👋',
-//   description: 'Look at me in dark mode',
-//   theme: '#ff0000',
-//   colorMode: 'dark',
-// })
 
 useSeoMeta({
   // title: titles[i18n.locale.value],
@@ -178,5 +132,53 @@ useHead({
       href: 'https://example.com/'
     }
   ]
+})
+
+// defineOgImageComponent('NuxtSeo', {
+//   title: 'Hello OG Image 👋',
+//   description: 'Look at me in dark mode',
+//   theme: '#ff0000',
+//   colorMode: 'dark',
+// })
+</script>
+
+<script setup lang="ts">
+import { businessDetails } from '~/data'
+
+// const i18n = useI18n()
+
+const heroEl = useTemplateRef<HTMLElement>('heroEl')
+const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
+const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
+
+if (import.meta.client) {
+  onMounted(() => {
+    const textClasses = ['animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500']
+
+    /**
+     * Animates an element in the document given the provided classes
+     * @param el The element to animate
+     * @param classes The classes to use for the animation
+     */
+    function observe(el: typeof intermediateOneEl, classes: string[]) {
+        useIntersectionObserver(el, ([entry]) => {
+          if (entry?.isIntersecting) {
+            el.value?.classList.add(...classes)
+          } else {
+            el.value?.classList.remove(...classes)
+          }
+        }
+      )
+    }
+
+    observe(intermediateOneEl, textClasses)
+    observe(intermediateTwoEl,textClasses)
+  })
+}
+
+onMounted(() => {
+  if (heroEl.value) {
+    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
+  }
 })
 </script>
