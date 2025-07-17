@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { faqList } from '~/app/data'
+import { faqList } from '~/data'
 
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
