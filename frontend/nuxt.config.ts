@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   ssr: true,
+  sourcemap: false,
 
   site: {
     url: process.env.NUXT_SITE_URL || 'http://localhost:3000'

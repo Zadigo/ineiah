@@ -21,10 +21,10 @@ services:
       - traefik.http.routers.ineiah.middlewares=https-redirect
       - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
       - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
-    # ports:
-    #   - 3000:3000
-    depends_on:
-      - redis
+    ports:
+      - 3000:3000
+    # depends_on:
+    #   - redis
     networks:
       - ineiah_network
 
