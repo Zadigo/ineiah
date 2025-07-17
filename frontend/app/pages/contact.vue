@@ -70,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, footer } from '~/app/data'
+import { businessDetails, footer } from '~/data'
 
 const email = ref<string>('')
 const telephone = ref<string>('')

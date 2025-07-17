@@ -8,7 +8,7 @@
             <p class="text-wrap">{{ error?.message }}</p>
           
             <NuxtLinkLocale id="link-shop-error" href="/" @click="handleError">
-              {{ $t('Accueil') }}
+              {{ 'Accueil' }}
             </NuxtLinkLocale>
           </ShadCardContent>
         </ShadCard>

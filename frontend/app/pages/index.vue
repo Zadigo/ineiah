@@ -112,38 +112,7 @@
   </section>
 </template>
 
-<script lang="ts">
-const titles: Record<string, string> = {
-  fr: 'Coupe et coiffures tout type de cheveux'
-}
-
-useSeoMeta({
-  // title: titles[i18n.locale.value],
-  title: titles.fr,
-  description: 'Sublime ta singularité',
-  titleTemplate: "%s | La beauté d'Inéïah",
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
-})
-
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: 'https://example.com/'
-    }
-  ]
-})
-
-// defineOgImageComponent('NuxtSeo', {
-//   title: 'Hello OG Image 👋',
-//   description: 'Look at me in dark mode',
-//   theme: '#ff0000',
-//   colorMode: 'dark',
-// })
-</script>
-
 <script setup lang="ts">
-import { useIntersectionObserver } from '@vueuse/core'
 import { businessDetails } from '~/data'
 
 // const i18n = useI18n()
@@ -182,4 +151,32 @@ onMounted(() => {
     heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
   }
 })
+
+const titles: Record<string, string> = {
+  fr: 'Coupe et coiffures tout type de cheveux'
+}
+
+useSeoMeta({
+  // title: titles[i18n.locale.value],
+  title: titles.fr,
+  description: 'Sublime ta singularité',
+  titleTemplate: "%s | La beauté d'Inéïah",
+  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+})
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://example.com/'
+    }
+  ]
+})
+
+// defineOgImageComponent('NuxtSeo', {
+//   title: 'Hello OG Image 👋',
+//   description: 'Look at me in dark mode',
+//   theme: '#ff0000',
+//   colorMode: 'dark',
+// })
 </script>
