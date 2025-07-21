@@ -4,9 +4,9 @@ volumes:
 networks:
   ineiah_network:
     driver: bridge
-  # myprosite_network:
-  #   external: true
-  #   name: myprosite_myprosite_network  
+  myprosite_network:
+    external: true
+    name: myprosite_myprosite_network  
 
 services:
   ineiah:
@@ -24,18 +24,18 @@ services:
       - traefik.http.routers.ineiah.middlewares=https-redirect
       - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
       - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
-    ports:
-      - 3000:3000
+    # ports:
+    #   - 3000:3000
     networks:
       - ineiah_network
-      # - myprosite_network
+      - myprosite_network
 
   redis_dev_ineiah:
     build: ./docker/redis
     container_name: app_redis_dev_ineiah
     # https://stackoverflow.com/questions/68461172/docker-compose-redis-password-via-environment-variable
     ports:
-      - 6379:6000
+      - 6380:6000
     restart: always
     volumes:
       - RedisData:/data
