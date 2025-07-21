@@ -1,5 +1,5 @@
 <template>
-  <ShadCard class="text-white bg-cover" style="background-image:url('/hero/hair7.jpg')">
+  <ShadCard class="text-brand-pink-100 bg-cover" style="background-image:url('/hero/hair7.jpg')">
     <ShadCardContent class="p-8 md:p-20">
       <div class="flex-col justify-center mx-auto text-center max-w-7xl">
         <h2 class="text-5xl md:text-7xl text-shadow-brand-500 font-bold mb-5 font-title">

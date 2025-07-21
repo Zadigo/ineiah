@@ -3,17 +3,17 @@
     <ShadCardContent v-if="!showServiceDetails" class="p-0 rounded-lg">
       <img src="/hero/hair8.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="" />
 
-      <div class="absolute bottom-0 left-0 p-5 text-white">
+      <div class="absolute bottom-0 left-0 p-5 text-brand-pink-50">
         <p class="text-light text-sm">Coupe sur</p>
         <p class="font-semibold uppercase">cheveux sec . <span class="font-bold">120€</span></p>
 
-        <Transition enter-active-class="animate zoom-in-10" leave-active-class="animate zoom-out-10">
+        <Transition enter-active-class="animate__animated animate__zoomIn" leave-active-class="animate__animated animate__zoomOut">
           <p v-if="showIndicatorPhrase">En savoir plus</p>
         </Transition>
       </div>
     </ShadCardContent>
 
-    <ShadCardContent class="service h-[300px] w-[300px] overflow-x-hidden text-wrap text-lightp p-8 text-sm bg-brand-pink-500/50 rounded-lg" v-else>
+    <ShadCardContent class="service h-[300px] w-[300px] overflow-x-hidden text-wrap text-lightp p-8 text-sm bg-brand-pink-300 rounded-lg" v-else>
       <p class="mb-5 font-light">
         Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, 
         qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de 
