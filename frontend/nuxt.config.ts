@@ -6,8 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  
   ssr: true,
+  sourcemap: false,
 
   site: {
     url: process.env.NUXT_SITE_URL || 'http://localhost:3000'
@@ -25,7 +25,8 @@ export default defineNuxtConfig({
     '/faq': { swr: 30*60 },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { swr: 60*60 },
-    '/legal/**': { prerender: true }
+    // '/legal/**': { prerender: true }
+    '/legal/**': { swr: true }
   },
 
   css: ['~/assets/css/tailwind.css'],
@@ -38,6 +39,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      prodDomain: process.env.NUXT_SITE_URL || 'http://localhost:3000',
+      
       // Firebase
       firebaseApiKey: process.env.NUXT_FIREBASE_API_KEY,
       firebaseAuthDomain: process.env.NUXT_FIREBASE_AUTH_DOMAIN,
@@ -63,50 +66,63 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@nuxt/image',
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/test-utils',
+    '@nuxt/test-utils/module',
     '@nuxt/scripts',
     '@nuxt/ui',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
-    '@nuxtjs/google-fonts',
+    // '@nuxtjs/google-fonts',
+    // '@sentry/nuxt/module,'
+    '@vueuse/nuxt',
     'pinia-plugin-persistedstate',
     'shadcn-nuxt',
-    '@vueuse/nuxt',
     'nuxt-gtag',
-    'nuxt-schema-org'
+    'nuxt-schema-org',
+    'nuxt-og-image',
+    '@nuxtjs/tailwindcss'
   ],
 
   shadcn: {
     prefix: 'Shad',
-    componentDir: './components/ui'
+    componentDir: '~/components/ui'
   },
 
-  googleFonts: {
-    display: 'swap',
-    families: {
-      Ubuntu: {
-        wght: [300, 700]
+  fonts: {
+    provider: 'google',
+    families: [
+      {
+        name: 'Ubuntu',
+        weight: '300..700'
       },
-      Roboto: {
-        wght: [200, 700]
+      {
+        name: 'Roboto',
+        weight: '200..700'
       },
-      'Kreon': {
-        wght: [300, 700]
+      {
+        name: 'Kreon',
+        weight: '300..700'
       }
-    }
+    ]
   },
-
+  
   i18n: {
     baseUrl: './',
     langDir: './locales',
     defaultLocale: 'fr',
     lazy: true,
     vueI18n: './i18n.config.ts',
+    bundle: {
+      // TODO: Remove on next major i18n update
+      optimizeTranslationDirective: false
+    },
+    // experimental: {
+    //   localeDetector: 'i18n/locale_detector.ts'
+    // },
     locales: [
       {
         code: 'fr',
@@ -280,6 +296,14 @@ export default defineNuxtConfig({
     ]
   },
 
+  // Add this alias configuration
+  // alias: {
+  //   'vue': 'vue/dist/vue.esm-bundler.js',
+  // },
+  // Add this build configuration
+  // build: {
+  //   transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
+  // }
   nitro: {
     esbuild: {
       options: {
@@ -295,5 +319,21 @@ export default defineNuxtConfig({
         password: process.env.NUXT_REDIS_PASSWORD
       }
     }
+  },
+
+  sentry: {
+    disabled: process.env.NODE_ENV === 'test',
+    disableClientSide: process.env.NODE_ENV === 'test',
+    disableServerSide: process.env.NODE_ENV === 'test',
+    sourceMapsUploadOptions: {
+      org: 'jpm-holdings',
+      project: 'dev-client'
+    },
+
+    autoInjectServerSentry: 'top-level-import'
+  },
+
+  sourcemap: {
+    client: 'hidden'
   }
 })

@@ -11,8 +11,8 @@ export default withNuxt({
     '**/*.d.ts',
     '**/coverage/**',
     '**/dist/**',
-    '**/src/volt/**',
-    '**/src/components/ui/**'
+    '**/volt/**',
+    '**/components/ui/**'
   ],
   rules: {
     'vue/max-attributes-per-line': ['error', {
