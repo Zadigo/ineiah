@@ -3,14 +3,6 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-
-    <!-- <div class="fixed bottom-1/12 left-11/12">
-      <ShadButton size="lg" class="rounded-full">
-        <a href="tel:+">
-          <Icon name="fa-solid:phone" />
-        </a>
-      </ShadButton>
-    </div> -->
   </section>
 </template>
 
