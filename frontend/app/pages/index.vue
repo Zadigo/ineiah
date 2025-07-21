@@ -65,7 +65,7 @@
     <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min brand-500 mt-10 bg-brand-brown-500">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
-          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-brand-pink-800 font-title leading-10 md:leading-15">
+          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-brand-brown-800 font-title leading-10 md:leading-15">
             L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
           </h2>
           

@@ -22,11 +22,11 @@
       </div>
 
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
-        <p class="block mb-4 text-sm text-center text-brand-pink-200 md:mb-0">
+        <p class="block mb-4 text-sm text-center text-brand-brown-200 md:mb-0">
           © {{ currentYear }} <NuxtLinkLocale to="/">{{ businessDetails.legalName }}</NuxtLinkLocale>. Réalisé par <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
         </p>
 
-        <div class="flex gap-4 text-brand-pink-200 sm:justify-center">
+        <div class="flex gap-4 text-brand-brown-200 sm:justify-center">
           <a v-for="social in footer.socials" :id="`social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" class="block transition-opacity text-inherit hover:opacity-80">
             <Icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name.toLowerCase()}`" />
           </a>

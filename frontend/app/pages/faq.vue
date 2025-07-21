@@ -13,7 +13,7 @@
 
               <ShadAccordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
                 <ShadAccordionItem v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
-                  <ShadAccordionTrigger :id="`faq-${section.id}-${i}`" class="text-brand-800 bg-brand-pink-400/30 px-3 text-md cursor-pointer">
+                  <ShadAccordionTrigger :id="`faq-${section.id}-${i}`" class="text-brand-800 bg-brand-brown-400/30 px-3 text-md cursor-pointer">
                     {{ item.question }}
                   </ShadAccordionTrigger>
 

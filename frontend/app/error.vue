@@ -14,7 +14,7 @@
         </ShadCard>
 
         <DevOnly>
-          <div class="text-wrap overflow-y-scroll pa-10 rounded-3xl bg-brand-pink-700 mt-10">
+          <div class="text-wrap overflow-y-scroll pa-10 rounded-3xl bg-brand-brown-700 mt-10">
             {{ error }}
           </div>
         </DevOnly>
