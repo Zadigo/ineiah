@@ -29,17 +29,3 @@ services:
     networks:
       - ineiah_network
       - myprosite_network
-
-  redis_dev_ineiah:
-    build: ./docker/redis
-    container_name: app_redis_dev_ineiah
-    # https://stackoverflow.com/questions/68461172/docker-compose-redis-password-via-environment-variable
-    ports:
-      - 6380:6000
-    restart: always
-    volumes:
-      - RedisData:/data
-      - ~/var/redis_dev_ineiah.log:/data/redis.log:rw
-      - ./docker/redis/redis.conf:/usr/local/etc/redis/redis.conf
-    networks:
-      - ineiah_network
