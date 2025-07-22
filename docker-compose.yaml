@@ -147,7 +147,6 @@ services:
       - traefik.http.middlewares.n8n.headers.contentTypeNosniff=true
     env_file:
       - ./docker/environment/automation.env
-      - ./docker/environment/secure_automation.env
     volumes:
       - ~/var/n8n_data:/home/node/.n8n
       - ~/var/local-files:/files
