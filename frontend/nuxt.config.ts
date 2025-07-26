@@ -330,9 +330,9 @@ export default defineNuxtConfig({
       }
     },
     preset: 'vercel-edge',
-    alias: {
-      vue: 'vue/dist/vue.esm-bundler.js'
-    },
+    // alias: {
+    //   vue: 'vue/dist/vue.esm-bundler.js'
+    // },
     storage: {
       redis: {
         driver: 'redis',
