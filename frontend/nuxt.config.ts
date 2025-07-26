@@ -323,6 +323,11 @@ export default defineNuxtConfig({
   // build: {
   //   transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
   // }
+
+  alias: {
+    vue: 'vue/dist/vue.esm-bundler.js'
+  },
+
   nitro: {
     esbuild: {
       options: {
@@ -330,9 +335,6 @@ export default defineNuxtConfig({
       }
     },
     preset: 'vercel-edge',
-    // alias: {
-    //   vue: 'vue/dist/vue.esm-bundler.js'
-    // },
     storage: {
       redis: {
         driver: 'redis',
