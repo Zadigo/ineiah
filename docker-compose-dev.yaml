@@ -17,7 +17,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.ineiah.entrypoints=websecure
-      - traefik.http.routers.ineiah.rule=Host(`dev-client.gency313.fr`)
+      - traefik.http.routers.ineiah.rule=Host(`client.gency313.fr`)
       - traefik.http.routers.ineiah.tls=true
       - traefik.http.routers.ineiah.tls.certresolver=production
       - traefik.http.services.ineiah-service.loadbalancer.server.port=3000
