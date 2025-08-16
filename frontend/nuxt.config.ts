@@ -91,7 +91,7 @@ export default defineNuxtConfig({
     
     // '@sentry/nuxt/module,'
     
-    'pinia-plugin-persistedstate',
+    // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
     'shadcn-nuxt',
     'nuxt-gtag',
     'nuxt-schema-org',

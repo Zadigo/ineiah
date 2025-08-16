@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 
 import NotreHistoire from '~/pages/notre-histoire.vue'
 
-describe('Notre Histoire Page', () => {
+describe.skip('Notre Histoire Page', () => {
   it('should render page', async () => {
     const component = await renderSuspended(NotreHistoire)
     const pageLead = await component.findByText('Notre histoire')

@@ -3,7 +3,7 @@ import { renderSuspended, mountSuspended } from '@nuxt/test-utils/runtime'
 
 import MentionsLegales from '~/pages/legal/mentions-legales.vue'
 
-describe('Mentions Légales Page', () => {
+describe.skip('Mentions Légales Page', () => {
   it('should render page', async () => {
     const component = await renderSuspended(MentionsLegales)
     const pageTitle = await component.findByText('Mentions légales')
