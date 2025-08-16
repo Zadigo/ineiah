@@ -1,5 +1,5 @@
 import { InferSeoMetaPlugin } from '@unhead/addons'
-import { businessDetails } from '~/constants/business'
+import { businessDetails } from '~/data/constants/business'
 import { injectHead } from '#imports'
 
 export default defineNuxtPlugin(() => {
