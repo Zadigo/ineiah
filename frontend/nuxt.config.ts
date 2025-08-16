@@ -92,8 +92,9 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/ui',
 
-    '@pinia/nuxt',
-    // '@nuxtjs/i18n',
+    // '@pinia/nuxt', //FIXME: Breaks in production
+
+    '@nuxtjs/i18n',
     // '@nuxtjs/seo',
     '@vueuse/nuxt',
     
