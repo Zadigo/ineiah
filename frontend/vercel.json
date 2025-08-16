@@ -1,7 +1,0 @@
-{
-    "buildCommand": "pnpm run build",
-    "outputDirectory": "frontend/.output/public",
-    "installCommand": "pnpm install",
-    "devCommand": "pnpm run dev",
-    "framework": null
-}

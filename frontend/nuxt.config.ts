@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   sourcemap: false,
 
   site: {
-    url: process.env.NUXT_SITE_URL || 'http://localhost:3000'
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
   },
 
   app: {
@@ -27,10 +27,6 @@ export default defineNuxtConfig({
   //       target: 'esnext'
   //     }
   //   }
-  // },
-
-  // alias: {
-  //   'vue': 'vue/dist/vue.esm-bundler.js'
   // },
 
   routeRules: {
@@ -50,37 +46,41 @@ export default defineNuxtConfig({
     ]
   },
 
+  vuefire: {
+    config: {
+      // Firebase
+      apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
+      authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+      dbUrl: process.env.NUXT_PUBLIC_FIREBASE_DB_URL,
+      storageBucket: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+      appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
+      measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+      messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
+      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID,
+    }
+  },
+
   runtimeConfig: {
     public: {
-      prodDomain: process.env.NUXT_SITE_URL || 'http://localhost:3000',
+      prodDomain: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
       
-      // Firebase
-      firebaseApiKey: process.env.NUXT_FIREBASE_API_KEY,
-      firebaseAuthDomain: process.env.NUXT_FIREBASE_AUTH_DOMAIN,
-      firebaseDbUrl: process.env.NUXT_FIREBASE_DB_URL,
-      firebaseStorageBucket: process.env.NUXT_FIREBASE_STORAGE_BUCKET,
-      firebaseAppId: process.env.NUXT_FIREBASE_APP_ID,
-      firebaseMeasurementId: process.env.NUXT_FIREBASE_MEASUREMENT_ID,
-      firebaseMessageSenderId: process.env.NUXT_FIREBASE_MESSAGE_SENDER_ID,
-      firebaseProjectId: process.env.NUXT_FIREBASE_PROJECT_ID,
-
       // Stripe
-      stripeTestSecretKey: process.env.NUXT_STRIPE_TEST_SECRET_KEY,
-      stripeTestPublishableKey: process.env.NUXT_STRIPE_TEST_PUBLISHABLE_KEY,
+      stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,
+      stripeTestPublishableKey: process.env.NUXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY,
       stripeApiVersion: '2024-06-20',
       stripeLocale: 'fr',
 
       // What's App
-      whatsAppUrl: process.env.NUXT_WHATS_APP_URL,
+      whatsAppUrl: process.env.NUXT_PUBLIC_WHATS_APP_URL,
 
       // Cloudfront
-      cdnBaseUrl: process.env.NUXT_CLOUDFRONT_URL || '',
+      cdnBaseUrl: process.env.NUXT_PUBLIC_CLOUDFRONT_URL || '',
 
       // Twilio
-      twilioAccountSid: process.env.NUXT_TWILIO_ACCOUNT_SID,
-      twilioAuthToken: process.env.NUXT_TWILIO_AUTH_TOKEN,
-      twilioPhoneNumber: process.env.NUXT_TWILIO_PHONE_NUMBER,
-      twilioToPhoneNumber: process.env.NUXT_TWILIO_TO_PHONE_NUMBER
+      twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,
+      twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
+      twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
+      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
     }
   },
 
@@ -95,15 +95,15 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
-    // '@nuxtjs/google-fonts',
     // '@sentry/nuxt/module,'
     '@vueuse/nuxt',
+    '@nuxtjs/tailwindcss',
     'pinia-plugin-persistedstate',
     'shadcn-nuxt',
     'nuxt-gtag',
     'nuxt-schema-org',
     'nuxt-og-image',
-    '@nuxtjs/tailwindcss'
+    'nuxt-vuefire'
   ],
 
   shadcn: {
@@ -338,10 +338,10 @@ export default defineNuxtConfig({
     storage: {
       redis: {
         driver: 'redis',
-        host: process.env.NUXT_REDIS_HOST,
+        host: process.env.NUXT_PUBLIC_REDIS_HOST,
         port: 6379,
         username: '',
-        password: process.env.NUXT_REDIS_PASSWORD
+        password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
       }
     }
   },
