@@ -158,9 +158,8 @@ const titles: Record<string, string> = {
 
 useSeoMeta({
   title: titles[i18n.locale.value],
-  // title: titles.fr,
   description: 'Sublime ta singularité',
-  titleTemplate: `%s | La beauté d'Inéïah`,
+  titleTemplate: `%s | ${businessDetails.legalName}`,
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 

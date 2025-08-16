@@ -15,31 +15,31 @@
 </template>
 
 <script setup lang="ts">
-const titles: Record<string, string> = {
-  fr: 'Coupe et coiffures tout type de cheveux'
+import { businessDetails } from '~/data'
+
+const i18n = useI18n()
+
+const titles: Record<typeof i18n.locale.value, string> = {
+  fr: 'Coupe et coiffures tout type de cheveux',
+  en: 'Haircuts and hairstyles for all hair types'
 }
 
-// defineOgImageComponent('NuxtSeo', {
-//   title: 'Hello OG Image 👋',
-//   description: 'Look at me in dark mode',
-//   theme: '#ff0000',
-//   colorMode: 'dark',
-// })
+const descriptions: Record<typeof i18n.locale.value, string> = {
+  fr: 'Sublime ta singularité',
+  en: 'Sublime your uniqueness'
+}
 
-// useSeoMeta({
-//   // title: titles[i18n.locale.value],
-//   title: titles.fr,
-//   description: 'Sublime ta singularité',
-//   titleTemplate: "%s | La beauté d'Inéïah",
-//   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
-// })
+useSeoMeta({
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  titleTemplate: `%s | ${businessDetails.legalName}`,
+  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+})
 
-// useHead({
-//   link: [
-//     {
-//       rel: 'canonical',
-//       href: 'https://example.com/'
-//     }
-//   ]
-// })
+defineOgImageComponent('NuxtSeo', {
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  theme: '#ff0000',
+  colorMode: 'dark',
+})
 </script>
