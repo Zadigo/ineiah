@@ -4,6 +4,8 @@ import { describe, expect, it } from 'vitest'
 
 import Index from '~/pages/index.vue'
 
+const a = 1
+
 describe('Index Page', () => {
   it('should render page', async () => {
     const renderedEl = await renderSuspended(Index)

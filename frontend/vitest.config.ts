@@ -1,11 +1,13 @@
-import path from 'path'
-import { defineVitestConfig } from '@nuxt/test-utils/config'
+import { defineVitestProject } from '@nuxt/test-utils/config'
 import { defineConfig } from 'vitest/config'
 
-export default defineVitestConfig({
+import path from 'path'
+
+export default defineConfig({
   test: {
     globals: true,
     testTimeout: 20000,
+    setupFiles: ['tests/setup.ts'],
     alias: {
       '~': path.resolve(__dirname, 'app')
     },
@@ -13,14 +15,13 @@ export default defineVitestConfig({
       enabled: true
     },
     projects: [
-      {
-        extends: true,
+      await defineVitestProject({
         test: {
           name: 'nuxt-pages',
-          testTimeout: 20000,
-          include: ['nuxt/**/*.{spec,test}.ts']
+          include: ['tests/app/**/*.{spec,test}.ts'],
+          testTimeout: 50000
         }
-      }
+      })
     ]
   },
   resolve: {
