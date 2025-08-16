@@ -29,7 +29,7 @@
     <div class="p-5 md:p-15">
       <div class="grid grid-rows-2 auto-rows-min md:grid-cols-2 md:grid-rows-none gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <img src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
+          <img ref="imageFirstEl" src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
         </div>
         
         <div class="flex flex-col justify-center">
@@ -53,10 +53,7 @@
 
           <div>
             <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5 bg-brand-brown-800" as-child>
-              <a href="tel:+33">
-                <Icon name="fa-solid:phone" />
-                Je veux me faire belle
-              </a>
+              <BaseTelephoneLink :with-icon="true" text="Je veux me faire belle" />
             </ShadButton>
           </div>
         </div>
@@ -122,10 +119,11 @@ const i18n = useI18n()
 const heroEl = useTemplateRef<HTMLElement>('heroEl')
 const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
 const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
+const imageFirstEl = useTemplateRef<HTMLElement>('imageFirstEl')
 
 if (import.meta.client) {
   onMounted(() => {
-    const textClasses = ['animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500']
+    const textClasses = ['animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500']
 
     /**
      * Animates an element in the document given the provided classes
@@ -145,6 +143,7 @@ if (import.meta.client) {
 
     observe(intermediateOneEl, textClasses)
     observe(intermediateTwoEl,textClasses)
+    observe(imageFirstEl, ['animate-in', 'zoom-in-90', 'duration-800'])
   })
 }
 
