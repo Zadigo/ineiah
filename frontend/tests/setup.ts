@@ -1,11 +1,4 @@
 import { vi } from 'vitest'
-import { mockComponent } from '@nuxt/test-utils/runtime'
-
-mockComponent('defineOgImageComponent', {
-  setup(props: unknown) {
-    return () => null // no-op component
-  }
-})
 
 vi.mock('@vueuse/core', async () => {
   const actual = await vi.importActual<typeof import('@vueuse/core')>('@vueuse/core')

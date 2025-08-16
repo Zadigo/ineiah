@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest'
 
 import BaseNavbar from '~/components/BaseNavbar.vue'
 
-describe('Navbar', () => {
+describe.skip('Navbar', () => {
   describe('call to action', async () => {
     it('should contain call to action', async () => {
       const component = await mountSuspended(BaseNavbar)

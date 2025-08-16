@@ -113,7 +113,7 @@
 
 <script setup lang="ts">
 import { businessDetails } from '~/data'
-
+console.log(useI18n)
 const i18n = useI18n()
 
 const heroEl = useTemplateRef<HTMLElement>('heroEl')

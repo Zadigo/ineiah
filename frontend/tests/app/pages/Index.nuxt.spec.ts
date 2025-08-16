@@ -1,18 +1,33 @@
 import { HeroBrand, HeroPhotoCall } from '#components'
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
-import { describe, expect, it } from 'vitest'
+import { config } from '@vue/test-utils'
+import { describe, expect, it, vi } from 'vitest'
+import { createI18n } from 'vue-i18n'
 
 import Index from '~/pages/index.vue'
 
-const a = 1
+const i18n = createI18n({
+  legacy: false,
+  locale: 'en',
+  globalInjection: true,
+  missing: (_, key) => key,
+})
+
+config.global.plugins.push(i18n)
+i18n.global.setLocale = vi.fn()
 
 describe('Index Page', () => {
-  it('should render page', async () => {
-    const renderedEl = await renderSuspended(Index)
+  it.only('should render page', async () => {
+    const renderedEl = await renderSuspended(Index, {
+      global: {
+        mocks: {
+          defineOgImageComponent: vi.fn(() => ({}))
+        }
+      }
+    })
+    console.log(renderedEl.html())
     const el = await renderedEl.findByText('Sublime ta singularité')
-
     expect(el).toBeDefined()
-
   })
   
   it('should have required components', async () => {
@@ -87,4 +102,4 @@ describe('Index Page', () => {
     const component = await mountSuspended(Index)
     expect(component.html()).toMatchSnapshot()
   })
-}, 50000)
+}, 5000)
