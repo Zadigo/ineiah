@@ -1,10 +1,10 @@
 <template>
-  <nav :class="{ 'bg-transparent': !showBackground, 'bg-brand-pink-500 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
+  <nav :class="{ 'bg-transparent': !showBackground, 'bg-brand-brown-500 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-pink-700 hover:bg-brand-pink-400 hover:text-brand-pink-500 focus:ring-2 focus:ring-brand-pink-500 focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-brown-700 hover:bg-brand-brown-400 hover:text-brand-brown-500 focus:ring-2 focus:ring-brand-brown-500 focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -34,16 +34,16 @@
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
-            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-pink-200 has-[a]:transition-all has-[a]:ease-in-out">
-              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-50 hover:text-brand-pink-300">
+            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-brown-200 has-[a]:transition-all has-[a]:ease-in-out">
+              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
                 Accueil
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-50 hover:text-brand-pink-300">
+              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
                 Prestations
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-50 hover:text-brand-pink-300">
+              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
                 Notre histoire
               </NuxtLinkLocale>
             </div>

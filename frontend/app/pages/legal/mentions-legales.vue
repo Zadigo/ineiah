@@ -1,14 +1,14 @@
 <template>
   <section id="mentions-legales" class="mt-30">
     <div class="px-5 md:px-10 md:max-w-4xl mx-auto">
-      <ShadCard class="bg-brand-pink-500/0 shadow-none">
+      <ShadCard class="bg-brand-brown-500/0 shadow-none">
         <ShadCardContent class="has-[p]:leading-8">
-          <h1 class="uppercase text-brand-pink-500 text-3xl font-bold mb-2">
+          <h1 class="uppercase text-brand-brown-500 text-3xl font-bold mb-2">
             Mentions légales
           </h1>
 
-          <p class="font-bold uppercase text-2xl text-brand-pink-500 mb-10">
-            Mentions légales concernant <span class="text-brand-pink-600">l'éditeur du site internet</span>
+          <p class="font-bold uppercase text-2xl text-brand-brown-500 mb-10">
+            Mentions légales concernant <span class="text-brand-brown-600">l'éditeur du site internet</span>
           </p>
 
           <div class="my-2 has-[p]:mb-5">
@@ -22,7 +22,7 @@
 
           <div class="my-2 has-[p]:mb-5">
             <p class="font-bold uppercase text-1xl">
-              Mentions légales concernant <span class="text-brand-pink-600">le responsable éditorial du site internet</span>
+              Mentions légales concernant <span class="text-brand-brown-600">le responsable éditorial du site internet</span>
             </p>
 
             <p>Nom du directeur de la publication: {{ businessDetails.publishingDirector }}</p>
@@ -31,7 +31,7 @@
           
           <div class="my-2 has-[p]:mb-5">
             <p class="font-bold uppercase text-1xl">
-              Mentions légales concernant <span class="text-brand-pink-600">l'hébergeur du site internet</span>
+              Mentions légales concernant <span class="text-brand-brown-600">l'hébergeur du site internet</span>
             </p>
 
             <p>{{ businessDetails.cloudProvider.description }}</p>
@@ -41,7 +41,7 @@
 
           <div class="my-2 has-[p]:mb-5">
             <p class="font-bold uppercase text-1xl">
-              Mentions légales concernant <span class="text-brand-pink-600">la creation du site internet</span>
+              Mentions légales concernant <span class="text-brand-brown-600">la creation du site internet</span>
             </p>
 
             <p>

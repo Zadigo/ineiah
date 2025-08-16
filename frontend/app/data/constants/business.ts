@@ -44,7 +44,7 @@ export const businessDetails: BusinessDetails = {
     
   ],
   rcs: '',
-  address: '',
+  address: '15 test address, Lille',
   priceRange: '$$',
   foundingDate: '',
   foundingLocation: '',
