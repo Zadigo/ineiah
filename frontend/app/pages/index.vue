@@ -1,29 +1,9 @@
 <template>
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15">
     <!-- Hero -->
-    <div ref="heroEl" class="w-full h-[98vh] bg-center bg-no-repeat bg-cover flex items-center">
-      <div id="lead" class="md:max-w-5xl md:mx-auto text-left md:text-center text-brand-brown-50 p-5 md:p-10">
-        <h1 class="text-6xl md:text-7xl font-bold mb-5 animate animate-fade-up">Sublime ta singularité</h1>
-        <p class="text-2xl font-normal">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore vel
-        </p>
-
-        <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
-          <ShadButton id="link-offer-hero" variant="outline" size="xl" class="rounded-full mt-10 md:mt-5 w-full md:w-auto" as-child>
-            <NuxtLinkLocale to="/nos-prestations">
-              Prestations
-            </NuxtLinkLocale>
-          </ShadButton>
-
-          <ShadButton id="tel-hero" size="xl" class="rounded-full mt-5 w-full md:w-auto" as-child>
-            <a href="tel:+33">
-              <Icon name="fa-solid:phone" />
-              Nous appeller
-            </a>
-          </ShadButton>
-        </div>
-      </div>
-    </div>
+    <HeroTopImage />
+    <!-- <HeroTopVideo /> -->
+    <!-- <HeroTopCarousel /> -->
 
     <!-- Intermediate-1 -->
     <div class="p-5 md:p-15">
@@ -33,7 +13,7 @@
         </div>
         
         <div class="flex flex-col justify-center">
-          <h2 ref="intermediateOneEl" class="text-5xl font-bold brand-500 mb-10 text-brand-brown-500 font-title leading-15">
+          <h2 ref="intermediateOneEl" class="text-5xl font-bold mb-10 text-brand-brown-500 font-title leading-15">
             Plus q'un salon, une <span class="text-brand-brown-800">expérience</span> de vie
           </h2>
 
@@ -52,7 +32,7 @@
           </p>
 
           <div>
-            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5 bg-brand-brown-800" as-child>
+            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5" as-child>
               <BaseTelephoneLink :with-icon="true" text="Je veux me faire belle" />
             </ShadButton>
           </div>
@@ -94,10 +74,10 @@
       </h3>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
-        <HeroBrand />
-        <HeroBrand />
-        <HeroBrand />
-        <HeroBrand />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
       </div>
     </div>
 
@@ -113,10 +93,9 @@
 
 <script setup lang="ts">
 import { businessDetails } from '~/data'
-console.log(useI18n)
+
 const i18n = useI18n()
 
-const heroEl = useTemplateRef<HTMLElement>('heroEl')
 const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
 const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
 const imageFirstEl = useTemplateRef<HTMLElement>('imageFirstEl')
@@ -146,12 +125,6 @@ if (import.meta.client) {
     observe(imageFirstEl, ['animate-in', 'zoom-in-90', 'duration-800'])
   })
 }
-
-onMounted(() => {
-  if (heroEl.value) {
-    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
-  }
-})
 
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'

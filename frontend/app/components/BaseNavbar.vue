@@ -28,14 +28,14 @@
 
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex shrink-0 items-center">
-            <NuxtLinkLocale id="nav-link-home" to="/">
+            <NuxtLinkLocale id="link-home-nav" to="/">
               <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
             </NuxtLinkLocale>
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
             <div class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
-              <NuxtLinkLocale v-for="route in routes" :key="route.path" :to="route.path" :class="linkTheme" id="nav-link">
+              <NuxtLinkLocale v-for="route in routes" :key="route.path" :to="route.path" :class="linkTheme" :id="create(route.id, 'link-nav')">
                 {{ route.title }}
               </NuxtLinkLocale>
             </div>
@@ -78,14 +78,17 @@ if (import.meta.client) {
 
 const routes = [
   {
+    id: 'home',
     title: 'Accueil',
     path: '/'
   },
   {
+    id: 'offers',
     title: 'Prestations',
     path: '/nos-prestations'
   },
   {
+    id: 'about us',
     title: 'Notre histoire',
     path: '/notre-histoire'
   }
@@ -95,6 +98,8 @@ const linkTheme = ref(`
   rounded-md px-3 py-2 text-lg font-semibold uppercase 
   text-brand-brown-50 hover:text-brand-brown-400 relative
 `)
+
+const { create } = useDynamicId()
 </script>
 
 <style lang="css">

@@ -42,8 +42,6 @@ export default withNuxt({
     '@stylistic/comma-dangle': ['warn', 'never'],
     '@stylistic/brace-style': ['error', '1tbs'],
     '@stylistic/no-confusing-arrow': ['warn'],
-    '@stylistic/switch-colon-spacing': [
-      'error', { 'after': true, 'before': false }
-    ]
+    '@stylistic/switch-colon-spacing': ['error', { 'after': true, 'before': false }]
   }
 })

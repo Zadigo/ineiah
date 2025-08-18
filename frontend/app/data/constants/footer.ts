@@ -30,9 +30,13 @@ export const footer: FooterSection = {
           name: 'FAQ',
           to: '/faq'
         },
+        // {
+        //   name: 'Conditions générales de vente',
+        //   to: '/legal/conditions-generales'
+        // },
         {
-          name: 'Conditions générales de vente',
-          to: '/legal/conditions-generales'
+          name: 'Plan du site',
+          to: '/sitemap'
         },
         {
           name: 'Politique de confidentialité',

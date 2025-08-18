@@ -20,6 +20,13 @@
     "consola": "^3.0.0"
   },
   "dependencies": {
+    "@capacitor/app": "7.0.2",
+    "@capacitor/cli": "7.4.2",
+    "@capacitor/core": "7.4.2",
+    "@capacitor/haptics": "7.0.2",
+    "@capacitor/keyboard": "7.0.2",
+    "@capacitor/share": "^7.0.2",
+    "@capacitor/status-bar": "7.0.2",
     "@firebase/app-types": "^0.9.3",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "2.0.0",
@@ -35,6 +42,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-vue": "^8.6.0",
     "firebase": "^12.1.0",
     "firebase-admin": "^13.4.0",
@@ -42,6 +50,7 @@
     "import-in-the-middle": "^1.14.2",
     "lucide-vue-next": "^0.539.0",
     "nuxt": "^4.0.3",
+    "nuxt-ganalytics": "^1.0.3",
     "nuxt-gtag": "^3.0.3",
     "nuxt-og-image": "^5.1.9",
     "nuxt-schema-org": "5.0.6",
@@ -61,7 +70,7 @@
     "vue-stripe-js": "^2.0.2",
     "vuefire": "^3.2.2"
   },
-  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
   "devDependencies": {
     "@iconify-json/fa-brands": "^1.2.2",
     "@iconify-json/fa-solid": "^1.2.2",

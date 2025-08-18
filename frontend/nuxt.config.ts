@@ -10,7 +10,8 @@ export default defineNuxtConfig({
   sourcemap: false,
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    name: "La Beauté d'Inéïah"
   },
 
   app: {
@@ -26,7 +27,9 @@ export default defineNuxtConfig({
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { swr: 60*60 },
     // '/legal/**': { prerender: true }
-    '/legal/**': { swr: true }
+    '/legal/**': { swr: true },
+    '/contact': { swr: true },
+    '/admin/**': { ssr: false }
   },
 
   css: ['~/assets/css/tailwind.css'],
@@ -96,7 +99,8 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-schema-org',
     'nuxt-og-image',
-    'nuxt-vuefire'
+    'nuxt-vuefire',
+    'nuxt-ganalytics'
   ],
 
   shadcn: {
@@ -120,6 +124,16 @@ export default defineNuxtConfig({
         weight: '300..700'
       }
     ]
+  },
+
+  ganalytics: {
+    ga4: {
+      id: 'G-CVKFG2XPVG',
+      enableDebug: true
+    },
+    gtm: {
+      id: 'GTM-TGZCVB2G'
+    }
   },
   
   i18n: {

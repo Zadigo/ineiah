@@ -26,3 +26,8 @@ logs
 # Tests
 */coverage/
 __snapshots__/
+
+# Videos
+*.mp4
+*.avi
+*.mov

@@ -1,33 +1,35 @@
 <template>
-  <NuxtLayout>
-    <section class="error-page my-10">
-      <div class="mx-auto md:max-w-2xl">
-        <ShadCard class="border-none shadow-sm">
-          <ShadCardContent>
-            <h1>{{ error?.statusCode }}</h1>
-            <p class="text-wrap">{{ error?.message }}</p>
-          
-            <NuxtLinkLocale id="link-shop-error" href="/" @click="handleError">
-              {{ 'Accueil' }}
-            </NuxtLinkLocale>
-          </ShadCardContent>
-        </ShadCard>
+  <section class="font-sans bg-brand-brown-500/20 relative">
+    <NuxtLayout>
+      <section class="error-page my-20">
+        <div class="mx-auto md:max-w-2xl">
+          <ShadCard class="border-none shadow-sm">
+            <ShadCardContent>
+              <h1 class="font-5xl">{{ error?.statusCode }}</h1>
+              <p class="font-2xl text-light">{{ error?.message }}</p>
+            
+              <NuxtLinkLocale id="link-error" href="/" @click="handleError">
+                {{ 'Accueil' }}
+              </NuxtLinkLocale>
+            </ShadCardContent>
+          </ShadCard>
 
-        <DevOnly>
-          <div class="text-wrap overflow-y-scroll pa-10 rounded-3xl bg-brand-pink-700 mt-10">
-            {{ error }}
-          </div>
-        </DevOnly>
-      </div>
-    </section>
-  </NuxtLayout>
+          <DevOnly>
+            <div class="text-wrap overflow-y-scroll pa-10 rounded-3xl bg-brand-brown-500 mt-10">
+              {{ error }}
+            </div>
+          </DevOnly>
+        </div>
+      </section>
+    </NuxtLayout>
+  </section>
 </template>
 
 <script setup lang="ts">
 const error = useError()
 
 useHead({
-  title: "La page n'exist pas"
+  title: "La page n'existe pas"
 })
 
 // const { gtag } = useGtag()
@@ -44,10 +46,3 @@ function handleError() {
   clearError({ redirect: '/' })
 }
 </script>
-
-<style lang="scss" scoped>
-h1 {
-  font-size: 4rem;
-  font-weight: 800;
-}
-</style>
