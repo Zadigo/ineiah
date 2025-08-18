@@ -30,7 +30,7 @@
           </p>
 
           <div>
-            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5 bg-brand-brown-800" as-child>
+            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5" as-child>
               <BaseTelephoneLink :with-icon="true" text="Je veux me faire belle" />
             </ShadButton>
           </div>
