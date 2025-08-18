@@ -1,6 +1,7 @@
 <template>
   <a :href="`tel:${telephone}`">
-    <Icon v-if="withIcon" name="fa-solid:phone" />
+    <Icon v-if="withIcon" name="i-fa7-solid:phone" />
+
     <slot>
       {{ text }}
     </slot>
