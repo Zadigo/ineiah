@@ -99,7 +99,8 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-schema-org',
     'nuxt-og-image',
-    'nuxt-vuefire'
+    'nuxt-vuefire',
+    'nuxt-ganalytics'
   ],
 
   shadcn: {
@@ -123,6 +124,16 @@ export default defineNuxtConfig({
         weight: '300..700'
       }
     ]
+  },
+
+  ganalytics: {
+    ga4: {
+      id: 'G-CVKFG2XPVG',
+      enableDebug: true
+    },
+    gtm: {
+      id: 'GTM-TGZCVB2G'
+    }
   },
   
   i18n: {

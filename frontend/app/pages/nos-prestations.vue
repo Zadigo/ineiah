@@ -3,7 +3,7 @@
     <BaseJumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
 
     <div class="px-5 md:px-10">
-      <ServicesSection v-for="section in defaultServices" :key="section.name" :section="section" />
+      <ServicesSection v-for="(section, index) in defaultServices" :key="section.name" :index="index" :section="section" />
 
       <div class="my-10">
         <CardCTA id="tel-services" />

@@ -7,13 +7,13 @@
         </h5>
 
         <div class="grid justify-between grid-rows-2 grid-cols-none gap-4 md:grid-cols-2 md:grid-rows-none">
-          <ul v-for="section in footer.sections" :key="section.title">
+          <ul v-for="(section, idx) in footer.sections" :id="`footer-section-${idx + 1}`" :key="section.title">
             <p class="block mb-1 text-lg font-bold text-brand-brown-100 uppercase">
               {{ section.title }}
             </p>
 
-            <li v-for="link in section.links">
-              <NuxtLinkLocale :to="link.to" class="block text-brand-brown-100 py-1 hover:text-brand-brown-300 focus:text-brand-brown-300 text-md">
+            <li v-for="(link, linkIdx) in section.links">
+              <NuxtLinkLocale :id="`footer-link-${linkIdx + 1}-section-${idx + 1}`" :to="link.to" class="block text-brand-brown-100 py-1 hover:text-brand-brown-300 focus:text-brand-brown-300 text-md">
                 {{ link.name }}
               </NuxtLinkLocale>
             </li>
@@ -27,7 +27,7 @@
         </p>
 
         <div class="flex gap-4 text-brand-brown-200 sm:justify-center">
-          <a v-for="social in footer.socials" :id="`social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" class="block transition-opacity text-inherit hover:opacity-80">
+          <a v-for="social in footer.socials" :id="`footer-social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" class="block transition-opacity text-inherit hover:opacity-80">
             <Icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name.toLowerCase()}`" />
           </a>
         </div>

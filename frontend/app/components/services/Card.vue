@@ -1,5 +1,5 @@
 <template>
-  <ShadCard class="p-0 relative cursor-pointer" @click="() => showServiceDetails=!showServiceDetails" @mouseenter="() => showIndicatorPhrase=true" @mouseleave="() => showIndicatorPhrase=false">
+  <ShadCard :id="`service-${index + 1}`" :data-service="service.name" class="p-0 relative cursor-pointer" @click="() => showServiceDetails=!showServiceDetails" @mouseenter="() => showIndicatorPhrase=true" @mouseleave="() => showIndicatorPhrase=false">
     <ShadCardContent v-if="!showServiceDetails" class="p-0 rounded-lg">
       <img src="/hero/hair8.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="" />
 
@@ -25,9 +25,13 @@
         </li>
       </ul>
 
-      <ShadButton id="tel-service-xyz" class="mt-3 rounded-full" size="sm" as-child>
-        <BaseTelephoneLink :with-icon="true" text="Réserver" />
-      </ShadButton>
+      <NuxtAnalytics event="generate_lead" :params="{ event_label: service.name, event_category: 'telephone' }">
+        <template #default="{ attrs }">
+          <ShadButton :id="`tel-service-${index + 1}`" class="mt-3 rounded-full" size="sm" as-child @click="() => attrs.sendTemplateEvent()">
+            <BaseTelephoneLink :with-icon="true" text="Réserver" />
+          </ShadButton>
+        </template>
+      </NuxtAnalytics>
     </ShadCardContent>
   </ShadCard>
 </template>
@@ -35,7 +39,7 @@
 <script setup lang="ts">
 import type { Service, ServiceSection } from '~/data'
 
-const props = defineProps<{ service: Service }>()
+const props = defineProps<{ index: number, service: Service }>()
 
 const showIndicatorPhrase = ref<boolean>(false)
 const showServiceDetails = ref<boolean>(false)
