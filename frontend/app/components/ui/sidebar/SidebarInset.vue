@@ -1,4 +1,3 @@
-
 <template>
   <main :class="insetClass">
     <slot />
@@ -6,12 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { cn } from '~/lib/utils'
+import { cn } from "~/lib/utils"
 
-const props = defineProps<{
-  class?: HTMLAttributes["class"]
-}>()
+import type { HTMLAttributes } from "vue"
+
+const props = defineProps<{ class?: HTMLAttributes['class'] }>()
 
 const insetClass = cn(
   'relative flex min-h-svh flex-1 flex-col bg-background',

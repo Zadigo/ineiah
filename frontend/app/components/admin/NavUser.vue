@@ -32,7 +32,9 @@
               </div>
             </div>
           </ShadDropdownMenuLabel>
+
           <ShadDropdownMenuSeparator />
+
           <ShadDropdownMenuGroup>
             <ShadDropdownMenuItem>
               <Sparkles />

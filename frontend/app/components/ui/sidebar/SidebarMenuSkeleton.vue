@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from "vue"
+import { computed } from "vue"
 import { cn } from "~/lib/utils"
+import { Skeleton } from "..//skeleton"
 
 const props = defineProps<{
   showIcon?: boolean
@@ -13,8 +15,20 @@ const width = computed(() => {
 </script>
 
 <template>
-  <div data-sidebar="menu-skeleton" :class="cn('rounded-md h-8 flex gap-2 px-2 items-center', props.class)">
-    <ShadSkeleton v-if="showIcon" class="size-4 rounded-md" data-sidebar="menu-skeleton-icon" />
-    <ShadSkeleton class="h-4 flex-1 max-w-[--skeleton-width]" data-sidebar="menu-skeleton-text" :style="{ '--skeleton-width': width }" />
+  <div
+    data-sidebar="menu-skeleton"
+    :class="cn('rounded-md h-8 flex gap-2 px-2 items-center', props.class)"
+  >
+    <Skeleton
+      v-if="showIcon"
+      class="size-4 rounded-md"
+      data-sidebar="menu-skeleton-icon"
+    />
+
+    <Skeleton
+      class="h-4 flex-1 max-w-[--skeleton-width]"
+      data-sidebar="menu-skeleton-text"
+      :style="{ '--skeleton-width': width }"
+    />
   </div>
 </template>

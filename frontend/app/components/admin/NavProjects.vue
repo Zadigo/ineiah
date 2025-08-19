@@ -54,7 +54,6 @@ import type { LucideIcon } from "lucide-vue-next"
 import {
   Folder,
   Forward,
-
   MoreHorizontal,
   Trash2
 } from "lucide-vue-next"
