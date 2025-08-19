@@ -73,12 +73,12 @@ import {
   ChevronsUpDown,
   CreditCard,
   LogOut,
-  Sparkles,
+  Sparkles
 } from "lucide-vue-next"
 
 import { useSidebar } from '~/components/ui/sidebar'
 
-const props = defineProps<{
+defineProps<{
   user: {
     name: string
     email: string
