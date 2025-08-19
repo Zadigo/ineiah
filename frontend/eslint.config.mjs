@@ -7,6 +7,13 @@ export default withNuxt({
   plugins: {
     '@stylistic': stylistic
   },
+  languageOptions: {
+    parserOptions: {
+      project: './tsconfig.json',
+      extraFileExtensions: ['.vue'],
+      tsconfigRootDir: import.meta.dirname || process.cwd()
+    }
+  },
   ignores: [
     '**/*.d.ts',
     '**/coverage/**',

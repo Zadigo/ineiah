@@ -23,14 +23,14 @@
               <Folder class="text-muted-foreground" />
               <span>View Project</span>
             </ShadDropdownMenuItem>
-          
+
             <ShadDropdownMenuItem>
               <Forward class="text-muted-foreground" />
               <span>Share Project</span>
             </ShadDropdownMenuItem>
-          
+
             <ShadDropdownMenuSeparator />
-          
+
             <ShadDropdownMenuItem>
               <Trash2 class="text-muted-foreground" />
               <span>Delete Project</span>
@@ -38,7 +38,7 @@
           </ShadDropdownMenuContent>
         </ShadDropdownMenu>
       </ShadSidebarMenuItem>
-      
+
       <ShadSidebarMenuItem>
         <ShadSidebarMenuButton class="text-sidebar-foreground/70">
           <MoreHorizontal class="text-sidebar-foreground/70" />
@@ -56,7 +56,7 @@ import {
   Forward,
 
   MoreHorizontal,
-  Trash2,
+  Trash2
 } from "lucide-vue-next"
 
 import { useSidebar } from '~/components/ui/sidebar'
