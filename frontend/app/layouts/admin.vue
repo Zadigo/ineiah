@@ -9,7 +9,7 @@
           <ShadSidebarTrigger class="-ml-1" />
 
           <ShadSeparator orientation="vertical" class="mr-2 h-4" />
-          
+
           <ShadBreadcrumb>
             <ShadBreadcrumbList>
               <ShadBreadcrumbItem class="hidden md:block">
@@ -19,7 +19,7 @@
               </ShadBreadcrumbItem>
 
               <ShadBreadcrumbSeparator class="hidden md:block" />
-              
+
               <ShadBreadcrumbItem>
                 <ShadBreadcrumbPage>Data Fetching</ShadBreadcrumbPage>
               </ShadBreadcrumbItem>
