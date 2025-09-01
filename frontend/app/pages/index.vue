@@ -96,6 +96,10 @@ import { businessDetails } from '~/data'
 
 const i18n = useI18n()
 
+/**
+ * Animations
+ */
+
 const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
 const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
 const imageFirstEl = useTemplateRef<HTMLElement>('imageFirstEl')
@@ -151,5 +155,6 @@ defineOgImageComponent('NuxtSeo', {
   description: 'Sublime ta singularité',
   theme: '#ff0000',
   colorMode: 'dark',
+  url: '/hair1.jpg'
 })
 </script>

@@ -41,7 +41,7 @@
             </div>
           </div>
 
-          <ShadButton id="tel-navbar" class="rounded-full md:visible" as-child>
+          <ShadButton id="tel-navbar" class="rounded-full hidden md:visible" as-child>
             <BaseTelephoneLink />
           </ShadButton>
         </div>
