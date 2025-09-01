@@ -6,7 +6,7 @@
           <div class="relative">
             <img :src="item.image" :alt="item.alt" />
 
-            <div id="lead" class="text-brand-brown-50 p-2 absolute top-3/12 left-2/14 right-2/14 z-10 text-left md:max-w-5xl md:p-10 md:text-center">
+            <div id="lead" class="text-brand-brown-50 p-2 absolute top-3/12 left-4/16 z-10 text-left md:max-w-5xl md:p-10 md:text-center">
               <h1 class="text-6xl md:text-7xl font-bold mb-5 animate animate-fade-up">
                 {{ item.leadTitle }}
               </h1>
