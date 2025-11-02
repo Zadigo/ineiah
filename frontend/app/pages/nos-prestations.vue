@@ -13,8 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { defaultServices } from '~/data'
-import { businessDetails } from '~/data'
+import { businessDetails, defaultServices } from '~/data'
 
 const i18n = useI18n()
 

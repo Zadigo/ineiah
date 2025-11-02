@@ -1,6 +1,5 @@
-import { defineOrganization } from 'nuxt-schema-org/schema'
-
 import tailwindcss from '@tailwindcss/vite'
+import { defineOrganization } from 'nuxt-schema-org/schema'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -322,6 +321,12 @@ export default defineNuxtConfig({
         port: 6379,
         username: '',
         password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
+      }
+    },
+    devStorage: {
+      file: {
+        driver: 'fs',
+        base: './dev-storage'
       }
     }
   },

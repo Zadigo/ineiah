@@ -10,7 +10,7 @@
 
     <!-- Modals -->
     <ClientOnly>
-      <ModalsMobile v-model="showMobileMenu" />
+      <ModalsMobile v-model:show="showMobileMenu" />
     </ClientOnly>
 
     <BaseReassurance />

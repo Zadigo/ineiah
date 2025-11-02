@@ -1,3 +1,6 @@
+/**
+ * Composable to generate dynamic IDs from string values
+ */
 export function useDynamicId() {
   function create(value: string | null, prefix?: string): string {
     if (!value) {
@@ -19,6 +22,8 @@ export function useDynamicId() {
     /**
      * Creates a dynamic ID from a string value
      * @param {string | null} value - The string to convert into an ID
+     * @param {string} [prefix] - An optional prefix to prepend to the ID
+     * @returns {string} The generated dynamic ID
      */
     create
   }

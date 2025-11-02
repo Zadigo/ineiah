@@ -97,7 +97,6 @@ async function handleSendMessage() {
 
   try {
     const contactRef = doc(fireStore, 'contact', email.value)
-    // const contactSnapshot = await getDoc(contactRef)
     await setDoc(contactRef, contactMessage)
   } catch (e) {
     console.error(e)

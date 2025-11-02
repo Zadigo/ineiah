@@ -53,6 +53,7 @@
 <script setup lang="ts">
 import { useScroll } from '@vueuse/core'
 import { businessDetails } from '~/data'
+import type { BaseRoute } from '~/types'
 
 const emit = defineEmits<{
   'mobile-menu': []
@@ -76,7 +77,7 @@ if (import.meta.client) {
   })
 }
 
-const routes = [
+const routes: BaseRoute[] = [
   {
     id: 'home',
     title: 'Accueil',
