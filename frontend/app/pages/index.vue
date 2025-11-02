@@ -94,7 +94,7 @@
       <div class="max-w-8xl mx-auto pt-20 px-20">
         <div class="grid grid-cols-2 bg-brand-brown-200 rounded-md">
           <video class="aspect-video object-fill rounded-lg" autoplay muted loop playsinline>
-            <source src="/vid1.mp4" type="video/mp4">
+            <source src="https://freelance-data-storage.s3.us-east-1.amazonaws.com/hair.mp4" type="video/mp4">
           </video>
 
           <div class="p-10 rounded-tr-md rounded-br-md flex-col justify-center content-center text-center max-w-3xl">
@@ -122,20 +122,21 @@
     </dev-only>
 
     <dev-only>
+      <!-- Template Settings -->
       <client-only>
         <div class="fixed p-5 right-0 top-6/12 z-50 rounded-md bg-white m-3 shadow-md space-y-2">
           <p class="text-bold mb-4">Template settings</p>
-  
+
           <div class="flex items-center space-x-2">
             <shad-switch v-model="showImage" />
             <label for="">Image</label>
           </div>
-          
+
           <div class="flex items-center space-x-2">
             <shad-switch v-model="showVideo" />
             <label for="">Video</label>
           </div>
-          
+
           <div class="flex items-center space-x-2">
             <shad-switch v-model="showCarousel" />
             <label for="">Carousel</label>
