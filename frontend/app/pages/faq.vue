@@ -66,9 +66,7 @@ useSeoMeta({
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 
-const questionsList = computed(() => {
-  return faqList.map(x => [...x.questions]).flat()
-})
+const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
 
 useSchemaOrg([
   {
