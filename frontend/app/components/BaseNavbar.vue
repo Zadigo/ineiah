@@ -28,21 +28,21 @@
 
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
           <div class="flex shrink-0 items-center">
-            <NuxtLinkLocale id="link-home-nav" to="/">
-              <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
-            </NuxtLinkLocale>
+            <nuxt-link-locale id="link-home-nav" to="/">
+              <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name">
+            </nuxt-link-locale>
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
             <div class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
-              <NuxtLinkLocale v-for="route in routes" :key="route.path" :to="route.path" :class="linkTheme" :id="create(route.id, 'link-nav')">
+              <nuxt-link-locale v-for="route in routes" :id="create(route.id, 'link-nav')" :key="route.path" :to="route.path" :class="linkTheme">
                 {{ route.title }}
-              </NuxtLinkLocale>
+              </nuxt-link-locale>
             </div>
           </div>
 
           <volt-button id="tel-navbar" class="hidden md:visible" rounded>
-            <BaseTelephoneLink />
+            <base-telephone-link />
           </volt-button>
         </div>
       </div>

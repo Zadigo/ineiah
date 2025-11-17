@@ -1,5 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 import { defineOrganization } from 'nuxt-schema-org/schema'
+import Aura from '@primeuix/themes/aura'
+import { definePreset } from '@primeuix/themes'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -102,21 +104,49 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxt/ui',
-    // '@pinia/nuxt', //FIXME: Breaks in production
-
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
-    // '@sentry/nuxt/module,'
-
-    // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
     'nuxt-gtag',
     'nuxt-schema-org',
     'nuxt-og-image',
     'nuxt-vuefire',
     'nuxt-ganalytics',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    '@primevue/nuxt-module' // TODO: Does not work. Remove?
+
+    // '@pinia/nuxt', //FIXME: Breaks in production
+    // '@sentry/nuxt/module,'
+    // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
   ],
+
+  // TODO: Does not work
+  primevue: {
+    options: {
+      theme: {
+        preset: definePreset(Aura, {
+          components: {
+            card: {
+              colorScheme: {
+                light: {
+                  root: {
+                    background: '{primary.100}',   // override your surface token
+                    color: '{surface.700}'
+                  }
+                },
+                dark: {
+                  root: {
+                    background: '{surface.950}',
+                    color: '{surface.50}'
+                  }
+                }
+              }
+            }
+          }
+        })
+      }
+    }
+  },
 
   fonts: {
     provider: 'google',

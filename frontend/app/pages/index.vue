@@ -9,7 +9,7 @@
     <div class="p-5 md:p-15">
       <div class="grid grid-rows-2 auto-rows-min md:grid-cols-2 md:grid-rows-none gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <img ref="imageFirstEl" src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="">
+          <img ref="imageFirstEl" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="">
         </div>
 
         <div class="flex flex-col justify-center dark:text-primary-200">
@@ -63,13 +63,13 @@
       </div>
 
       <div class="h-auto">
-        <img src="/hero/hair2.jpg" class="aspect-square object-cover" alt="">
+        <img src="/hero/hair10.jpg" class="aspect-square object-cover" alt="">
       </div>
     </div>
 
     <!-- Brands -->
     <div class="my-5 md:p-10">
-      <h3 class="text-center text-2xl font-bold text-primary-500 mb-5 md:mb-0">
+      <h3 class="text-center text-3xl font-bold text-primary-500 mb-5 md:mb-0">
         Nos marques
       </h3>
 
@@ -83,15 +83,19 @@
 
     <!-- Photocall -->
     <div class="grid grid-rows-2 grid-cols-2 gap-0 auto-rows-min rounded-md md:grid-rows-1 md:grid-cols-4">
-      <hero-photo-call src="/hero/hair2.jpg" alt="Some alt" title="Cheveux fins" />
-      <hero-photo-call src="/hero/hair3.jpg" alt="Some alt" title="Cheveux fins" />
-      <hero-photo-call src="/hero/hair4.jpg" alt="Some alt" title="Cheveux fins" />
-      <hero-photo-call src="/hero/hair5.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair10.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair3.jpg" alt="Some alt" title="Cheveux longs" />
+      <hero-photo-call src="/hero/hair12.jpg" alt="Some alt" title="Cheveux réactivés" />
+      <hero-photo-call src="/hero/hair4.jpg" alt="Some alt" title="Cheveux afro" />
     </div>
 
     <dev-only>
+      <base-product-recommendations />
+    </dev-only>
+
+    <dev-only>
       <!-- VideoCall -->
-      <div id="video-call-hero" class="max-w-8xl mx-auto pt-20 px-20">
+      <!-- <div id="video-call-hero" class="max-w-8xl mx-auto pt-20 px-20">
         <div class="grid grid-cols-2 bg-primary-200 dark:bg-primary-700 dark:text-primary-200 rounded-tr-lg rounded-br-lg">
           <video class="aspect-video object-fill rounded-tl-lg rounded-bl-lg" autoplay muted loop playsinline>
             <source src="https://freelance-data-storage.s3.us-east-1.amazonaws.com/hair.mp4" type="video/mp4">
@@ -118,7 +122,7 @@
             <p class="text-md">Retrouvez-nous sur instagram <a :href="businessDetails.socials.instagram.url" :title="businessDetails.socials.instagram.url">{{ businessDetails.socials.instagram.handle }}</a></p>
           </div>
         </div>
-      </div>
+      </div> -->
     </dev-only>
 
     <dev-only>

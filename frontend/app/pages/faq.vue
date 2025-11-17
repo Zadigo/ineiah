@@ -1,24 +1,26 @@
 <template>
   <section id="faq">
-    <BaseJumbotron src="/hero/hair4.jpg" lead="FAQ" subtitle="Nous répondons à vos questions" />
+    <base-jumbotron src="/hero/hair4.jpg" lead="FAQ" subtitle="Nous répondons à vos questions" />
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
         <div class="space-y-5">
-          <volt-card v-for="section in faqList" :key="section.title" class="bg-primary-500/20 shadow-none">
+          <volt-card v-for="section in faqList" :key="section.title" class="bg-surface-100 shadow-none">
             <template #content>
-              <h3 :id="`faq-${section.id}`" class="uppercase text-2xl font-semibold text-brand-500">
+              <h3 :id="`faq-${section.id}`" class="uppercase text-3xl font-semibold text-brand-500">
                 {{ section.title }}
               </h3>
 
-              <volt-accordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
+              <volt-accordion class="w-full mt-5" default-value="Something" collapsible>
                 <volt-accordion-panel v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
-                  <volt-accordion-header :id="`faq-${section.id}-${i}`" class="text-primary-800 bg-primary-400/30 px-3 text-md cursor-pointer">
+                  <volt-accordion-header :id="`faq-${section.id}-${i}`" class="text-primary-800 bg-surface-200 text-md cursor-pointer">
                     {{ item.question }}
                   </volt-accordion-header>
 
-                  <volt-accordion-content class="px-3">
-                    {{ item.answer }}
+                  <volt-accordion-content>
+                    <div class="p-5">
+                      {{ item.answer }}
+                    </div>
                   </volt-accordion-content>
                 </volt-accordion-panel>
               </volt-accordion>
@@ -27,7 +29,7 @@
         </div>
       </div>
 
-      <CardCTA id="tel-faq-section" class="mt-15">
+      <card-call-to-action id="tel-faq-section" class="mt-15">
         <template #title>
           Des questions ?
         </template>
@@ -39,7 +41,7 @@
         <template #action>
           Nous contacter
         </template>
-      </CardCTA>
+      </card-call-to-action>
     </div>
   </section>
 </template>
@@ -86,6 +88,6 @@ defineOgImageComponent('NuxtSeo', {
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   theme: '#ff0000',
-  colorMode: 'dark',
+  colorMode: 'dark'
 })
 </script>

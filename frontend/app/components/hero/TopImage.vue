@@ -32,7 +32,7 @@ const heroEl = useTemplateRef<HTMLElement>('heroEl')
 
 onMounted(() => {
   if (heroEl.value) {
-    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
+    heroEl.value.style.backgroundImage = "url('/hero/hair11.jpg')"
   }
 })
 </script>

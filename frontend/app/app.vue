@@ -1,5 +1,5 @@
 <template>
-  <section class="font-sans bg-primary-500/20 dark:bg-primary-800 relative">
+  <section class="font-sans bg-primary-100 dark:bg-primary-800 relative">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

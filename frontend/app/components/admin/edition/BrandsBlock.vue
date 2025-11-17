@@ -1,7 +1,7 @@
 <template>
   <shad-card>
     <shad-card-content>
-      <h3 class="font-bold">{{ blockTitle }}</h3>
+      <h3 class="font-bold text-3xl">{{ blockTitle }}</h3>
 
       <div class="flex justify-between gap-2">
         <shad-input placeholder="Brand Name" />

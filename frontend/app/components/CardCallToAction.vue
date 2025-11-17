@@ -1,10 +1,9 @@
 <template>
-  <!-- TODO: { backgroundImage: '/hero/hair7.jpg' } -->
-  <volt-card class="text-primary-100 bg-cover" style="background-image:url('/hero/hair7.jpg')">
+  <volt-card :style="bgStyle">
     <template #content>
-      <div class="p-8 md:p-20">
+      <div class="p-8 text-primary-100 dark:text-primary-50 md:p-20">
         <div class="flex-col justify-center mx-auto text-center max-w-7xl">
-          <h2 class="text-5xl md:text-7xl text-shadow-primary-500 font-bold mb-5 font-title">
+          <h2 class="text-5xl md:text-7xl font-bold mb-5 font-title">
             <slot name="title">
               Prête à se sublimer
             </slot>
@@ -21,11 +20,11 @@
           </p>
 
           <volt-button :id="id" size="xl" class="mt-10" rounded>
-            <BaseTelephoneLink :with-icon="true">
+            <base-telephone-link :with-icon="true">
               <slot name="action">
                 Obtenir mon moment plaisir
               </slot>
-            </BaseTelephoneLink>
+            </base-telephone-link>
           </volt-button>
         </div>
       </div>
@@ -34,5 +33,12 @@
 </template>
 
 <script setup lang="ts">
-const { id = 'tel-offer-section' } = defineProps<{ id: string }>()
+const { id = 'tel-offer-section' } = defineProps<{ id?: string }>()
+
+const bgStyle = ref({
+  backgroundImage: "url('/hero/hair11.jpg')",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'
+})
 </script>
