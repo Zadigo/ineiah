@@ -9,7 +9,7 @@
     <div class="p-5 md:p-15">
       <div class="grid grid-rows-2 auto-rows-min md:grid-cols-2 md:grid-rows-none gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <img ref="imageFirstEl" src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
+          <img ref="imageFirstEl" src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="">
         </div>
 
         <div class="flex flex-col justify-center dark:text-primary-200">
@@ -63,7 +63,7 @@
       </div>
 
       <div class="h-auto">
-        <img src="/hero/hair2.jpg" class="aspect-square object-cover" alt="" />
+        <img src="/hero/hair2.jpg" class="aspect-square object-cover" alt="">
       </div>
     </div>
 
@@ -74,26 +74,26 @@
       </h3>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
       </div>
     </div>
 
     <!-- Photocall -->
     <div class="grid grid-rows-2 grid-cols-2 gap-0 auto-rows-min rounded-md md:grid-rows-1 md:grid-cols-4">
-      <HeroPhotoCall src="/hero/hair2.jpg" alt="Some alt" title="Cheveux fins" />
-      <HeroPhotoCall src="/hero/hair3.jpg" alt="Some alt" title="Cheveux fins" />
-      <HeroPhotoCall src="/hero/hair4.jpg" alt="Some alt" title="Cheveux fins" />
-      <HeroPhotoCall src="/hero/hair5.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair2.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair3.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair4.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair5.jpg" alt="Some alt" title="Cheveux fins" />
     </div>
 
     <dev-only>
       <!-- VideoCall -->
-      <!-- <div class="max-w-8xl mx-auto pt-20 px-20">
-        <div class="grid grid-cols-2 bg-primary-200 dark:bg-primary-700 dark:text-primary-200 rounded-md">
-          <video class="aspect-video object-fill rounded-lg" autoplay muted loop playsinline>
+      <div id="video-call-hero" class="max-w-8xl mx-auto pt-20 px-20">
+        <div class="grid grid-cols-2 bg-primary-200 dark:bg-primary-700 dark:text-primary-200 rounded-tr-lg rounded-br-lg">
+          <video class="aspect-video object-fill rounded-tl-lg rounded-bl-lg" autoplay muted loop playsinline>
             <source src="https://freelance-data-storage.s3.us-east-1.amazonaws.com/hair.mp4" type="video/mp4">
           </video>
 
@@ -112,13 +112,13 @@
           </div>
         </div>
 
-        <div>
+        <div role="contentinfo">
           <div class="p-20 text-center text-primary-500 dark:text-primary-200">
             <p class="font-bold mb-3 text-4xl">Rejoint le <span class="text-primary-800 dark:text-primary-400">#curlymouvement</span></p>
-            <p class="text-md">Retrouvez-nous sur instagram <a href="http://example.com" title="http://example.com">@hairstudiobyanissa</a></p>
+            <p class="text-md">Retrouvez-nous sur instagram <a :href="businessDetails.socials.instagram.url" :title="businessDetails.socials.instagram.url">{{ businessDetails.socials.instagram.handle }}</a></p>
           </div>
         </div>
-      </div> -->
+      </div>
     </dev-only>
 
     <dev-only>
@@ -148,12 +148,6 @@
 </template>
 
 <script setup lang="ts">
-/**
- * NOTE: The Hero is in client-only only for dev purposes to be able to
- * switch between different hero types. In the final proposition, remove the
- * client-only
- */
-
 import { businessDetails } from '~/data'
 
 const { showImage, showCarousel, showVideo } = useDevComposable()

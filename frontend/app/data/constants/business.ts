@@ -36,6 +36,16 @@ export interface BusinessDetails {
   websiteProvider: WebsiteProvider
   cloudProvider: CloudProvider
   contact: ContactPoints
+  socials: {
+    instagram: {
+      url: string
+      handle?: string
+    }
+    facebook: {
+      url: string
+      handle?: string
+    }
+  }
 }
 
 export const businessDetails: BusinessDetails = {
@@ -45,10 +55,10 @@ export const businessDetails: BusinessDetails = {
   description: "",
   logo: '',
   sameAs: [
-    
+
   ],
   image: [
-    
+
   ],
   rcs: '',
   address: '15 test address, Lille',
@@ -75,5 +85,15 @@ export const businessDetails: BusinessDetails = {
     telephone: '+1-888-555-0123',
     email: 'contact@ineiah.com',
     address: '15 test address, Lille'
+  },
+  socials: {
+    instagram: {
+      url: 'https://www.instagram.com/hairstudiobyanissa',
+      handle: '@hairstudiobyanissa'
+    },
+    facebook: {
+      url: 'https://www.facebook.com/hairstudiobyanissa',
+      handle: 'hairstudiobyanissa'
+    }
   }
 }
