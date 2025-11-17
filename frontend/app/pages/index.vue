@@ -33,10 +33,6 @@
 
           <div id="cta-1" class="mt-10">
             <base-telephone-button id="tel-intermadiate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
-
-            <!-- <volt-button id="tel-intermadiate-1" size="xl" class="mt-5" rounded>
-              <BaseTelephoneLink :with-icon="true" text="Je veux me faire belle" />
-            </volt-button> -->
           </div>
         </div>
       </div>
@@ -57,9 +53,9 @@
           </p>
 
           <volt-button size="large" class="mt-10" rounded>
-            <NuxtLinkLocale to="/notre-histoire">
+            <nuxt-link-locale to="/notre-histoire">
               Découvrir
-            </NuxtLinkLocale>
+            </nuxt-link-locale>
           </volt-button>
         </div>
       </div>

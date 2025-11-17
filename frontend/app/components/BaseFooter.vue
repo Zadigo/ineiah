@@ -13,9 +13,9 @@
             </p>
 
             <li v-for="(link, linkIdx) in section.links" :key="linkIdx">
-              <NuxtLinkLocale :id="`footer-link-${linkIdx + 1}-section-${idx + 1}`" :to="link.to" class="block text-primary-100 dark:text-primary-200 py-1 hover:text-primary-300 focus:text-primary-300 text-md">
+              <nuxt-link-locale :id="`footer-link-${linkIdx + 1}-section-${idx + 1}`" :to="link.to" class="block text-primary-100 dark:text-primary-200 py-1 hover:text-primary-300 focus:text-primary-300 text-md">
                 {{ link.name }}
-              </NuxtLinkLocale>
+              </nuxt-link-locale>
             </li>
           </ul>
         </div>
@@ -23,7 +23,7 @@
 
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
         <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
-          © {{ currentYear }} <NuxtLinkLocale to="/">{{ businessDetails.legalName }}</NuxtLinkLocale>. Réalisé par <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
+          © {{ currentYear }} <nuxt-link-locale to="/">{{ businessDetails.legalName }}</nuxt-link-locale>. Réalisé par <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
         </p>
 
         <div class="flex gap-4 text-primary-200 sm:justify-center">

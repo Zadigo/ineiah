@@ -6,9 +6,9 @@
           <ul>
             <h2 v-motion-fade class="text-2xl mb-5 text-brand-brown-secondary-700">{{ section.title }}</h2>
             <li v-for="link in section.links" :key="link.name" class="py-1">
-              <NuxtLinkLocale :to="link.to" class="text-lg text-secondary underline">
+              <nuxt-link-locale :to="link.to" class="text-lg text-secondary underline">
                 {{ link.name }}
-              </NuxtLinkLocale>
+              </nuxt-link-locale>
             </li>
           </ul>
         </template>

@@ -1,34 +1,33 @@
 <template>
   <section id="site">
-    <ClientOnly>
-      <BaseNavbar @mobile-menu="() => showMobileMenu = true" />
-    </ClientOnly>
+    <client-only>
+      <base-navbar @mobile-menu="() => toggleMobileMenu(true)" />
+    </client-only>
 
     <div id="main">
       <slot />
     </div>
 
     <!-- Modals -->
-    <ClientOnly>
-      <ModalsMobile v-model:show="showMobileMenu" />
-    </ClientOnly>
+    <client-only>
+      <modals-mobile v-model:show="showMobileMenu" />
+    </client-only>
 
     <!-- Reassurance -->
-    <BaseReassurance />
+    <base-reassurance />
 
     <!-- Footer -->
-    <BaseFooter />
+    <base-footer />
   </section>
 </template>
 
 <script setup lang="ts">
-import { useScroll } from '@vueuse/core'
 import { scrollLevelKey } from '~/data'
 
 const scrollLevel = ref<number>(0)
 provide(scrollLevelKey, scrollLevel)
 
-const showMobileMenu = ref<boolean>(false)
+const [showMobileMenu, toggleMobileMenu] = useToggle<boolean>(false)
 
 if (import.meta.client) {
   onMounted(() => {
@@ -36,7 +35,7 @@ if (import.meta.client) {
 
     watch(y, (value) => {
       scrollLevel.value = value
-    }, { 
+    }, {
       immediate: true
     })
   })

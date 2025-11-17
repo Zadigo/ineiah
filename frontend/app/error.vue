@@ -8,9 +8,9 @@
               <h1 class="font-5xl">{{ error?.statusCode }}</h1>
               <p class="font-2xl text-light">{{ error?.message }}</p>
 
-              <NuxtLinkLocale id="link-error" href="/" @click="handleError">
+              <nuxt-link-locale id="link-error" href="/" @click="handleError">
                 {{ 'Accueil' }}
-              </NuxtLinkLocale>
+              </nuxt-link-locale>
             </template>
           </volt-card>
 

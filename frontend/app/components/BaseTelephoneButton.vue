@@ -1,6 +1,6 @@
 <template>
   <a :href="`tel:${telephone}`" class="block">
-    <volt-button :size="size" rounded>
+    <volt-button :size="size" class="w-full md:w-auto" rounded>
       <icon v-if="withIcon" name="i-fa7-solid:phone" />
       <slot>
         {{ text }}
