@@ -39,6 +39,8 @@ import type { BaseRoute } from '~/types'
 
 defineEmits<{ 'mobile-menu': [] }>()
 
+const route = useRoute()
+
 /**
  * Mobile
  */
@@ -51,6 +53,10 @@ const showBackground = ref<boolean>(false)
 if (import.meta.client) {
   onMounted(() => {
     const { y } = useScroll(window)
+
+    if (route.meta.name === 'privacy') {
+      showBackground.value = true
+    }
 
     watch(y, (value) => {
       if (value >= 100) {

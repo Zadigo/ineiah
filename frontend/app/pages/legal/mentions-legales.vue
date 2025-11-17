@@ -116,6 +116,14 @@
 <script setup lang="ts">
 import { businessDetails } from '~/data/constants/business'
 
+definePageMeta({
+  name: 'privacy'
+})
+
+/**
+ * SEO
+ */
+
 const i18n = useI18n()
 
 const titles: Record<typeof i18n.locale.value, string> = {
