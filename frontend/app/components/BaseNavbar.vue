@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ 'bg-transparent': !showBackground, 'bg-primary-500 dark:bg-primary-800 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
+  <nav :class="{ 'bg-primary-100/20': !showBackground, 'bg-primary-500 dark:bg-primary-800 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -16,14 +16,16 @@
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
-            <div class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
-              <nuxt-link-locale v-for="route in routes" :id="create(route.id, 'link-nav')" :key="route.path" :to="route.path" :class="linkTheme">
-                {{ $t(route.title) }}
-              </nuxt-link-locale>
-            </div>
+            <ul class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
+              <li v-for="item in routes" :id="create(item.id, 'link-nav')" :key="item.path" class="p-2 rounded-xl has-[.router-link-exact-active]:bg-primary-100/30">
+                <nuxt-link-locale :to="item.path" :class="linkTheme">
+                  {{ $t(item.title) }}
+                </nuxt-link-locale>
+              </li>
+            </ul>
           </div>
 
-          <base-telephone-button v-if="isLargeScreen">
+          <base-telephone-button v-if="isLargeScreen" class="hidden md:flex ml-auto">
             Nous rappeler {{ isMobile }} {{ isLargeScreen }}
           </base-telephone-button>
         </div>
@@ -97,7 +99,7 @@ const routes: BaseRoute[] = [
  */
 
 const linkTheme = ref(`
-  rounded-md px-3 py-2 text-lg font-semibold uppercase 
+  px-3 py-2 text-lg font-semibold uppercase 
   text-primary-50 hover:text-primary-400 relative
 `)
 

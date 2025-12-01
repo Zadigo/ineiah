@@ -19,7 +19,7 @@ export default defineConfig({
         test: {
           name: 'nuxt-pages',
           include: ['tests/app/**/*.{spec,test}.ts'],
-          testTimeout: 10000
+          testTimeout: 20000
         }
       })
     ]

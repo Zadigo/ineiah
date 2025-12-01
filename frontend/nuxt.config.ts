@@ -3,7 +3,7 @@ import { defineOrganization } from 'nuxt-schema-org/schema'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-11-10',
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   ssr: true,
   sourcemap: false,

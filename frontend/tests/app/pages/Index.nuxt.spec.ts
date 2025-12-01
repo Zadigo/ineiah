@@ -1,16 +1,17 @@
-import { HeroBrand, HeroPhotoCall } from '#components'
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
 import { config } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { createI18n } from 'vue-i18n'
 
-import Index from '~/pages/index.vue'
+import HeroBrand from '../../../app/components/hero/Brand.vue'
+import HeroPhotoCall from '../../../app/components/hero/PhotoCall.vue'
+import Index from '../../../app/pages/index.vue'
 
 const i18n = createI18n({
   legacy: false,
   locale: 'en',
   globalInjection: true,
-  missing: (_, key) => key,
+  missing: (_: unknown, key: string) => key,
 })
 
 config.global.plugins.push(i18n)

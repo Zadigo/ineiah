@@ -27,7 +27,7 @@
         <div class="grid grid-rows-2 gap-2 md:grid-rows-none md:grid-cols-2 md:gap-8">
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <img src="/map.jpg" class="rounded-lg">
+              <img src="/map.jpg" class="rounded-lg" alt="">
             </template>
           </volt-card>
 

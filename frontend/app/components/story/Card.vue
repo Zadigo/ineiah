@@ -1,9 +1,9 @@
 <template>
   <volt-card class="bg-surface-500/10 has-[p]:leading-8">
     <template #content>
-      <div class="grid grid-rows-2 grid-cols-none auto-rows-min md:auto-cols-min md:grid-cols-2 md:grid-rows-none gap-10">
+      <div class="grid md:grid-rows-1 md:grid-cols-2 gap-10">
         <div v-show="!invert">
-          <img src="/hero/hair10.jpg" class="aspect-square object-cover rounded-lg">
+          <img src="/hero/hair10.jpg" class="aspect-square object-cover rounded-lg" alt="Anissa en action">
         </div>
 
         <!-- mt-5 md:mt-0 md:max-w-lg has-[p]:space-y-3 -->
@@ -28,7 +28,7 @@
         </div>
 
         <div v-show="invert" class="rounded-md">
-          <img src="/hero/hair10.jpg" class="aspect-square object-cover rounded-md">
+          <img src="/hero/hair10.jpg" class="aspect-square object-cover rounded-md" alt="Anissa en action">
         </div>
       </div>
     </template>
@@ -36,9 +36,5 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{
-  invert?: boolean
-}>(), {
-  invert: false
-})
+const { invert = false } = defineProps<{ invert?: boolean }>() 
 </script>
