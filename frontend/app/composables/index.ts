@@ -1,4 +1,4 @@
-import { useColorMode } from "@vueuse/core"
+import { useColorMode } from '@vueuse/core'
 
 /**
  * Composable to generate dynamic IDs from string values
@@ -102,17 +102,49 @@ export const useDarkModeComposable = createGlobalState(() => {
   }
 })
 
+/**
+ * Composable to manage cookie banner state
+ */
 export const useCookieComposable = createGlobalState(() => {
-  const showBanner = useState('showCookieBanner', () => true)
+  const cookieAccepted = useSessionStorage('cookieAccepted', () => false)
+  const showBanner = useState('showCookieBanner', () => !cookieAccepted.value)
   const showOptions = useState('showCookieOptions', () => false)
 
   const toggleShowBanner = useToggle(showBanner)
   const toggleShowOptions = useToggle(showOptions)
 
+  function accept() {
+    cookieAccepted.value = true
+    showBanner.value = false
+  }
+
   return {
+    /**
+     * Whether the user has accepted cookies
+     * @default false
+     */
+    cookieAccepted,
+    /**
+     * Whether to show the cookie banner
+     * @default true
+     */
     showBanner,
+    /**
+     * Whether to show the cookie options modal
+     * @default false
+     */
     showOptions,
+    /**
+     * Toggles the visibility of the cookie banner
+     */
     toggleShowBanner,
-    toggleShowOptions
+    /**
+     * Toggles the visibility of the cookie options modal
+     */
+    toggleShowOptions,
+    /**
+     * Accepts the cookie policy and hides the banner
+     */
+    accept
   }
 })

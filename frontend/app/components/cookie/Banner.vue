@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-7/12 left-5 [--shadow:rgba(60,64,67,0.3)_0_1px_2px_0,rgba(60,64,67,0.15)_0_2px_6px_2px] w-4/5 h-auto z-50 rounded-2xl bg-primary-100 dark:bg-primary-400 [box-shadow:var(--shadow)] max-w-[300px]">
+  <div v-if="showBanner"  class="fixed top-7/12 left-5 [--shadow:rgba(60,64,67,0.3)_0_1px_2px_0,rgba(60,64,67,0.15)_0_2px_6px_2px] w-4/5 h-auto z-50 rounded-2xl bg-primary-100 dark:bg-primary-400 [box-shadow:var(--shadow)] max-w-[300px]">
     <div class="flex flex-col items-center justify-between pt-9 px-6 pb-6 relative">
       <span class="relative mx-auto -mt-16 mb-8">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="46" width="65">
@@ -34,7 +34,7 @@
         </button>
 
         <!-- cursor-pointer py-2 px-8 w-max break-keep text-sm rounded-lg transition-colors text-[#634647] hover:text-[#ddad81] bg-[#ddad81] hover:bg-[#634647] -->
-        <volt-contrast-button class="font-semibold">
+        <volt-contrast-button class="font-semibold" @click="() => accept()">
           Accept
         </volt-contrast-button>
       </div>
@@ -43,5 +43,5 @@
 </template>
 
 <script setup lang="ts">
-const { toggleShowOptions } = useCookieComposable()
+const { toggleShowOptions, showBanner, accept } = useCookieComposable()
 </script>

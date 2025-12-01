@@ -36,6 +36,8 @@
     "@tailwindcss/vite": "^4.1.17",
     "@unhead/addons": "^2.0.19",
     "@unhead/vue": "^2.0.19",
+    "@vercel/analytics": "^1.6.0",
+    "@vercel/speed-insights": "^1.3.0",
     "@vueuse/core": "^14.1.0",
     "@vueuse/motion": "3.0.3",
     "animate.css": "^4.1.1",
