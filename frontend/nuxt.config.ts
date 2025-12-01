@@ -111,7 +111,7 @@ export default defineNuxtConfig({
     'nuxt-vuefire',
     'nuxt-ganalytics',
     '@vueuse/motion/nuxt',
-    '@primevue/nuxt-module' // TODO: Does not work. Remove?
+    // '@primevue/nuxt-module' // TODO: Does not work. Remove?
 
     // '@pinia/nuxt', //FIXME: Breaks in production
     // '@sentry/nuxt/module,'
