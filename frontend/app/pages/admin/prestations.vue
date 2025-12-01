@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <volt-card class="bg-secondary-100">
+    <volt-card :pt="{ body: 'bg-surface-500' }">
       <template #content>
         <div class="flex justify-between items-center">
           <p class="font-bold">Prestation #1</p>

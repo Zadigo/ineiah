@@ -21,12 +21,12 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: 16*60 },
-    '/faq': { swr: 30*60 },
-    '/nos-prestations': { swr: 15*60 },
-    '/notre-histoire': { swr: 60*60 },
-    '/legal/**': { swr: true },
-    '/contact': { swr: true },
+    // '/': { swr: 16*60 },
+    // '/faq': { swr: 30*60 },
+    // '/nos-prestations': { swr: 15*60 },
+    // '/notre-histoire': { swr: 60*60 },
+    // '/legal/**': { swr: true },
+    // '/contact': { swr: true },
     '/admin/**': { ssr: false }
   },
 
@@ -328,7 +328,7 @@ export default defineNuxtConfig({
     devStorage: {
       file: {
         driver: 'fs',
-        base: './dev-storage'
+        base: './data/storage'
       }
     }
   }

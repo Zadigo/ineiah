@@ -1,7 +1,7 @@
 <template>
-  <volt-card :id="`service-${index + 1}`" ref="serviceEl" class="p-0 bg-surface-50 relative cursor-pointer" @click="() => toggleServiceDetails()" @mouseenter="() => toggleIndicatorPhrase(true)" @mouseleave="() => toggleIndicatorPhrase(false)">
+  <volt-card :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
     <template #content>
-      <div v-if="!showServiceDetails" class="p-0 rounded-lg">
+      <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg">
         <img src="/hero/hair12.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="">
 
         <div class="absolute bottom-0 left-0 p-5 text-primary-50">
@@ -9,7 +9,7 @@
           <p class="font-semibold uppercase">cheveux sec . <span class="font-bold">{{ service.price }}€</span></p>
 
           <transition enter-active-class="animate__animated animate__zoomIn" leave-active-class="animate__animated animate__zoomOut">
-            <p v-if="showIndicatorPhrase">En savoir plus</p>
+            <p v-if="isHovered">En savoir plus</p>
           </transition>
         </div>
       </div>
@@ -28,7 +28,6 @@ defineProps<{ index: number, service: Service }>()
  * Toggles
  */
 
-const [showIndicatorPhrase, toggleIndicatorPhrase] = useToggle<boolean>(false)
 const [showServiceDetails, toggleServiceDetails] = useToggle<boolean>(false)
 
 /**
@@ -36,7 +35,14 @@ const [showServiceDetails, toggleServiceDetails] = useToggle<boolean>(false)
  */
 
 const serviceEl = useTemplateRef('serviceEl')
-onClickOutside(serviceEl, () => toggleServiceDetails(false))
+const isHovered = ref(false)
+
+ if (import.meta.client) {
+   onClickOutside(serviceEl, () => toggleServiceDetails(false))
+
+   const _isHovered = useElementHover(serviceEl)
+   syncRef(isHovered, _isHovered, { direction: 'ltr' })
+ }
 
 /**
  * Global Services

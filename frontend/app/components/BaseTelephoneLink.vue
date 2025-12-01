@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import { businessDetails } from '~/data'
 
-const { 
+const {
   telephone = businessDetails.contact.telephone, 
   text = 'Nous appeler',
   withIcon = true

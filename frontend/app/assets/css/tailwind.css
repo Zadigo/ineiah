@@ -49,6 +49,18 @@
   --p-surface-900: #30231f;
   --p-surface-950: #30231f;
 
+  /* --p-surface-50: var(--color-secondary-50);
+  --p-surface-100: var(--color-secondary-100);
+  --p-surface-200: var(--color-secondary-200);
+  --p-surface-300: var(--color-secondary-300);
+  --p-surface-400: var(--color-secondary-400);
+  --p-surface-500: var(--color-secondary-500);
+  --p-surface-600: var(--color-secondary-600);
+  --p-surface-700: var(--color-secondary-700);
+  --p-surface-800: var(--color-secondary-800);
+  --p-surface-900: var(--color-secondary-900);
+  --p-surface-950: var(--color-secondary-950); */
+
   --p-content-border-radius: 6px;
 
   /* Pink */
