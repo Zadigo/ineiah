@@ -186,6 +186,9 @@ importers:
       jsdom:
         specifier: ^27.2.0
         version: 27.2.0
+      lucide-vue-next:
+        specifier: ^0.555.0
+        version: 0.555.0(vue@3.5.25(typescript@5.9.3))
       pinia-plugin-persistedstate:
         specifier: ^4.7.1
         version: 4.7.1(@nuxt/kit@4.2.1(magicast@0.5.1))(@pinia/nuxt@0.11.3(magicast@0.5.1)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3))))(pinia@3.0.4(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3)))
@@ -5384,6 +5387,11 @@ packages:
 
   lru-memoizer@2.3.0:
     resolution: {integrity: sha512-GXn7gyHAMhO13WSKrIiNfztwxodVsP8IoZ3XfrJV4yH2x0/OeTO/FIaAHTY5YekdGgW94njfuKmyyt1E0mR6Ug==}
+
+  lucide-vue-next@0.555.0:
+    resolution: {integrity: sha512-7hczPsiMD/y+VNLpal5Q5Wv09kQxlHS0l/cM1xagrd+MA3i5umMm+PUXqllvsbgwAl3PHv27fo59h4PN02GM5A==}
+    peerDependencies:
+      vue: '>=3.0.1'
 
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
@@ -13545,6 +13553,10 @@ snapshots:
     dependencies:
       lodash.clonedeep: 4.5.0
       lru-cache: 6.0.0
+
+  lucide-vue-next@0.555.0(vue@3.5.25(typescript@5.9.3)):
+    dependencies:
+      vue: 3.5.25(typescript@5.9.3)
 
   lz-string@1.5.0: {}
 
