@@ -14,17 +14,24 @@
       </p>
 
       <!-- CTA -->
-      <volt-button v-if="isSelected" rounded>
-        Je réserve cette coupe
-      </volt-button>
+       <div class="flex gap-2">
+         <volt-button v-if="isSelected" rounded>
+           <icon name="i-fa6-solid:phone" />
+         </volt-button>
+   
+         <volt-secondary-button v-if="isSelected" severity="info" rounded @click.stop="share()">
+           <icon name="i-fa6-solid:share" />
+         </volt-secondary-button>
+       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Share } from '@capacitor/share'
 import type { GalleryImage } from '~/types'
 
-defineProps<{ image: GalleryImage }>()
+const props = defineProps<{ image: GalleryImage }>()
 
 /**
  * Media Query
@@ -50,4 +57,17 @@ const theme = computed(() => {
     }
   ]
 })
+
+/**
+ * Sharing
+ */
+
+async function share() {
+  await Share.share({
+    title: props.image.name,
+    text: 'Really awesome thing you need to see right meow',
+    url: window.location.href,
+    dialogTitle: 'Partagez cette coupe'
+  })
+}
 </script>
