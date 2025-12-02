@@ -4,7 +4,13 @@ import { defineOrganization } from 'nuxt-schema-org/schema'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
 
   modules: [
     '@nuxt/eslint',
@@ -24,8 +30,9 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     'nuxt-og-image',
     'nuxt-vuefire',
-    'nuxt-gtag',
-    'nuxt-ganalytics'
+    // 'nuxt-gtag',
+    'nuxt-ganalytics',
+    'nuxt-link-checker'
   ],
 
   site: {
@@ -119,15 +126,15 @@ export default defineNuxtConfig({
     ]
   },
 
-  // ganalytics: {
-  //   ga4: {
-  //     id: 'G-CVKFG2XPVG',
-  //     enableDebug: true
-  //   },
-  //   gtm: {
-  //     id: 'GTM-TGZCVB2G'
-  //   }
-  // },
+  ganalytics: {
+    ga4: {
+      id: 'G-CVKFG2XPVG',
+      enableDebug: true
+    },
+    gtm: {
+      id: 'GTM-TGZCVB2G'
+    }
+  },
 
   i18n: {
     baseUrl: process.env.NUXT_PUBLIC_SITE_URL,

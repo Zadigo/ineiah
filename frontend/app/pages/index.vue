@@ -127,7 +127,7 @@
     <dev-only>
       <!-- Template Settings -->
       <client-only>
-        <!-- <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
+        <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
           <p class="font-bold mb-4">Template settings</p>
 
           <div class="space-x-2">
@@ -159,7 +159,7 @@
           <volt-label label-for="show-carousel" label="Show Carousel">
             <volt-toggle-switch id="show-carousel" v-model="showCarousel" />
           </volt-label>
-        </div> -->
+        </div>
       </client-only>
     </dev-only>
   </section>
@@ -175,40 +175,6 @@ definePageMeta({
 })
 
 const i18n = useI18n()
-
-/**
- * Animations
- */
-
-const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
-const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
-const imageFirstEl = useTemplateRef<HTMLElement>('imageFirstEl')
-
-if (import.meta.client) {
-  onMounted(() => {
-    const textClasses = ['animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500']
-
-    /**
-     * Animates an element in the document given the provided classes
-     * @param el The element to animate
-     * @param classes The classes to use for the animation
-     */
-    function observe(el: typeof intermediateOneEl, classes: string[]) {
-        useIntersectionObserver(el, ([entry]) => {
-          if (entry?.isIntersecting) {
-            el.value?.classList.add(...classes)
-          } else {
-            el.value?.classList.remove(...classes)
-          }
-        }
-      )
-    }
-
-    observe(intermediateOneEl, textClasses)
-    observe(intermediateTwoEl,textClasses)
-    observe(imageFirstEl, ['animate-in', 'zoom-in-90', 'duration-800'])
-  })
-}
 
 /**
  * Dark mode
@@ -228,7 +194,7 @@ useSeoMeta({
   title: titles[i18n.locale.value],
   description: 'Sublime ta singularité',
   titleTemplate: `%s | ${businessDetails.legalName}`,
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  ogImage: '/hero/hair10.jpg'
 })
 
 useHead({
