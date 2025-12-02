@@ -1,8 +1,6 @@
 <template>
   <section id="site">
-    <client-only>
-      <base-navbar @mobile-menu="() => toggleMobileMenu(true)" />
-    </client-only>
+    <base-navbar @mobile-menu="() => toggleMobileMenu(true)" />
 
     <div id="main">
       <slot />

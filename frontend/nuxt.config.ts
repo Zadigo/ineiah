@@ -58,6 +58,7 @@ export default defineNuxtConfig({
     '/notre-histoire': { swr: 60*60 },
     '/legal/**': { swr: true },
     '/contact': { swr: true },
+    '/galerie': { ssr: false },
     '/admin/**': { ssr: false }
   },
 

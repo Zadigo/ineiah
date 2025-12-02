@@ -2,9 +2,11 @@
   <footer class="relative bg-primary-800 dark:bg-primary-900 w-full">
     <div class="w-full px-8 mx-auto max-w-7xl">
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
-        <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
-          {{ businessDetails.legalName }}
-        </h5>
+        <nuxt-link-locale to="/">
+          <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+            {{ businessDetails.legalName }}
+          </h5>
+        </nuxt-link-locale>
 
         <div class="grid justify-between grid-rows-2 grid-cols-none gap-4 md:grid-cols-2 md:grid-rows-none">
           <ul v-for="(section, idx) in footer.sections" :id="`footer-section-${idx + 1}`" :key="section.title">
@@ -22,9 +24,11 @@
       </div>
 
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
-        <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
-          © {{ currentYear }} <nuxt-link-locale to="/">{{ businessDetails.legalName }}</nuxt-link-locale>. Réalisé par <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
-        </p>
+        <client-only>
+          <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
+            © {{ currentYear }} <nuxt-link-locale to="/">{{ businessDetails.legalName }}</nuxt-link-locale>. Réalisé par <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
+          </p>
+        </client-only>
 
         <div class="flex gap-4 text-primary-200 sm:justify-center">
           <a v-for="social in footer.socials" :id="`footer-social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" class="block transition-opacity text-inherit hover:opacity-80">

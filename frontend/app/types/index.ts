@@ -7,3 +7,8 @@ export type Arrayable<T> = T[]
 export type StringInterface<T extends string> = { [K in T]: string }
 
 export type BaseRoute = StringInterface<'id' | 'title' | 'path'>
+
+export interface GalleryImage {
+  name: string
+  image: string
+}

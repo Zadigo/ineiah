@@ -60,10 +60,13 @@ export const useDevComposable = createGlobalState(() => {
     }
   })
 
+  const showVideoBlock = ref(false)
+
   return {
     showImage,
     showVideo,
-    showCarousel
+    showCarousel,
+    showVideoBlock
   }
 })
 

@@ -5,7 +5,7 @@
     <div class="grid grid-rows-5 md:grid-rows-1 md:grid-cols-5 gap-5">
       <volt-card v-for="idx in 5" :key="idx" class="bg-surface-50">
         <template #content>
-          <div class="grid grid-cols-2">
+          <div class="grid grid-cols-2 md:grid-cols-1 md:items-center md:text-center">
             <a href="https://fr.olaplex.com/collections/all-products-fr/products/rich-hydration-mask-eu" target="_blank" rel="noopener noreferrer">
               <img src="/products/product1.webp" alt="">
             </a>

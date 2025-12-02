@@ -4,10 +4,8 @@
       <nuxt-page />
 
       <dev-only>
-        <client-only>
-          <cookie-banner />
-          <cookie-options :show="showOptions" />
-        </client-only>
+        <cookie-banner />
+        <cookie-options :show="showOptions" />
       </dev-only>
     </nuxt-layout>
   </section>
