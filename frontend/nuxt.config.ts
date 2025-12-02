@@ -19,13 +19,12 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@vueuse/nuxt',
-    '@vueuse/motion/nuxt',
-    'nuxt-gtag',
     'nuxt-vuefire',
     'nuxt-schema-org',
     'nuxt-og-image',
     'nuxt-vuefire',
-    'nuxt-ganalytics',
+    'nuxt-gtag',
+    'nuxt-ganalytics'
   ],
 
   site: {
@@ -97,25 +96,7 @@ export default defineNuxtConfig({
       twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,
       twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
       twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
-      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER,
-
-      // Motion
-      motion: {
-        directives: {
-          'pop-bottom': {
-            initial: {
-              scale: 0,
-              opacity: 0,
-              y: 100
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              y: 0
-            }
-          }
-        }
-      }
+      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
     }
   },
 
@@ -137,15 +118,15 @@ export default defineNuxtConfig({
     ]
   },
 
-  ganalytics: {
-    ga4: {
-      id: 'G-CVKFG2XPVG',
-      enableDebug: true
-    },
-    gtm: {
-      id: 'GTM-TGZCVB2G'
-    }
-  },
+  // ganalytics: {
+  //   ga4: {
+  //     id: 'G-CVKFG2XPVG',
+  //     enableDebug: true
+  //   },
+  //   gtm: {
+  //     id: 'GTM-TGZCVB2G'
+  //   }
+  // },
 
   i18n: {
     baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
