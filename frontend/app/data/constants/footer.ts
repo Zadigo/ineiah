@@ -1,10 +1,13 @@
+import type { Nullable } from "~/types"
+
 export interface FooterLinks {
   name: string
   to: string
+  showOnMobile?: boolean
+  linkPosition?: Nullable<number>
 }
 
-export interface SocialLinks {
-  name: string
+export type SocialLinks = Pick<FooterLinks, 'name'> & {
   url: string
   icon: string
 }
@@ -24,11 +27,14 @@ export const footer: FooterSection = {
       links: [
         {
           name: 'Contact',
-          to: '/contact'
+          to: '/contact',
+          showOnMobile: true,
+          linkPosition: 4
         },
         {
           name: 'FAQ',
-          to: '/faq'
+          to: '/faq',
+          showOnMobile: false
         },
         // {
         //   name: 'Conditions générales de vente',
@@ -36,15 +42,18 @@ export const footer: FooterSection = {
         // },
         {
           name: 'Plan du site',
-          to: '/sitemap'
+          to: '/sitemap',
+          showOnMobile: false
         },
         {
           name: 'Politique de confidentialité',
-          to: '/legal/confidentialite'
+          to: '/legal/confidentialite',
+          showOnMobile: false
         },
         {
           name: 'Mentions légales',
-          to: '/legal/mentions-legales'
+          to: '/legal/mentions-legales',
+          showOnMobile: false
         }
       ]
     },
@@ -52,12 +61,28 @@ export const footer: FooterSection = {
       title: 'Le salon',
       links: [
         {
-          name: 'Notre histoire',
-          to: '/notre-histoire'
+          name: 'Accueil',
+          to: '/',
+          showOnMobile: true,
+          linkPosition: 0
         },
         {
           name: 'Nos prestations',
-          to: '/nos-prestations'
+          to: '/nos-prestations',
+          showOnMobile: true,
+          linkPosition: 1
+        },
+        {
+          name: 'Notre histoire',
+          to: '/notre-histoire',
+          showOnMobile: true,
+          linkPosition: 2
+        },
+        {
+          name: 'Nos coupes',
+          to: '/galerie',
+          showOnMobile: true,
+          linkPosition: 3
         }
       ]
     }
@@ -81,25 +106,11 @@ export const footer: FooterSection = {
   ]
 }
 
-export const mobileLinks: FooterLinks[] = [
-  {
-    name: 'Accueil',
-    to: '/'
-  },
-  {
-    name: 'Notre histoire',
-    to: '/notre-histoire'
-  },
-  {
-    name: 'Nos prestations',
-    to: '/nos-prestations'
-  },
-  {
-    name: 'Contact',
-    to: '/contact'
-  },
-  {
-    name: 'FAQ',
-    to: '/faq'
-  }
-]
+export const mobileLinks: FooterLinks[] = footer.sections.reduce((acc, section) => {
+  const mobileSectionLinks = section.links.filter(link => link.showOnMobile)
+  return acc.concat(mobileSectionLinks)
+}, [] as FooterLinks[]).sort((a, b) => {
+  const posA = a.linkPosition ?? Number.MAX_SAFE_INTEGER
+  const posB = b.linkPosition ?? Number.MAX_SAFE_INTEGER
+  return posA - posB
+})
