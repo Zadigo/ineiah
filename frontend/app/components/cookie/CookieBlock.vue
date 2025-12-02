@@ -10,7 +10,9 @@
       </div>
 
       <div class="col-span-2">
-        <volt-toggle-switch v-model="cookie.required" />
+        <client-only>
+          <volt-toggle-switch v-model="cookie.required" />
+        </client-only>
       </div>
     </div>
   </div>

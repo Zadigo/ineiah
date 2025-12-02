@@ -9,42 +9,48 @@
     <div class="p-5 md:p-15">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <img v-motion-slide-visible-left :delay="100" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="">
+          <client-only>
+            <img v-motion-slide-visible-left :delay="200" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="">
+          </client-only>
         </div>
 
-        <div v-motion-slide-visible-right :delay="300" class="flex flex-col justify-center dark:text-primary-200">
-          <h2 class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
-            Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie
-          </h2>
+        <client-only>
+          <div v-motion-slide-visible-right :delay="400" class="flex flex-col justify-center dark:text-primary-200">
+            <h2 class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
+              Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie
+            </h2>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
-            tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
-            Facere maiores quidem minima.
-          </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
+              tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
+              Facere maiores quidem minima.
+            </p>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
-            tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
-            Facere maiores quidem minima.
-          </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
+              tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
+              Facere maiores quidem minima.
+            </p>
 
-          <div id="cta-1" class="mt-10">
-            <base-telephone-button id="tel-intermadiate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
+            <div id="cta-1" class="mt-10">
+              <base-telephone-button id="tel-intermadiate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
+            </div>
           </div>
-        </div>
+        </client-only>
       </div>
     </div>
 
     <!-- Intermediate-2 -->
     <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200">
       <div class="items-center md:flex md:p-10">
-        <div v-motion-slide-visible-left :delay="500" class="p-10 text-center md:text-left md:max-w-lg">
-          <h2 :delay="400" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
-            L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
-          </h2>
+        <div class="p-10 text-center md:text-left md:max-w-lg">
+          <client-only>
+            <h2 v-motion-slide-visible-right :delay="400" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
+              L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
+            </h2>
+          </client-only>
 
           <p class="font-light">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -62,7 +68,9 @@
       </div>
 
       <div class="h-auto">
-        <img v-motion-fade-visible :delay="600" src="/hero/hair10.jpg" class="aspect-square object-cover" alt="">
+        <client-only>
+          <img v-motion-fade-visible :delay="600" src="/hero/hair10.jpg" class="aspect-square object-cover" alt="">
+        </client-only>
       </div>
     </div>
 
@@ -126,41 +134,47 @@
 
     <dev-only>
       <!-- Template Settings -->
-      <client-only>
-        <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
-          <p class="font-bold mb-4">Template settings</p>
+      <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
+        <p class="font-bold mb-4">Template settings</p>
 
-          <div class="space-x-2">
-            <nuxt-link-locale to="/" locale="fr">
-              <volt-secondary-button>
-                <icon name="i-circle-flags:fr" />
-              </volt-secondary-button>
-            </nuxt-link-locale>
+        <div class="space-x-2">
+          <nuxt-link-locale to="/" locale="fr">
+            <volt-secondary-button>
+              <icon name="i-circle-flags:fr" />
+            </volt-secondary-button>
+          </nuxt-link-locale>
 
-            <nuxt-link-locale to="/" locale="en">
-              <volt-secondary-button>
-                <icon name="i-circle-flags:uk" />
-              </volt-secondary-button>
-            </nuxt-link-locale>
-          </div>
-
-          <volt-label label-for="dark-mode" label="Dark mode">
-            <volt-toggle-switch id="dark-mode" v-model="darkMode" />
-          </volt-label>
-
-          <volt-label label-for="show-image" label="Show Image">
-            <volt-toggle-switch id="show-image" v-model="showImage" />
-          </volt-label>
-
-          <volt-label label-for="show-video" label="Show Video">
-            <volt-toggle-switch id="show-video" v-model="showVideo" />
-          </volt-label>
-
-          <volt-label label-for="show-carousel" label="Show Carousel">
-            <volt-toggle-switch id="show-carousel" v-model="showCarousel" />
-          </volt-label>
+          <nuxt-link-locale to="/" locale="en">
+            <volt-secondary-button>
+              <icon name="i-circle-flags:uk" />
+            </volt-secondary-button>
+          </nuxt-link-locale>
         </div>
-      </client-only>
+
+        <volt-label label-for="dark-mode" label="Dark mode">
+          <client-only>
+            <volt-toggle-switch id="dark-mode" v-model="darkMode" />
+          </client-only>
+        </volt-label>
+
+        <volt-label label-for="show-image" label="Show Image">
+          <client-only>
+            <volt-toggle-switch id="show-image" v-model="showImage" />
+          </client-only>
+        </volt-label>
+
+        <volt-label label-for="show-video" label="Show Video">
+          <client-only>
+            <volt-toggle-switch id="show-video" v-model="showVideo" />
+          </client-only>
+        </volt-label>
+
+        <volt-label label-for="show-carousel" label="Show Carousel">
+          <client-only>
+            <volt-toggle-switch id="show-carousel" v-model="showCarousel" />
+          </client-only>
+        </volt-label>
+      </div>
     </dev-only>
   </section>
 </template>
@@ -181,6 +195,20 @@ const i18n = useI18n()
  */
 
 const { darkMode } = useDarkModeComposable()
+
+/**
+ * Motion
+ */
+
+const initial = ref({
+  x: 0,
+  opacity: 0,
+})
+
+const enter = ref({
+  x: -100,
+  opacity: 1,
+})
 
 /**
  * SEO

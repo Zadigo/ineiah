@@ -49,25 +49,19 @@ const route = useRoute()
 
 const showBackground = ref<boolean>(false)
 
-if (import.meta.client) {
-  onMounted(() => {
-    const { y } = useScroll(window)
+onMounted(() => {
+  const { y } = useScroll(window)
 
-    if (route.meta.name === 'privacy') {
-      showBackground.value = true
-    }
+  if (route.meta.name === 'privacy') {
+    showBackground.value = true
+  }
 
-    watch(y, (value) => {
-      if (value >= 100) {
-        showBackground.value = true
-      } else {
-        showBackground.value = false
-      }
-    }, {
-      immediate: true
-    })
+  watch(y, (value) => {
+    showBackground.value = value > 10
+  }, {
+    immediate: true
   })
-}
+})
 
 /**
  * Routes
@@ -88,6 +82,11 @@ const routes: BaseRoute[] = [
     id: 'about us',
     title: 'Notre histoire',
     path: '/notre-histoire'
+  },
+  {
+    id: 'gallery',
+    title: 'Galerie',
+    path: '/galerie'
   }
 ]
 
