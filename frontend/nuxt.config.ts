@@ -4,13 +4,44 @@ import { defineOrganization } from 'nuxt-schema-org/schema'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-  ssr: true,
-  sourcemap: false,
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
+
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/hints',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/scripts',
+    '@nuxt/test-utils',
+    '@nuxt/test-utils/module',
+    '@nuxtjs/seo',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
+    'nuxt-vuefire',
+    'nuxt-schema-org',
+    'nuxt-og-image',
+    'nuxt-vuefire',
+    // 'nuxt-gtag',
+    'nuxt-ganalytics',
+    'nuxt-link-checker'
+  ],
 
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     name: "La Beauté d'Inéïah"
+  },
+
+  seo: {
+    fallbackTitle: true
   },
 
   app: {
@@ -25,13 +56,14 @@ export default defineNuxtConfig({
     '/faq': { swr: 30*60 },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { swr: 60*60 },
-    // '/legal/**': { prerender: true }
     '/legal/**': { swr: true },
     '/contact': { swr: true },
     '/admin/**': { ssr: false }
   },
 
-  css: ['~/assets/css/tailwind.css'],
+  css: [
+    '~/assets/css/tailwind.css'
+  ],
 
   vite: {
     plugins: [
@@ -72,51 +104,9 @@ export default defineNuxtConfig({
       twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,
       twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
       twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
-      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER,
-
-      // Motion
-      motion: {
-        directives: {
-          'pop-bottom': {
-            initial: {
-              scale: 0,
-              opacity: 0,
-              y: 100
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              y: 0
-            }
-          }
-        }
-      }
+      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
     }
   },
-
-  modules: [
-    '@nuxt/image',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/test-utils/module',
-    '@nuxt/eslint',
-    '@nuxt/scripts',
-    '@nuxt/ui',
-    '@nuxtjs/i18n',
-    '@nuxtjs/seo',
-    '@vueuse/nuxt',
-    'nuxt-gtag',
-    'nuxt-schema-org',
-    'nuxt-og-image',
-    'nuxt-vuefire',
-    'nuxt-ganalytics',
-    '@vueuse/motion/nuxt',
-    // '@primevue/nuxt-module' // TODO: Does not work. Remove?
-
-    // '@pinia/nuxt', //FIXME: Breaks in production
-    // '@sentry/nuxt/module,'
-    // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
-  ],
 
   fonts: {
     provider: 'google',
@@ -168,7 +158,7 @@ export default defineNuxtConfig({
       {
         code: 'en',
         language: 'en-US',
-        files: [ 'en.ts', 'en-US.ts' ],
+        files: ['en.ts', 'en-US.ts'],
         dir: 'ltr',
         name: 'English'
       }
@@ -185,11 +175,6 @@ export default defineNuxtConfig({
     // providers: {
     //   cloudfront: {}
     // }
-  },
-
-  seo: {
-    url: 'https://example.com',
-    name: "La beauté d'Inéïah"
   },
 
   schemaOrg: {
@@ -304,19 +289,19 @@ export default defineNuxtConfig({
     })
   },
 
-  gtag: {
-    id: 'G-CVKFG2XPVG',
-    initCommands: [
-      ['config', 'default', {
-        debug: 'true',
-        currency: 'EUR',
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied'
-      }]
-    ]
-  },
+  // gtag: {
+  //   id: 'G-CVKFG2XPVG',
+  //   initCommands: [
+  //     ['config', 'default', {
+  //       debug: 'true',
+  //       currency: 'EUR',
+  //       ad_storage: 'denied',
+  //       ad_user_data: 'denied',
+  //       ad_personalization: 'denied',
+  //       analytics_storage: 'denied'
+  //     }]
+  //   ]
+  // },
 
   nitro: {
     storage: {
@@ -327,24 +312,12 @@ export default defineNuxtConfig({
         username: '',
         password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
       }
-    },
-    devStorage: {
-      file: {
-        driver: 'fs',
-        base: './dev-storage'
-      }
     }
-  },
-
-  sentry: {
-    disabled: process.env.NODE_ENV === 'test',
-    disableClientSide: process.env.NODE_ENV === 'test',
-    disableServerSide: process.env.NODE_ENV === 'test',
-    sourceMapsUploadOptions: {
-      org: 'jpm-holdings',
-      project: 'dev-client'
-    },
-
-    autoInjectServerSentry: 'top-level-import'
+    // devStorage: {
+    //   file: {
+    //     driver: 'fs',
+    //     base: './data/storage'
+    //   }
+    // }
   }
 })

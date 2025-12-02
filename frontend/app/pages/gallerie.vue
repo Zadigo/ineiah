@@ -27,7 +27,6 @@ definePageMeta({
   name: 'gallery'
 })
 
-
 const imageBlocks: ImageBlock[][] = [
   [
     {

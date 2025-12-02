@@ -1,27 +1,27 @@
 <template>
-  <section class="font-sans bg-primary-500/20 relative">
-    <NuxtLayout>
+  <section class="font-sans relative">
+    <nuxt-layout>
       <section class="error-page my-20">
         <div class="mx-auto md:max-w-2xl">
-          <volt-card class="border-none shadow-sm">
+          <volt-card>
             <template #content>
               <h1 class="font-5xl">{{ error?.statusCode }}</h1>
               <p class="font-2xl text-light">{{ error?.message }}</p>
 
-              <nuxt-link-locale id="link-error" href="/" @click="handleError">
+              <nuxt-link-locale id="link-error" to="/" aria-label="Accueil" @click="handleError">
                 {{ 'Accueil' }}
               </nuxt-link-locale>
             </template>
           </volt-card>
 
-          <DevOnly>
+          <dev-only>
             <div class="text-wrap overflow-y-scroll pa-10 rounded-3xl bg-primary-500 mt-10">
               {{ error }}
             </div>
-          </DevOnly>
+          </dev-only>
         </div>
       </section>
-    </NuxtLayout>
+    </nuxt-layout>
   </section>
 </template>
 
@@ -31,13 +31,6 @@ const error = useError()
 useHead({
   title: "La page n'existe pas"
 })
-
-// const { gtag } = useGtag()
-
-// gtag('event', 'exception', {
-//   description: `${error.statusCode}`
-// })
-
 /**
  * A function that handles the
  * redirect to the home page
