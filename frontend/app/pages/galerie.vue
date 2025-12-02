@@ -31,113 +31,54 @@ definePageMeta({
   name: 'gallery'
 })
 
-const imageBlocks: ImageBlock[][] = [
-  [
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg'
-    },
-    {
-      name: ' Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg'
-    },
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg'
-    }
-  ],
-  [
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg'
-    },
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg'
-    },
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg'
-    }
-  ],
-  [
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg'
-    },
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg'
-    },
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg'
-    }
-  ],
-  [
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg'
-    },
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg'
-    },
-    {
-      name: 'Nom de la coupe',
-      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg'
-    }
-  ]
-]
-
 const testImages = [
   {
     name: 'Lissage brésilien',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg'
+    image: '/hero/hair6.jpg'
   },
   {
     name: 'Boucles naturelles',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg'
+    image: '/hero/hair7.jpg'
   },
   {
     name: 'Coupe pixie moderne',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg'
+    image: '/hero/hair10.jpg'
   },
   {
     name: 'Brushing volumineux',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg'
+    image: '/hero/hair9.jpg'
   },
   {
     name: 'Coupe dégradée',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg'
+    image: '/hero/hair11.jpg'
   },
   {
     name: 'Chignon élégant',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg'
+    image: '/hero/hair12.jpg'
   },
   {
     name: 'Nom de la coupe',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg'
+    image: '/hero/hair6.jpg'
   },
   {
     name: 'Coupe afro',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg'
+    image: '/hero/hair7.jpg'
   },
   {
     name: 'Coupe undercut',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg'
+    image: '/hero/hair9.jpg'
   },
   {
     name: 'Coupe bob asymétrique',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg'
+    image: '/hero/hair10.jpg'
   },
   {
     name: 'Coupe chignon',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg'
+    image: '/hero/hair11.jpg'
   },
   {
     name: 'Coupe tresse',
-    image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg'
+    image: '/hero/hair12.jpg'
   }
 ]
 
