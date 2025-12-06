@@ -7,7 +7,7 @@
         <template #content>
           <div class="grid grid-cols-2 md:grid-cols-1 md:items-center md:text-center">
             <a href="https://fr.olaplex.com/collections/all-products-fr/products/rich-hydration-mask-eu" target="_blank" rel="noopener noreferrer">
-              <img src="/products/product1.webp" alt="">
+              <nuxt-img src="/products/product1.webp" alt="" />
             </a>
 
             <div class="flex-row content-center">

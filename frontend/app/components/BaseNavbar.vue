@@ -12,7 +12,7 @@
           <div class="hidden xl:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
             <div class="flex shrink-0 items-center">
               <nuxt-link-locale id="link-home-nav" to="/">
-                <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name">
+                <nuxt-img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
               </nuxt-link-locale>
             </div>
   
