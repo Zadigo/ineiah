@@ -190,6 +190,10 @@
 <script setup lang="ts">
 import { businessDetails } from '~/data'
 
+definePageMeta({
+  title: 'Home'
+})
+
 /**
  * Template settings
  */

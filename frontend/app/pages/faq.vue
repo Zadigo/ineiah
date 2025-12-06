@@ -50,9 +50,12 @@
 import { businessDetails, faqList } from '~/data'
 
 definePageMeta({
-  name: 'faq'
+  name: 'FAQ'
 })
 
+/**
+ * SEO
+ */
 
 const i18n = useI18n()
 

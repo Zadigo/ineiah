@@ -16,8 +16,12 @@
 import { businessDetails, defaultServices } from '~/data'
 
 definePageMeta({
-  name: 'services'
+  title: 'Services'
 })
+
+/**
+ * SEO
+ */
 
 const i18n = useI18n()
 

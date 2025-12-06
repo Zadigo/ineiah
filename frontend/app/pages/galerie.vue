@@ -26,7 +26,7 @@
 import type { Arrayable, GalleryImage } from '~/types'
 
 definePageMeta({
-  name: 'gallery'
+  title: 'Gallery'
 })
 
 const testImages: Arrayable<GalleryImage> = [

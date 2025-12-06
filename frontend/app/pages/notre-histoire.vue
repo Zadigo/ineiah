@@ -27,7 +27,7 @@
 import { businessDetails } from '~/data'
 
 definePageMeta({
-  name: 'our-history'
+  title: 'Our Story'
 })
 
 
