@@ -78,7 +78,7 @@ export const useDarkModeComposable = createGlobalState(() => {
 
   if (import.meta.client) {
     const colorMode = useColorMode({
-      initialValue: 'system',
+      initialValue: 'light',
       onChanged(mode, defaultHandler) {
         if (mode == 'dark') {
           document.documentElement.classList.add('p-dark')
