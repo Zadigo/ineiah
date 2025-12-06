@@ -15,23 +15,21 @@
           </div>
         </div>
       </div>
-  
+      
+      <!-- Images -->
       <gallery-base :images="filteredImages" />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-interface ImageBlock {
-  name: string
-  image: string
-}
+import type { Arrayable, GalleryImage } from '~/types'
 
 definePageMeta({
   name: 'gallery'
 })
 
-const testImages = [
+const testImages: Arrayable<GalleryImage> = [
   {
     name: 'Lissage brésilien',
     image: '/hero/hair6.jpg'
@@ -70,7 +68,11 @@ const testImages = [
   },
   {
     name: 'Coupe undercut',
-    image: '/testimages/jpeg/customer14.jpg'
+    image: [
+      '/testimages/jpeg/customer13.jpg',
+      '/testimages/jpeg/customer14.jpg',
+      '/testimages/jpeg/customer17.jpg'
+    ]
   },
   {
     name: 'Coupe bob asymétrique',
@@ -78,7 +80,10 @@ const testImages = [
   },
   {
     name: 'Coupe tresse',
-    image: '/testimages/jpeg/customer5.jpg'
+    image: [
+      '/testimages/jpeg/customer4.jpg',
+      '/testimages/jpeg/customer5.jpg'
+    ]
   }
 ]
 
