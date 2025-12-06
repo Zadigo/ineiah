@@ -49,7 +49,7 @@
         </div>
 
         <div class="relative hidden bg-muted md:block">
-          <img src="/placeholder.svg" alt="Image" class="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale">
+          <nuxt-img src="/placeholder.svg" class="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale" alt="" />
         </div>
       </template>
     </volt-card>
