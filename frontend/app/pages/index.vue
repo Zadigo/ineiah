@@ -69,7 +69,7 @@
 
       <div class="h-auto">
         <client-only>
-          <img v-motion-fade-visible :delay="600" src="/hero/hair10.jpg" class="aspect-square object-cover" alt="">
+          <nuxt-img v-motion-fade-visible :delay="600" src="/hero/hair10.jpg" class="aspect-square object-cover w-full" alt="" />
         </client-only>
       </div>
     </div>
