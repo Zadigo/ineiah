@@ -200,10 +200,6 @@ definePageMeta({
 
 const { showImage, showCarousel, showVideo, showVideoBlock } = useDevComposable()
 
-definePageMeta({
-  name: 'home'
-})
-
 const i18n = useI18n()
 
 /**
