@@ -2,7 +2,7 @@
   <volt-card :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
     <template #content>
       <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg">
-        <img src="/hero/hair12.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="">
+        <nuxt-img src="/hero/hair12.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="" />
 
         <div class="absolute bottom-0 left-0 p-5 text-primary-50">
           <p class="text-light text-sm">Coupe sur</p>
