@@ -3,13 +3,13 @@
     <nav :class="{ 'bg-primary-100/20 dark:bg-primary-900/30': !showBackground, 'bg-primary-500 dark:bg-primary-800 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <volt-secondary-button aria-label="Open mobile menu" @click="$emit('mobile-menu')">
+          <div class="xl:hidden absolute inset-y-0 left-0 flex items-center">
+            <volt-secondary-button id="mobile-menu" aria-label="Open mobile menu" @click="$emit('mobile-menu')">
               <icon name="i-fa7-solid:bars" />
             </volt-secondary-button>
           </div>
   
-          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
+          <div class="hidden xl:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
             <div class="flex shrink-0 items-center">
               <nuxt-link-locale id="link-home-nav" to="/">
                 <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name">

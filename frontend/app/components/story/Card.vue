@@ -7,7 +7,7 @@
         </div>
 
         <!-- mt-5 md:mt-0 md:max-w-lg has-[p]:space-y-3 -->
-        <div class="flex md:max-w-xl mx-auto md:justify-center md:items-center">
+        <div class="flex md:max-w-xl mx-auto md:justify-center md:items-center order-2 xl:order-1">
           <div>
             <h3 class="font-semibold text-5xl mb-5 text-primary-500 dark:text-primary-200 font-title leading-15">
               Une <span class="italic text-primary-700 dark:text-primary-300">expertise</span> façonnée par l'experience
