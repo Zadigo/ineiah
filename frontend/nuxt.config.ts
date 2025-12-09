@@ -32,7 +32,8 @@ export default defineNuxtConfig({
     'nuxt-vuefire',
     // 'nuxt-gtag',
     'nuxt-ganalytics',
-    'nuxt-link-checker'
+    'nuxt-link-checker',
+    '@nuxtjs/mcp-toolkit'
   ],
 
   site: {

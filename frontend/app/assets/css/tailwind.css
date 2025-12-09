@@ -19,6 +19,18 @@
   --color-secondary-800: #2e4640;
   --color-secondary-900: #1b2a26;
   --color-secondary-950: #090e0d;
+
+  --color-tertiary-50: #f1f2f0;
+  --color-tertiary-100: #f1f2f0;
+  --color-tertiary-200: #d5d9d1;
+  --color-tertiary-300: #c7ccc1;
+  --color-tertiary-400: #aab2a2;
+  --color-tertiary-500: #727f64;
+  --color-tertiary-600: #2e3328;
+  --color-tertiary-700: #22261e;
+  --color-tertiary-800: #171914;
+  --color-tertiary-900: #0b0d0a;
+  --color-tertiary-950: #0b0d0a;
 }
 
 /* Primary and Surface Palettes */
