@@ -18,9 +18,26 @@
     </hero-top-image>
 
     <!-- Pricing -->
-    <section class="p-10">
-      <coaching-pricing />
-    </section>
+    <base-section-container>
+      <div class="text-center mt-10 mb-15">
+        <h2 class="text-4xl font-bold">Tarifs coaching personnalisés</h2>
+        <p>Choisissez le plan qui correspond le mieux à vos besoins et commencez votre parcours de coaching dès aujourd'hui.</p>
+      </div>
 
+      <coaching-pricing />
+    </base-section-container>
+
+    <!-- Call to Action -->
+    <base-section-container>
+      <card-call-to-action id="coaching-cta">
+        <template #title>
+          Prêt à transformer votre vie ?
+        </template>
+        
+        <p>
+          Nos coachs experts sont là pour vous guider à chaque étape de votre parcours. Ne laissez pas passer cette opportunité de croissance personnelle et professionnelle.
+        </p>
+      </card-call-to-action>
+    </base-section-container>
   </section>
 </template>

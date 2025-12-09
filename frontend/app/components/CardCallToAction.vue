@@ -17,12 +17,16 @@
             orci etiam vestibulum netus. Phasellus laoreet faucibus vel ac natoque vel fermentum accumsan taciti enim.
           </slot>
         </p>
-
-        <base-telephone-button :id="id" size="large" class="mt-10" :with-icon="true">
-          <template #default>
-            Obtenir mon moment plaisir
-          </template>
-        </base-telephone-button>
+        
+        <slot name="cta">
+          <base-telephone-button :id="id" size="large" class="mt-10" :with-icon="true">
+            <template #default>
+              <slot name="ctaName">
+                Obtenir mon moment plaisir
+              </slot>
+            </template>
+          </base-telephone-button>
+        </slot>
       </div>
     </div>
   </div>

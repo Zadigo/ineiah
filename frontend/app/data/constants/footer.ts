@@ -83,6 +83,12 @@ export const footer: FooterSection = {
           to: '/galerie',
           showOnMobile: true,
           linkPosition: 3
+        },
+        {
+          name: 'Coaching',
+          to: '/coaching',
+          showOnMobile: true,
+          linkPosition: 4
         }
       ]
     }

@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseTelephoneLink from './BaseTelephoneLink.vue';
+import BaseTelephoneLink from './TelephoneLink.vue'
 
 const { title = 'Une équipe à ton écoute' } = defineProps<{ title?: string }>()
 
