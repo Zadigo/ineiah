@@ -110,15 +110,14 @@ export const useDarkModeComposable = createGlobalState(() => {
  */
 export const useCookieComposable = createGlobalState(() => {
   const cookieAccepted = useSessionStorage('cookieAccepted', () => false)
-  const showBanner = useState('showCookieBanner', () => !cookieAccepted.value)
-  const showOptions = useState('showCookieOptions', () => false)
+  const showBanner = computed(() => !cookieAccepted.value)
+  const showOptions = ref(false)
 
   const toggleShowBanner = useToggle(showBanner)
   const toggleShowOptions = useToggle(showOptions)
 
   function accept() {
     cookieAccepted.value = true
-    showBanner.value = false
   }
 
   return {
