@@ -6,73 +6,53 @@
     <hero-top-carousel v-else-if="showCarousel" />
 
     <!-- Intermediate-1 -->
-    <div class="p-5 md:p-15 overflow-hidden">
-      <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
-        <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <client-only>
-            <nuxt-img v-motion-slide-visible-left :delay="200" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="" />
-          </client-only>
-        </div>
+    <base-section-container>
+      <base-section-simple image="/hero/hair10.jpg" image-alt="Salon de coiffure">
+        <template #title>
+          Découvrez un salon de coiffure <span class="text-primary-800 dark:text-primary-400">pas comme les autres</span>
+        </template>
 
-        <client-only>
-          <div v-motion-slide-visible-right :delay="400" class="flex flex-col justify-center dark:text-primary-200">
-            <h2 class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
-              Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie
-            </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
+          tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
+          Facere maiores quidem minima.
+        </p>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
-              tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
-              Facere maiores quidem minima.
-            </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
+          tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
+          Facere maiores quidem minima.
+        </p>
 
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
-              tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
-              Facere maiores quidem minima.
-            </p>
-
-            <div id="cta-1" class="mt-10">
-              <base-telephone-button id="tel-intermadiate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
-            </div>
-          </div>
-        </client-only>
-      </div>
-    </div>
+        <template #cta>
+          <base-telephone-button id="tel-intermadiate-0" :with-icon="true" size="large" text="Prendre rendez-vous" />
+        </template>
+      </base-section-simple>
+    </base-section-container>
 
     <!-- Intermediate-2 -->
-    <div class="grid grid-cols-1 xl:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200 overflow-hidden">
-      <div class="items-center md:flex md:p-10">
-        <div class="p-10 text-center md:text-left md:max-w-lg">
-          <client-only>
-            <h2 v-motion-slide-visible-right :delay="400" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
-              L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
-            </h2>
-          </client-only>
+    <base-section-wide image="/hero/hair10.jpg" image-alt="Salon de coiffure">
+      <template #title>
+        L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
+      </template>
 
-          <p class="font-light">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Omnis obcaecati beatae velit ipsa quos sapiente at sunt. Ut blanditiis
-            dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
-          </p>
+      <template #description>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Omnis obcaecati beatae velit ipsa quos sapiente at sunt. Ut blanditiis
+        dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
+      </template>
 
-          <nuxt-link-locale to="/notre-histoire">
-            <volt-button size="large" class="mt-10" rounded>
-              Découvrir
-              <icon name="fa7-solid:arrow-right" />
-            </volt-button>
-          </nuxt-link-locale>
-        </div>
-      </div>
-
-      <div class="h-auto">
-        <client-only>
-          <nuxt-img v-motion-fade-visible :delay="600" src="/hero/hair10.jpg" class="aspect-square object-cover w-full" alt="" />
-        </client-only>
-      </div>
-    </div>
+      <template #cta>
+        <nuxt-link-locale to="/notre-histoire">
+          <volt-button size="large" class="mt-10" rounded>
+            Découvrir
+            <icon name="fa7-solid:arrow-right" />
+          </volt-button>
+        </nuxt-link-locale>
+      </template>
+    </base-section-wide>
 
     <!-- Brands -->
     <div class="my-5 md:p-10">

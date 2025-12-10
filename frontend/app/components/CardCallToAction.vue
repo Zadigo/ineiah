@@ -18,15 +18,17 @@
           </slot>
         </p>
         
-        <slot name="cta">
-          <base-telephone-button :id="id" size="large" class="mt-10" :with-icon="true">
-            <template #default>
-              <slot name="ctaName">
-                Obtenir mon moment plaisir
-              </slot>
-            </template>
-          </base-telephone-button>
-        </slot>
+        <div class="mt-10">
+          <slot name="cta">
+            <base-telephone-button :id="id" size="large" :with-icon="true">
+              <template #default>
+                <slot name="ctaName">
+                  Obtenir mon moment plaisir
+                </slot>
+              </template>
+            </base-telephone-button>
+          </slot>
+        </div>
       </div>
     </div>
   </div>

@@ -57,6 +57,8 @@
   "devDependencies": {
     "@iconify-json/fa-brands": "^1.2.2",
     "@iconify-json/fa-solid": "^1.2.2",
+    "@iconify-json/fa7-solid": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.79",
     "@nuxt/eslint": "1.11.0",
     "@nuxt/test-utils": "3.20.1",
     "@nuxtjs/mcp-toolkit": "^0.5.1",
@@ -88,5 +90,6 @@
     "vitest": "^4.0.15",
     "vue-router-mock": "^2.0.0",
     "zod": "^4.1.13"
-  }
+  },
+  "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501"
 }
