@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { serviceSectionFixtures } from '~/data/fixtures/services'
-import { businessDetails, defaultServices } from '~/data'
+import { businessDetails } from '~/data'
 
 definePageMeta({
   title: 'Services'

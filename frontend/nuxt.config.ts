@@ -144,11 +144,13 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
     customRoutes: 'config',
     pages: {
+      'faq': { fr: '/faq', en: '/faq' },
+      'galerie': { fr: '/galerie', en: '/gallery' },
+      'contact': { fr: '/contact', en: '/contact' },
       'nos-prestations': { fr: '/nos-prestations', en: '/our-services' },
       'notre-histoire': { fr: '/notre-histoire', en: '/our-story' },
-      'galerie': { fr: '/galerie', en: '/gallery' },
-      'faq': { fr: '/faq', en: '/faq' },
-      'contact': { fr: '/contact', en: '/contact' }
+      'legal/confidentialite': { fr: '/legal/confidentialite', en: '/legal/privacy-policy' },
+      'legal/mentions-legales': { fr: '/legal/mentions-legales', en: '/legal/legal-notices' },
     },
     locales: [
       {

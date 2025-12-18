@@ -19,40 +19,51 @@ export async function loadPolicies(): Promise<Policy[]> {
       content: [
         {
           type: 'paragraph',
-          text: "Les données personnelles collectées auprès des utilisateurs ont pour objectif la mise à disposition des services du site web, leur amélioration et le maintien d'un environnement sécurisé. Plus précisément, les utilisations sont les suivantes :"
+          text: "Les données personnelles collectées auprès des utilisateurs ont pour objectif la mise à disposition des services du site web, leur amélioration et le maintien d'un environnement sécurisé. Plus précisément, les utilisations sont les suivantes :",
+          textEn: "The personal data collected from users is intended to provide the website's services, improve them, and maintain a secure environment. More specifically, the uses are as follows:"
         },
         {
           type: 'list',
           items: [
             {
-              text: "accès et utilisation du site web par l'utilisateur ;"
+              text: "accès et utilisation du site web par l'utilisateur ;",
+              textEn: "user access and use of the website;"
             },
             {
-              text: "gestion du fonctionnement et optimisation du site web ;"
+              text: "gestion du fonctionnement et optimisation du site web ;",
+              textEn: "management of the operation and optimization of the website;"
             },
             {
-              text: "organisation des conditions d'utilisation des Services de paiement ;"
+              text: "organisation des conditions d'utilisation des Services de paiement ;",
+              textEn: "organization of the terms of use of Payment Services;"
             },
             {
-              text: "vérification, identification et authentification des données transmises par l'utilisateur ;"
+              text: "vérification, identification et authentification des données transmises par l'utilisateur ;",
+              textEn: "verification, identification, and authentication of data transmitted by the user;"
             },
             {
-              text: "proposition à l'utilisateur de la possibilité de communiquer avec d'autres utilisateurs du site web ;"
+              text: "proposition à l'utilisateur de la possibilité de communiquer avec d'autres utilisateurs du site web ;",
+              textEn: "offering the user the possibility to communicate with other users of the website;"
             },
             {
-              text: "mise en oeuvre d'une assistance utilisateurs ;"
+              text: "mise en oeuvre d'une assistance utilisateurs ;",
+              textEn: "implementation of user support;"
             },
             {
-              text: "personnalisation des services en affichant des publicités en fonction de l'historique de navigation de l'utilisateur, selon ses préférences ;"
+              text: "personnalisation des services en affichant des publicités en fonction de l'historique de navigation de l'utilisateur, selon ses préférences ;",
+              textEn: "personalization of services by displaying advertisements based on the user's browsing history, according to their preferences;"
             },
             {
-              text: "prévention et détection des fraudes, malwares (malicious softwares ou logiciels malveillants) et gestion des incidents de sécurité ;"
+              text: "prévention et détection des fraudes, malwares (malicious softwares ou logiciels malveillants) et gestion des incidents de sécurité ;",
+              textEn: "prevention and detection of fraud, malware (malicious software), and management of security incidents;"
             },
             {
-              text: "gestion des éventuels litiges avec les utilisateurs ;"
+              text: "gestion des éventuels litiges avec les utilisateurs ;",
+              textEn: "management of any disputes with users;"
             },
             {
-              text: "envoi d'informations commerciales et publicitaires, en fonction des préférences de l'utilisateur."
+              text: "envoi d'informations commerciales et publicitaires, en fonction des préférences de l'utilisateur.",
+              textEn: "sending commercial and advertising information, based on the user's preferences."
             }
           ]
         }
@@ -95,6 +106,7 @@ export async function loadPolicies(): Promise<Policy[]> {
     },
     {
       title: "Sécurité et confidentialité",
+      titleEn: "Security and Confidentiality",
       content: [
         {
           type: 'paragraph',
@@ -104,6 +116,7 @@ export async function loadPolicies(): Promise<Policy[]> {
     },
     {
       title: "Mise en oeuvre des droits des utilisateurs",
+      titleEn: "Exercising Users' Rights",
       content: [
         {
           type: 'paragraph',

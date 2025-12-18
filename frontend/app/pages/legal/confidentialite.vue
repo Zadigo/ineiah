@@ -5,17 +5,17 @@
         <template #content>
           <div class="has-[p]:leading-8">
             <h1 class="uppercase text-primary-500 text-3xl font-bold mb-2">
-              {{ policy.title }}
+              <span>{{ $i18n.locale === 'en' ? policy.titleEn || policy.title : policy.title }}</span>
             </h1>
 
             <template v-for="(item, idx) in policy.content" :key="idx">
               <p v-if="item.type === 'paragraph'">
-                {{ item.text }}
+                {{  $i18n.locale === 'en' ? item.textEn || item.text : item.text }}
               </p>
 
               <ul v-else-if="item.type === 'list'" class="list-disc list-inside my-4 leading-7">
                 <li v-for="(listItem, itemIdx) in item.items" :key="itemIdx">
-                  {{ listItem.text }}
+                  {{ $i18n.locale === 'en' ? listItem.textEn || listItem.text : listItem.text }}
                 </li>
               </ul>
             </template>
