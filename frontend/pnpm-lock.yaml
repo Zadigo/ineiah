@@ -11,9 +11,6 @@ importers:
       '@capacitor/app':
         specifier: 8.0.0
         version: 8.0.0(@capacitor/core@8.0.0)
-      '@capacitor/cli':
-        specifier: 8.0.0
-        version: 8.0.0
       '@capacitor/core':
         specifier: 8.0.0
         version: 8.0.0
@@ -35,21 +32,12 @@ importers:
       '@firebase/app-types':
         specifier: ^0.9.3
         version: 0.9.3
-      '@nuxt/fonts':
-        specifier: 0.12.1
-        version: 0.12.1(db0@0.3.4)(ioredis@5.8.2)(magicast@0.5.1)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))
-      '@nuxt/hints':
-        specifier: 1.0.0-alpha.4
-        version: 1.0.0-alpha.4(magicast@0.5.1)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))(xml2js@0.6.2)
       '@nuxt/icon':
         specifier: 2.1.1
         version: 2.1.1(magicast@0.5.1)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
       '@nuxt/image':
         specifier: 2.0.0
         version: 2.0.0(db0@0.3.4)(ioredis@5.8.2)(magicast@0.5.1)
-      '@nuxt/scripts':
-        specifier: 0.13.1
-        version: 0.13.1(@googlemaps/markerclusterer@2.6.2)(@types/google.maps@3.58.1)(@unhead/vue@2.0.19(vue@3.5.26(typescript@5.9.3)))(db0@0.3.4)(ioredis@5.8.2)(magicast@0.5.1)(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3))
       '@nuxtjs/i18n':
         specifier: ^10.2.1
         version: 10.2.1(@vue/compiler-dom@3.5.26)(db0@0.3.4)(eslint@9.39.2(jiti@2.6.1))(ioredis@5.8.2)(magicast@0.5.1)(rollup@4.53.5)(vue@3.5.26(typescript@5.9.3))
@@ -80,30 +68,9 @@ importers:
       firebase:
         specifier: ^12.7.0
         version: 12.7.0
-      firebase-admin:
-        specifier: ^13.6.0
-        version: 13.6.0
-      firebase-functions:
-        specifier: ^7.0.2
-        version: 7.0.2(firebase-admin@13.6.0)
       nuxt:
         specifier: ^4.2.2
         version: 4.2.2(@parcel/watcher@2.5.1)(@types/node@25.0.3)(@vue/compiler-sfc@3.5.26)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.2(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.53.5)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(typescript@5.9.3)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(xml2js@0.6.2)(yaml@2.8.2)
-      nuxt-ganalytics:
-        specifier: ^2.2.3
-        version: 2.2.3(@vueuse/core@14.1.0(vue@3.5.26(typescript@5.9.3)))(nuxt@4.2.2(@parcel/watcher@2.5.1)(@types/node@25.0.3)(@vue/compiler-sfc@3.5.26)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.2(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.53.5)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(typescript@5.9.3)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(xml2js@0.6.2)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
-      nuxt-gtag:
-        specifier: ^4.1.0
-        version: 4.1.0(magicast@0.5.1)
-      nuxt-link-checker:
-        specifier: 4.3.9
-        version: 4.3.9(db0@0.3.4)(h3@1.15.4)(ioredis@5.8.2)(magicast@0.5.1)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
-      nuxt-og-image:
-        specifier: ^5.1.13
-        version: 5.1.13(@unhead/vue@2.0.19(vue@3.5.26(typescript@5.9.3)))(h3@1.15.4)(magicast@0.5.1)(unstorage@1.17.3(db0@0.3.4)(ioredis@5.8.2))(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
-      nuxt-schema-org:
-        specifier: ^5.0.10
-        version: 5.0.10(@unhead/vue@2.0.19(vue@3.5.26(typescript@5.9.3)))(h3@1.15.4)(magicast@0.5.1)(unhead@2.0.19)(vue@3.5.26(typescript@5.9.3))(zod@4.2.1)
       nuxt-vuefire:
         specifier: 1.1.0
         version: 1.1.0(@firebase/app-types@0.9.3)(firebase-admin@13.6.0)(firebase-functions@7.0.2(firebase-admin@13.6.0))(firebase@12.7.0)(magicast@0.5.1)(vuefire@3.2.2(consola@3.4.2)(firebase@12.7.0)(vue@3.5.26(typescript@5.9.3)))
@@ -119,9 +86,6 @@ importers:
       reka-ui:
         specifier: ^2.6.1
         version: 2.6.1(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3))
-      sass-embedded:
-        specifier: ^1.97.0
-        version: 1.97.0
       shadcn-nuxt:
         specifier: 2.4.3
         version: 2.4.3(magicast@0.5.1)
@@ -138,6 +102,9 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(consola@3.4.2)(firebase@12.7.0)(vue@3.5.26(typescript@5.9.3))
     devDependencies:
+      '@capacitor/cli':
+        specifier: 8.0.0
+        version: 8.0.0
       '@iconify-json/fa-brands':
         specifier: ^1.2.2
         version: 1.2.2
@@ -147,6 +114,15 @@ importers:
       '@nuxt/eslint':
         specifier: 1.12.1
         version: 1.12.1(@typescript-eslint/utils@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.26)(eslint@9.39.2(jiti@2.6.1))(magicast@0.5.1)(typescript@5.9.3)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))
+      '@nuxt/fonts':
+        specifier: 0.12.1
+        version: 0.12.1(db0@0.3.4)(ioredis@5.8.2)(magicast@0.5.1)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))
+      '@nuxt/hints':
+        specifier: 1.0.0-alpha.4
+        version: 1.0.0-alpha.4(magicast@0.5.1)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))(xml2js@0.6.2)
+      '@nuxt/scripts':
+        specifier: 0.13.1
+        version: 0.13.1(@googlemaps/markerclusterer@2.6.2)(@types/google.maps@3.58.1)(@unhead/vue@2.0.19(vue@3.5.26(typescript@5.9.3)))(db0@0.3.4)(ioredis@5.8.2)(magicast@0.5.1)(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3))
       '@nuxt/test-utils':
         specifier: 3.21.0
         version: 3.21.0(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.26)(vue@3.5.26(typescript@5.9.3)))(@vue/test-utils@2.4.6)(happy-dom@20.0.11)(jsdom@27.3.0)(magicast@0.5.1)(playwright-core@1.57.0)(typescript@5.9.3)
@@ -192,6 +168,12 @@ importers:
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
+      firebase-admin:
+        specifier: ^13.6.0
+        version: 13.6.0
+      firebase-functions:
+        specifier: ^7.0.2
+        version: 7.0.2(firebase-admin@13.6.0)
       happy-dom:
         specifier: ^20.0.11
         version: 20.0.11
@@ -201,12 +183,30 @@ importers:
       lucide-vue-next:
         specifier: ^0.562.0
         version: 0.562.0(vue@3.5.26(typescript@5.9.3))
+      nuxt-ganalytics:
+        specifier: ^2.2.3
+        version: 2.2.3(@vueuse/core@14.1.0(vue@3.5.26(typescript@5.9.3)))(nuxt@4.2.2(@parcel/watcher@2.5.1)(@types/node@25.0.3)(@vue/compiler-sfc@3.5.26)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.2(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.53.5)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(typescript@5.9.3)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(xml2js@0.6.2)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
+      nuxt-gtag:
+        specifier: ^4.1.0
+        version: 4.1.0(magicast@0.5.1)
+      nuxt-link-checker:
+        specifier: 4.3.9
+        version: 4.3.9(db0@0.3.4)(h3@1.15.4)(ioredis@5.8.2)(magicast@0.5.1)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
+      nuxt-og-image:
+        specifier: ^5.1.13
+        version: 5.1.13(@unhead/vue@2.0.19(vue@3.5.26(typescript@5.9.3)))(h3@1.15.4)(magicast@0.5.1)(unstorage@1.17.3(db0@0.3.4)(ioredis@5.8.2))(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.0)(sass@1.97.0)(terser@5.44.1)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))
+      nuxt-schema-org:
+        specifier: ^5.0.10
+        version: 5.0.10(@unhead/vue@2.0.19(vue@3.5.26(typescript@5.9.3)))(h3@1.15.4)(magicast@0.5.1)(unhead@2.0.19)(vue@3.5.26(typescript@5.9.3))(zod@4.2.1)
       pinia-plugin-persistedstate:
         specifier: ^4.7.1
         version: 4.7.1(@nuxt/kit@4.2.2(magicast@0.5.1))(@pinia/nuxt@0.11.3(magicast@0.5.1)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3))))(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))
       playwright-core:
         specifier: ^1.57.0
         version: 1.57.0
+      sass-embedded:
+        specifier: ^1.97.0
+        version: 1.97.0
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
