@@ -37,8 +37,8 @@ export default defineI18nLocale(async _locale => {
     'Soins et traitements': 'Soins et traitements',
     'Coloration et mèches': 'Coloration et mèches',
     'Réalisé par': 'Réalisé par',
-    'Dénomination ou raison sociale:': 'Dénomination ou raison sociale :',
-    'Adresse du siège social:': 'Adresse du siège social :',
+    'Dénomination ou raison sociale': 'Dénomination ou raison sociale :',
+    'Adresse du siège social': 'Adresse du siège social :',
     'Capital social': 'Capital social',
     "Numéro d'identification au Registre du Commerce et des Sociétés (RCS)": "Numéro d'identification au Registre du Commerce et des Sociétés (RCS)",
     'Personne morale': 'Personne morale',
@@ -48,5 +48,7 @@ export default defineI18nLocale(async _locale => {
     "Les copyright des photos présents sur le site sont la propriété exclusive de la société {businessName}": "Les copyright des photos présents sur le site sont la propriété exclusive de la société {businessName}",
     "Mentions légales concernant": "Mentions légales concernant",
     "l'éditeur du site internet": "l'éditeur du site internet",
+    'Nous répondons à vos questions': 'Nous répondons à vos questions',
+    'Toutes nos informations de contact': 'Toutes nos informations de contact',
   }
 })

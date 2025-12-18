@@ -48,5 +48,7 @@ export default defineI18nLocale(async _locale => {
     "Les copyright des photos présents sur le site sont la propriété exclusive de la société {businessName}": "The copyrights of the photos on the site are the exclusive property of {businessName}",
     "Mentions légales concernant": "Legal notice concerning",
     "l'éditeur du site internet": "the website publisher",
+    'Nous répondons à vos questions': 'Answering your questions',
+    'Toutes nos informations de contact': 'All our contact information',
   }
 })
