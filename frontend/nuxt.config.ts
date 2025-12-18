@@ -55,10 +55,11 @@ export default defineNuxtConfig({
     '/': { swr: 16*60 },
     '/faq': { swr: 30*60 },
     '/nos-prestations': { swr: 15*60 },
-    '/notre-histoire': { swr: 60*60 },
+    '/notre-histoire': { prerender: true },
     '/legal/**': { prerender: true },
     '/contact': { swr: true },
     '/galerie': { ssr: false },
+    '/sitemap': { prerender: true },
     '/admin/**': { ssr: false }
   },
 
