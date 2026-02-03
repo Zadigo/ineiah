@@ -47,6 +47,8 @@
         L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
       </template>
 
+      <template #content>   
+        <div class="max-w-4xl mx-auto text-center dark:text-primary-200">
           <p class="font-light">
             Notre histoire, c’est avant tout une histoire humaine. Une histoire de passion, de transmission et 
             d’amour du cheveu sous toutes ses formes. Derrière chaque geste se cache un parcours, une vision et l’envie 
@@ -61,14 +63,14 @@
             </volt-button>
           </nuxt-link-locale>
         </div>
-      </div>
+      </template>
 
       <div class="h-auto">
         <client-only>
           <nuxt-img v-motion-fade-visible :delay="600" src="/kira/DSC05626.jpg" class="aspect-square object-cover w-full" alt="" />
         </client-only>
       </div>
-    </div>
+    </base-section-wide>
 
     <!-- Brands -->
     <div class="my-5 md:p-10">
