@@ -1,6 +1,6 @@
 import type { Nullable } from "."
 
-export type ServiceNames = 'Shampoings coupes coiffage' | 'Soins et traitements' | 'Soins Olaplex' | 'Soins Kératine Végétale / Botox Naturel' | 'Balayages / Mèches' | 'Couleurs'
+export type ServiceNames = 'Shampoings coupes coiffage' | 'Soins et traitements' | 'Soins Olaplex' | 'Soins Kératine Végétale / Botox Naturel' | 'Balayage / Mèches' | 'Couleurs'
 
 export type ServiceCategory = 'Coupe'
 

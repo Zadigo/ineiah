@@ -44,7 +44,7 @@ export const defaultServices: ServiceSection[] = [
         description: "Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)",
         includes: [],
         duration: 120,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer1.jpg'
       },
       {
         name: 'Transformation',
@@ -53,7 +53,7 @@ export const defaultServices: ServiceSection[] = [
         description: "Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)",
         includes: [],
         duration: 120,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer2.jpg'
       }
     ]
   },
@@ -227,7 +227,7 @@ export const defaultServices: ServiceSection[] = [
     ]
   },
   {
-    name: 'Balayages / Mèches',
+    name: 'Balayage / Mèches',
     includes: [
       "Soin réparateur profond / Anti-casse",
     ],
