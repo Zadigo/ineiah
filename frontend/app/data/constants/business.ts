@@ -18,6 +18,10 @@ export interface ContactPoints {
 export interface BusinessDetails {
   name: string
   legalName: string
+  siren: string
+  siret: string
+  numberoTVA?: string
+  creationDate: string
   alternateName: string
   description: string
   logo: string
@@ -52,6 +56,10 @@ export const businessDetails: BusinessDetails = {
   name: "La beauté d'Inéïah",
   legalName: "La beauté d'Inéïah",
   alternateName: "La beauté d'Inéïah",
+  siren: '790 849 574',
+  siret: '790 849 574 00039',
+  numberoTVA: 'FR29790849574',
+  creationDate: '2013-01-28',
   description: "",
   logo: '',
   sameAs: [
@@ -66,10 +74,10 @@ export const businessDetails: BusinessDetails = {
   foundingDate: '',
   foundingLocation: '',
   shareCapital: null,
-  founder: 'Natasha Morel',
-  webContentManager: 'Natasha Morel',
-  publishingDirector: 'Natasha Morel',
-  editorInChief: 'Natasha Morel',
+  founder: 'Natacha Morel',
+  webContentManager: 'Natacha Morel',
+  publishingDirector: 'Natacha Morel',
+  editorInChief: 'Natacha Morel',
   websiteProvider: {
     legalName: 'Gency313',
     url: 'https://gency313.fr'
@@ -83,7 +91,7 @@ export const businessDetails: BusinessDetails = {
   },
   contact: {
     telephone: '+1-888-555-0123',
-    email: 'contact@ineiah.com',
+    email: 'labeautedineiah@gmail.com',
     address: '15 test address, Lille'
   },
   socials: {
@@ -95,5 +103,22 @@ export const businessDetails: BusinessDetails = {
       url: 'https://www.facebook.com/hairstudiobyanissa',
       handle: 'hairstudiobyanissa'
     }
+  }
+}
+
+type BusinessDetailsKeys = keyof BusinessDetails
+
+type BusinessDetailsKeyValue = {
+  [K in BusinessDetailsKeys]: BusinessDetails[K]
+}
+
+export async function useBusinessDetails() {
+  function get<K extends BusinessDetailsKeys>(key: K): BusinessDetailsKeyValue[K] {
+    return businessDetails[key]
+  }
+
+  return {
+    businessDetails,
+    get
   }
 }

@@ -5,20 +5,20 @@
         <template #content>
           <div class="has-[p]:leading-8">
             <h1 class="uppercase text-primary-500 text-3xl font-bold mb-2">
-              Mentions légales
+              {{ $t('Mentions légales') }}
             </h1>
 
             <p class="font-bold uppercase text-2xl text-primary-500 mb-10">
-              Mentions légales concernant <span class="text-primary-600">l'éditeur du site internet</span>
+              {{ $t("Mentions légales concernant") }} <span class="text-primary-600">{{ $t("l'éditeur du site internet") }}</span>
             </p>
 
             <div class="my-2 has-[p]:mb-5">
-              <p class="uppercase mt-3 mb-1 font-bold">Personne morale</p>
+              <p class="uppercase mt-3 mb-1 font-bold">{{ $t('Personne morale') }}</p>
 
-              <p>Dénomination ou raison sociale: {{ businessDetails.legalName }}</p>
-              <p>Adresse du siège social: {{ businessDetails.address }}</p>
-              <p>Capital social : {{ businessDetails.shareCapital || '-' }}</p>
-              <p>Numéro d'identification au Registre du Commerce et des Sociétés (RCS) : {{ businessDetails.rcs }}</p>
+              <p>{{ $t('Dénomination ou raison sociale') }} : {{ businessDetails.legalName }}</p>
+              <p>{{ $t('Adresse du siège social') }} : {{ businessDetails.address }}</p>
+              <p>{{ $t('Capital social') }} : {{ businessDetails.shareCapital || '-' }}</p>
+              <p>{{ $t("Numéro d'identification au Registre du Commerce et des Sociétés (RCS)") }} : {{ businessDetails.rcs || '-' }}</p>
             </div>
 
             <div class="my-2 has-[p]:mb-5">
@@ -26,8 +26,8 @@
                 Mentions légales concernant <span class="text-primary-600">le responsable éditorial du site internet</span>
               </p>
 
-              <p>Nom du directeur de la publication: {{ businessDetails.publishingDirector }}</p>
-              <p>Nom du responsable de la rédaction: {{ businessDetails.editorInChief }}</p>
+              <p>{{ $t('Nom du directeur de la publication') }} : {{ businessDetails.publishingDirector }}</p>
+              <p>{{ $t('Nom du responsable de la rédaction') }} : {{ businessDetails.editorInChief }}</p>
             </div>
 
             <div class="my-2 has-[p]:mb-5">
@@ -63,10 +63,7 @@
               </p>
 
               <p>
-                Les informations, pictogrammes, photographies, images, textes,
-                séquences vidéo, animations et autres documents présents sur le site
-                Internet sont protégés par le droit de la propriété intellectuelle. En ces termes,
-                l'article L 122-4 du Code de la propriété intellectuelle indique :
+                {{ $t("Les informations, pictogrammes, photographies, images, textes, séquences vidéo, animations et autres documents présents sur le site Internet sont protégés par le droit de la propriété intellectuelle. En ces termes, l'article L 122-4 du Code de la propriété intellectuelle indique") }} :
               </p>
 
               <p>
@@ -90,8 +87,7 @@
               </p>
 
               <p>
-                Les copyright des photos présents sur le site sont la propriété
-                exclusive de la société {{ businessDetails.legalName }}
+                {{ $t("Les copyright des photos présents sur le site sont la propriété exclusive de la société {businessName}", { businessName: businessDetails.legalName }) }}
               </p>
             </div>
 

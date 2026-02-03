@@ -4,7 +4,7 @@
       <icon :name="item.icon" size="50" class="text-primary-600 dark:text-primary-200" />
       <div class="flex-col">
         <p class="font-semibold text-primary-700 dark:text-primary-300">
-          {{ item.title }}
+          {{ $t(item.title) }}
         </p>
 
         <base-telephone-link :with-icon="false" text="Nous contacter" class="text-primary-600 dark:text-primary-200 underline underline-offset-7" />
@@ -14,25 +14,18 @@
 </template>
 
 <script setup lang="ts">
-import BaseTelephoneLink from './TelephoneLink.vue'
-
-const { title = 'Une équipe à ton écoute' } = defineProps<{ title?: string }>()
-
 const reassurance = [
   {
     title: 'Une équipe à ton écoute',
-    icon: 'i-lucide-heart',
-    link: 'tel:+123456789'
+    icon: 'i-lucide-heart'
   },
   {
     title: 'Un service client réactif',
-    icon: 'i-lucide-shopping-bag',
-    link: 'tel:+123456789'
+    icon: 'i-lucide-shopping-bag'
   },
   {
     title: 'Des conseils personnalisés',
-    icon: 'i-lucide-table',
-    link: 'tel:+123456789'
+    icon: 'i-lucide-table'
   }
 ]
 </script>

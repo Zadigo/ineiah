@@ -3,7 +3,7 @@
     <icon v-if="withIcon" name="i-fa7-solid:phone" />
 
     <slot>
-      {{ text }}
+      {{ $t(text) }}
     </slot>
   </a>
 </template>

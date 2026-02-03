@@ -3,7 +3,7 @@
     <volt-button :size="size" class="w-full md:w-auto" rounded>
       <icon v-if="withIcon" name="i-fa7-solid:phone" />
       <slot>
-        {{ text }}
+        {{ $t(text) }}
       </slot>
     </volt-button>
   </a>

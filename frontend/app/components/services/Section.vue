@@ -1,7 +1,7 @@
 <template>
   <div :id="`package-${index + 1}`" :data-package="section.name" class="my-5">
     <h2 class="font-bold text-4xl px-4 mb-7 text-primary-700 dark:text-primary-400">
-      {{ section.name }}
+      {{ $t(section.name) }}
     </h2>
 
     <!-- Scrollable Area -->

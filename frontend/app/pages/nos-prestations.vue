@@ -1,6 +1,6 @@
 <template>
   <section id="prestation">
-    <base-jumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
+    <base-jumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies." />
 
     <div class="px-5 md:px-10">
       <services-section v-for="(section, index) in serviceSectionFixtures" :key="section.name" :index="index" :section="section" />
@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { serviceSectionFixtures } from '~/data/fixtures/services'
-import { businessDetails, defaultServices } from '~/data'
+import { businessDetails } from '~/data'
 
 definePageMeta({
   title: 'Services'

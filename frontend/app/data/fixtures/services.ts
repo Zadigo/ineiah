@@ -62,7 +62,7 @@ export const serviceSectionFixtures: Arrayable<ServiceSection> = [
     services: servicesFixtures
   },
   {
-    name: 'Soins',
+    name: 'Soins et traitements',
     includes: serviceIncludes,
     services: servicesFixtures
   }

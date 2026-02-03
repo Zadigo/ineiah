@@ -1,12 +1,12 @@
 <template>
   <section id="story">
-    <BaseJumbotron src="/hero/hair4.jpg" lead="Notre histoire" subtitle="Découvrez tout ou partie de notre histoire" />
+    <BaseJumbotron src="/hero/hair4.jpg" :lead="$t('Notre histoire')" :subtitle="$t('Découvrez notre histoire et la création de notre salon')" />
 
     <!-- Quote TODO: Component -->
     <div class="p-10 md:p-20 bg-primary-500 text-primary-700 dark:bg-primary-700 dark:text-primary-200 w-full text-center">
       <h1 class="text-2xl md:text-4xl max-w-4xl md:mx-auto font-bold space-x-2 md:space-x-5">
         <Icon name="fa-solid:quote-left" />
-        <span>Hairstudio by Anissa c'est avant tout une histoire de passion et d'humanité !</span>
+        <span>{{ $t('{businessName}, une vision du cheveu sans compromis', { businessName: businessDetails.legalName }) }}</span>
         <Icon name="fa-solid:quote-right" />
       </h1>
     </div>

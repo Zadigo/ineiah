@@ -2,21 +2,37 @@
   <footer class="relative bg-primary-800 dark:bg-primary-900 w-full">
     <div class="w-full px-8 mx-auto max-w-7xl">
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
-        <nuxt-link-locale to="/">
-          <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
-            {{ businessDetails.legalName }}
-          </h5>
-        </nuxt-link-locale>
+        <div class="mb-5 md:mb-0">
+          <nuxt-link-locale to="/">
+            <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+              {{ businessDetails.legalName }}
+            </h5>
+          </nuxt-link-locale>
+          
+          <div class="flex gap-2">
+            <nuxt-link-locale to="/" locale="fr">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:fr" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
+  
+            <nuxt-link-locale to="/" locale="en">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:uk" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
+          </div>
+        </div>
 
         <div class="grid justify-between grid-rows-2 grid-cols-none gap-4 md:grid-cols-2 md:grid-rows-none">
           <ul v-for="(section, idx) in footer.sections" :id="`footer-section-${idx + 1}`" :key="section.title">
             <p class="block mb-1 text-lg font-bold text-primary-100 dark:text-primary-300 uppercase">
-              {{ section.title }}
+              {{ $t(section.title) }}
             </p>
 
             <li v-for="(link, linkIdx) in section.links" :key="linkIdx">
               <nuxt-link-locale :id="`footer-link-${linkIdx + 1}-section-${idx + 1}`" :to="link.to" class="block text-primary-100 dark:text-primary-200 py-1 hover:text-primary-300 focus:text-primary-300 text-md">
-                {{ link.name }}
+                {{ $t(link.name) }}
               </nuxt-link-locale>
             </li>
           </ul>
@@ -26,7 +42,7 @@
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
         <client-only>
           <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
-            © {{ currentYear }} <nuxt-link-locale to="/">{{ businessDetails.legalName }}</nuxt-link-locale>. Réalisé par <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
+            © {{ currentYear }} <nuxt-link-locale to="/">{{ businessDetails.legalName }}</nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
           </p>
         </client-only>
 

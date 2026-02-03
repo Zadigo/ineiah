@@ -1,4 +1,4 @@
-export type ServiceNames = 'Shampoings coupes coiffage' | 'Soins'
+export type ServiceNames = 'Shampoings coupes coiffage' | 'Soins et traitements'
 
 export type ServiceCategory = 'Coupe'
 
