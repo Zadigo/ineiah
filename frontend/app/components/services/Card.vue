@@ -10,7 +10,7 @@
         <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
           <div v-if="isHovered && !isMobile" class="flex items-center space-x-2">
             <icon name="lucide:arrow-up-right" />
-            <p>En savoir plus</p>
+            <p>{{ $t('En savoir plus') }}</p>
           </div>
         </transition>
       </div>
@@ -18,7 +18,7 @@
 
     <template v-else>
       <services-card-info v-if="serviceSection" :index="index" :service="service" :service-section="serviceSection" />
-      <nuxt-skeleton v-else class="h-75 w-75 rounded-lg" />
+      <volt-skeleton v-else class="h-75 w-75 rounded-lg" />
     </template>
   </div>
 </template>

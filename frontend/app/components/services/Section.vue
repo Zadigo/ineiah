@@ -7,7 +7,7 @@
     <!-- Scrollable Area -->
     <volt-custom-scroll-area class="whitespace-nowrap">
       <div class="flex p-4 space-x-4 w-max">
-        <services-card v-for="(service, serviceIndex) in section.services" :key="service.name" :service="service" :index="serviceIndex" />
+        <services-card v-for="(service, serviceIndex) in section.services" :key="service.name || serviceIndex" :service="service" :index="serviceIndex" />
       </div>
       <volt-custom-scroll-bar orientation="horizontal" />
     </volt-custom-scroll-area>

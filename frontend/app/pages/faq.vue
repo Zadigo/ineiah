@@ -8,18 +8,18 @@
           <volt-card v-for="section in faqList" :key="section.title" class="bg-surface-50 shadow-none">
             <template #content>
               <h3 :id="`faq-${section.id}`" class="uppercase text-3xl font-semibold text-primary-500 dark:text-primary-100">
-                {{ section.title }}
+                {{ $t(section.title) }}
               </h3>
 
               <volt-accordion class="w-full mt-5" default-value="0" collapsible>
                 <volt-accordion-panel v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
                   <volt-accordion-header :id="`faq-${section.id}-${i}`" class="text-primary-800 bg-surface-200 text-md cursor-pointer">
-                    {{ item.question }}
+                    {{ $t(item.question) }}
                   </volt-accordion-header>
 
                   <volt-accordion-content :pt="{ root: 'bg-surface-100 dark:bg-surface-900 text-surface-700 dark:text-surface-0 pt-0 px-[1.125rem] pb-[1.125rem]' }">
                     <div class="p-5">
-                      {{ item.answer }}
+                      {{ $t(item.answer) }}
                     </div>
                   </volt-accordion-content>
                 </volt-accordion-panel>
@@ -31,7 +31,7 @@
 
       <card-call-to-action id="tel-faq-section" class="mt-15">
         <template #title>
-          Des questions ?
+          {{ $t('Des questions ?') }}
         </template>
 
         <template #default>
