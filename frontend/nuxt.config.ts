@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     // 'nuxt-gtag',
     'nuxt-ganalytics',
     'nuxt-link-checker',
-    '@nuxtjs/mcp-toolkit'
+    // '@nuxtjs/mcp-toolkit'
   ],
 
   site: {
