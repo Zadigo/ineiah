@@ -1,4 +1,6 @@
-export type ServiceNames = 'Shampoings coupes coiffage' | 'Soins et traitements'
+import type { Nullable } from "."
+
+export type ServiceNames = 'Shampoings coupes coiffage' | 'Soins et traitements' | 'Soins Olaplex' | 'Soins Kératine Végétale / Botox Naturel' | 'Balayages / Mèches' | 'Couleurs'
 
 export type ServiceCategory = 'Coupe'
 
@@ -6,11 +8,11 @@ export interface Service {
   /**
    * Name of the service
    */
-  name: string
+  name: Nullable<string>
   /**
    * Gender
    */
-  gender: 'Femme' | 'Homme'
+  gender: 'Femme' | 'Homme' | 'Mixte'
   /**
    * Price of the service in euros
    */
@@ -33,6 +35,7 @@ export interface Service {
    * Illustration image URL for the service
    */
   illustration?: string
+  image: string
 }
 
 export interface ServiceSection {

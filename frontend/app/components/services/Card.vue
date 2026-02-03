@@ -1,11 +1,11 @@
 <template>
   <div :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
     <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg overflow-hidden">
-      <nuxt-img src="/hero/hair12.jpg" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-[300px]" alt="" />
+      <nuxt-img :src="service.image || '/hero/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-[300px]" alt="" />
 
       <div class="absolute bottom-0 left-0 p-5 text-primary-50">
-        <p class="font-light text-sm">Coupe sur</p>
-        <p class="font-semibold uppercase">cheveux sec . <span class="font-bold">{{ service.price }}€</span></p>
+        <p class="font-light text-sm">Coupe <span v-if="service.name">sur cheveux</span></p>
+        <p class="font-semibold uppercase">{{ service.name }} . <span class="font-bold">{{ service.price }}€</span></p>
 
         <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
           <div v-if="isHovered && !isMobile" class="flex items-center space-x-2">
@@ -18,7 +18,7 @@
 
     <template v-else>
       <services-card-info v-if="serviceSection" :index="index" :service="service" :service-section="serviceSection" />
-      <nuxt-skeleton v-else class="h-[300px] w-[300px] rounded-lg" />
+      <nuxt-skeleton v-else class="h-75 w-75 rounded-lg" />
     </template>
   </div>
 </template>
