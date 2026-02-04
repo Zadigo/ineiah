@@ -2,7 +2,7 @@ import type { Nullable } from "."
 
 export type ServiceNames = 'Shampoings coupes coiffage' | 'Soins et traitements' | 'Soins Olaplex' | 'Soins Kératine Végétale / Botox Naturel' | 'Balayage / Mèches' | 'Couleurs'
 
-export type ServiceCategory = 'Coupe'
+export type ServiceCategory = 'Coupe' | 'Soin' | 'Coloration' | 'Mèches'
 
 export interface Service {
   /**
@@ -35,7 +35,14 @@ export interface Service {
    * Illustration image URL for the service
    */
   illustration?: string
+  /**
+   * Image URL for the service card
+   */
   image: string
+  /**
+   * Category of the service
+   */
+  category: ServiceCategory
 }
 
 export interface ServiceSection {

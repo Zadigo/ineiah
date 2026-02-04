@@ -80,6 +80,15 @@ export default defineI18nLocale(async _locale => {
     'Oui, vous pouvez venir pour un conseil afin de discuter de vos besoins et de vos préférences avec moi. Le rendez-vous de conseil peut être facturé séparément. Le montant pour une séance de conseil est de 15€.': 'Oui, vous pouvez venir pour un conseil afin de discuter de vos besoins et de vos préférences avec moi. Le rendez-vous de conseil peut être facturé séparément. Le montant pour une séance de conseil est de 15€.',
     "Conditions d'âge": "Conditions d'âge",
     'Prenez-vous les mineur(e)s ?': 'Prenez-vous les mineur(e)s ?',
-    'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur(trice) légal(e) qui devra signer une autorisation parentale avant le début du rendez-vous.': 'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur
+    'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur(trice) légal(e) qui devra signer une autorisation parentale avant le début du rendez-vous.': 'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur(trice) légal(e) qui devra signer une autorisation parentale avant le début du rendez-vous.',
+    'Coupe sur cheveux': 'Coupe sur cheveux',
+    'Soin sur cheveux': 'Soin sur cheveux',
+    'Coloration sur cheveux': 'Coloration sur cheveux',
+    'Court': 'Court',
+    'Mi-long': 'Mi-long',
+    'Long': 'Long',
+    'Cheveux secs': 'Cheveux secs',
+    'XL': 'XL',
+    'Transformation': 'Transformation',
   }
 })

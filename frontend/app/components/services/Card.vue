@@ -1,11 +1,14 @@
 <template>
   <div :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
     <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg overflow-hidden">
-      <nuxt-img :src="service.image || '/hero/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-[300px]" alt="" />
+      <nuxt-img :src="service.image || '/hero/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-75" :alt="service.name" />
 
       <div class="absolute bottom-0 left-0 p-5 text-primary-50">
-        <p class="font-light text-sm">Coupe <span v-if="service.name">sur cheveux</span></p>
-        <p class="font-semibold uppercase">{{ service.name }} . <span class="font-bold">{{ service.price }}€</span></p>
+        <p v-if="service.category === 'Coupe'" class="font-light text-sm">{{ $t('Coupe sur cheveux') }}</p>
+        <p v-else-if="service.category === 'Soin'" class="font-light text-sm">{{ $t('Soin sur cheveux') }}</p>
+        <p v-else-if="service.category === 'Coloration'" class="font-light text-sm">{{ $t('Coloration sur cheveux') }}</p>
+
+        <p class="font-semibold uppercase">{{ $t(service.name || '') }} • <span class="font-bold">{{ $n(service.price, 'currency') }}</span> • <span>{{ $t(service.gender) }}</span></p>
 
         <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
           <div v-if="isHovered && !isMobile" class="flex items-center space-x-2">

@@ -22,10 +22,15 @@
             </h2>
 
             <p>
+              Bien plus qu'un salon chez Inéïah la beauté est révélée. Le cheveux est respescté,
+              son passé est écouté, son présent est choyé et son futur est sublimé.
+            </p>
+
+            <!-- <p>
               Ici, chaque rendez-vous est un moment pour soi. On prend le temps de t’écouter, de 
               comprendre tes cheveux, ton style et ton histoire. Que tes cheveux soient crépus, bouclés ou lisses, 
               tu repars avec bien plus qu’une coiffure : confiance, bien-être et une vraie reconnexion à toi-même.
-            </p>
+            </p> -->
 
             <p>
               Au-delà du résultat, c’est l’expérience qui compte : un espace bienveillant, sans jugement, où chaque 

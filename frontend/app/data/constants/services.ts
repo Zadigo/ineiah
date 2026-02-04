@@ -17,7 +17,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)",
         includes: [],
         duration: 30,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Coupe'
       },
       {
         name: 'Court',
@@ -26,7 +27,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)",
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Coupe'
       },
       {
         name: 'Mi-Long',
@@ -35,7 +37,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)",
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer18.jpg'
+        image: '/testimages/jpeg/customer18.jpg',
+        category: 'Coupe'
       },
       {
         name: 'XL',
@@ -44,7 +47,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)",
         includes: [],
         duration: 120,
-        image: '/testimages/jpeg/customer1.jpg'
+        image: '/testimages/jpeg/customer1.jpg',
+        category: 'Coupe'
       },
       {
         name: 'Transformation',
@@ -53,7 +57,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)",
         includes: [],
         duration: 120,
-        image: '/testimages/jpeg/customer2.jpg'
+        image: '/testimages/jpeg/customer2.jpg',
+        category: 'Coupe'
       }
     ]
   },
@@ -64,77 +69,45 @@ export const defaultServices: ServiceSection[] = [
     ],
     services: [
       {
-        name: 'Olapex - Court',
+        name: 'Court',
         price: 35,
         gender: 'Mixte',
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
       },
       {
-        name: 'Olapex - Mi-long',
+        name: 'Mi-long',
         price: 45,
         gender: 'Mixte',
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
 
       },
       {
-        name: 'Olapex - Long',
+        name: 'Long',
         price: 55,
         gender: 'Mixte',
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
       },
       {
-        name: 'Olapex - XL',
+        name: 'XL',
         price: 65,
         gender: 'Mixte',
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
-      },
-      {
-        name: 'Kératine Végétale en Provence - Court',
-        price: 35,
-        gender: 'Mixte',
-        description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
-        includes: [],
-        duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
-      },
-      {
-        name: 'Kératine Végétale en Provence - Mi-long',
-        price: 45,
-        gender: 'Mixte',
-        description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
-        includes: [],
-        duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
-      },
-      {
-        name: 'Kératine Végétale en Provence - Long',
-        price: 55,
-        gender: 'Mixte',
-        description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
-        includes: [],
-        duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
-      },
-      {
-        name: 'Kératine Végétale en Provence - XL',
-        price: 65,
-        gender: 'Mixte',
-        description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
-        includes: [],
-        duration: 60,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
       }
     ]
   },
@@ -151,7 +124,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 30,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
       },
       {
         name: 'Mi-long',
@@ -160,7 +134,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 50,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
       },
       {
         name: 'Long',
@@ -169,7 +144,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 70,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
       },
       {
         name: 'XL',
@@ -178,7 +154,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Soin'
       }
     ]
   },
@@ -195,7 +172,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 30,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Coloration'
       },
       {
         name: 'Mi-long',
@@ -204,7 +182,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 50,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Coloration'
       },
       {
         name: 'Long',
@@ -213,7 +192,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 70,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Coloration'
       },
       {
         name: 'XL',
@@ -222,7 +202,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Coloration'
       }
     ]
   },
@@ -239,7 +220,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 30,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Mèches'
       },
       {
         name: 'Mi-long',
@@ -248,7 +230,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 50,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Mèches'
       },
       {
         name: 'Long',
@@ -257,7 +240,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 70,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Mèches'
       },
       {
         name: 'XL',
@@ -266,7 +250,8 @@ export const defaultServices: ServiceSection[] = [
         description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer15.jpg'
+        image: '/testimages/jpeg/customer15.jpg',
+        category: 'Mèches'
       }
     ]
   }

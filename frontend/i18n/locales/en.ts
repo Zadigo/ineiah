@@ -80,6 +80,15 @@ export default defineI18nLocale(async _locale => {
     'Oui, vous pouvez venir pour un conseil afin de discuter de vos besoins et de vos préférences avec moi. Le rendez-vous de conseil peut être facturé séparément. Le montant pour une séance de conseil est de 15€.': 'Yes, you can come for advice to discuss your needs and preferences with me. The consultation appointment may be charged separately. The amount for a consultation session is €15.',
     "Conditions d'âge": 'Age Restrictions',
     'Prenez-vous les mineur(e)s ?': 'Do you accept minors?',
-    'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur(trice) légal(e) qui devra signer une autorisation parentale avant le début du rendez-vous.': 'Minors are welcome, but must be accompanied by a parent or legal guardian who must sign a parental authorization before the appointment begins.'
+    'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur(trice) légal(e) qui devra signer une autorisation parentale avant le début du rendez-vous.': 'Minors are welcome, but must be accompanied by a parent or legal guardian who must sign a parental authorization before the appointment begins.',
+    'Coupe sur cheveux': 'Cut on hair',
+    'Soin sur cheveux': 'Care on hair',
+    'Coloration sur cheveux': 'Coloring on hair',
+    'Court': 'Short',
+    'Mi-long': 'Medium-length',
+    'Long': 'Long',
+    'Cheveux secs': 'Dry hair',
+    'XL': 'XL',
+    'Transformation': 'Transformation',
   }
 })
