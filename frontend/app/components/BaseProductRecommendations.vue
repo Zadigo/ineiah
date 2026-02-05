@@ -8,7 +8,7 @@
       <volt-card v-for="recommendation in recommendations" :key="recommendation.name" class="bg-surface-50">
         <template #content>
           <div class="grid grid-cols-2 md:grid-cols-1 md:items-center md:text-center">
-            <nuxt-analytics event="view_item" :params="{ items: _analyticsItems }">
+            <nuxt-analytics event="view_item_list" :params="{ items: _analyticsItems }">
               <template #default="{ attrs }">
                 <a :id="`link-product-recommendation_${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" @click="attrs.sendTemplateEvent">
                   <nuxt-img :src="recommendation.image" :alt="`${get('legalName')} recommande ${recommendation.name}`" />
@@ -19,7 +19,7 @@
             <div class="flex-row content-center">
               <h4 class="font-semibold truncate" :title="recommendation.name">{{ recommendation.name }}</h4>
               <p class="font-light text-sm">{{ recommendation.description }}</p>
-              <nuxt-analytics event="view_item" :params="{ items: _analyticsItems }">
+              <nuxt-analytics event="view_item_list" :params="{ items: _analyticsItems }">
                 <template #default="{ attrs }">
                   <a :id="`link-product-recommendation-link-${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" class="text-primary-500 underline underline-offset-2 text-sm mt-2 inline-block" @click="attrs.sendTemplateEvent">
                     {{ $t("Voir le produit") }}
@@ -88,6 +88,8 @@ const recommendations: Recommendation[] = [
 
 const _analyticsItems: EventParameters['items'] = recommendations.map(item => ({
   index: recommendations.indexOf(item) + 1,
+  item_list_id: 'recommended-products',
+  item_list_name: 'Recommended Products',
   item_brand: item.brand,
   item_name: item.name,
   item_id: item.url
