@@ -98,5 +98,6 @@ export default defineI18nLocale(async _locale => {
     "Soumettre": "Soumettre",
     "Email": "Email",
     "Téléphone": "Téléphone",
+    "Coupe": "Coupe",
   }
 })

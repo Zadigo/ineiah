@@ -36,7 +36,7 @@ export default defineNuxtConfig({
 
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-    name: "La Beauté d'Inéïah"
+    name: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah"
   },
 
   seo: {
@@ -87,7 +87,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      prodDomain: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah",
 
       // Stripe
       stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,

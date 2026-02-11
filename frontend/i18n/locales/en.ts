@@ -97,5 +97,6 @@ export default defineI18nLocale(async _locale => {
     "Soumettre": "Submit",
     "Email": "Email",
     "Téléphone": "Phone",
+    "Coupe": "Cut",
   }
 })

@@ -4,6 +4,8 @@ export default defineNuxtPlugin(async () => {
   const { get, getSocial } = await useBusinessDetails()
   const { services } = useServices()
 
+  const siteUrl = useRuntimeConfig().public.siteUrl
+
   useSchemaOrg(
     [
       defineOrganization({
@@ -134,18 +136,18 @@ export default defineNuxtPlugin(async () => {
 
       defineWebSite({
         '@type': 'WebSite',
-        '@id': useRuntimeConfig().public.prodDomain + '#website',
-        url: useRuntimeConfig().public.prodDomain,
+        '@id': siteUrl + '#website',
+        url: siteUrl,
         name: get('legalName'),
         description: get('description'),
         publisher: {
-          '@id': useRuntimeConfig().public.prodDomain + '#organization'
+          '@id': siteUrl + '#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-            urlTemplate: useRuntimeConfig().public.prodDomain + '/search?q={search_term_string}'
+            urlTemplate: siteUrl + '/search?q={search_term_string}'
           },
           'query-input': 'required name=search_term_string'
         }
@@ -158,7 +160,7 @@ export default defineNuxtPlugin(async () => {
             '@type': 'ListItem',
             position: 1,
             name: 'Accueil',
-            item: useRuntimeConfig().public.prodDomain + '/'
+            item: siteUrl + '/'
           }
         ]
       }),
@@ -169,14 +171,14 @@ export default defineNuxtPlugin(async () => {
         jobTitle: 'Coiffeuse professionnelle & Fondatrice',
         description: get('founderDescription'),
         image: get('founderImage'),
-        url: useRuntimeConfig().public.prodDomain + '/notre-histoire',
+        url: siteUrl + '/notre-histoire',
         sameAs: [
             getSocial('instagram')?.url,
             getSocial('facebook')?.url
         ],
         worksFor: {
           '@type': 'Organization',
-          '@id': useRuntimeConfig().public.prodDomain + '#organization',
+          '@id': siteUrl + '#organization',
         },
         knowsAbout: get('founderKnowsAbout')
       })
