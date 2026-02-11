@@ -93,7 +93,7 @@ export const businessDetails: BusinessDetails = {
   editorInChief: 'Natacha Morel',
   websiteProvider: {
     legalName: 'Gency313',
-    url: 'https://gency313.fr'
+    url: 'https://john-pendenque.gency313.fr/'
   },
   cloudProvider: {
     legalName: 'SAS OVH',
