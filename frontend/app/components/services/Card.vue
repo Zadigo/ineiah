@@ -1,5 +1,5 @@
 <template>
-  <article :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
+  <article :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer rounded-lg" @click="() => toggleServiceDetails()">
     <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg overflow-hidden">
       <nuxt-img :src="service.image || '/hero/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-75" :alt="`${service.category} - ${service.name} - ${service.gender} - ${get('legalName')}`" />
 
