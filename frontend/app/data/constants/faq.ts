@@ -53,6 +53,10 @@ export const faqList: FAQSection[] = [
       {
         question: 'Je ne suis pas sûre de ce que je veux, puis-je venir pour un conseil ?',
         answer: 'Oui, vous pouvez venir pour un conseil afin de discuter de vos besoins et de vos préférences avec moi. Le rendez-vous de conseil peut être facturé séparément. Le montant pour une séance de conseil est de 15€.'
+      },
+      {
+        question: 'Dois-je arriver les cheveux attaché ?',
+        answer: "Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu'ils soient bien démêlés et propres."
       }
     ]
   },

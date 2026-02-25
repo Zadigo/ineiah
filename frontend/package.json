@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "upload-aws": "aws s3 sync .output/public/ s3://reka.app --delete --acl public-read"
   },
   "dependencies": {
     "@capacitor/app": "8.0.0",

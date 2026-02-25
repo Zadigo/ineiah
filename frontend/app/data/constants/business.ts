@@ -74,7 +74,7 @@ export const businessDetails: BusinessDetails = {
 
   ],
   rcs: '',
-  address: '15 test address, Lille, France',
+  address: '13 Place Nouvelle Aventure, 59000 Lille',
   priceRange: '$$',
   foundingDate: '2013-01-28',
   foundingLocation: 'Lille, France',
@@ -103,9 +103,9 @@ export const businessDetails: BusinessDetails = {
     rcs: '424 761 419 00045'
   },
   contact: {
-    telephone: '+33-3-20-00-00-00',
+    telephone: '+33 03 20 51 44 91',
     email: 'labeautedineiah@gmail.com',
-    address: '15 test address, Lille, France'
+    address: '13 Place Nouvelle Aventure, 59000 Lille'
   },
   socials: {
     instagram: {

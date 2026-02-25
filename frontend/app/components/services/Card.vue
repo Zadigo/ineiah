@@ -8,7 +8,7 @@
         <p v-else-if="service.category === 'Soin'" class="font-light text-sm">{{ $t('Soin sur cheveux') }}</p>
         <p v-else-if="service.category === 'Coloration'" class="font-light text-sm">{{ $t('Coloration sur cheveux') }}</p>
 
-        <p class="font-semibold uppercase">{{ $t(service.name || '') }} • <span class="font-bold">{{ $n(service.price, 'currency') }}</span> • <span>{{ $t(service.gender) }}</span></p>
+        <p class="font-semibold uppercase">{{ $t(service.name || '') }} • <span v-if="service.price" class="font-bold">{{ $n(service.price, 'currency') }}</span> <span v-else="service.priceText">{{ $t(service.priceText || '') }}</span> • <span>{{ $t(service.gender) }}</span></p>
 
         <transition 
           enter-active-class="transition-all duration-300"
