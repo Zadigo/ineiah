@@ -4,12 +4,15 @@
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
         <div class="mb-5 md:mb-0">
           <nuxt-link-locale to="/">
-            <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+            <h5 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
               {{ businessDetails.legalName }}
             </h5>
+            <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" class="text-sm text-primary-100 dark:text-primary-200 underline">
+              chez 70's coiffure
+            </a>
           </nuxt-link-locale>
           
-          <div class="flex gap-2">
+          <div class="flex gap-2 mt-5">
             <nuxt-link-locale to="/" locale="fr" aria-label="Français">
               <volt-secondary-button>
                 <icon name="i-circle-flags:fr" />
