@@ -143,7 +143,7 @@ export const defaultServices: ServiceSection[] = [
     services: [
       {
         name: 'Court',
-        price: 35,
+        price: 30,
         priceText: null,
         gender: 'Mixte',
         description: null,
@@ -154,7 +154,7 @@ export const defaultServices: ServiceSection[] = [
       },
       {
         name: 'Mi-long',
-        price: 45,
+        price: 60,
         priceText: null,
         gender: 'Mixte',
         description: null,
@@ -166,7 +166,7 @@ export const defaultServices: ServiceSection[] = [
       },
       {
         name: 'Long',
-        price: 55,
+        price: 60,
         priceText: null,
         gender: 'Mixte',
         description: null,
@@ -177,7 +177,7 @@ export const defaultServices: ServiceSection[] = [
       },
       {
         name: 'XL',
-        price: 65,
+        price: 90,
         priceText: null,
         gender: 'Mixte',
         description: null,
@@ -230,7 +230,7 @@ export const defaultServices: ServiceSection[] = [
       },
       {
         name: 'XL',
-        price: 105,
+        price: 150,
         priceText: null,
         gender: 'Mixte',
         description: null,
