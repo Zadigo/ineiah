@@ -62,7 +62,7 @@ export const businessDetails: BusinessDetails = {
   siren: '790 849 574',
   siret: '790 849 574 00039',
   numberoTVA: 'FR29790849574',
-  creationDate: '2013-01-28',
+  creationDate: '2024-12-14',
   description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure',
   logo: '',
   sameAs: [
@@ -76,7 +76,7 @@ export const businessDetails: BusinessDetails = {
   rcs: '',
   address: '13 Place Nouvelle Aventure, 59000 Lille',
   priceRange: '$$',
-  foundingDate: '2013-01-28',
+  foundingDate: '2024-12-14',
   foundingLocation: 'Lille, France',
   founderImage: null,
   shareCapital: null,
@@ -103,7 +103,7 @@ export const businessDetails: BusinessDetails = {
     rcs: '424 761 419 00045'
   },
   contact: {
-    telephone: '+33 03 20 51 44 91',
+    telephone: '+33 07 86 20 94 59',
     email: 'labeautedineiah@gmail.com',
     address: '13 Place Nouvelle Aventure, 59000 Lille'
   },
