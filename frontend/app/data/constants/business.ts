@@ -130,7 +130,7 @@ type BusinessDetailsKeyValue = {
 }
 
 /**
- * A composable to access business details throughout the application. It provides a `get` function 
+ * A composable to access business details throughout the application. It provides a `get` function
  * to retrieve specific details by key, ensuring type safety and consistency across the app.
  */
 export async function useBusinessDetails() {

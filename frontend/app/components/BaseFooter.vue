@@ -7,7 +7,7 @@
             <h5 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
               {{ businessDetails.legalName }}
             </h5>
-            <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" class="text-sm text-primary-100 dark:text-primary-200 underline">
+            <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
               chez 70's coiffure
             </a>
           </nuxt-link-locale>
