@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15 relative">
     <!-- Hero -->
-    <hero-top-image v-if="showImage" />
+    <hero-top-image v-if="showImage" :image="`/images/hero/customer18.jpg`" />
     <hero-top-video v-else-if="showVideo" />
     <hero-top-carousel v-else-if="showCarousel" />
 
@@ -10,7 +10,7 @@
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
           <client-only>
-            <nuxt-img v-motion-slide-visible-left :delay="200" src="/images/kira/photoshoot45.jpg" class="rounded-lg aspect-square object-cover w-full" alt="" />
+            <nuxt-img v-motion-slide-visible-left :delay="200" src="/images/kira/photoshoot46.jpg" class="rounded-lg aspect-square object-cover w-full" alt="" />
           </client-only>
         </div>
 
