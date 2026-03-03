@@ -44,7 +44,7 @@
         </p>
       </story-card>
 
-      <story-card :image="'/images/natacha-morel/img1.jpg'" class="shadow-none">
+      <story-card :image="'/images/natacha-morel/img3.jpg'" class="shadow-none">
         <template #title>
           Mon <span class="italic text-primary-700 dark:text-primary-300">expertise</span>
         </template>

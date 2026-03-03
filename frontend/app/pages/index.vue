@@ -10,7 +10,7 @@
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
           <client-only>
-            <nuxt-img v-motion-slide-visible-left :delay="200" src="/kira/DSC05656.jpg" class="rounded-lg aspect-square object-cover w-full" alt="" />
+            <nuxt-img v-motion-slide-visible-left :delay="200" src="/images/kira/photoshoot45.jpg" class="rounded-lg aspect-square object-cover w-full" alt="" />
           </client-only>
         </div>
 
@@ -74,7 +74,7 @@
 
       <div class="h-auto">
         <client-only>
-          <nuxt-img v-motion-fade-visible :delay="600" :alt="get('founder')" src="/kira/DSC05626.jpg" class="aspect-square object-cover h-full xl:w-full" />
+          <nuxt-img v-motion-fade-visible :delay="600" :alt="`${get('founder')}`" src="/images/kira/photoshoot40.jpg" class="aspect-square object-cover h-full xl:w-full" />
         </client-only>
       </div>
     </div>
@@ -95,10 +95,10 @@
 
     <!-- Photocall -->
     <div class="grid grid-rows-2 grid-cols-2 gap-0 auto-rows-min rounded-md md:grid-rows-1 md:grid-cols-4">
-      <hero-photo-call src="/hero/hair10.jpg" alt="Some alt" title="Cheveux fins" />
-      <hero-photo-call src="/testimages/jpeg/customer6.jpg" alt="Some alt" title="Cheveux longs" />
-      <hero-photo-call src="/hero/hair12.jpg" alt="Some alt" title="Cheveux réactivés" />
-      <hero-photo-call src="/testimages/jpeg/customer18.jpg" alt="Some alt" title="Cheveux afro" />
+      <hero-photo-call src="/images/dev/hair10.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/images/photocall/customer6.jpg" alt="Some alt" title="Cheveux longs" />
+      <hero-photo-call src="/images/dev/hair12.jpg" alt="Some alt" title="Cheveux réactivés" />
+      <hero-photo-call src="/images/photocall/customer18.jpg" alt="Some alt" title="Cheveux afro" />
     </div>
 
     <!-- Product Recommendations -->

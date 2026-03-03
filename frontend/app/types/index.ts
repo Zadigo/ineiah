@@ -14,6 +14,13 @@ export interface GalleryImage {
   name: string
   image: string | Arrayable<string>
   category: 'image' | 'video'
+  url: string | null
+  author: {
+    name: string 
+    username: string | null
+    website: string | null
+    instagram: string | null
+  }
 }
 
 export type Locale = 'fr' | 'en'

@@ -2,71 +2,212 @@ import type { Arrayable, GalleryImage } from '~/types'
 
 const galleryImages: Arrayable<GalleryImage> = [
   {
-    name: 'Lissage brésilien',
-    image: '/hero/hair6.jpg',
-    category: 'image'
-  },
-  {
-    name: 'Boucles naturelles',
-    image: '/testimages/jpeg/customer10.jpg',
-    category: 'image'
-  },
-  {
-    name: 'Coupe pixie moderne',
-    image: '/hero/hair10.jpg',
-    category: 'image'
+    name: 'Coupe styling mi-long',
+    image: [
+      '/images/gallery/customer1.jpg',
+      '/images/gallery/customer2.jpg'
+    ],
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
     name: 'Brushing volumineux',
-    image: '/testimages/jpeg/customer18.jpg',
-    category: 'image'
+    image: '/images/gallery/customer18.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
+  },
+  {
+    name: 'Hair contouring cheveux longs',
+    image: [
+      '/images/gallery/customer32.jpg',
+      '/images/gallery/customer33.jpg'
+    ],
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
+  },
+  {
+    name: 'Soin à la Kératine et couleur',
+    image: '/images/gallery/customer3.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
     name: 'Coupe dégradée',
-    image: '/testimages/jpeg/customer6.jpg',
-    category: 'image'
+    image: '/images/gallery/customer6.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
     name: 'Chignon élégant',
-    image: '/hero/hair12.jpg',
-    category: 'image'
+    image: '/images/gallery/customer7.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
+  },
+  {
+    name: 'Chignon élégant',
+    image: '/images/gallery/customer8.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
+  },
+  {
+    name: 'Chignon élégant',
+    image: '/images/gallery/customer9.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
     name: 'Nom de la coupe',
-    image: '/hero/hair6.jpg',
-    category: 'image'
+    image: '/images/gallery/customer19.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
-    name: 'Coupe chignon',
-    image: '/testimages/jpeg/customer15.jpg',
-    category: 'image'
+    name: 'Shampoing coupe styling',
+    image: '/images/gallery/customer23.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
     name: 'Coupe afro',
-    image: '/testimages/jpeg/customer11.jpg',
-    category: 'image'
+    image: '/images/gallery/customer11.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
     name: 'Coupe undercut',
     image: [
-      '/testimages/jpeg/customer13.jpg',
-      '/testimages/jpeg/customer14.jpg',
-      '/testimages/jpeg/customer17.jpg'
+      '/images/gallery/customer13.jpg',
+      '/images/gallery/customer14.jpg',
+      '/images/gallery/customer17.jpg'
     ],
-    category: 'image'
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    }
   },
   {
-    name: 'Coupe bob asymétrique',
-    image: '/hero/hair10.jpg',
-    category: 'image'
-  },
-  {
-    name: 'Coupe tresse',
+    name: 'Styling XL',
     image: [
-      '/testimages/jpeg/customer4.jpg',
-      '/testimages/jpeg/customer5.jpg',
+      '/images/gallery/customer29.jpg',
+      '/images/gallery/customer30.jpg',
     ],
-    category: 'image'
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: 'kira-lopez'
+    }
+  },
+  {
+    name: 'Coloration repousse longueur cheveux mi-longs',
+    image: [
+      '/images/gallery/customer24.jpg',
+      '/images/gallery/customer25.jpg',
+    ],
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: 'kira-lopez'
+    },
+  },
+  {
+    name: 'Tresses',
+    image: '/images/gallery/customer34.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: 'kira-lopez'
+    }
+  },
+  {
+    name: 'Tresses',
+    image: '/images/gallery/customer35.jpg',
+    category: 'image',
+    url: null,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: 'kira-lopez'
+    }
   }
 ]
 
