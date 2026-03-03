@@ -1,6 +1,6 @@
 <template>
   <section id="prestation">
-    <base-jumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies." />
+    <base-jumbotron src="/images/banners/img1.jpg" :position-y="55" lead="Nos prestations" subtitle="Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies." />
 
     <div class="px-5 md:px-10">
       <services-section v-for="(section, index) in defaultServices" :key="section.name" :index="index" :section="section" />
