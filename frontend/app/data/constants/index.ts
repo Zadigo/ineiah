@@ -1,7 +1,2 @@
-export * from './business'
-export * from './faq'
 export * from './footer'
-export * from './gallery'
-export * from './privacy_policy'
-export * from './services'
 export * from './symbols'

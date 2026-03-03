@@ -103,5 +103,12 @@ export default defineI18nLocale(async _locale => {
     "Email": "Email",
     "Téléphone": "Phone",
     "Coupe": "Cut",
+    "Votre vie privée est importante pour nous": "Your privacy is important to us",
+    "Nous traitons vos informations personnelles afin de mesurer et d'améliorer nos sites et services, de soutenir nos campagnes et de vous proposer des contenus personnalisés.": "We process your personal information to measure and improve our sites and services, support our campaigns, and provide you with personalized content.",
+    "Pour plus d'informations, consultez notre Politique de confidentialité.": "For more information, please see our",
+    "Plus d'options": "More Options",
+    "Accepter tout": "Accept All",
+    "Refuser tout": "Reject All",
+    "Enregistrer les préférences": "Save Preferences"
   }
 })

@@ -1,4 +1,9 @@
-import { useColorMode } from '@vueuse/core'
+export * from './business'
+export * from './dark_mode'
+export * from './faq'
+export * from './gallery'
+export * from './privacy_policy'
+export * from './socials'
 
 /**
  * Composable to generate dynamic IDs from string values
@@ -67,41 +72,6 @@ export const useDevComposable = createGlobalState(() => {
     showVideo,
     showCarousel,
     showVideoBlock
-  }
-})
-
-/**
- * Composable to manage dark mode state
- */
-export const useDarkModeComposable = createGlobalState(() => {
-  const [darkMode, toggleDarkMode] = useToggle()
-
-  // if (import.meta.client) {
-  //   const colorMode = useColorMode({
-  //     initialValue: 'light',
-  //     onChanged(mode, defaultHandler) {
-  //       if (mode == 'dark') {
-  //         document.documentElement.classList.add('p-dark')
-  //         defaultHandler(mode)
-  //       } else {
-  //         document.documentElement.classList.remove('p-dark')
-  //         defaultHandler(mode)
-  //       }
-  //     }
-  //   })
-
-  //   watch(darkMode, (newValue) => {
-  //     colorMode.value = newValue ? 'dark' : 'light'
-  //   })
-
-  //   onMounted(() => {
-  //     darkMode.value = colorMode.value === 'dark' || (colorMode.value === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  //   })
-  // }
-
-  return {
-    darkMode,
-    toggleDarkMode
   }
 })
 

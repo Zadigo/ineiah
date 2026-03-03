@@ -3,7 +3,7 @@
     <base-jumbotron src="/images/banners/img1.jpg" :position-y="55" lead="Nos prestations" subtitle="Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies." />
 
     <div class="px-5 md:px-10">
-      <services-section v-for="(section, index) in defaultServices" :key="section.name" :index="index" :section="section" />
+      <services-section v-for="(section, index) in services" :key="section.name" :index="index" :section="section" />
 
       <div class="my-10">
         <card-call-to-action id="tel-calls-us-services" />
@@ -13,11 +13,16 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, defaultServices } from '~/data'
-
 definePageMeta({
   title: 'Services'
 })
+
+/**
+ * Business details
+ */
+
+const { businessDetails, get } = useBusinessDetails()
+const { services } = useServices()
 
 /**
  * SEO

@@ -1,6 +1,6 @@
 <template>
   <section id="contact">
-    <base-jumbotron src="/hero/hair4.jpg" lead="Contact" subtitle="Toutes nos informations de contact" />
+    <base-jumbotron src="/images/dev/hair4.jpg" lead="Contact" subtitle="Toutes nos informations de contact" />
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-4xl mx-auto">
@@ -27,14 +27,14 @@
         <div class="grid grid-rows-2 gap-2 md:grid-rows-none md:grid-cols-2 md:gap-8">
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <nuxt-img src="/map.jpg" class="rounded-lg" alt="" />
+              <nuxt-img src="/images/dev/map.jpg" class="rounded-lg" alt="" />
             </template>
           </volt-card>
 
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
               <p class="font-bold uppercase text-primary-500 dark:text-primary-200">{{ get('legalName') }}</p>
-              <p>{{ get('address') }}</p>
+              <p>{{ address }}</p>
 
               <p class="font-light mt-5 italic">{{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}</p>
 
@@ -43,7 +43,7 @@
 
                 <a :href="`mailto:${get('contact').email}`">
                   <volt-button id="email-contact-us" size="large" class="mt-5" rounded>
-                    <Icon name="fa-solid:envelope" />
+                    <icon name="fa-solid:envelope" />
                     {{ $t("Email") }}
                   </volt-button>
                 </a>
@@ -66,14 +66,13 @@
 
 <script setup lang="ts">
 import { doc, setDoc } from 'firebase/firestore'
-import { businessDetails, footer, useBusinessDetails } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Contact'
 })
 
-const { get, activeSocials, getSocialIcon, getSocial } = await useBusinessDetails()
+const { get, activeSocials, getSocialIcon, getSocial, address } = useBusinessDetails()
 
 /**
  * Contact form

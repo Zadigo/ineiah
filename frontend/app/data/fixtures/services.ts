@@ -15,7 +15,10 @@ export const servicesFixtures: Arrayable<Service> = [
     description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
     includes: serviceIncludes,
     duration: 60,
-    illustration: '/testimages/jpeg/customer18.jpg'
+    illustration: '/testimages/jpeg/customer18.jpg',
+    category: 'Coloration',
+    image: '/testimages/jpeg/customer18.jpg',
+    priceText: '25€'
   },
   {
     name: 'Court',
@@ -24,7 +27,10 @@ export const servicesFixtures: Arrayable<Service> = [
     description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
     includes: serviceIncludes,
     duration: 60,
-    illustration: '/testimages/jpeg/customer17.jpg'
+    illustration: '/testimages/jpeg/customer17.jpg',
+    category: 'Coloration',
+    image: '/testimages/jpeg/customer18.jpg',
+    priceText: '25€'
   },
   {
     name: 'Mi-long',
@@ -33,7 +39,10 @@ export const servicesFixtures: Arrayable<Service> = [
     description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
     includes: serviceIncludes,
     duration: 60,
-    illustration: '/testimages/jpeg/customer16.jpg'
+    illustration: '/testimages/jpeg/customer16.jpg',
+    category: 'Coloration',
+    image: '/testimages/jpeg/customer18.jpg',
+    priceText: '25€'
   },
   {
     name: 'Long',
@@ -42,7 +51,10 @@ export const servicesFixtures: Arrayable<Service> = [
     description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
     includes: serviceIncludes,
     duration: 60,
-    illustration: '/testimages/jpeg/customer15.jpg'
+    illustration: '/testimages/jpeg/customer15.jpg',
+    category: 'Coloration',
+    image: '/testimages/jpeg/customer18.jpg',
+    priceText: '25€'
   },
   {
     name: 'XL',
@@ -51,18 +63,23 @@ export const servicesFixtures: Arrayable<Service> = [
     description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
     includes: serviceIncludes,
     duration: 60,
-    illustration: '/testimages/jpeg/customer14.jpg'
+    illustration: '/testimages/jpeg/customer14.jpg',
+    category: 'Coloration',
+    image: '/testimages/jpeg/customer18.jpg',
+    priceText: '25€'
   }
 ]
 
 export const serviceSectionFixtures: Arrayable<ServiceSection> = [
   {
-    name: 'Shampoings coupes coiffage',
+    name: 'Shampoings • Coupes • Mise en forme',
+    globalDescription: "Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
     includes: serviceIncludes,
     services: servicesFixtures
   },
   {
-    name: 'Soins et traitements',
+    name: 'Shampoings • Coupes • Mise en forme',
+    globalDescription: "Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
     includes: serviceIncludes,
     services: servicesFixtures
   }

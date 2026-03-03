@@ -1,11 +1,11 @@
 import { InferSeoMetaPlugin } from '@unhead/addons'
-import { businessDetails } from '~/data/constants/business'
 import { injectHead } from '#imports'
 
 export default defineNuxtPlugin(() => {
   const head = injectHead()
-
+  const { get } = useBusinessDetails()
+  
   head.use(InferSeoMetaPlugin({
-    ogTitle: title => title?.replace(` - ${businessDetails.legalName}`, '') || ''
+    ogTitle: title => title?.replace(` - ${get('legalName')}`, '') || ''
   }))
 })
