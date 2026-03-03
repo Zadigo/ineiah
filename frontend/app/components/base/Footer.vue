@@ -4,23 +4,23 @@
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
         <div class="mb-5 md:mb-0">
           <nuxt-link-locale to="/">
-            <h5 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+            <h4 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
               {{ get('legalName') }}
-            </h5>
+            </h4>
             <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
               chez 70's coiffure
             </a>
           </nuxt-link-locale>
           
           <div class="flex gap-2 mt-5">
-            <nuxt-link-locale to="/" locale="fr" aria-label="Français">
-              <volt-secondary-button>
+            <nuxt-link-locale to="/" locale="fr">
+              <volt-secondary-button aria-label="Français">
                 <icon name="i-circle-flags:fr" />
               </volt-secondary-button>
             </nuxt-link-locale>
   
-            <nuxt-link-locale to="/" locale="en" aria-label="English">
-              <volt-secondary-button>
+            <nuxt-link-locale to="/" locale="en">
+              <volt-secondary-button aria-label="English">
                 <icon name="i-circle-flags:uk" />
               </volt-secondary-button>
             </nuxt-link-locale>
@@ -50,7 +50,7 @@
         </client-only>
 
         <div class="flex gap-4 text-primary-200 sm:justify-center">
-          <a v-for="social in activeSocials" :id="`footer-social-${social}`" :key="social" :href="getSocial(social)?.url" class="block transition-opacity text-inherit hover:opacity-80">
+          <a v-for="social in activeSocials" :id="`footer-social-${social}`" :key="social" :href="getSocial(social)?.url" :aria-label="social" class="block transition-opacity text-inherit hover:opacity-80">
             <icon :name="getSocialIcon(social)" :alt="`${get('name')} - ${social}`" />
           </a>
         </div>
