@@ -1,7 +1,5 @@
-import { useBusinessDetails, useServices } from "~/data"
-
 export default defineNuxtPlugin(async () => {
-  const { get, getSocial } = await useBusinessDetails()
+  const { get, getSocial } = useBusinessDetails()
   const { services } = useServices()
 
   const siteUrl = useRuntimeConfig().public.siteUrl
@@ -69,7 +67,12 @@ export default defineNuxtPlugin(async () => {
         },
         taxId: null,
         vatId: null,
-        address: {},
+        address: {
+          streetAddress: get('address').street,
+          addressLocality: get('address').city,
+          postalCode: get('address').postalCode,
+          addressCountry: 'FR'
+        },
         currenciesAccepted: 'EUR',
         areaServed: {
           '@type': 'Place',

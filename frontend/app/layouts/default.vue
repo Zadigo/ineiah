@@ -2,9 +2,9 @@
   <section id="site">
     <base-navbar @mobile-menu="() => toggleMobileMenu(true)" />
 
-    <div id="main">
+    <main>
       <slot />
-    </div>
+    </main>
 
     <!-- Modals -->
     <client-only>

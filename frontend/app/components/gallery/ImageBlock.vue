@@ -11,9 +11,10 @@
     <div class="absolute left-5 bottom-5 space-y-1">
       <h3 class="text-primary-100 text-xl font-semibold">{{ image.name }}</h3>
       <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
-        <p v-if="isHovered && !isMobile" class="text-primary-50 text-sm font-thin">{{ $t("En savoir plus") }}
-          <icon name="i-fa6:fullscreen" />
-        </p>
+        <div v-if="isHovered && !isMobile" class="text-primary-50 text-sm font-thin">
+          <p v-if="!isSelected" class="flex items-center gap-2">{{ $t("En savoir plus") }} <icon name="lucide:fullscreen" /></p>
+          <p v-if="image.author.instagram">Réalisée par <a :href="`https://www.instagram.com/${image.author.instagram}`" target="_blank" class="underline underline-offset-3 font-semibold">@{{ image.author.instagram }}</a></p>
+        </div>
       </transition>
 
       <!-- CTA -->
@@ -32,12 +33,11 @@
 
 <script setup lang="ts">
 import { Share } from '@capacitor/share'
-import { useBusinessDetails } from '~/data'
 import type { GalleryImage } from '~/types'
 
 const props = defineProps<{ image: GalleryImage }>()
 
-const { get } = await useBusinessDetails()
+const { get } = useBusinessDetails()
 
 /**
  * Slider
@@ -80,7 +80,7 @@ const theme = computed(() => {
 async function share() {
   await Share.share({
     title: props.image.name,
-    text: 'Really awesome thing you need to see right meow',
+    text: `Découvrez cette création de ${get('legalName')}`,
     url: window.location.href,
     dialogTitle: 'Partagez cette coupe'
   })

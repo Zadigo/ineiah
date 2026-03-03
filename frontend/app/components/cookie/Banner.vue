@@ -17,26 +17,27 @@
         </span>
   
         <h5 class="text-sm font-semibold mb-2 text-left mr-auto text-surface-700 dark:text-surface-50">
-          Your privacy is important to us
+          {{ $t("Votre vie privée est importante pour nous") }}
         </h5>
   
         <p class="w-full mb-4 text-sm text-justify text-surface-800 dark:text-surface-50">
-          We process your personal information to measure and improve our sites and
-          services, to assist our campaigns and to provide personalised content.
+          {{ $t("Nous traitons vos informations personnelles afin de mesurer et d'améliorer nos sites et services, de soutenir nos campagnes et de vous proposer des contenus personnalisés.") }}
         </p>
   
         <p class="w-full mb-6 text-sm text-justify text-surface-800 dark:text-surface-50">
-          For more information see our <nuxt-link to="/legal/mentions-legales" class="mb-2 text-sm cursor-pointer font-semibold transition-colors dark:hover:text-surface-100 underline underline-offset-2">Privacy Policy</nuxt-link>
+          {{ $t("Pour plus d'informations, consultez notre Politique de confidentialité.") }} <nuxt-link class="text-surface-600 hover:text-surface-700 hover:underline underline-offset-2" href="/privacy-policy">
+            {{ $t("Politique de confidentialité") }}
+          </nuxt-link>
         </p>
   
         <div class="grid grid-cols-2 w-full content-center">
           <button class="text-sm text-surface-600 cursor-pointer font-semibold transition-colors hover:text-surface-700 hover:underline underline-offset-2" @click="() => toggleShowOptions()">
-            More Options
+            {{ $t("Plus d'options") }}
           </button>
   
           <!-- cursor-pointer py-2 px-8 w-max break-keep text-sm rounded-lg transition-colors text-[#634647] hover:text-[#ddad81] bg-[#ddad81] hover:bg-[#634647] -->
           <volt-contrast-button class="font-semibold" @click="() => accept()">
-            Accept
+            {{ $t("Accepter tout") }}
           </volt-contrast-button>
         </div>
       </div>

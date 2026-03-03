@@ -1,7 +1,7 @@
 <template>
   <section id="gallery">
     <div class="max-w-7xl mx-auto mb-5 px-5 md:px-10 xl:px-0">
-      <div class="mb-5 bg-secondary-100 dark:bg-secondary-800 p-20 py-40 rounded-xl shadow-md bg-center bg-cover" :style="{ backgroundImage: 'url(/hero/hair11.jpg)' }">
+      <div class="mb-5 bg-secondary-100 dark:bg-secondary-800 p-20 py-40 rounded-xl shadow-md bg-center bg-cover" :style="{ backgroundImage: 'url(/images/dev/hair11.jpg)' }">
         <div>
           <h2 class="text-3xl font-extrabold text-primary-50 dark:text-primary-100">
             {{ $t('Galerie') }}
@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import { faqList, useBusinessDetails, useImageGallery } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
@@ -44,7 +43,7 @@ const { images, search, filteredImages, keywords } = useImageGallery()
  * SEO
  */
 
-const { businessDetails } = await useBusinessDetails()
+const { get } = useBusinessDetails()
 const i18n = useI18n()
 
 const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
@@ -60,7 +59,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
+  titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'

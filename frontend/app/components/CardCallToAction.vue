@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-center bg-cover bg-no-repeat rounded-lg overflow-hidden" :style="{ backgroundImage: `url(/hero/hair11.jpg)` }">
+  <div class="bg-center bg-cover bg-no-repeat rounded-lg overflow-hidden" :style="{ backgroundImage: `url(/images/dev/hair11.jpg)` }">
     <div class="p-8 text-primary-100 dark:text-primary-50 md:p-20">
       <div class="flex-col justify-center mx-auto text-center max-w-7xl">
         <h2 class="text-5xl md:text-7xl font-bold mb-5 font-title">

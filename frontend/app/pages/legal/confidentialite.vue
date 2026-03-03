@@ -47,8 +47,11 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, loadPolicies } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
+
+/**
+ * Load policies data
+ */
 
 const policies = await loadPolicies()
 

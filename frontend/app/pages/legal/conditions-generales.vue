@@ -5,8 +5,13 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
+
+/**
+ * Business details
+ */
+
+const { get } = useBusinessDetails()
 
 const i18n = useI18n()
 
@@ -23,7 +28,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
+  titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'

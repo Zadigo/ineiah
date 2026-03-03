@@ -45,19 +45,19 @@ const items = [
   {
     leadTitle: 'Sublime ta singularité',
     leadDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore',
-    image: '/hero/hair1.jpg',
+    image: '/images/dev/hair1.jpg',
     alt: ''
   },
   {
     leadTitle: 'Sublime ta singularité 2',
     leadDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore',
-    image: '/hero/hair2.jpg',
+    image: '/images/dev/hair2.jpg',
     alt: ''
   },
   {
     leadTitle: 'Sublime ta singularité 3',
     leadDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore',
-    image: '/hero/hair3.jpg',
+    image: '/images/dev/hair3.jpg',
     alt: ''
   }
 ]

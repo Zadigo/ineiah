@@ -15,10 +15,10 @@
             <div class="my-2 has-[p]:mb-5">
               <p class="uppercase mt-3 mb-1 font-bold">{{ $t('Personne morale') }}</p>
 
-              <p>{{ $t('Dénomination ou raison sociale') }} : {{ businessDetails.legalName }}</p>
-              <p>{{ $t('Adresse du siège social') }} : {{ businessDetails.address }}</p>
-              <p>{{ $t('Capital social') }} : {{ businessDetails.shareCapital || '-' }}</p>
-              <p>{{ $t("Numéro d'identification au Registre du Commerce et des Sociétés (RCS)") }} : {{ businessDetails.rcs || '-' }}</p>
+              <p>{{ $t('Dénomination ou raison sociale') }} {{ businessDetails.legalName }}</p>
+              <p>{{ $t('Adresse du siège social') }} {{ address }}</p>
+              <p>{{ $t('Capital social') }} {{ businessDetails.shareCapital || '-' }}</p>
+              <p>{{ $t("Numéro d'identification au Registre du Commerce et des Sociétés (RCS)") }} {{ businessDetails.rcs || '-' }}</p>
             </div>
 
             <div class="my-2 has-[p]:mb-5">
@@ -87,6 +87,9 @@
               </p>
 
               <p>
+                Les photographies présentes sur ce site ont été réalisées par <a :href="instagram('_khreate_')" target="_blank" class="underline text-secondary underline-offset-4">@_khreate_</a>. 
+                Leur utilisation sur ce site a été autorisée dans le cadre d'un accord entre <a :href="instagram('_khreate_')" target="_blank" class="underline text-secondary underline-offset-4">@_khreate_</a> et la société La beauté d'Inéïah.
+
                 {{ $t("Les copyright des photos présents sur le site sont la propriété exclusive de la société {businessName}", { businessName: businessDetails.legalName }) }}
               </p>
             </div>
@@ -98,7 +101,7 @@
 
               <p>
                 Cette politique de confidentialité a été mise à jour pour la dernière
-                fois le 7 novembre 2021. En cas de mise à jour ou de modification des mentions
+                fois le 1 mars 2026. En cas de mise à jour ou de modification des mentions
                 légales, celles-ci seront publiées sur cette page.
               </p>
             </div>
@@ -110,12 +113,23 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails } from '~/data/constants/business'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   name: 'privacy'
 })
+
+/**
+ * Business details
+ */
+
+const { businessDetails, address } = useBusinessDetails()
+
+/**
+ * Utils
+ */
+
+const { instagram } = useSocialLinks()
 
 /**
  * SEO
