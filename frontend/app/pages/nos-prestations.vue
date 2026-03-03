@@ -21,7 +21,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails, get } = useBusinessDetails()
+const { businessDetails } = useBusinessDetails()
 const { services } = useServices()
 
 /**

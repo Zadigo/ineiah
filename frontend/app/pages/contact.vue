@@ -127,7 +127,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
+  titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
