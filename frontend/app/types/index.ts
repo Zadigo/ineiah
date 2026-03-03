@@ -13,6 +13,7 @@ export type BaseRoute = StringInterface<'id' | 'title' | 'path'>
 export interface GalleryImage {
   name: string
   image: string | Arrayable<string>
+  category: 'image' | 'video'
 }
 
 export type Locale = 'fr' | 'en'

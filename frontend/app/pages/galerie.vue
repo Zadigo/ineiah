@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { faqList, useBusinessDetails, useImageGallery } from '~/data'
+import { useBusinessDetails, useImageGallery } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
