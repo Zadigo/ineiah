@@ -16,7 +16,7 @@
               <p class="uppercase mt-3 mb-1 font-bold">{{ $t('Personne morale') }}</p>
 
               <p>{{ $t('Dénomination ou raison sociale') }} {{ businessDetails.legalName }}</p>
-              <p>{{ $t('Adresse du siège social') }} {{ businessDetails.address }}</p>
+              <p>{{ $t('Adresse du siège social') }} {{ address }}</p>
               <p>{{ $t('Capital social') }} {{ businessDetails.shareCapital || '-' }}</p>
               <p>{{ $t("Numéro d'identification au Registre du Commerce et des Sociétés (RCS)") }} {{ businessDetails.rcs || '-' }}</p>
             </div>
@@ -123,7 +123,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails } = useBusinessDetails()
+const { businessDetails, address } = useBusinessDetails()
 
 /**
  * Utils

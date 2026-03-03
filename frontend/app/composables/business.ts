@@ -37,7 +37,13 @@ export interface BusinessDetails {
   sameAs: string[]
   image: string[]
   rcs: string
-  address: string
+  address: {
+    street: string
+    postalCode: string
+    city: string
+    lat: number | null
+    lng: number | null
+  }
   priceRange: '$' | '$$' | '$$$'
   foundingDate: string
   foundingLocation: string
@@ -74,7 +80,13 @@ export const businessDetails: BusinessDetails = {
 
   ],
   rcs: '',
-  address: '13 Place Nouvelle Aventure, 59000 Lille',
+  address: {
+    street: '13 Place Nouvelle Aventure',
+    postalCode: '59000',
+    city: 'Lille',
+    lat: 50.626999404132064,
+    lng: 3.0499777837365993
+  },
   priceRange: '$$',
   foundingDate: '2024-12-14',
   foundingLocation: 'Lille, France',
@@ -159,12 +171,18 @@ export function useBusinessDetails() {
     return icons[platform]
   }
 
+  const address = computed(() => {
+    const address = get('address')
+    return `${address.street}, ${address.postalCode} ${address.city}`
+  })
+
   return {
     businessDetails,
     activeSocials,
     get,
     reactiveGet,
     getSocial,
-    getSocialIcon
+    getSocialIcon,
+    address
   }
 }

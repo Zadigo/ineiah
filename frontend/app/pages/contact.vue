@@ -34,7 +34,7 @@
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
               <p class="font-bold uppercase text-primary-500 dark:text-primary-200">{{ get('legalName') }}</p>
-              <p>{{ get('address') }}</p>
+              <p>{{ address }}</p>
 
               <p class="font-light mt-5 italic">{{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}</p>
 
@@ -43,7 +43,7 @@
 
                 <a :href="`mailto:${get('contact').email}`">
                   <volt-button id="email-contact-us" size="large" class="mt-5" rounded>
-                    <Icon name="fa-solid:envelope" />
+                    <icon name="fa-solid:envelope" />
                     {{ $t("Email") }}
                   </volt-button>
                 </a>
@@ -72,7 +72,7 @@ definePageMeta({
   title: 'Contact'
 })
 
-const { get, activeSocials, getSocialIcon, getSocial } = useBusinessDetails()
+const { get, activeSocials, getSocialIcon, getSocial, address } = useBusinessDetails()
 
 /**
  * Contact form

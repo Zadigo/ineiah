@@ -219,6 +219,9 @@ export function useImageGallery() {
   const images = ref(galleryImages)
 
   const search = ref<string>('')
+  const query = useUrlSearchParams() as { q: string }
+
+  watch(search, (newValue) => { query.q = newValue })
 
   const filteredImages = computed(() => {
     return images.value.filter(img => img.name.toLowerCase().includes(search.value.toLowerCase())) // Currently returns all images

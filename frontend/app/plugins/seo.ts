@@ -67,7 +67,12 @@ export default defineNuxtPlugin(async () => {
         },
         taxId: null,
         vatId: null,
-        address: {},
+        address: {
+          streetAddress: get('address').street,
+          addressLocality: get('address').city,
+          postalCode: get('address').postalCode,
+          addressCountry: 'FR'
+        },
         currenciesAccepted: 'EUR',
         areaServed: {
           '@type': 'Place',
