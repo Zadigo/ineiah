@@ -121,8 +121,8 @@ export const businessDetails: BusinessDetails = {
   },
   socials: {
     instagram: {
-      url: 'https://www.instagram.com/labeautedineiah',
-      handle: '@labeautedineiah'
+      url: 'https://www.instagram.com/ineiah',
+      handle: '@ineiah'
     },
     facebook: {
       url: 'https://www.facebook.com/labeautedineiah',
