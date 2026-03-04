@@ -14,7 +14,7 @@
       <client-only>
         <div v-motion-slide-visible-right :delay="400" class="flex flex-col justify-center dark:text-primary-200">
           <h2 class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
-              La coiffure pensée pour <span class="text-primary-800 dark:text-primary-400">tous</span> les types de cheveux
+            La coiffure pensée pour <span class="text-primary-800 dark:text-primary-400">tous</span> les types de cheveux
           </h2>
 
           <p>

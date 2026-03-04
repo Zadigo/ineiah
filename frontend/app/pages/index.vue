@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15 relative">
     <!-- Hero -->
-    <hero-top-image v-if="showImage" :image="`/images/hero/customer18.jpg`" />
+    <hero-bottom-cta v-if="showImage" :image="`/images/hero/customer18.jpg`" />
     <hero-top-video v-else-if="showVideo" />
 
     <!-- Intermediate-1 -->
@@ -33,20 +33,6 @@
       <!-- Template Settings -->
       <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
         <p class="font-bold mb-4">Template settings</p>
-
-        <div class="space-x-2">
-          <nuxt-link-locale to="/" locale="fr">
-            <volt-secondary-button>
-              <icon name="i-circle-flags:fr" />
-            </volt-secondary-button>
-          </nuxt-link-locale>
-
-          <nuxt-link-locale to="/" locale="en">
-            <volt-secondary-button>
-              <icon name="i-circle-flags:uk" />
-            </volt-secondary-button>
-          </nuxt-link-locale>
-        </div>
 
         <volt-label label-for="dark-mode" label="Dark mode">
           <client-only>

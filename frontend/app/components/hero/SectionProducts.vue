@@ -1,39 +1,41 @@
 <template>
   <section id="recommended-products" class="px-5 py-20 md:p-20">
-    <h3 class="text-center text-3xl mb-10 text-primary-500">
+    <h3 class="text-center text-3xl xl:text-5xl mb-10 text-primary-500">
       {{ $t("Mes recommendations produits") }}
     </h3>
 
     <div class="grid grid-rows-1 md:grid-cols-3 xl:grid-cols-5 gap-5">
-      <volt-card v-for="recommendation in recommendations" :key="recommendation.name" class="bg-surface-50">
-        <template #content>
-          <div class="grid grid-cols-2 md:grid-cols-1 md:items-center md:text-center">
-            <nuxt-analytics event="view_item_list" :params="{ items: _analyticsItems }">
-              <template #default="{ attrs }">
-                <a :id="`link-product-recommendation_${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" @click="attrs.sendTemplateEvent">
-                  <nuxt-img :src="recommendation.image" :alt="`${get('legalName')} recommande ${recommendation.name}`" class="w-full aspect-square object-cover min-h-90" />
-                </a>
-              </template>
-            </nuxt-analytics>
-
-            <div class="flex-row content-center">
-              <h4 class="font-semibold truncate" :title="recommendation.name">{{ recommendation.name }}</h4>
-              
-              <client-only>
-                <p :title="recommendation.description" class="font-light text-sm overflow-hidden text-ellipsis max-h-10">{{ recommendation.description }}</p>
-              </client-only>
-
+      <client-only>
+        <volt-card v-for="recommendation in recommendations" :key="recommendation.name" v-motion-pop-visible-once :delay="200" class="bg-surface-50">
+          <template #content>
+            <div class="grid grid-cols-2 md:grid-cols-1 md:items-center md:text-center">
               <nuxt-analytics event="view_item_list" :params="{ items: _analyticsItems }">
                 <template #default="{ attrs }">
-                  <a :id="`link-product-recommendation-link-${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" class="text-primary-500 underline underline-offset-2 text-sm mt-2 inline-block" @click="attrs.sendTemplateEvent">
-                    {{ $t("Voir le produit") }}
+                  <a :id="`link-product-recommendation_${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" @click="attrs.sendTemplateEvent">
+                    <nuxt-img :src="recommendation.image" :alt="`${get('legalName')} recommande ${recommendation.name}`" class="w-full aspect-square object-cover min-h-90" />
                   </a>
                 </template>
               </nuxt-analytics>
+  
+              <div class="flex-row content-center">
+                <h4 class="font-semibold truncate" :title="recommendation.name">{{ recommendation.name }}</h4>
+                
+                <client-only>
+                  <p :title="recommendation.description" class="font-light text-sm overflow-hidden text-ellipsis max-h-10">{{ recommendation.description }}</p>
+                </client-only>
+  
+                <nuxt-analytics event="view_item_list" :params="{ items: _analyticsItems }">
+                  <template #default="{ attrs }">
+                    <a :id="`link-product-recommendation-link-${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" class="text-primary-500 underline underline-offset-2 text-sm mt-2 inline-block" @click="attrs.sendTemplateEvent">
+                      {{ $t("Voir le produit") }}
+                    </a>
+                  </template>
+                </nuxt-analytics>
+              </div>
             </div>
-          </div>
-        </template>
-      </volt-card>
+          </template>
+        </volt-card>
+      </client-only>
     </div>
   </section>
 </template>

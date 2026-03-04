@@ -1,5 +1,5 @@
 <template>
-  <a :href="`tel:${telephone || businessDetails.contact.telephone}`">
+  <a :href="`tel:${fallbackTelephone}`">
     <icon v-if="withIcon" name="i-fa7-solid:phone" />
 
     <slot>
@@ -16,8 +16,9 @@
 const { businessDetails } = useBusinessDetails()
 
 const {
-  telephone, 
   text = 'Nous appeler',
   withIcon = true
-} = defineProps<{ telephone?: string, text?: string, withIcon?: boolean }>()
+} = defineProps<{ text?: string, withIcon?: boolean }>()
+
+const fallbackTelephone = businessDetails.contact.telephone
 </script>

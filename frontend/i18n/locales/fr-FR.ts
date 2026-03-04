@@ -115,5 +115,7 @@ export default defineI18nLocale(async _locale => {
     "Dois-je arriver les cheveux attaché ?": "Dois-je arriver les cheveux attaché ?",
     "Il est préférable de venir les cheveux attachés pour votre rendez-vous afin de garantir les meilleurs résultats possibles.": "Il est préférable de venir les cheveux attachés pour votre rendez-vous afin de garantir les meilleurs résultats possibles.",
     "Coupe seule": "Coupe seule",
+    "Ce que pensent mes clients": "Ce que pensent mes clients",
+    "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.": "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.",
   }
 })

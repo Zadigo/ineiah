@@ -113,6 +113,7 @@ export default defineI18nLocale(async _locale => {
     "Dois-je arriver les cheveux attaché ?": "Should I come with tied hair?",
     "Il est préférable de venir les cheveux attachés pour votre rendez-vous afin de garantir les meilleurs résultats possibles.": "It is best to come with tied hair for your appointment to ensure the best possible results.",
     "Coupe seule": "Cut only",
-
+    "Ce que pensent mes clients": "Customer Testimonials",
+    "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.": "Hear what our users say about us. We're always looking for ways to improve. If you have a positive experience with us, leave a review.",
   }
 })

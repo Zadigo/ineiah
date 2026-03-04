@@ -1,16 +1,16 @@
 <template>
   <section class="px-5 py-20 md:p-20 text-primary-100 bg-primary-500">
     <div class="mb-10 text-center max-w-3xl mx-auto">
-      <h3 class="text-3xl">
-        Customer Testimonials
+      <h3 class="text-3xl xl:text-5xl mb-5">
+        {{ $t("Ce que pensent mes clients") }}
       </h3>
 
       <p>
-        Hear what our users say about us. We're always looking for ways to improve. If you have a positive experience with us, leave a review.
+        {{ $t("Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.") }}
       </p>
     </div>
 
-    <div class="flex justify-center text-left gap-10 text-primary-500">
+    <div class="flex flex-wrap justify-center text-left gap-5 xl:gap-10 text-primary-500">
       <article v-for="(review, idx) in reviews" :key="idx" class="flex flex-col justify-left shadow-md rounded-xl bg-primary-200 dark:bg-primary-800">
         <div id="review" class="flex flex-col p-5 max-w-70">
           <div id="review-rating">
