@@ -13,6 +13,7 @@
     "test": "vitest",
     "test:co": "vitest --coverage",
     "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
     "lint:oxc": "oxlint",
     "lint:oxc-fix": "oxlint --fix"
   },
@@ -66,6 +67,7 @@
     "@unhead/addons": "^2.1.10",
     "@vitejs/plugin-vue": "^6.0.4",
     "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
     "@vueuse/core": "^14.2.1",
     "@vueuse/nuxt": "^14.2.1",
     "class-variance-authority": "^0.7.1",

@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <div v-show="invert" class="rounded-lg w-full">
+        <div v-show="invert" id="inverted-image" class="rounded-lg w-full">
           <client-only>
             <nuxt-img v-motion-fade-visible-once :src="image" class="aspect-square object-cover rounded-md w-full" alt="" />
           </client-only>
@@ -32,5 +32,5 @@
 </template>
 
 <script setup lang="ts">
-const { invert = false, image } = defineProps<{ invert?: boolean, image: string }>() 
+const { invert = false, image } = defineProps<{ invert: boolean, image: string }>() 
 </script>

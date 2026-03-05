@@ -2,20 +2,23 @@ import { NuxtLinkLocale } from '#components'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
 
-import BaseNavbar from '~/components/BaseNavbar.vue'
+import BaseNavbar from '../../../app/components/base/Navbar.vue'
 
-describe.skip('Navbar', () => {
+describe('Navbar', () => {
   describe('call to action', async () => {
     it('should contain call to action', async () => {
-      const component = await mountSuspended(BaseNavbar)
-      const cta = component.find(`[id="tel-navbar"]`)
+      const component = await mountSuspended(BaseNavbar, { props: { id: 'navbar', buttonClass: '' } })
+      const cta = component.find(`[id="tel-call-us-navbar"]`)
 
       expect(cta.exists()).toBeTruthy()
-      expect(cta.attributes('href')).toContain('tel:')
+
+      const value = cta.attributes('href')
+      expect(value).toBeDefined()
+      expect(value?.startsWith('tel:')).toBeTruthy()
     })
   })
 
-  describe('fixed when scrolled', () => {
+  describe.skip('fixed when scrolled', () => {
     // TODO: Renders only the navbar so when scrolled nothing happens. This
     // has to be tested on a page
     it.skip('applies bg-brand-pink-500 if show showBackground is true', async () => {
@@ -52,7 +55,7 @@ describe.skip('Navbar', () => {
     })
   })
 
-  it('emits when mobile button is clicked', async () => {
+  it.skip('emits when mobile button is clicked', async () => {
     const component = await mountSuspended(BaseNavbar)
     const button = component.get('button[aria-controls="mobile-menu"]')
     
@@ -60,7 +63,7 @@ describe.skip('Navbar', () => {
     expect(component.emitted('mobile-menu')).toBeTruthy()
   })
 
-  it('has all expected links', async () => {
+  it.skip('has all expected links', async () => {
     const component = await mountSuspended(BaseNavbar)
     const links = component.findAllComponents(NuxtLinkLocale)
 

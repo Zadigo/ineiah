@@ -2,8 +2,8 @@ import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { fireEvent, waitFor } from '@testing-library/vue'
 import { describe, expect, it, vi } from 'vitest'
 
-import BaseJumbotron from '~/components/BaseJumbotron.vue'
-import Contact from '~/pages/contact.vue'
+import BaseJumbotron from '../../../app/components/base/Jumbotron.vue'
+import Contact from '../../../app/pages/contact.vue'
 
 vi.stubGlobal('$fetch', vi.fn(() => Promise.resolve({ success: true })))
 

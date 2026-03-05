@@ -8,6 +8,7 @@ export default defineConfig({
     globals: true,
     testTimeout: 20000,
     setupFiles: ['tests/setup.ts'],
+    // reporters: ['default', 'html'],
     alias: {
       '~': path.resolve(__dirname, 'app')
     },
@@ -21,6 +22,20 @@ export default defineConfig({
           include: ['tests/app/**/*.{spec,test}.ts'],
           testTimeout: 20000
         }
+      }),
+      await defineVitestProject({
+        test: {
+          name: 'e2e',
+          include: ['test/e2e/*.{test,spec}.ts'],
+          environment: 'node',
+        }
+      }),
+      await defineVitestProject({
+        test: {
+          name: 'nuxt',
+          include: ['test/nuxt/*.{test,spec}.ts'],
+          environment: 'nuxt',
+        },
       })
     ]
   },

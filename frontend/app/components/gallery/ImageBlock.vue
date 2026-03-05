@@ -7,7 +7,10 @@
     <!-- Infos -->
     <div class="absolute left-5 bottom-5 space-y-1">
       <h3 class="text-primary-100 text-xl font-semibold">{{ image.name }}</h3>
-      <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
+      <transition 
+        enter-from-class="opacity-0" 
+        enter-to-class="opacity-100 animate-fadeindown"
+      >
         <div v-if="isHovered && !isMobile" class="text-primary-50 text-sm font-thin">
           <p v-if="!isSelected" class="flex items-center gap-2">{{ $t("En savoir plus") }} <icon name="lucide:fullscreen" /></p>
           <p v-if="image.author.instagram">Réalisée par <a :href="`https://www.instagram.com/${image.author.instagram}`" target="_blank" class="underline underline-offset-3 font-semibold">@{{ image.author.instagram }}</a></p>

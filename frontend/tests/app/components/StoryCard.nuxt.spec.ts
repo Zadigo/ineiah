@@ -1,17 +1,34 @@
-import { describe, expect, it, vi } from 'vitest'
-import { screen, fireEvent, waitFor } from '@testing-library/vue'
-import { renderSuspended, mountSuspended } from '@nuxt/test-utils/runtime'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+import { describe, expect, it } from 'vitest'
 
-import StoryCard from '~/components/story/Card.vue'
+import StoryCard from '../../../app/components/story/Card.vue'
 
-describe.concurrent.skip('Story Card', () => {
+describe.concurrent('Story Card', () => {
   it('should render card', async () => {
-    const html = await mountSuspended(StoryCard, {
+    const content = await mountSuspended(StoryCard, {
       props: {
-        invert: true
+        invert: false,
+        image: '/images/story-1.jpg'
       }
     })
 
-    expect(html.text()).toContain('Quand Anissa découvre la coiffure')
+    expect(content.text()).toEqual('')
+    expect(content.get('h3')).toBeDefined()
+
+    const img = content.get('img')
+    expect(img).toBeDefined()
+    expect(img.attributes('src')).toBe('/images/story-1.jpg')
+  })
+
+  it('should render inverted card', async () => {
+    const content = await mountSuspended(StoryCard, {
+      props: {
+        invert: true,
+        image: '/images/story-1.jpg'
+      }
+    })
+    
+    const invertedImage = content.get('#inverted-image')
+    expect(invertedImage).toBeDefined()
   })
 })

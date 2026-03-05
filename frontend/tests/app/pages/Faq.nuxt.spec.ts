@@ -1,10 +1,9 @@
-import { ShadAccordionContent } from '#components'
+import AccordionContent from '../../../app/components/volt/AccordionContent.vue'
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
 import { fireEvent, within } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
-import { faqList } from '~/data'
-
-import Faq from '~/pages/faq.vue'
+import {  useFaq } from '../../../app/composables'
+import Faq from '../../../app/pages/Faq.vue'
 
 describe.skip('FAQ Page', () => {
   it('should render page', async () => {
@@ -31,6 +30,7 @@ describe.skip('FAQ Page', () => {
 
   it('renders expected number of accordion items for each section', async () => {
     const wrapper = await mountSuspended(Faq)
+    const { faqList } = useFaq()
 
     faqList.forEach(section => {
       const sectionEl = wrapper.find(`#faq-${section.id}`)
@@ -50,8 +50,9 @@ describe.skip('FAQ Page', () => {
   describe('accordion', async () => {
     it.todo('toggles accordion content when trigger is clicked', async () => {
       const wrapper = await mountSuspended(Faq)
+      const { faqList } = useFaq()
       const firstTrigger = wrapper.find(`[id="faq-${faqList[0].id}-0"]`)
-      const firstContent = wrapper.findComponent(ShadAccordionContent)
+      const firstContent = wrapper.findComponent(AccordionContent)
       expect(firstContent.isVisible()).toBe(false)
 
       // await firstTrigger.trigger('click')

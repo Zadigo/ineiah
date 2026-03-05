@@ -1,21 +1,35 @@
 import { renderSuspended } from '@nuxt/test-utils/runtime'
 import { screen } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
+import BaseHero from '../../../app/components/base/Hero.vue'
+import { vi } from 'vitest'
 
-import BaseHero from '~/components/BaseHero.vue'
+vi.mock('#app/composables/payload', async (importOriginal) => {
+  const actual = await importOriginal()
 
-describe.concurrent.skip('Base Hero', () => {
-  it.skip('renders correctly with default props', async () => {
-    await renderSuspended(BaseHero, {
+  return {
+    ...actual,
+    loadPayload: vi.fn().mockResolvedValue(null),
+  }
+})
+
+describe.concurrent('Base Hero', () => {
+  it('renders correctly with default props', async () => {
+    const { container } =  await renderSuspended(BaseHero, {
       props: {
         lead: 'Default Title',
         subtitle: 'Default Subtitle',
         src: '/default.jpg'
       }
     })
-    
+
+    console.log('HTML', container.getHTML())
+
     expect(screen.getByText('Default Title')).toBeDefined()
     expect(screen.getByText('Default Subtitle')).toBeDefined()
+
+    const div = container.firstElementChild as HTMLElement
+    expect(div.style.backgroundImage).toBe('url(/default.jpg)')
   })
 
   const cases: Array<[string, string, string]> = [
@@ -23,7 +37,7 @@ describe.concurrent.skip('Base Hero', () => {
   ]
 
   cases.forEach(([lead, subtitle, src]) => {
-    it(`renders correctly with props: ${lead} ${subtitle} ${src}`, async () => {
+    it(`renders correctly with props: "${lead}" "${subtitle}" "${src}"`, async () => {
       await renderSuspended(BaseHero, {
         props: {
           lead,
