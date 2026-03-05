@@ -50,7 +50,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: 16*60 },
+    '/': { prerender: true },
     '/faq': { prerender: true },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { prerender: true },
