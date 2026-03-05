@@ -5,7 +5,7 @@
         <div class="mx-auto md:max-w-2xl">
           <volt-card>
             <template #content>
-              <h1 class="font-5xl">{{ error?.statusCode }}</h1>
+              <h1 class="font-5xl">{{ error?.status }}</h1>
               <p class="font-2xl font-light">{{ error?.message }}</p>
 
               <nuxt-link-locale id="link-error" to="/" aria-label="Accueil" @click="handleError">
@@ -31,6 +31,7 @@ const error = useError()
 useHead({
   title: "La page n'existe pas"
 })
+
 /**
  * A function that handles the
  * redirect to the home page

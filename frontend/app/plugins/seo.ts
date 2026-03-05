@@ -11,13 +11,10 @@ export default defineNuxtPlugin(async () => {
         name: get('legalName'),
         legalName: get('legalName'),
         alternateName: 'Inéïah Beauté',
-        description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure.',
-        logo: 'https://example.com/logo.png',
+        description: get('description'),
+        logo: get('logo'),
         sameAs: get('sameAs'),
-        image: [
-          'https://yourdomain.com/images/service-haircut.jpg',
-          'https://yourdomain.com/images/service-coloring.jpg'
-        ],
+        image: get('image'),
         priceRange: '$$',
         foundingDate: get('foundingDate'),
         foundingLocation: {
@@ -28,12 +25,10 @@ export default defineNuxtPlugin(async () => {
           '@type': 'Person',
           name: get('founder'),
           jobTitle: 'Founder & CEO',
-          description: "Natacha Morel est une coiffeuse certifiée et experte en bien-être avec plus de 10 ans d'expérience dans l'industrie de la beauté.",
-          image: 'https://yourdomain.com/images/founder-natacha.jpg',
-          url: 'https://yourdomain.com/about',
-          sameAs: [
-            'https://www.instagram.com/ineiah'
-          ],
+          description: get('founderDescription'),
+          image: get('founderImage'),
+          url: null,
+          sameAs: get('sameAs'),
           worksFor: {
             '@type': 'Organization',
             name: get('legalName')
