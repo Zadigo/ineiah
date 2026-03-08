@@ -18,8 +18,8 @@ export default defineConfig({
     projects: [
       await defineVitestProject({
         test: {
-          name: 'nuxt-pages',
-          include: ['tests/app/**/*.{spec,test}.ts'],
+          name: 'nuxt',
+          include: ['tests/nuxt/**/*.{spec,test}.ts'],
           testTimeout: 20000
         }
       }),
@@ -32,9 +32,9 @@ export default defineConfig({
       }),
       await defineVitestProject({
         test: {
-          name: 'nuxt',
-          include: ['test/nuxt/*.{test,spec}.ts'],
-          environment: 'nuxt',
+          name: 'unit',
+          include: ['test/unit/*.{test,spec}.ts'],
+          environment: 'node',
         },
       })
     ]
