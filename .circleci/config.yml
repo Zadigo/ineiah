@@ -44,6 +44,11 @@ jobs:
             - .pnpm-store
 
       - run:
+          name: Run lint
+          working_directory: ~/repo/frontend/
+          command: pnpm run lint
+
+      - run:
           name: Run tests
           working_directory: ~/repo/frontend/
           command: pnpm run test
@@ -51,7 +56,8 @@ jobs:
       - run:
           name: Build project
           working_directory: ~/repo/frontend/
-          command: pnpm run build
+          command: |
+            pnpm run build
 
 workflows:
   version: 2

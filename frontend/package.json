@@ -8,14 +8,14 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "upload-aws": "aws s3 sync .output/public/ s3://reka.app --delete --acl public-read",
-    "lint": "eslint --ext .ts,.vue .",
+    "sync:s3": "aws s3 sync .output/public/ s3://reka.app --delete --acl public-read",
     "test": "vitest",
     "test:co": "vitest --coverage",
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
-    "lint:oxc": "oxlint",
-    "lint:oxc-fix": "oxlint --fix"
+    "lint": "oxlint lint --type-aware",
+    "lint:fix": "oxlint --fix",
+    "lint:eslint": "eslint --ext .ts,.vue ."
   },
   "dependencies": {
     "@capacitor/app": "8.0.0",
