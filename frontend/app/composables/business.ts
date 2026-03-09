@@ -31,7 +31,7 @@ export interface BusinessDetails {
   siret: string
   numberoTVA: Nullable<string>
   creationDate: string
-  alternateName: string
+  alternateName: string | string[]
   description: string
   logo: string
   sameAs: string[]
@@ -64,7 +64,12 @@ export interface BusinessDetails {
 export const businessDetails: BusinessDetails = {
   name: "La beauté d'Inéïah",
   legalName: "La beauté d'Inéïah",
-  alternateName: "La beauté d'Inéïah",
+  alternateName: [
+    "La beauté d'Ineiah",
+    "Inéïah",
+    "Ineiah",
+    "Ineiah Coiffure"
+  ],
   siren: '790 849 574',
   siret: '790 849 574 00039',
   numberoTVA: 'FR29790849574',
