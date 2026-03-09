@@ -1,6 +1,5 @@
 import type { ServiceSection } from '~/types'
 
-
 export const defaultServices: ServiceSection[] = [
   {
     name: 'Shampoings • Coupes • Mise en forme',

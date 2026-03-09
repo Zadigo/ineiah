@@ -1,7 +1,5 @@
 // @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
-// import stylistic from '@stylistic/eslint-plugin'
-// import typescriptEslint from '@typescript-eslint/eslint-plugin'
 
 export default withNuxt(
   // {

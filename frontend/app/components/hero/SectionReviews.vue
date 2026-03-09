@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex flex-wrap justify-center text-left gap-5 xl:gap-10 text-primary-500">
-      <article v-for="(review, idx) in reviews" :ref="reviewEls.set" :key="idx" class="flex flex-col justify-left shadow-md rounded-xl bg-primary-200 dark:bg-primary-800" @click="selectReview(review)">
+      <article v-for="(review, idx) in reviews" :key="idx" class="flex flex-col justify-left shadow-md rounded-xl bg-primary-200 dark:bg-primary-800" @click="selectReview(review)">
         <div id="review" class="flex flex-col justify-between p-5 max-w-70">
           <div id="review-rating">
             <icon v-for="i in review.rating" :key="i" name="lucide:star" />
@@ -49,13 +49,13 @@
 
 const { reviews, selectedReview, hasSelection, selectReview } = useReviewsComposable()
 
-const reviewEls = useTemplateRefsList()
+// const reviewEls = useTemplateRefsList()
 
-reviewEls.value.forEach((el) => {
-  onClickOutside(el, () => {
-    selectReview(null)
-  })
-})
+// reviewEls.value.forEach((el) => {
+//   onClickOutside(el, () => {
+//     selectReview(null)
+//   })
+// })
 
 /**
  * SEO
@@ -63,6 +63,11 @@ reviewEls.value.forEach((el) => {
 
 useSchemaOrg(
   reviews.map(review => defineReview({
+    author: {
+      '@type': "Person",
+      givenName: review.reviewer.givenName,
+      familyName: review.reviewer.familyName
+    },
     reviewBody: review.comment,
     reviewRating: {
       ratingValue: review.rating.toString(),

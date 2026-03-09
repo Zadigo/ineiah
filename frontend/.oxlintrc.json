@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": [
+    "eslint-plugin-tailwindcss",
     "jsdoc",
     "import",
     "vitest",
@@ -12,6 +13,46 @@
   ],
   "categories": {},
   "rules": {
+    "tailwindcss/classnames-order": [
+      "error",
+      {
+        "sortTailwindcss": {
+          "stylesheet": "./app/assets/css/tailwind.css",
+          "functions": [
+            "clsx",
+            "cn"
+          ],
+          "preserveWhitespace": true
+        }
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "sortImports": {
+          "groups": [
+            "type-import",
+            [
+              "value-builtin",
+              "value-external"
+            ],
+            "type-internal",
+            "value-internal",
+            [
+              "type-parent",
+              "type-sibling",
+              "type-index"
+            ],
+            [
+              "value-parent",
+              "value-sibling",
+              "value-index"
+            ],
+            "unknown"
+          ]
+        }
+      }
+    ]
   },
   "settings": {
     "jsx-a11y": {
