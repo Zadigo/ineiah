@@ -1,6 +1,9 @@
 <template>
   <section class="font-sans bg-primary-100 dark:bg-primary-800 relative">
     <nuxt-layout>
+      <analytics />
+      <speed-insights />
+      
       <nuxt-page />
 
       <dev-only>
@@ -12,6 +15,8 @@
 </template>
 
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt'
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 import { provideSSRWidth } from '@vueuse/core'
 
 const nuxtApp = useNuxtApp()
