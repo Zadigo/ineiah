@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div v-if="showBanner"  class="fixed top-7/12 left-5 [--shadow:rgba(60,64,67,0.3)_0_1px_2px_0,rgba(60,64,67,0.15)_0_2px_6px_2px] w-4/5 h-auto z-50 rounded-2xl bg-primary-100 dark:bg-primary-400 [box-shadow:var(--shadow)] max-w-[300px]">
+    <div v-if="showBanner"  class="fixed top-7/12 left-5 [--shadow:rgba(60,64,67,0.3)_0_1px_2px_0,rgba(60,64,67,0.15)_0_2px_6px_2px] w-4/5 h-auto z-50 rounded-2xl bg-primary-100 dark:bg-primary-400 [box-shadow:var(--shadow)] max-w-75">
       <div class="flex flex-col items-center justify-between pt-9 px-6 pb-6 relative">
         <span class="relative mx-auto -mt-16 mb-8">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="46" width="65">
