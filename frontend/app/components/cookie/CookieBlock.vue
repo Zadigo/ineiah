@@ -21,8 +21,8 @@
 <script setup lang="ts">
 const props = defineProps<{
   cookieValue: {
-    name: string
-    description: string
+    name: string,
+    description: string,
     required: boolean
   }
 }>()

@@ -36,7 +36,7 @@
           </button>
 
           <!-- cursor-pointer py-2 px-8 w-max break-keep text-sm rounded-lg transition-colors text-[#634647] hover:text-[#ddad81] bg-[#ddad81] hover:bg-[#634647] -->
-          <volt-contrast-button class="font-semibold" @click="() => accept()">
+          <volt-contrast-button class="font-semibold" @click="() => accept(acceptAll)">
             {{ $t("Accepter tout") }}
           </volt-contrast-button>
         </div>
@@ -46,5 +46,13 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * Cookie
+ */
 const { toggleShowOptions, showBanner, accept } = useCookieComposable()
+
+/**
+ * Consent Google Analytics
+ */
+const { acceptAll } = useConsent()
 </script>
