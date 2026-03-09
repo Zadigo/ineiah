@@ -26,3 +26,10 @@ export interface GalleryImage {
 export type Locale = 'fr' | 'en'
 
 export type PageTitleOrDescription<T extends string> = Record<T, string>
+
+export type Photocall = {
+  src: string
+  alt: string
+  subtitle: 'Coupe' | 'Soin'
+  title: string
+}
