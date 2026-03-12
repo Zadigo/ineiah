@@ -1,5 +1,5 @@
 export default defineNuxtPlugin({
-  name: 'PinterestPlugin',
+  name: 'pinterest',
   parallel: true,
   async setup() {
     useHead({

@@ -6,7 +6,7 @@
       <services-section v-for="(section, index) in services" :key="section.name" :index="index" :section="section" />
 
       <div class="my-10">
-        <card-call-to-action id="tel-calls-us-services" />
+        <card-call-to-action id="tel-call-us-services" />
       </div>
     </div>
   </section>

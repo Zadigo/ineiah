@@ -1,5 +1,5 @@
 <template>
-  <article :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer rounded-lg" @click="() => toggleServiceDetails()">
+  <article :id="createElementId('service', null, service.gender, service.category, service.name || `${index + 1}`)" class="relative bg-surface-200 cursor-pointer rounded-lg" @click="() => toggleServiceDetails()">
     <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg overflow-hidden">
       <nuxt-img :src="service.image || '/images/dev/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-75" :alt="`${service.category} - ${service.name} - ${service.gender} - ${get('legalName')}`" />
 
@@ -37,7 +37,7 @@
 import { serviceSectionKey } from '~/data'
 import type { Service, ServiceSection } from '~/types'
 
-defineProps<{ index: number, service: Service }>()
+const props = defineProps<{ index: number, service: Service }>()
 
 /**
  * Busness details
@@ -55,6 +55,25 @@ const isMobile = useMediaQuery('(max-width: 768px)')
  */
 
 const [showServiceDetails, toggleServiceDetails] = useToggle<boolean>(false)
+
+/**
+ * Analytics
+ */
+
+const { sendEvent } = useAnalyticsEvent()
+
+whenever(showServiceDetails, () => {
+  sendEvent(
+    defineAnalyticsEvent(
+      'open_service_details',
+      {
+        item_index: props.index,
+        item_name: `${props.service.category} - ${props.service.name} - ${props.service.gender}`,
+        item_value: props.service.price || 0
+      }
+    )
+  )
+})
 
 /**
  * Click outside

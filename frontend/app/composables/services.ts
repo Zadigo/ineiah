@@ -1,4 +1,4 @@
-import type { ServiceSection } from '~/types'
+import type { Nullable, ServiceSection } from '~/types'
 
 export const defaultServices: ServiceSection[] = [
   {
@@ -373,7 +373,43 @@ export const defaultServices: ServiceSection[] = [
 export function useServices() {
   const services = ref<ServiceSection[]>(defaultServices)
 
+  function resolver(index: number, item: ServiceSection, query?: string) {
+    return item.services.map(item => ({
+      id: `${index}`,
+      title: `${item.category} - ${item.name} - ${item.gender}`,
+      description: item.description,
+      slug: item.name?.replace(' ', '-').toLowerCase(),
+      type: 'product',
+      to: `/nos-prestations?q=${query}`,
+      tags: []
+    } as SearchItem))
+  }
+
+  function googleSearchResolver(searchedValue: Nullable<string>) {
+    if (isDefined(searchedValue)) {
+      const searchedItem = searchedValue.toLowerCase()
+      return services.value.filter((service) => {
+        return (
+          service.name.toLowerCase().includes(searchedItem) ||
+          service.globalDescription?.toLowerCase().includes(searchedItem) ||
+          service.services.map(item => {
+            return (
+              item.name?.toLowerCase().includes(searchedItem) ||
+              item.gender.toLocaleUpperCase().includes(searchedItem) ||
+              `${item.price?.toString()}€`.includes(searchedItem)
+            )
+          }).some(x => x === true)
+        )
+      }).map((item, idx) => resolver(idx, item))
+    } else {
+      return []
+    }
+  }
+
   return {
-    services
+    services,
+    googleSearchResolver
+    // search,
+    // searched
   }
 }

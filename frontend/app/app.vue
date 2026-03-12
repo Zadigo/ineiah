@@ -47,19 +47,6 @@ onMounted(() => {
 onUnmounted(() => {
   document.querySelector('html')?.classList.remove(...tokens)
 })
-
-/**
- * SEO
- */
-
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: useRuntimeConfig().public.siteUrl
-    }
-  ]
-})
 </script>
 
 <style lang="scss">

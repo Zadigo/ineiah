@@ -11,6 +11,6 @@
             "(?:'|\"|`)([^']*)(?:'|\"|`)"
         ]
     ],
-    "tailwind-fold.autoFold": true,
+    "tailwind-fold.autoFold": false,
     "oxc.enable.oxfmt": true
 }
