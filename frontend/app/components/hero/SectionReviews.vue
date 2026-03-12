@@ -19,7 +19,7 @@
             <icon v-for="i in review.rating" :key="i" name="lucide:star" />
           </div>
 
-          <div v-if="hasSelection && selectedReview.reviewer.name === review.reviewer.name" class="font-thin leading-5 text-sm w-full h-25 overflow-scroll" @click="selectReview(null)">
+          <div v-if="selectedReview && selectedReview.reviewer.name === review.reviewer.name" class="font-thin leading-5 text-sm w-full h-25 overflow-scroll" @click="selectReview(null)">
             "{{ review.comment }}"
           </div>
 
@@ -47,7 +47,7 @@
  * Reviews
  */
 
-const { reviews, selectedReview, hasSelection, selectReview } = useReviewsComposable()
+const { reviews, selectedReview, selectReview } = useReviewsComposable()
 
 // const reviewEls = useTemplateRefsList()
 

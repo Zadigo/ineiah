@@ -88,6 +88,7 @@
     "nuxt-vuefire": "1.1.0",
     "oxfmt": "^0.36.0",
     "oxlint": "^1.51.0",
+    "oxlint-tsgolint": "^0.16.0",
     "pinia-plugin-persistedstate": "^4.7.1",
     "playwright-core": "^1.58.2",
     "sass-embedded": "^1.97.3",
@@ -102,5 +103,5 @@
     "vue-router-mock": "^2.0.2",
     "zod": "^4.3.6"
   },
-  "packageManager": "pnpm@10.31.0+sha512.e3927388bfaa8078ceb79b748ffc1e8274e84d75163e67bc22e06c0d3aed43dd153151cbf11d7f8301ff4acb98c68bdc5cadf6989532801ffafe3b3e4a63c268"
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }
