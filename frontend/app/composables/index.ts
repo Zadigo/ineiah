@@ -5,6 +5,7 @@ export * from './gallery'
 export * from './privacy_policy'
 export * from './socials'
 export * from './reviews'
+export * from './search'
 
 /**
  * Composable to generate dynamic IDs from string values

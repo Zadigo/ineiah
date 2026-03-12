@@ -1,3 +1,6 @@
+import type { Nullable } from '~/types'
+import type { SearchItem } from './search'
+
 export interface Policy {
   title: string
   titleEn?: string
@@ -9,10 +12,10 @@ export interface Policy {
   }[]
 }
 
-export async function loadPolicies(): Promise<Policy[]> {
+export function useWebsitePolicies() {
   const { get } = useBusinessDetails()
 
-  return [
+  const defaultPolicies: Policy[] = [
     {
       title: 'Utilisation des données personnelles',
       titleEn: 'Use of Personal Data',
@@ -102,7 +105,7 @@ export async function loadPolicies(): Promise<Policy[]> {
           type: 'paragraph',
           text: "Si le site web est impliquée dans une opération de fusion, acquisition, cession d'actifs ou procédure de redressement judiciaire, elle pourra être amenée à céder ou partager tout ou partie de ses actifs, y compris les données à caractère personnel. Dans ce cas, les utilisateurs seraient informés, avant que les données à caractère personnel ne soient transférées à une tierce partie."
         }
-      ] 
+      ]
     },
     {
       title: "Sécurité et confidentialité",
@@ -132,7 +135,7 @@ export async function loadPolicies(): Promise<Policy[]> {
               text: "le droit de rectification : si les données à caractère personnel détenues par le site web sont inexactes, ils peuvent demander la mise à jour des informations."
             },
             {
-              text: "le droit de suppression des données : les utilisateurs peuvent demander la suppression de leurs données à caractère personnel, conformément aux lois applicables en matière de protection des données."  
+              text: "le droit de suppression des données : les utilisateurs peuvent demander la suppression de leurs données à caractère personnel, conformément aux lois applicables en matière de protection des données."
             },
             {
               text: "le droit à la limitation du traitement : les utilisateurs peuvent de demander au site web de limiter le traitement des données personnelles conformément aux hypothèses prévues par le RGPD."
@@ -166,5 +169,44 @@ export async function loadPolicies(): Promise<Policy[]> {
       ]
     }
   ]
+
+  function resolver(index: number, item: Policy): SearchItem {
+    const text = item.content.flatMap((x) => {
+      if (x.type === 'paragraph') {
+        return [x.text]
+      } else if (x.type === 'list') {
+        return x.items?.flatMap(s => [s.text])
+      }
+    })
+
+    return {
+      id: `${index}`,
+      title: item.title,
+      description: text.join(' '),
+      type: 'page',
+      tags: [],
+      to: '/legal/confidentialite',
+      slug: ''
+    }
+  }
+
+  function googleSearchResolver(searchedValue: Nullable<string>) {
+    return computed(() => {
+      if (!isDefined(searchedValue)) {
+        return defaultPolicies.map((item, idx) => resolver(idx, item))
+      }
+
+      return defaultPolicies.filter(item => {
+        return (
+          item.title.includes(searchedValue)
+        )
+      }).map((item, idx) => resolver(idx, item))
+    })
+  }
+
+  return {
+    defaultPolicies,
+    googleSearchResolver
+  }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <section id="mentions-legales" class="mb-30">
     <div class="px-5 md:px-10 md:max-w-4xl mx-auto space-y-2">
-      <volt-card v-for="policy in policies" :key="policy.title">
+      <volt-card v-for="policy in defaultPolicies" :key="policy.title">
         <template #content>
           <div class="has-[p]:leading-8">
             <h1 class="uppercase text-primary-500 text-3xl font-bold mb-2">
@@ -50,10 +50,10 @@
 import type { PageTitleOrDescription } from '~/types'
 
 /**
- * Load policies data
+ * Website Policies
  */
 
-const policies = await loadPolicies()
+const { defaultPolicies } = useWebsitePolicies()
 
 /**
  * SEO Meta
