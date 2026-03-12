@@ -2,7 +2,9 @@
   <div class="grid grid-rows-2 grid-cols-2 gap-0 auto-rows-min rounded-md md:grid-rows-1 md:grid-cols-4">
     <client-only>
       <motion-group preset="fadeVisibleOnce">
-        <hero-photo-call v-for="item in items" :key="item.title" :item="item" :delay="randomMotionDelays()" :alt="``" />
+        <article v-for="item in items" :key="item.title" :delay="randomMotionDelays()">
+          <hero-photo-call :item="item" :alt="` Service de ${item.subtitle} - ${item.title} de la ${get('legalName')}`" />
+        </article>
       </motion-group>
     </client-only>
   </div>

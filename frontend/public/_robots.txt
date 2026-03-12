@@ -1,2 +1,5 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Disallow: /_nuxt/
+Disallow: /search?q=
+
+Sitemap: https://labeautedineiah.com/sitemap.xml
