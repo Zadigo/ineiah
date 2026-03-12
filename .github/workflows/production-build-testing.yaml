@@ -30,9 +30,9 @@ jobs:
         with:
           node-version: '>=24'
           
-      - name: "Move to frontend"
-        run: cd frontend
-        
+      # - name: "Move to frontend"
+      #   run: cd frontend
+
       - run: npm i -g --force corepack@latest && corepack enable
 
       - name: "Install dependencies"
