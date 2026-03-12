@@ -29,14 +29,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '>=24'
-          
-      # - name: "Move to frontend"
-      #   run: cd frontend
-
+                  
       - run: npm i -g --force corepack@latest && corepack enable
 
-      - name: "Install dependencies"
-        run: npx nypm@latest i
+      - name: "Move to frontend"
+        run: ls -Fal --color && cd frontend
+          
+      # - name: "Install dependencies"
+      #   run: npx nypm@latest i
 
 
       # - name: Install Nuxt
