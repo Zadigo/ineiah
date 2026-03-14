@@ -115,5 +115,6 @@ export default defineI18nLocale(async _locale => {
     "Coupe seule": "Cut only",
     "Ce que pensent mes clients": "Customer Testimonials",
     "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.": "Hear what our users say about us. We're always looking for ways to improve. If you have a positive experience with us, leave a review.",
+    "Soin": "Soin"
   }
 })
