@@ -123,7 +123,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails, address } = useBusinessDetails()
+const { businessDetails, address, get } = useBusinessDetails()
 
 /**
  * Utils
@@ -147,19 +147,21 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover the legal notice of our hair salon, which provides important information about the site publisher, the host, and intellectual property rights.'
 }
 
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
+  titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  ogImage: shareImage
 })
 
 defineOgImage('Base', {
   title: titles[i18n.locale.value] || undefined,
   description: descriptions[i18n.locale.value] || undefined,
-  author: businessDetails.legalName || undefined,
+  author: get('legalName')
 })
 
 useSchemaOrg(

@@ -76,7 +76,7 @@ useSeoMeta({
 defineOgImage('Base', {
   title: titles[i18n.locale.value] || undefined,
   description: descriptions[i18n.locale.value] || undefined,
-  author: legalName.value || undefined,
+  author: get('legalName')
 })
 
 useSchemaOrg(

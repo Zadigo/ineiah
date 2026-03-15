@@ -48,6 +48,7 @@
 </template>
 
 <script setup lang="ts">
+import { B } from 'vue-router/dist/index-DFCq6eJK.js'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
@@ -58,7 +59,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails } = useBusinessDetails()
+const { businessDetails, get } = useBusinessDetails()
 const { faqList } = useFaq()
 
 /**
@@ -123,6 +124,6 @@ useSchemaOrg([
 defineOgImage('Base', {
   title: titles[i18n.locale.value] || undefined,
   description: descriptions[i18n.locale.value] || undefined,
-  author: legalName.value || undefined,
+  author: get('legalName')
 })
 </script>

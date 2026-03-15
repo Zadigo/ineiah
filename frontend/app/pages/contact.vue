@@ -123,18 +123,20 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Contact us for any questions or appointment requests'
 }
 
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  ogImage: shareImage
 })
 
 defineOgImage('Base', {
   title: titles[i18n.locale.value] || undefined,
   description: descriptions[i18n.locale.value] || undefined,
-  author: get('legalName') || undefined,
+  author: get('legalName')
 })
 </script>

@@ -23,7 +23,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails } = useBusinessDetails()
+const { businessDetails, get } = useBusinessDetails()
 const { services } = useServices()
 
 /**
@@ -62,7 +62,7 @@ useSeoMeta({
 defineOgImage('Base', {
   title: titles[i18n.locale.value] || undefined,
   description: descriptions[i18n.locale.value] || undefined,
-  author: businessDetails.legalName || undefined,
+  author: get('legalName')
 })
 
 useSchemaOrg(
