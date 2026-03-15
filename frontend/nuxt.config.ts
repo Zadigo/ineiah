@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils',
     '@nuxt/test-utils/module',
     '@nuxtjs/seo',
     '@nuxtjs/i18n',
@@ -26,12 +25,12 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
     'nuxt-vuefire',
-    'nuxt-schema-org',
-    'nuxt-og-image',
-    'nuxt-vuefire',
-    'nuxt-ganalytics',
-    'nuxt-link-checker'
+    'nuxt-ganalytics'
   ],
+
+  ogImage: {
+    componentDirs: [ 'og-image' ]
+  },
 
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',

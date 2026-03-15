@@ -20,3 +20,12 @@ export function createElementId(name: string, separator?: Nullable<string>, ...a
   const _args = args.map(x => x.toLowerCase().replace(/\s/g, '-'))
   return `${name}${separator ?? '__'}${_args.join('-')}`
 }
+
+/**
+ * Return the full URL for an Open Graph image based on the provided path.
+ * @param path The path to the Open Graph image.
+ */
+export function getOgImageImageUrl(path: string): string {
+  const _path = path.startsWith('/') ? path : `/${path}`
+  return `${useRuntimeConfig().public.siteUrl}${_path}`
+}

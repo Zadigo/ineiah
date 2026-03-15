@@ -106,9 +106,12 @@ const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
-  fr: 'Sublime ta singularité',
-  en: 'Sublime your singularity'
+  fr: "L'art de coiffer toutes les textures",
+  en: "The art of styling all textures"
 }
+
+const url = useRuntimeConfig().public.siteUrl
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -116,22 +119,26 @@ useSeoMeta({
   titleTemplate: `%s | ${legalName.value}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: '/images/dev/hair10.jpg'
+  twitterImage: shareImage,
+  twitterCard: 'summary_large_image',
+  ogImage: shareImage,
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
 useHead({
   link: [
     {
       rel: 'canonical',
-      href: useRuntimeConfig().public.siteUrl + useRoute().path
+      href: url + useRoute().path
     }
   ]
 })
 
-defineOgImageComponent('NuxtSeo', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark'
+defineOgImage('Base', {
+  title: titles[i18n.locale.value] || undefined,
+  description: descriptions[i18n.locale.value] || undefined,
+  author: legalName.value || undefined,
 })
 </script>

@@ -54,7 +54,7 @@
       </story-card>
 
       <div class="mt-10">
-        <card-call-to-action id="tel-call-us-story" />
+        <lazy-card-call-to-action id="tel-call-us-story" hydrate-on-idle />
       </div>
     </div>
   </section>
@@ -89,20 +89,27 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover our story and the creation of our salon.'
 }
 
+const url = useRuntimeConfig().public.siteUrl
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${businessDetails.legalName}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  ogImage: shareImage,
+  twitterImage: shareImage,
+  twitterCard: 'summary_large_image',
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
-defineOgImageComponent('NuxtSeo', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark',
+defineOgImage('NuxtSeoTakumi', {
+  title: titles[i18n.locale.value] || undefined,
+  description: descriptions[i18n.locale.value] || undefined,
+  author: businessDetails.legalName || undefined,
 })
 
 useSchemaOrg(

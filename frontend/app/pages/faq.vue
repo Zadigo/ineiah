@@ -86,9 +86,9 @@ useSeoMeta({
   titleTemplate: `%s | ${businessDetails.legalName}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: shareImage,
   twitterImage: shareImage,
   twitterCard: 'summary_large_image',
+  ogImage: shareImage,
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
   ogUrl: url + useRoute().path
@@ -120,10 +120,9 @@ useSchemaOrg([
   })
 ])
 
-defineOgImageComponent('NuxtSeo', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark'
+defineOgImage('Base', {
+  title: titles[i18n.locale.value] || undefined,
+  description: descriptions[i18n.locale.value] || undefined,
+  author: legalName.value || undefined,
 })
 </script>

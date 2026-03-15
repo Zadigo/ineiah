@@ -80,11 +80,10 @@ useSeoMeta({
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 
-defineOgImageComponent('NuxtSeo', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark',
+defineOgImage('Base', {
+  title: titles[i18n.locale.value] || undefined,
+  description: descriptions[i18n.locale.value] || undefined,
+  author: businessDetails.legalName || undefined,
 })
 
 useSchemaOrg(

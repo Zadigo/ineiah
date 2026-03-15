@@ -42,20 +42,27 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover the structure of our site and easily access all important pages.'
 }
 
+const url = useRuntimeConfig().public.siteUrl
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  twitterImage: shareImage,
+  twitterCard: 'summary_large_image',
+  ogImage: shareImage,
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
-defineOgImageComponent('NuxtSeo', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark',
+defineOgImage('Base', {
+  title: titles[i18n.locale.value] || undefined,
+  description: descriptions[i18n.locale.value] || undefined,
+  author: legalName.value || undefined,
 })
 
 useSchemaOrg(
