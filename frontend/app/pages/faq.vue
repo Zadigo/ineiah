@@ -48,7 +48,6 @@
 </template>
 
 <script setup lang="ts">
-import { B } from 'vue-router/dist/index-DFCq6eJK.js'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
