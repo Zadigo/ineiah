@@ -58,7 +58,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails, get } = useBusinessDetails()
+const { get } = useBusinessDetails()
 const { faqList } = useFaq()
 
 /**
@@ -83,7 +83,8 @@ const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
+  author: get('legalName'),
+  titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   twitterImage: shareImage,
@@ -91,7 +92,8 @@ useSeoMeta({
   ogImage: shareImage,
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url + useRoute().path,
+  ogLocale: i18n.locale.value,
 })
 
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))

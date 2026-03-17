@@ -116,6 +116,7 @@ const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
+  author: get('legalName'),
   titleTemplate: `%s | ${legalName.value}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
