@@ -171,8 +171,8 @@ export default defineNuxtPlugin(async () => {
         image: get('founderImage'),
         url: siteUrl + '/notre-histoire',
         sameAs: [
-            getSocial('instagram')?.url,
-            getSocial('facebook')?.url
+          getSocial('instagram')?.url,
+          getSocial('facebook')?.url
         ],
         worksFor: {
           '@type': 'Organization',

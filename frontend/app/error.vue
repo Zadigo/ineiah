@@ -30,18 +30,13 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * Utils
+ */
+
 const error = useError()
 
-const url = useRuntimeConfig().public.siteUrl
-
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: url + useRoute().path
-    }
-  ]
-})
+preloadRouteComponents('/')
 
 /**
  * A function that handles the

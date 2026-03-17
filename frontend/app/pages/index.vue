@@ -2,7 +2,7 @@
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15 relative">
     <!-- Hero -->
     <hero-bottom-cta v-if="showImage" :image="`/images/hero/customer18-small.webp`" />
-    <hero-top-video v-else-if="showVideo" />
+    <lazy-hero-top-video v-else-if="showVideo" hydrate-on-visible />
 
     <!-- Intermediate-1 -->
     <hero-section-image />
@@ -73,14 +73,14 @@ definePageMeta({
  * Socials
  */
 
-const { getSocial, reactiveGet, get } = useBusinessDetails()
+const { reactiveGet, get } = useBusinessDetails()
 const legalName = reactiveGet('legalName')
 
 /**
  * Utils
  */
 
-const { instagram } = useSocialLinks()
+// const { instagram } = useSocialLinks()
 
 /**
  * Template settings
@@ -125,15 +125,6 @@ useSeoMeta({
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
   ogUrl: url + useRoute().path
-})
-
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: url + useRoute().path
-    }
-  ]
 })
 
 defineOgImage('NuxtSeoTakumi', {
