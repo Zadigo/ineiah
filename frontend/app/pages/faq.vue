@@ -78,20 +78,16 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const url = useRuntimeConfig().public.siteUrl
-const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   author: get('legalName'),
   twitterDescription: descriptions[i18n.locale.value],
-  twitterImage: shareImage,
   twitterCard: 'summary_large_image',
-  ogImage: shareImage,
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path,
-  ogLocale: i18n.locale.value,
+  ogUrl: url + useRoute().path
 })
 
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))

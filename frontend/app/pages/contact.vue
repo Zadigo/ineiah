@@ -123,15 +123,17 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Contact us for any questions or appointment requests'
 }
 
-const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+const url = useRuntimeConfig().public.siteUrl
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   author: get('legalName'),
-  twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: shareImage
+  twitterCard: 'summary_large_image',
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
 defineOgImage('NuxtSeoTakumi', {
