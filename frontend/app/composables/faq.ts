@@ -69,6 +69,25 @@ export const faqList: FAQSection[] = [
         answer: 'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur(trice) légal(e) qui devra signer une autorisation parentale avant le début du rendez-vous.'
       }
     ]
+  },
+  {
+    id: 'values',
+    title: 'Valeurs & Engagements',
+    questions: [
+      {
+        question: "Utilisez-vous des produits respectueux de l'environnement ?",
+        answer: `L'éco-responsabilité fait partie intégrante de ma façon de travailler. Je sélectionne avec soin des produits capillaires naturels et respectueux de 
+        l'environnement — des marques comme Végétalement Provence ou Les Secrets de Loly, reconnues pour leur formulation saine, sans sulfates ni silicones agressifs, 
+        et engagées dans une démarche durable. Au-delà des produits, j'applique des pratiques responsables au quotidien : réduction des déchets, utilisation raisonnée 
+        de l'eau et choix de marques dont les valeurs environnementales correspondent aux miennes. Prendre soin de tes cheveux ne devrait pas se faire au détriment de la planète.`
+      },
+      {
+        question: 'Quels shampoings et soins recommandés pour cheveux afros très secs ?',
+        answer: `Je recommande d’utiliser des shampoings et soins spécialement formulés pour les cheveux afros très secs, qui contiennent des 
+        ingrédients hydratants et nourrissants tels que l’huile de coco, le beurre de karité et l’huile d’argan. Je peux vous conseiller 
+        des produits spécifiques lors de votre rendez-vous.`
+      }
+    ]
   }
 ]
 
