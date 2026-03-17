@@ -16,8 +16,9 @@
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  title: 'Services'
+  label: 'Services'
 })
+
 
 /**
  * Business details

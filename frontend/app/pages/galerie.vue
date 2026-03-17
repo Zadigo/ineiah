@@ -30,7 +30,7 @@
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  title: 'Gallery'
+  label: 'Gallery'
 })
 
 /**

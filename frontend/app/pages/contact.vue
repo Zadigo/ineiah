@@ -68,7 +68,7 @@ import { doc, setDoc } from 'firebase/firestore'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  title: 'Contact'
+  label: 'Contact'
 })
 
 const { get, activeSocials, getSocialIcon, getSocial, address } = useBusinessDetails()

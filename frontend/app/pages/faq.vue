@@ -51,7 +51,7 @@
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  name: 'FAQ'
+  label: 'FAQ'
 })
 
 /**

@@ -49,6 +49,11 @@
 <script setup lang="ts">
 import type { PageTitleOrDescription } from '~/types'
 
+definePageMeta({
+  label: 'Privacy'
+})
+
+
 /**
  * Website Policies
  */

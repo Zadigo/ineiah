@@ -55,6 +55,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  label: 'Search'
+})
+
 /**
  * Search
  */

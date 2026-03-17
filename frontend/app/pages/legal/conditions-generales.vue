@@ -7,6 +7,10 @@
 <script setup lang="ts">
 import type { PageTitleOrDescription } from '~/types'
 
+definePageMeta({
+  label: 'Terms and Conditions'
+})
+
 /**
  * Business details
  */

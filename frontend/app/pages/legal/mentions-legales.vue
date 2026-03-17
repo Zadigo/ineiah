@@ -116,7 +116,7 @@
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  name: 'privacy'
+  label: 'Privacy'
 })
 
 /**
