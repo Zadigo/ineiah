@@ -102,8 +102,16 @@ export const businessDetails: BusinessDetails = {
   founderKnowsAbout: [
     'Cheveux crépus',
     'Cheveux bouclés',
+    'Coiffure homme',
+    'Coiffure femme',
     'Coiffure multiculturelle',
-    'Soins capillaires'
+    'Coloration cheveux crépus',
+    'Hair Contouring',
+    'Soins capillaires',
+    'Coiffure Artistique',
+    'Coiffure sur-mesure',
+    'Bien-être',
+    'Formation capillaire'
   ],
   webContentManager: 'Natacha Morel',
   publishingDirector: 'Natacha Morel',
@@ -181,13 +189,51 @@ export function useBusinessDetails() {
     return `${address.street}, ${address.postalCode} ${address.city}`
   })
 
+  function suffixLegalName(name: Nullable<string>, separator: string = ' - '): string {
+    const legalName = get('legalName')
+    return `${name ?? ''}${separator}${legalName}`
+  }
+
   return {
+    /**
+     * The business details object containing all relevant information about the business, 
+     * including contact details, social media links, and more.
+     */
     businessDetails,
+    /**
+     * A computed property that returns an array of active social media 
+     * platforms based on the provided socials in the business details.
+     */
     activeSocials,
+    /**
+     * A computed property that returns the full address of the business 
+     * as a formatted string, combining the street, postal code, and city.
+     */
+    address,
+    /**
+     * A function that appends the legal name of the business to a given name, 
+     * separated by a specified separator (default is ' - ').
+     */
+    suffixLegalName,
+    /**
+     * A function to retrieve specific business details by key, ensuring type safety.
+     * @param key - The key of the business detail to retrieve.
+     */
     get,
+    /**
+     * A reactive version of the `get` function, useful for reactive contexts.
+     * @param key - The key of the business detail to retrieve reactively.
+     */
     reactiveGet,
+    /**
+     * A function to retrieve social media details for a specific platform.
+     * @param platform - The social media platform to retrieve details for (e.g., 'instagram', 'facebook').
+     */
     getSocial,
+    /**
+     * A function to retrieve the icon name for a specific social media platform.
+     * @param platform - The social media platform to retrieve the icon for (e.g., 'instagram', 'facebook').
+     */
     getSocialIcon,
-    address
   }
 }

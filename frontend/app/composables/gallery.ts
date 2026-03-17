@@ -3,6 +3,7 @@ import type { Arrayable, GalleryImage } from '~/types'
 const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Coupe styling mi-long',
+    alt: 'Coupe styling mi-long',
     image: [
       '/images/gallery/customer1.jpg',
       '/images/gallery/customer2.jpg'
@@ -18,6 +19,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Brushing volumineux',
+    alt: 'Brushing volumineux',
     image: '/images/gallery/customer18.jpg',
     category: 'image',
     url: null,
@@ -30,6 +32,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Hair contouring cheveux longs',
+    alt: 'Hair contouring cheveux longs',
     image: [
       '/images/gallery/customer32.jpg',
       '/images/gallery/customer33.jpg'
@@ -45,6 +48,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Soin à la Kératine et couleur',
+    alt: 'Soin à la Kératine et couleur',
     image: '/images/gallery/customer3.jpg',
     category: 'image',
     url: null,
@@ -57,6 +61,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Coupe dégradée',
+    alt: 'Coupe dégradée',
     image: '/images/gallery/customer6.jpg',
     category: 'image',
     url: null,
@@ -69,6 +74,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Coupe homme',
+    alt: 'Coupe homme',
     image: '/images/gallery/customer7.jpg',
     category: 'image',
     url: null,
@@ -81,6 +87,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Coupe homme',
+    alt: 'Coupe homme',
     image: '/images/gallery/customer8.jpg',
     category: 'image',
     url: null,
@@ -93,6 +100,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Chignon élégant',
+    alt: 'Chignon élégant',
     image: '/images/gallery/customer9.jpg',
     category: 'image',
     url: null,
@@ -105,6 +113,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Nom de la coupe',
+    alt: 'Nom de la coupe',
     image: '/images/gallery/customer19.jpg',
     category: 'image',
     url: null,
@@ -117,6 +126,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Shampoing coupe styling',
+    alt: 'Shampoing coupe styling',
     image: '/images/gallery/customer23.jpg',
     category: 'image',
     url: null,
@@ -129,6 +139,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Coupe afro',
+    alt: 'Coupe afro',
     image: '/images/gallery/customer11.jpg',
     category: 'image',
     url: null,
@@ -141,6 +152,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Coupe undercut',
+    alt: 'Coupe undercut',
     image: [
       '/images/gallery/customer13.jpg',
       '/images/gallery/customer14.jpg',
@@ -157,6 +169,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Styling XL',
+    alt: 'Styling XL',
     image: [
       '/images/gallery/customer29.jpg',
       '/images/gallery/customer30.jpg',
@@ -172,6 +185,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Coloration repousse longueur cheveux mi-longs',
+    alt: 'Coloration repousse longueur cheveux mi-longs',
     image: [
       '/images/gallery/customer24.jpg',
       '/images/gallery/customer25.jpg',
@@ -187,6 +201,7 @@ const galleryImages: Arrayable<GalleryImage> = [
   },
   {
     name: 'Tresses',
+    alt: 'Tresses',
     image: '/images/gallery/customer34.jpg',
     category: 'image',
     url: null,
@@ -198,7 +213,8 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Tresses',
+    name: 'Coupe chignon',
+    alt: 'Coupe chignon',
     image: '/images/gallery/customer35.jpg',
     category: 'image',
     url: null,

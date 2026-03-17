@@ -4,13 +4,16 @@
       {{ $t('Nos marques partenaires') }}
     </h3>
 
-    <p class="text-center text-primary-500">Je leur fais confiance pour leurs produits de qualité.</p>
+    <p class="text-center text-primary-500">
+      Des marques sélectionnées pour leur excellence sur cheveux bouclés,
+      crépus et texturés.
+    </p>
 
     <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
-      <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-      <hero-brand src="/brands/olaplex.svg" alt="Logo de la marque Olaplex" />
-      <hero-brand src="/brands/les_secrets_de_loly.png" alt="Logo de la marque Les Secrets de Loly" />
-      <hero-brand src="/brands/vegetalement_provence/vegetalement_provence.png" alt="Logo de la marque Végétalement Provence" />
+      <hero-brand src="/brands/Bouclème.png" alt="Bouclème — Soin spécialisé cheveux bouclés et ondulés" />
+      <hero-brand src="/brands/olaplex.svg" alt="Olaplex — Traitement réparateur cheveux abîmés et colorés" />
+      <hero-brand src="/brands/les_secrets_de_loly.png" alt="Les Secrets de Loly — Soins naturels cheveux afros et crépus" />
+      <hero-brand src="/brands/vegetalement_provence/vegetalement_provence.png" alt="Végétalement Provence — Kératine végétale et soins naturels cheveux" />
     </div>
   </div>
 </template>

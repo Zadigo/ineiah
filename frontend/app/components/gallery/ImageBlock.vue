@@ -1,8 +1,8 @@
 <template>
   <article ref="imageEl" :id="createElementId('gallery-image', null, image.name)" :class ="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
     <!-- Image -->
-    <gallery-slider v-if="isSlider" :images="image.image" />
-    <nuxt-img v-else :src="typeof image.image === 'string' ? image.image : ''" :alt="`Cliente de ${get('legalName')}`" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />
+    <gallery-slider v-if="isSlider" :alt="suffixLegalName(image.alt)" :images="image.image" />
+    <nuxt-img v-else :src="typeof image.image === 'string' ? image.image : ''" :alt="suffixLegalName(image.alt)" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />
 
     <!-- Infos -->
     <div class="absolute left-5 bottom-5 space-y-1">
@@ -13,7 +13,7 @@
       >
         <div v-if="isHovered && !isMobile" class="text-primary-50 text-sm font-thin">
           <p v-if="!isSelected" class="flex items-center gap-2">{{ $t("En savoir plus") }} <icon name="lucide:fullscreen" /></p>
-          <p v-if="image.author.instagram">Réalisée par <a :href="`https://www.instagram.com/${image.author.instagram}`" target="_blank" class="underline underline-offset-3 font-semibold">@{{ image.author.instagram }}</a></p>
+          <p v-if="image.author.instagram">Réalisée par <a :href="instagram(image.author.instagram)" target="_blank" class="underline underline-offset-3 font-semibold">@{{ image.author.instagram }}</a></p>
         </div>
       </transition>
 
@@ -35,7 +35,13 @@ import type { GalleryImage } from '~/types'
 
 const props = defineProps<{ image: GalleryImage }>()
 
-const { get } = useBusinessDetails()
+/**
+ * Utils
+ */
+
+const { instagram } = useSocialLinks()
+
+const { get, suffixLegalName } = useBusinessDetails()
 
 /**
  * Slider

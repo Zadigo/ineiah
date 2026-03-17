@@ -12,7 +12,7 @@
     </client-only>
 
     <!-- Reassurance -->
-    <base-reassurance />
+    <lazy-base-reassurance hydrate-on-idle />
 
     <!-- Footer -->
     <lazy-base-footer hydrate-on-idle />
