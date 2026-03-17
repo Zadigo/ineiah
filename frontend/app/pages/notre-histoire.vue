@@ -4,7 +4,7 @@
 
     <!-- Quote TODO: Component -->
     <base-quote>
-      {{ $t('{businessName}, une vision du cheveu sans compromis', { businessName: businessDetails.legalName }) }}
+      {{ $t('{businessName}, une vision du cheveu sans compromis', { businessName: get('legalName') }) }}
     </base-quote>
 
     <div class="px-2 md:px-10 my-10 space-y-5">
@@ -71,7 +71,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails } = useBusinessDetails()
+const { get } = useBusinessDetails()
 
 /**
  * SEO
@@ -96,8 +96,6 @@ useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   author: get('legalName'),
-  titleTemplate: `%s | ${businessDetails.legalName}`,
-  twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   ogImage: shareImage,
   twitterImage: shareImage,
@@ -109,9 +107,9 @@ useSeoMeta({
 })
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
-  author: businessDetails.legalName || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  author: get('legalName'),
 })
 
 useSchemaOrg(

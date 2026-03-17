@@ -50,8 +50,6 @@ useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   author: get('legalName'),
-  titleTemplate: `%s | ${businessDetails.legalName}`,
-  twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   ogImage: shareImage,
   twitterImage: shareImage,

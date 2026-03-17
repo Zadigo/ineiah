@@ -129,15 +129,14 @@ useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   author: get('legalName'),
-  titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   ogImage: shareImage
 })
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
   author: get('legalName')
 })
 </script>
