@@ -93,7 +93,7 @@ const i18n = useI18n()
  * Dark mode
  */
 
-const { darkMode } = useDarkModeComposable()
+const { darkMode } = useDarkModeComposable(false)
 
 /**
  * SEO
