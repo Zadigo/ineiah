@@ -8,7 +8,7 @@
 
     <!-- Modals -->
     <client-only>
-      <modals-mobile v-model:show="showMobileMenu" />
+      <lazy-modals-mobile v-model:show="showMobileMenu" hydrate-on-visible />
     </client-only>
 
     <!-- Reassurance -->

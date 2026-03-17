@@ -68,7 +68,7 @@ import { doc, setDoc } from 'firebase/firestore'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  title: 'Contact'
+  label: 'Contact'
 })
 
 const { get, activeSocials, getSocialIcon, getSocial, address } = useBusinessDetails()
@@ -123,20 +123,24 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Contact us for any questions or appointment requests'
 }
 
-const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+const url = useRuntimeConfig().public.siteUrl
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${get('legalName')}`,
-  twitterTitle: titles[i18n.locale.value],
+  author: get('legalName'),
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: shareImage
+  twitterCard: 'summary_large_image',
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
   author: get('legalName')
 })
+
+useBreadcrumb(titles[i18n.locale.value])
 </script>

@@ -45,6 +45,14 @@ export default defineNuxtConfig({
     pageTransition: {
       name: 'page',
       mode: 'out-in'
+    },
+
+    head: {
+      titleTemplate: "%s %separator %siteName",
+      templateParams: {
+        separator: '-',
+        siteName: "La Beauté D'Inéïah"
+      }
     }
   },
 

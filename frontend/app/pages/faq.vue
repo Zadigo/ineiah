@@ -51,14 +51,14 @@
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  name: 'FAQ'
+  label: 'FAQ'
 })
 
 /**
  * Business details
  */
 
-const { businessDetails, get } = useBusinessDetails()
+const { get } = useBusinessDetails()
 const { faqList } = useFaq()
 
 /**
@@ -78,17 +78,13 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const url = useRuntimeConfig().public.siteUrl
-const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
-  twitterTitle: titles[i18n.locale.value],
+  author: get('legalName'),
   twitterDescription: descriptions[i18n.locale.value],
-  twitterImage: shareImage,
   twitterCard: 'summary_large_image',
-  ogImage: shareImage,
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
   ogUrl: url + useRoute().path
@@ -121,8 +117,10 @@ useSchemaOrg([
 ])
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
   author: get('legalName')
 })
+
+useBreadcrumb(titles[i18n.locale.value])
 </script>

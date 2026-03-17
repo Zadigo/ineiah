@@ -48,7 +48,7 @@ const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${get('legalName')}`,
+  author: get('legalName'),
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   twitterImage: shareImage,
@@ -56,7 +56,8 @@ useSeoMeta({
   ogImage: shareImage,
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url + useRoute().path,
+  ogLocale: i18n.locale.value,
 })
 
 defineOgImage('NuxtSeoTakumi', {

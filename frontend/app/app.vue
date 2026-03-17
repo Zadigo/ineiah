@@ -28,6 +28,9 @@ const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 useState('isMobile', () => isMobile)
 useState('isLargeScreen', () => isLargeScreen)
 
+const { locales, locale } = useI18n()
+useState('ogLocaleAlternate', () => locales.value.filter(l => l.code !== locale.value).map(l => l.code))
+
 /**
  * Cookie
  */
@@ -46,6 +49,33 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.querySelector('html')?.classList.remove(...tokens)
+})
+
+/**
+ * General SEO Tags
+ */
+
+const { get } = useBusinessDetails()
+
+useHead({
+  meta: [
+    {
+      name: 'geo.region',
+      content: 'FR-HDF'
+    },
+    {
+      name: 'geo.placename',
+      content: get('address').city
+    },
+    {
+      name: 'geo.position',
+      content: `${get('address').lat},${get('address').lng}`
+    },
+    {
+      name: 'ICBM',
+      content: `${get('address').lat},${get('address').lng}`
+    }
+  ]
 })
 </script>
 

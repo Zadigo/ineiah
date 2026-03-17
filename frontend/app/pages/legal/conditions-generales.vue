@@ -7,6 +7,10 @@
 <script setup lang="ts">
 import type { PageTitleOrDescription } from '~/types'
 
+definePageMeta({
+  label: 'Terms and Conditions'
+})
+
 /**
  * Business details
  */
@@ -25,35 +29,19 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover the terms and conditions of our hair salon, which govern the use of our services and the relationship between our business and our clients.'
 }
 
-const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+const url = useRuntimeConfig().public.siteUrl
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${get('legalName')}`,
-  twitterTitle: titles[i18n.locale.value],
-  twitterDescription: descriptions[i18n.locale.value],
-  ogImage: shareImage
+  ogLocale: i18n.locale.value
 })
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
   author: get('legalName')
 })
 
-useSchemaOrg(
-  [
-    defineBreadcrumb({
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
-        }
-      ]
-    })
-  ]
-)
+useBreadcrumb(titles[i18n.locale.value])
 </script>

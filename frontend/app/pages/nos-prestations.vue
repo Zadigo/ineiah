@@ -16,8 +16,9 @@
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  title: 'Services'
+  label: 'Services'
 })
+
 
 /**
  * Business details
@@ -43,16 +44,12 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const url = useRuntimeConfig().public.siteUrl
-const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
-  twitterTitle: titles[i18n.locale.value],
+  author: get('legalName'),
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: shareImage,
-  twitterImage: shareImage,
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
@@ -79,4 +76,6 @@ useSchemaOrg(
     })
   ]
 )
+
+useBreadcrumb(titles[i18n.locale.value])
 </script>
