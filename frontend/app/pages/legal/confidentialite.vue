@@ -28,15 +28,15 @@
           <div class="rounded-md bg-secondary-100 p-10 space-y-3">
             <p class="font-bold text-lg">Formulaire de rétractation</p>
 
-            <p>A l'attention de : {{ businessDetails.legalName }}</p>
-            <p>situé au : {{ businessDetails.address }},</p>
+            <p>A l'attention de : {{ get('legalName') }}</p>
+            <p>situé au : {{ get('address') }},</p>
             <p>n° de téléphone : -</p>
             <p>adresse mél : -</p>
             <p>Je vous notifie, par la présente, ma rétractation du contrat portant sur la prestation de service, commandée le : -</p>
             <p>Prénom et nom du consommateur : -</p>
             <p>Adresse du consommateur : -</p>
             <client-only>
-              <p>Le {{ $dayjs().format('DD/MM/YYYY') }}</p>
+              <p>Le <nuxt-time :datetime="Date.now()" :format="'DD/MM/YYYY'" /></p>
             </client-only>
             <p class="italic">Signature du consommateur</p>
           </div>
@@ -76,7 +76,8 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover our privacy policy, which explains how we collect, use, and protect our clients\' data.'
 }
 
-const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+const url = useRuntimeConfig().public.siteUrl
+const { get } = useBusinessDetails()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -85,23 +86,10 @@ useSeoMeta({
 })
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
-  author: businessDetails.legalName || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  author: get('legalName')
 })
 
-useSchemaOrg(
-  [
-    defineBreadcrumb({
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
-        }
-      ]
-    })
-  ]
-)
+useBreadcrumb(titles[i18n.locale.value])
 </script>

@@ -29,6 +29,8 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover the terms and conditions of our hair salon, which govern the use of our services and the relationship between our business and our clients.'
 }
 
+const url = useRuntimeConfig().public.siteUrl
+
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
@@ -36,23 +38,10 @@ useSeoMeta({
 })
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
   author: get('legalName')
 })
 
-useSchemaOrg(
-  [
-    defineBreadcrumb({
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
-        }
-      ]
-    })
-  ]
-)
+useBreadcrumb(titles[i18n.locale.value])
 </script>

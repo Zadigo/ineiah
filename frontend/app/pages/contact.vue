@@ -141,4 +141,6 @@ defineOgImage('NuxtSeoTakumi', {
   description: descriptions[i18n.locale.value],
   author: get('legalName')
 })
+
+useBreadcrumb(titles[i18n.locale.value])
 </script>

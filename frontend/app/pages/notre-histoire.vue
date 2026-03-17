@@ -122,4 +122,6 @@ useSchemaOrg(
     })
   ]
 )
+
+useBreadcrumb(titles[i18n.locale.value])
 </script>
