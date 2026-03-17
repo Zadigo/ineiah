@@ -34,15 +34,6 @@ const error = useError()
 
 const url = useRuntimeConfig().public.siteUrl
 
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: url + useRoute().path
-    }
-  ]
-})
-
 /**
  * A function that handles the
  * redirect to the home page

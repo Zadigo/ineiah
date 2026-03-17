@@ -127,15 +127,6 @@ useSeoMeta({
   ogUrl: url + useRoute().path
 })
 
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: url + useRoute().path
-    }
-  ]
-})
-
 defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value] || undefined,
   description: descriptions[i18n.locale.value] || undefined,
