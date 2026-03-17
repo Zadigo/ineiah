@@ -47,6 +47,33 @@ onMounted(() => {
 onUnmounted(() => {
   document.querySelector('html')?.classList.remove(...tokens)
 })
+
+/**
+ * General SEO Tags
+ */
+
+const { get } = useBusinessDetails()
+
+useHead({
+  meta: [
+    {
+      name: 'geo.region',
+      content: 'FR-HDF'
+    },
+    {
+      name: 'geo.placename',
+      content: get('address').city
+    },
+    {
+      name: 'geo.position',
+      content: `${get('address').lat},${get('address').lng}`
+    },
+    {
+      name: 'ICBM',
+      content: `${get('address').lat},${get('address').lng}`
+    }
+  ]
+})
 </script>
 
 <style lang="scss">
