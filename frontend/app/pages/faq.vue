@@ -97,7 +97,7 @@ useSeoMeta({
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
 
 useSchemaOrg([
-  {
+  computed(() => ({
     '@type': 'FAQPage',
     mainEntity: questionsList.value.map(item => ({
       '@type': 'Question',
@@ -107,7 +107,7 @@ useSchemaOrg([
         text: item.answer
       }
     }))
-  },
+  })),
   defineBreadcrumb({
     itemListElement: [
       {
