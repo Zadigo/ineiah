@@ -1,6 +1,6 @@
 <template>
   <div ref="sliderEl" id="slider" class="relative w-full min-h-55.75 xl:min-h-105 overflow-hidden rounded-xl">
-    <nuxt-img :src="images[index]" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover w-full transition-all duration-300" alt="" />
+    <nuxt-img :src="images[index]" :alt="alt" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover w-full transition-all duration-300" alt="" />
 
     <transition 
       mode="out-in" 
@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import type { GalleryImage } from '~/types';
 
-const props = defineProps<{ images: GalleryImage['image'] }>()
+const props = defineProps<{ images: GalleryImage['image'], alt: string | null }>()
 const sliderEl = useTemplateRef('sliderEl')
 
 /**

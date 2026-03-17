@@ -14,12 +14,21 @@
           </template>
         </client-only>
 
-        <p class="font-light">
-          Notre histoire, c’est avant tout une histoire humaine. Une histoire de passion, de transmission et
-          d’amour du cheveu sous toutes ses formes. Derrière chaque geste se cache un parcours, une vision et l’envie
-          profonde de créer un lieu où chacun peut se sentir reconnu, respecté et valorisé. Découvre comment cette aventure
-          est née et ce qui l’anime au quotidien.
-        </p>
+        <div class="space-y-3">
+          <p class="font-light">
+            Notre histoire, c'est avant tout une histoire humaine. Une histoire de passion, de transmission et 
+            d'amour du cheveu sous toutes ses formes. Née d'un désir profond de rendre la coiffure professionnelle accessible 
+            à toutes les textures — cheveux afros, bouclés, ondulés, caucasiens — La Beauté D'Inéïah s'est imposée comme la référence 
+            de la coiffure multiculturelle à Lille et dans le Nord.
+          </p>
+  
+          <p>
+            Derrière chaque coupe, chaque soin, chaque séance de kératine végétale ou chaque balayage se cache un parcours exigeant 
+            et passionné. Formée auprès des plus grands noms de la coiffure professionnelle, Inéïah met plus de 25 ans d'expertise au 
+            service de ta chevelure, avec une attention particulière portée aux cheveux texturés si souvent mal compris. Découvre l'histoire 
+            de cette aventure et la vision qui anime chaque rendez-vous.
+          </p>
+        </div>
 
         <nuxt-link-locale to="/notre-histoire">
           <volt-button size="large" class="mt-10" rounded>
@@ -32,7 +41,7 @@
 
     <div class="h-auto">
       <client-only>
-        <nuxt-img v-motion-fade-visible-once :delay="600" :alt="`${get('founder')}`" src="/images/kira/photoshoot40-small.webp" class="aspect-square object-cover h-full xl:w-full" />
+        <nuxt-img v-motion-fade-visible-once :delay="600" :alt="`Hair Artist - ${get('founder')}`" src="/images/kira/photoshoot40-small.webp" class="aspect-square object-cover h-full xl:w-full" />
       </client-only>
     </div>
   </div>

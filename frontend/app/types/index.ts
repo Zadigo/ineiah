@@ -17,6 +17,7 @@ export interface GalleryImage {
   image: string | Arrayable<string>
   category: 'image' | 'video'
   url: string | null
+  alt: string | null
   author: {
     name: string 
     username: string | null
