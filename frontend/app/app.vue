@@ -28,6 +28,9 @@ const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 useState('isMobile', () => isMobile)
 useState('isLargeScreen', () => isLargeScreen)
 
+const { locales, locale } = useI18n()
+useState('ogLocaleAlternate', () => locales.value.filter(l => l.code !== locale.value).map(l => l.code))
+
 /**
  * Cookie
  */

@@ -34,6 +34,7 @@ const {
   isPro = false,
   width = 1200,
   height = 600,
+  author = "author",
   image = "/images/hero/customer18-small.webp"
 } = defineProps<{
   colorMode?: string
@@ -42,7 +43,8 @@ const {
   isPro?: boolean
   width?: number
   height?: number
-  image?: string
+  image?: string,
+  author: string | null
 }>()
 
 /**

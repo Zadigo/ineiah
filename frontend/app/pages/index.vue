@@ -73,8 +73,7 @@ definePageMeta({
  * Socials
  */
 
-const { reactiveGet, get } = useBusinessDetails()
-const legalName = reactiveGet('legalName')
+const { get } = useBusinessDetails()
 
 /**
  * Utils
@@ -117,7 +116,7 @@ useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   author: get('legalName'),
-  titleTemplate: `%s | ${legalName.value}`,
+  titleTemplate: `%s | ${get('legalName')}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
   twitterImage: shareImage,
@@ -129,8 +128,8 @@ useSeoMeta({
 })
 
 defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
-  author: legalName.value || undefined,
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  author: get('legalName')
 })
 </script>
