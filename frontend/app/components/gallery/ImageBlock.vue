@@ -2,6 +2,7 @@
   <article ref="imageEl" :id="createElementId('gallery-image', null, image.name)" :class ="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
     <!-- Image -->
     <gallery-slider v-if="isSlider" :alt="suffixLegalName(image.alt)" :images="image.image" />
+    <!-- <lazy-gallery-video-block v-else-if="image.category === 'video'" :image="image" hydrate-on-idle /> -->
     <nuxt-img v-else :src="typeof image.image === 'string' ? image.image : ''" :alt="suffixLegalName(image.alt)" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />
 
     <!-- Infos -->
@@ -31,7 +32,7 @@
 
 <script setup lang="ts">
 import { Share } from '@capacitor/share'
-import type { GalleryImage } from '~/types'
+import type { GalleryImage, Nullable } from '~/types'
 
 const props = defineProps<{ image: GalleryImage }>()
 

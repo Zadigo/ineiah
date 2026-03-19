@@ -240,6 +240,20 @@ const galleryImages: Arrayable<GalleryImage> = [
       website: '',
       instagram: 'kira-lopez'
     }
+  },
+  {
+    name: 'Test Video',
+    alt: 'Test Video',
+    image: '/vid1.mov',
+    category: 'video',
+    url: null,
+    isVisible: false,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: 'kira-lopez'
+    }
   }
 ]
 
