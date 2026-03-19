@@ -260,8 +260,18 @@ export function useImageGallery() {
   })
 
   const keywords = computed(() => {
-    const allKeywords = images.value.map(image => image.name)
-    return Array.from(new Set(allKeywords)) // Return unique keywords
+    // const allKeywords = images.value.map(image => image.name)
+    // return Array.from(new Set(allKeywords)) // Return unique keywords
+    return [
+      'Shampoing',
+      'Coupe',
+      'Brushing',
+      'Coloration',
+      'Soin',
+      'Chignon',
+      'Styling',
+      'Hair contouring'
+    ]
   })
 
   function isVideo(value: string | Arrayable<string>): boolean {

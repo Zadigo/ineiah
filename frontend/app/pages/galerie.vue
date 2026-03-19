@@ -14,7 +14,7 @@
             <volt-input-text v-model="search" :placeholder="$t('Rechercher une coupe ou un style')" class="w-full md:w-100" />
             
             <div class="hidden justify-start gap-2 xl:flex">
-              <volt-tag v-for="keyword in keywords.slice(0, 4)" :key="keyword" :value="keyword" class="cursor-pointer" severity="contrast" @click="() => search = keyword" />
+              <volt-tag v-for="keyword in keywords" :key="keyword" :value="keyword" class="cursor-pointer" severity="contrast" @click="() => search = keyword" />
             </div>
           </div>
         </div>
