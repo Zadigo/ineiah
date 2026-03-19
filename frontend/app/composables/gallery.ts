@@ -10,6 +10,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     ],
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -23,6 +24,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     image: '/images/gallery/customer18.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -39,6 +41,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     ],
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -52,6 +55,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     image: '/images/gallery/customer3.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -65,6 +69,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     image: '/images/gallery/customer6.jpg',
     category: 'image',
     url: null,
+    isVisible: false,
     author: {
       name: '',
       username: '',
@@ -73,11 +78,12 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Coupe homme',
-    alt: 'Coupe homme',
+    name: 'Brushing Wavy cheveux XL',
+    alt: 'Brushing Wavy cheveux XL',
     image: '/images/gallery/customer7.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -86,11 +92,12 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Coupe homme',
-    alt: 'Coupe homme',
+    name: 'Coupe coiffage cheveux courts',
+    alt: 'Coupe coiffage cheveux courts',
     image: '/images/gallery/customer8.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -104,6 +111,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     image: '/images/gallery/customer9.jpg',
     category: 'image',
     url: null,
+    isVisible: false,
     author: {
       name: '',
       username: '',
@@ -112,11 +120,12 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Nom de la coupe',
-    alt: 'Nom de la coupe',
+    name: 'Shampoing coupe brushing wavy cheveux longs',
+    alt: 'Shampoing coupe brushing wavy cheveux longs',
     image: '/images/gallery/customer19.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -130,6 +139,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     image: '/images/gallery/customer23.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -138,11 +148,12 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Coupe afro',
-    alt: 'Coupe afro',
+    name: 'Couleur coupe brushing wavy cheveux longs',
+    alt: 'Couleur coupe brushing wavy cheveux longs',
     image: '/images/gallery/customer11.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -151,8 +162,8 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Coupe undercut',
-    alt: 'Coupe undercut',
+    name: 'Coupe frange rideau cheveux mi-longs',
+    alt: 'Coupe frange rideau cheveux mi-longs',
     image: [
       '/images/gallery/customer13.jpg',
       '/images/gallery/customer14.jpg',
@@ -160,6 +171,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     ],
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -176,6 +188,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     ],
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -192,6 +205,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     ],
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -200,11 +214,12 @@ const galleryImages: Arrayable<GalleryImage> = [
     },
   },
   {
-    name: 'Tresses',
-    alt: 'Tresses',
+    name: 'Styling XL',
+    alt: 'Styling XL',
     image: '/images/gallery/customer34.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',
@@ -213,11 +228,12 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Coupe chignon',
-    alt: 'Coupe chignon',
+    name: 'Chignon',
+    alt: 'Chignon',
     image: '/images/gallery/customer35.jpg',
     category: 'image',
     url: null,
+    isVisible: true,
     author: {
       name: '',
       username: '',

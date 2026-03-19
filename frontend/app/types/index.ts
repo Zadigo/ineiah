@@ -18,6 +18,7 @@ export interface GalleryImage {
   category: 'image' | 'video'
   url: string | null
   alt: string | null
+  isVisible: boolean
   author: {
     name: string 
     username: string | null
