@@ -5,7 +5,7 @@
     <div class="absolute text-primary-100 dark:text-primary-200 left-0 bottom-1/12 p-2 md:text-2xl md:left-1/12 md:bottom-1/12">
       <p class="font-light text-sm">{{ $t(item.subtitle) }}</p>
       <h4 class="font-semibold">
-        {{ item.title }}
+        {{ $t(item.title) }}
       </h4>
     </div>
   </div>

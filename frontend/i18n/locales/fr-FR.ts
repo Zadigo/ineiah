@@ -117,5 +117,14 @@ export default defineI18nLocale(async _locale => {
     "Ce que pensent mes clients": "Ce que pensent mes clients",
     "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.": "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.",
     "Soin": "Soin",
+    "Homme": "Homme",
+    "Femme": "Femme",
+    "Cheveux homme": "Cheveux homme",
+    "Cheveux femme": "Cheveux femme",
+    "Cheveux XL": "Cheveux XL",
+    "Mes prestations": "Mes prestations",
+    "Découvrez ma collection de coupes et de styles.": "Découvrez ma collection de coupes et de styles.",
+    "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.": "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
+    "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.": "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.",
   }
 })

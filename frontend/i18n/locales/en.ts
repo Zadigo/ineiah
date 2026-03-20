@@ -115,6 +115,15 @@ export default defineI18nLocale(async _locale => {
     "Coupe seule": "Cut only",
     "Ce que pensent mes clients": "Customer Testimonials",
     "Voici ce que mes clients pensent de moi. Je suis toujours à la recherche de moyens pour m'améliorer. Si vous avez une expérience positive avec moi, laissez un avis.": "Hear what my clients think of me. I am always looking for ways to improve. If you have a positive experience with me, please leave a review.",
-    "Soin": "Soin"
+    "Soin": "Care",
+    "Homme": "Men",
+    "Femme": "Women",
+    "Cheveux homme": "Men's Hair",
+    "Cheveux femme": "Women's Hair",
+    "Cheveux XL": "XL Hair",
+    "Mes prestations": "My Services",
+    "Découvrez ma collection de coupes et de styles.": "Discover my collection of cuts and styles.",
+    "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.": "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
+    "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.": "Brands selected for their excellence on curly, kinky and textured hair.",
   }
 })

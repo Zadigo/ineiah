@@ -5,8 +5,7 @@
     </h3>
 
     <p class="text-center text-primary-500">
-      Des marques sélectionnées pour leur excellence sur cheveux bouclés,
-      crépus et texturés.
+      {{ $t('Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.') }}
     </p>
 
     <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
