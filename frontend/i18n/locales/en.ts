@@ -122,6 +122,7 @@ export default defineI18nLocale(async _locale => {
     "Cheveux femme": "Women's Hair",
     "Cheveux XL": "XL Hair",
     "Mes prestations": "My Services",
+    "Cheveux courts": "Cheveux courts",
     "Découvrez ma collection de coupes et de styles.": "Discover my collection of cuts and styles.",
     "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.": "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
     "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.": "Brands selected for their excellence on curly, kinky and textured hair.",
