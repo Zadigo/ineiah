@@ -7,7 +7,7 @@
             {{ $t('Galerie') }}
           </h2>
           <p class="text-lg text-primary-50 dark:text-primary-100">
-            {{ $t('Découvrez notre collection de coupes et styles réalisés par nos experts.') }}
+            {{ $t('Découvrez ma collection de coupes et de styles.') }}
           </p>
 
           <div class="mt-5 flex justify-start gap-5 flex-wrap md:flex-nowrap">
@@ -52,8 +52,8 @@ const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
-  fr: 'Découvrez notre collection de coupes et styles réalisés par nos experts.',
-  en: 'Discover our collection of cuts and styles created by our experts.'
+  fr: 'Découvrez ma collection de coupes et de styles.',
+  en: 'Discover my collection of cuts and styles.'
 }
 
 const url = useRuntimeConfig().public.siteUrl

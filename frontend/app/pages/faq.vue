@@ -40,7 +40,7 @@
         </template>
 
         <template #action>
-          Nous contacter
+          Me contacter
         </template>
       </lazy-card-call-to-action>
     </div>

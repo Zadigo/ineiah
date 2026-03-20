@@ -39,8 +39,8 @@ const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
-  fr: 'La liste de nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.',
-  en: 'The list of our hairdressing and hair care services, tailored to your needs and desires.'
+  fr: 'La liste de mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.',
+  en: 'The list of my hairdressing and hair care services, tailored to your needs and desires.'
 }
 
 const url = useRuntimeConfig().public.siteUrl

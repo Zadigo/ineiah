@@ -2,7 +2,7 @@
   <div class="p-5 md:p-15 overflow-hidden">
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
       <client-only>
-        <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
+        <div class="group">
           <nuxt-img v-motion-slide-visible-once-left :delay="200" :alt="`Coiffure femme cheveux bouclés par ${get('legalName')}`" src="/images/kira/photoshoot46-small.webp" class="rounded-lg aspect-square object-cover w-full" />
         </div>
 

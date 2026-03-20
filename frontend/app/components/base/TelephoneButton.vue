@@ -33,7 +33,7 @@ const {
   id,
   buttonClass,
   telephone = null,
-  text = 'Nous appeler',
+  text = 'Me contacter',
   withIcon = true,
   size = 'small'
 } = defineProps<{ id?: string, buttonClass?: string, telephone?: Nullable<string>, text?: string, withIcon?: boolean, size?: ButtonProps['size'] }>()

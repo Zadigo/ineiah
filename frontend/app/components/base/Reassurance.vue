@@ -7,7 +7,7 @@
           {{ $t(item.title) }}
         </p>
 
-        <base-telephone-link :id="`tel-reassurance-${idx}`" :with-icon="false" text="Nous contacter" class="text-primary-600 hover:text-primary-700 dark:text-primary-200 underline underline-offset-7" />
+        <base-telephone-link :id="`tel-reassurance-${idx}`" :with-icon="false" text="Me contacter" class="text-primary-600 hover:text-primary-700 dark:text-primary-200 underline underline-offset-7" />
       </div>
     </div>
   </div>
@@ -16,11 +16,11 @@
 <script setup lang="ts">
 const reassurance = [
   {
-    title: 'Une équipe à ton écoute',
+    title: 'Toujours à ton écoute',
     icon: 'i-lucide-heart'
   },
   {
-    title: 'Un service client réactif',
+    title: 'Réservation facile et rapide',
     icon: 'i-lucide-phone'
   },
   {

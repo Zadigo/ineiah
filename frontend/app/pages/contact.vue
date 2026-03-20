@@ -1,6 +1,6 @@
 <template>
   <section id="contact">
-    <base-jumbotron src="/images/banners/banner1-small.webp" lead="Contact" subtitle="Toutes nos informations de contact" />
+    <base-jumbotron src="/images/banners/banner1-small.webp" lead="Contact" subtitle="Toutes mes informations de contact" />
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-4xl mx-auto">
         <volt-card class="bg-surface-100 shadow-none">

@@ -16,7 +16,7 @@
 const { businessDetails } = useBusinessDetails()
 
 const {
-  text = 'Nous appeler',
+  text = 'Me contacter',
   withIcon = true
 } = defineProps<{ text?: string, withIcon?: boolean }>()
 

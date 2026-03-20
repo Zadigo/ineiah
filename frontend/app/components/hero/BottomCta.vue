@@ -15,7 +15,7 @@
         </nuxt-link-locale>
 
         <a id="tel-call-us-hero" :href="`tel:${fallbackTelephone}`" class="block cursor-pointer">
-          <hero-buttons-glass text="Nous appeler" icon-name="lucide:phone" />
+          <hero-buttons-glass text="Me contacter" icon-name="lucide:phone" />
         </a>
       </div>
     </div>
