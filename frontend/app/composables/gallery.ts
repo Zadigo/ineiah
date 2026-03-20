@@ -213,8 +213,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     alt: 'Coupe frange rideau cheveux mi-longs',
     image: [
       '/images/gallery/customer13.jpg',
-      '/images/gallery/customer14.jpg',
-      '/images/gallery/customer17.jpg'
+      '/images/gallery/customer14.jpg'
     ],
     category: 'image',
     url: null,
