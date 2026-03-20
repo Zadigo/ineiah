@@ -16,7 +16,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Brushing volumineux',
@@ -30,7 +34,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Hair contouring cheveux longs',
@@ -47,7 +55,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Soin à la Kératine et couleur',
@@ -61,7 +73,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Coupe dégradée',
@@ -75,7 +91,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Brushing Wavy cheveux XL',
@@ -89,7 +109,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Coupe coiffage cheveux courts',
@@ -103,7 +127,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Chignon élégant',
@@ -117,7 +145,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Shampoing coupe brushing wavy cheveux longs',
@@ -131,7 +163,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Shampoing coupe styling',
@@ -145,7 +181,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Couleur coupe brushing wavy cheveux longs',
@@ -159,7 +199,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Coupe frange rideau cheveux mi-longs',
@@ -177,7 +221,11 @@ const galleryImages: Arrayable<GalleryImage> = [
       username: '',
       website: '',
       instagram: ''
-    }
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Styling XL',
@@ -193,8 +241,12 @@ const galleryImages: Arrayable<GalleryImage> = [
       name: '',
       username: '',
       website: '',
-      instagram: 'kira-lopez'
-    }
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Coloration repousse longueur cheveux mi-longs',
@@ -210,8 +262,12 @@ const galleryImages: Arrayable<GalleryImage> = [
       name: '',
       username: '',
       website: '',
-      instagram: 'kira-lopez'
+      instagram: ''
     },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Styling XL',
@@ -224,8 +280,12 @@ const galleryImages: Arrayable<GalleryImage> = [
       name: '',
       username: '',
       website: '',
-      instagram: 'kira-lopez'
-    }
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Chignon',
@@ -238,8 +298,12 @@ const galleryImages: Arrayable<GalleryImage> = [
       name: '',
       username: '',
       website: '',
-      instagram: 'kira-lopez'
-    }
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
   },
   {
     name: 'Test Video',
@@ -252,8 +316,38 @@ const galleryImages: Arrayable<GalleryImage> = [
       name: '',
       username: '',
       website: '',
-      instagram: 'kira-lopez'
-    }
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
+    image: [
+      '/images/kira/photoshoot46-small.webp',
+      '/images/kira/photoshoot45.jpg',
+      '/images/kira/photoshoot46.jpg',
+      '/images/kira/photoshoot19.jpg',
+      '/images/kira/photoshoot20.jpg',
+      '/images/kira/photoshoot2.jpg',
+      '/images/kira/photoshoot1.jpg'
+    ],
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: '_khreate_'
+    },
+    model: {
+      instagram: 'mei_linhconte'
+    },
+    brands: []
   }
 ]
 
