@@ -1,6 +1,6 @@
 <template>
   <div ref="sliderEl" id="slider" class="relative w-full min-h-55.75 xl:min-h-105 overflow-hidden rounded-xl">
-    <nuxt-img :src="images[index]" :alt="alt" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover w-full transition-all duration-300" alt="" />
+    <nuxt-img :src="images[index]" :alt="alt" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover transition-all duration-300" />
 
     <transition 
       mode="out-in" 
@@ -11,12 +11,12 @@
       leave-from-class="opacity-100" 
       leave-to-class="opacity-0"
     >
-      <div v-if="isHovered && !isMobile" class="absolute top-0 left-0 w-full h-full flex items-center justify-between p-5">
-        <volt-button variant="link" severity="info" rounded @click="() => prev()">
+      <div v-if="isHovered" class="absolute top-0 left-0 w-full h-full flex items-center justify-between p-5">
+        <volt-button rounded @click="() => prev()">
           <icon name="i-fa6-solid:arrow-left" />
         </volt-button>
 
-        <volt-button variant="link" severity="info" rounded @click="() => next()">
+        <volt-button rounded @click="() => next()">
           <icon name="i-fa6-solid:arrow-right" />
         </volt-button>
       </div>
