@@ -25,7 +25,10 @@ const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Brushing volumineux',
     alt: 'Brushing volumineux',
-    image: '/images/gallery/customer18.jpg',
+    image: [
+      '/images/gallery/customer18.jpg',
+      '/images/gallery/customer71.jpeg'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -324,8 +327,8 @@ const galleryImages: Arrayable<GalleryImage> = [
     brands: []
   },
   {
-    name: 'Mise en forme boucles',
-    alt: 'Mise en forme boucles',
+    name: 'Soin Kératine Végétale',
+    alt: 'Soin Kératine Végétale',
     image: [
       '/images/kira/photoshoot46-small.webp',
       '/images/kira/photoshoot45.jpg',
@@ -346,6 +349,122 @@ const galleryImages: Arrayable<GalleryImage> = [
     },
     model: {
       instagram: 'mei_linhconte'
+    },
+    brands: []
+  },
+  {
+    name: 'Soin Kératine Végétale',
+    alt: 'Soin Kératine Végétale',
+    image: [
+      '/images/gallery/customer36-small.webp',
+      '/images/gallery/customer37-small.webp',
+      '/images/gallery/customer38-small.webp',
+    ],
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
+    image: '/images/gallery/customer39-small.webp',
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
+    image: '/images/gallery/customer40-small.webp',
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles 3',
+    alt: 'Mise en forme boucles 3',
+    image: [
+      '/images/gallery/customer41-small.webp',
+      '/images/gallery/customer42.jpg',
+      '/images/gallery/customer44-small.webp'
+    ],
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: '_khreate_'
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
+    image: '/images/gallery/customer62-small.webp',
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
+    image: '/images/gallery/customer72-small.webp',
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    },
+    model: {
+      instagram: ''
     },
     brands: []
   }

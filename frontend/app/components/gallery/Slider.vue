@@ -1,6 +1,6 @@
 <template>
   <div ref="sliderEl" id="slider" class="relative w-full min-h-55.75 xl:min-h-105 overflow-hidden rounded-xl">
-    <nuxt-img :src="images[index]" :alt="alt" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover transition-all duration-300" />
+    <nuxt-img :src="images[index]" :alt="alt" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover transition-all duration-300 w-full" />
 
     <transition 
       mode="out-in" 
