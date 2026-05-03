@@ -105,8 +105,8 @@ const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
-  fr: "L'art de coiffer toutes les textures",
-  en: "The art of styling all textures"
+  fr: "Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure",
+  en: "Multicultural hair salon specializing in all hair types: kinky, curly, straight. Custom care, cuts and styles"
 }
 
 const url = useRuntimeConfig().public.siteUrl
