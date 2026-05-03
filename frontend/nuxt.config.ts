@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
-    '@nuxt/hints',
+    // '@nuxt/hints',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
@@ -51,7 +51,18 @@ export default defineNuxtConfig({
       titleTemplate: "%s %separator %siteName",
       templateParams: {
         separator: '-',
-        siteName: "La Beauté D'Inéïah"
+        siteName: "La Beauté D'Inéïah",
+        meta: [
+          { 
+            name: 'theme-color', 
+            content: '#96726a'
+          },
+          {
+            name: 'theme-color',
+            content: '#5e4842',
+            media: '(prefers-color-scheme: dark)'
+          }
+        ]
       }
     }
   },
@@ -77,7 +88,23 @@ export default defineNuxtConfig({
       tailwindcss({
         optimize: false
       })
-    ]
+    ],
+    optimizeDeps: {
+      include: [
+        'vuefire',
+        'dayjs', // CJS
+        'dayjs/plugin/calendar', // CJS
+        'dayjs/plugin/duration', // CJS
+        'dayjs/plugin/relativeTime', // CJS
+        'dayjs/plugin/timezone', // CJS
+        'dayjs/plugin/utc', // CJS
+        'primevue/config',
+        'primevue/card',
+        'tailwind-merge',
+        'primevue/button',
+        '@unhead/bundler',
+      ]
+    }
   },
 
   vuefire: {

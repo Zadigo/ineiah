@@ -10,21 +10,21 @@ export default defineNuxtPlugin({
     const localePath = useLocalePath()
 
     useHead(() => {
-      const canonicalHref = siteUrl + route.path
-
       // Generate hreflang for each locale
       const hreflangLinks = (locales.value).map((locale) => ({
         rel: 'alternate',
         hreflang: locale.language, // ex: 'fr-FR', 'en-US'
         href: siteUrl + localePath(route.name as string, locale.code)
       } as ResolvableLink))
-
+      
       // Add x-default pointing to the FR version (default)
       const xDefault: ResolvableLink = {
         rel: 'alternate',
         hreflang: 'x-default',
         href: siteUrl + localePath(route.name as string, 'fr')
       }
+      
+      const canonicalHref = siteUrl + route.path
 
       return {
         link: [

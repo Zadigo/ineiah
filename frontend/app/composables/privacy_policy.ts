@@ -123,7 +123,7 @@ export function useWebsitePolicies() {
       content: [
         {
           type: 'paragraph',
-          text: `En application de la réglementation applicable aux données à caractère personnel, les utilisateurs disposent des droits suivants, qu'ils peuvent exercer en faisant leur demande à l'adresse suivante : ${get('address')}.`
+          text: `En application de la réglementation applicable aux données à caractère personnel, les utilisateurs disposent des droits suivants, qu'ils peuvent exercer en faisant leur demande à l'adresse suivante : ${get('address').street}.`
         },
         {
           type: 'list',

@@ -1,4 +1,13 @@
-export default defineI18nLocale(async _locale => {
+export default defineI18nLocale(async () => {
+  const faq = {
+    "Quels shampoings et soins recommandés pour cheveux afros très secs ?": "What shampoos and treatments do you recommend for very dry afro hair?",
+    "Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu'ils soient bien démêlés et propres.": "It is recommended not to tie your hair for your appointment, to allow for a better assessment of the texture and condition of your hair. However, make sure they are well detangled and clean.",
+    "Valeurs & Engagements": "Values & Commitments",
+    "Utilisez-vous des produits respectueux de l'environnement ?": "Do you use environmentally friendly products?",
+    "L'éco-responsabilité fait partie intégrante de ma façon de travailler. Je sélectionne avec soin des produits capillaires naturels et respectueux de l'environnement — des marques comme Végétalement Provence ou Les Secrets de Loly, reconnues pour leur formulation saine, sans sulfates ni silicones agressifs, et engagées dans une démarche durable. Au-delà des produits, j'applique des pratiques responsables au quotidien : réduction des déchets, utilisation raisonnée de l'eau et choix de marques dont les valeurs environnementales correspondent aux miennes. Prendre soin de tes cheveux ne devrait pas se faire au détriment de la planète.": "Eco-responsibility is an integral part of my way of working. I carefully select natural and environmentally friendly hair products — brands like Végétalement Provence or Les Secrets de Loly, known for their healthy formulations, free from sulfates and harsh silicones, and committed to a sustainable approach. Beyond the products, I apply responsible practices daily: waste reduction, rational water use, and choosing brands whose environmental values align with mine. Taking care of your hair should not come at the expense of the planet.",
+    "Je recommande d’utiliser des shampoings et soins spécialement formulés pour les cheveux afros très secs, qui contiennent des ingrédients hydratants et nourrissants tels que l’huile de coco, le beurre de karité et l’huile d’argan. Je peux vous conseiller des produits spécifiques lors de votre rendez-vous.": "I recommend using shampoos and treatments specifically formulated for very dry afro hair, which contain moisturizing and nourishing ingredients such as coconut oil, shea butter, and argan oil. I can recommend specific products during your appointment."
+  }
+
   return {
     'Accueil': 'Home',
     'Prestations': 'Services',
@@ -122,8 +131,11 @@ export default defineI18nLocale(async _locale => {
     "Cheveux femme": "Women's Hair",
     "Cheveux XL": "XL Hair",
     "Mes prestations": "My Services",
+    "Cheveux courts": "Cheveux courts",
     "Découvrez ma collection de coupes et de styles.": "Discover my collection of cuts and styles.",
     "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.": "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
     "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.": "Brands selected for their excellence on curly, kinky and textured hair.",
+    "Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure": "Multicultural hair salon specializing in all hair types: kinky, curly, straight. Custom care, cuts and styles",
+    ...faq
   }
 })
