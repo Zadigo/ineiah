@@ -173,13 +173,13 @@ export function useBusinessDetails() {
 
   function getSocialIcon(platform: SocialPlatform): string {
     const icons: Record<SocialPlatform, string> = {
-      instagram: 'fa-brands:instagram',
-      facebook: 'fa-brands:facebook',
-      pinterest: 'fa-brands:pinterest',
-      twitter: 'fa-brands:twitter',
-      linkedin: 'fa-brands:linkedin',
-      tiktok: 'fa-brands:tiktok',
-      youtube: 'fa-brands:youtube'
+      instagram: 'lucide:instagram',
+      facebook: 'lucide:facebook',
+      pinterest: 'lucide:pinterest',
+      twitter: 'lucide:twitter',
+      linkedin: 'lucide:linkedin',
+      tiktok: 'lucide:tiktok',
+      youtube: 'lucide:youtube'
     }
     return icons[platform]
   }
