@@ -137,6 +137,7 @@ export default defineI18nLocale(async () => {
     "Découvrez ma collection de coupes et de styles.": "Découvrez ma collection de coupes et de styles.",
     "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.": "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
     "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.": "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.",
+    "Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure": "Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure",
     ...faq
   }
 })

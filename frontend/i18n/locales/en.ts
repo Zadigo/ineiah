@@ -135,6 +135,7 @@ export default defineI18nLocale(async () => {
     "Découvrez ma collection de coupes et de styles.": "Discover my collection of cuts and styles.",
     "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.": "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
     "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.": "Brands selected for their excellence on curly, kinky and textured hair.",
+    "Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure": "Multicultural hair salon specializing in all hair types: kinky, curly, straight. Custom care, cuts and styles",
     ...faq
   }
 })
