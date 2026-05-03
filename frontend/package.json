@@ -63,6 +63,7 @@
     "@nuxtjs/seo": "^5.1.3",
     "@pinia/nuxt": "0.11.3",
     "@primevue/icons": "^4.5.5",
+    "@sentry/nuxt": "^10.51.0",
     "@tailwindcss/vite": "^4.2.4",
     "@takumi-rs/core": "^1.1.2",
     "@takumi-rs/wasm": "^1.1.2",
