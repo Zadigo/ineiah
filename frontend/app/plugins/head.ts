@@ -1,4 +1,4 @@
-import { InferSeoMetaPlugin } from '@unhead/addons'
+import { InferSeoMetaPlugin } from '@unhead/bundler'
 import { injectHead } from '#imports'
 
 export default defineNuxtPlugin(() => {
