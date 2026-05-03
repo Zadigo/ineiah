@@ -1,5 +1,5 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { fireEvent, waitFor } from '@testing-library/vue'
+import { waitFor } from '@testing-library/vue'
 import { describe, expect, it, vi } from 'vitest'
 
 import BaseJumbotron from '../../../app/components/base/Jumbotron.vue'
