@@ -87,11 +87,11 @@ export default defineNuxtConfig({
         'dayjs/plugin/relativeTime', // CJS
         'dayjs/plugin/timezone', // CJS
         'dayjs/plugin/utc', // CJS
-        '@unhead/addons',
         'primevue/config',
         'primevue/card',
         'tailwind-merge',
         'primevue/button',
+        '@unhead/bundler',
       ]
     }
   },

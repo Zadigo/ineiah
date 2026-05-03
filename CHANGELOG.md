@@ -6,6 +6,7 @@
 * Updated all dependencies to their latest versions, which may have included some type fixes and improvements
 * Updated github actions file by removing the tag step
 * Added @ts-ignore on pinterest domain verification meta tag to resolve type issues with the meta tag attributes
+* Removed deprecated `@unhead/addons` dependency and replaced it with the newer `@unhead/bundler` which is compatible with the latest version of unhead and resolves some type issues related to unhead
 
 ### Other Type Fixes
 
