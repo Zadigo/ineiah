@@ -1,4 +1,4 @@
-export default defineNuxtPlugin(async () => {
+export default defineNuxtPlugin(() => {
   const { get, getSocial } = useBusinessDetails()
   const { services } = useServices()
 
@@ -8,125 +8,119 @@ export default defineNuxtPlugin(async () => {
     [
       defineOrganization({
         '@type': 'HairSalon',
-        name: get('legalName'),
-        legalName: get('legalName'),
-        alternateName: 'Inéïah Beauté',
-        description: get('description'),
-        logo: get('logo'),
-        sameAs: get('sameAs'),
-        image: get('image'),
-        priceRange: '$$',
-        foundingDate: get('foundingDate'),
-        foundingLocation: {
+        'name': get('legalName'),
+        'legalName': get('legalName'),
+        'alternateName': 'Inéïah Beauté',
+        'description': get('description'),
+        'logo': get('logo'),
+        'sameAs': get('sameAs'),
+        'image': get('image'),
+        'priceRange': '$$',
+        'foundingDate': get('foundingDate'),
+        'foundingLocation': {
           '@type': 'Place',
-          name: get('foundingLocation')
+          'name': get('foundingLocation')
         },
-        founder: {
+        'founder': {
           '@type': 'Person',
-          name: get('founder'),
-          jobTitle: 'Founder & CEO',
-          description: get('founderDescription'),
-          image: get('founderImage'),
-          url: null,
-          sameAs: get('sameAs'),
-          worksFor: {
+          'name': get('founder'),
+          'jobTitle': 'Founder & CEO',
+          'description': get('founderDescription'),
+          'image': get('founderImage'),
+          'url': null,
+          'sameAs': get('sameAs'),
+          'worksFor': {
             '@type': 'Organization',
-            name: get('legalName')
+            'name': get('legalName')
           }
         },
-        numberOfEmployees: {
+        'numberOfEmployees': {
           '@type': 'QuantitativeValue',
-          value: 1
+          'value': 1
         },
-        hasOfferCatalog: {
+        'hasOfferCatalog': {
           '@type': 'OfferCatalog',
-          name: 'Services',
-          itemListElement: services.value.flatMap(service => {
+          'name': 'Services',
+          'itemListElement': services.value.flatMap((service) => {
             return service.services.map(subService => ({
               '@type': 'Offer',
-              price: subService.price,
-              priceCurrency: 'EUR',
-              availability: 'https://schema.org/InStock',
-              itemOffered: {
+              'price': subService.price,
+              'priceCurrency': 'EUR',
+              'availability': 'https://schema.org/InStock',
+              'itemOffered': {
                 '@type': 'Service',
-                name: `${service.name} - ${subService.name || ''} - ${subService.gender}`.trim(),
-                description: service.globalDescription,
-                serviceType: null,
-                provider: {
+                'name': `${service.name} - ${subService.name || ''} - ${subService.gender}`.trim(),
+                'description': service.globalDescription,
+                'serviceType': null,
+                'provider': {
                   '@type': 'Organization',
-                  name: get('legalName')
+                  'name': get('legalName')
                 }
               }
             }))
           })
         },
-        taxId: null,
-        vatId: null,
-        address: {
+        'taxId': null,
+        'vatId': null,
+        'address': {
           streetAddress: get('address').street,
           addressLocality: get('address').city,
           postalCode: get('address').postalCode,
           addressCountry: 'FR'
         },
-        currenciesAccepted: 'EUR',
-        areaServed: {
+        'currenciesAccepted': 'EUR',
+        'areaServed': {
           '@type': 'Place',
-          name: 'Lille, France'
+          'name': 'Lille, France'
         },
-        paymentAccepted: [
+        'paymentAccepted': [
           'Credit Card',
           'Apple Pay',
           'Google Pay'
         ],
-        openingHoursSpecification: [
+        'openingHoursSpecification': [
           {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Monday',
-            opens: '09:00:00',
-            closes: '21:00:00'
+            'dayOfWeek': 'Monday',
+            'opens': '09:00:00',
+            'closes': '17:00:00'
           },
-          {'@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Tuesday',
-            opens: '09:00:00',
-            closes: '19:00:00'
-          },
-          {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Wednesday',
-            opens: '09:00:00',
-            closes: '17:00:00'
+          { '@type': 'OpeningHoursSpecification',
+            'dayOfWeek': 'Tuesday',
+            'opens': '09:00:00',
+            'closes': '17:00:00'
           },
           {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Thursday',
-            opens: '09:00:00',
-            closes: '15:00:00'
+            'dayOfWeek': 'Wednesday',
+            'opens': '09:00:00',
+            'closes': '17:00:00'
           },
           {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Friday',
-            opens: '09:00:00',
-            closes: '15:00:00'
+            'dayOfWeek': 'Thursday',
+            'opens': '09:00:00',
+            'closes': '15:00:00'
           },
           {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Saturday',
-            opens: '09:00:00',
-            closes: '12:00:00'
+            'dayOfWeek': 'Friday',
+            'opens': '09:00:00',
+            'closes': '15:00:00'
           }
         ],
-        contactPoint: [
+        'contactPoint': [
           {
             '@type': 'ContactPoint',
-            contactType: 'customer service',
-            telephone: get('contact').telephone,
-            email: get('contact').email,
-            availableLanguage: ['English', 'French'],
-            hoursAvailable: {
+            'contactType': 'customer service',
+            'telephone': get('contact').telephone,
+            'email': get('contact').email,
+            'availableLanguage': ['English', 'French'],
+            'hoursAvailable': {
               '@type': 'OpeningHoursSpecification',
-              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-              opens: '09:00:00',
-              closes: '15:00:00'
+              'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+              'opens': '09:00:00',
+              'closes': '15:00:00'
             }
           }
         ]
@@ -135,17 +129,17 @@ export default defineNuxtPlugin(async () => {
       defineWebSite({
         '@type': 'WebSite',
         '@id': siteUrl + '#website',
-        url: siteUrl,
-        name: get('legalName'),
-        description: get('description'),
-        publisher: {
+        'url': siteUrl,
+        'name': get('legalName'),
+        'description': get('description'),
+        'publisher': {
           '@id': siteUrl + '#organization'
         },
-        potentialAction: {
+        'potentialAction': {
           '@type': 'SearchAction',
-          target: {
+          'target': {
             '@type': 'EntryPoint',
-            urlTemplate: siteUrl + '/search?q={search_term_string}'
+            'urlTemplate': siteUrl + '/search?q={search_term_string}'
           },
           'query-input': 'required name=search_term_string'
         }
@@ -153,32 +147,32 @@ export default defineNuxtPlugin(async () => {
 
       defineBreadcrumb({
         '@type': 'BreadcrumbList',
-        itemListElement: [
+        'itemListElement': [
           {
             '@type': 'ListItem',
-            position: 1,
-            name: 'Accueil',
-            item: siteUrl + '/'
+            'position': 1,
+            'name': 'Accueil',
+            'item': siteUrl + '/'
           }
         ]
       }),
 
       definePerson({
         '@type': 'Person',
-        name: get('founder'),
-        jobTitle: 'Coiffeuse professionnelle & Fondatrice',
-        description: get('founderDescription'),
-        image: get('founderImage'),
-        url: siteUrl + '/notre-histoire',
-        sameAs: [
+        'name': get('founder'),
+        'jobTitle': 'Coiffeuse professionnelle & Fondatrice',
+        'description': get('founderDescription'),
+        'image': get('founderImage'),
+        'url': siteUrl + '/notre-histoire',
+        'sameAs': [
           getSocial('instagram')?.url,
           getSocial('facebook')?.url
         ],
-        worksFor: {
+        'worksFor': {
           '@type': 'Organization',
-          '@id': siteUrl + '#organization',
+          '@id': siteUrl + '#organization'
         },
-        knowsAbout: get('founderKnowsAbout')
+        'knowsAbout': get('founderKnowsAbout')
       })
     ]
   )
