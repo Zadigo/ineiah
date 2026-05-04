@@ -111,7 +111,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Multicultural hair salon specializing in all hair types: kinky, curly, straight. Custom care, cuts and styles'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -121,7 +121,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 defineOgImage('NuxtSeoTakumi', {

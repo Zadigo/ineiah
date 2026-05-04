@@ -44,7 +44,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover the structure of our site and easily access all important pages.'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 
 useSeoMeta({
@@ -58,7 +58,7 @@ useSeoMeta({
   ogImage: shareImage,
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path,
+  ogUrl: url.href,
   ogLocale: i18n.locale.value
 })
 
@@ -68,18 +68,16 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
-const origin = useBrowserLocation().value.origin || ''
-
 useSchemaOrg(
   [
     defineBreadcrumb({
       itemListElement: [
         {
           '@type': 'ListItem',
-          '@id': `${origin}/`,
+          '@id': url.href,
           'position': 2,
           'name': titles[i18n.locale.value],
-          'item': `${origin}${useRoute().fullPath}`
+          'item': url.href
         }
       ]
     })

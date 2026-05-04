@@ -127,7 +127,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Contact us for any questions or appointment requests'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -137,7 +137,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 defineOgImage('NuxtSeoTakumi', {

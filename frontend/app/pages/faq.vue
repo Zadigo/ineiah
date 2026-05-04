@@ -77,7 +77,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Find answers to your most frequently asked questions'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -87,12 +87,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
-
-const origin = useBrowserLocation().value.origin || ''
 
 useSchemaOrg([
   computed(() => ({
@@ -112,7 +110,7 @@ useSchemaOrg([
         '@type': 'ListItem',
         'position': 2,
         'name': titles[i18n.locale.value],
-        'item': `${origin}${useRoute().fullPath}`
+        'item': url.href
       }
     ]
   })

@@ -1,9 +1,6 @@
 <template>
   <section class="font-sans bg-primary-100 dark:bg-primary-800 relative">
     <nuxt-layout>
-      <!-- <analytics />
-      <speed-insights /> -->
-      
       <nuxt-page />
 
       <dev-only>
@@ -55,7 +52,7 @@ onUnmounted(() => {
  * General SEO Tags
  */
 
-const { get } = useBusinessDetails()
+const { geoLocation, get } = useBusinessDetails()
 
 useHead({
   meta: [
@@ -69,11 +66,24 @@ useHead({
     },
     {
       name: 'geo.position',
-      content: `${get('address').lat},${get('address').lng}`
+      content: geoLocation.value
     },
     {
       name: 'ICBM',
-      content: `${get('address').lat},${get('address').lng}`
+      content: geoLocation.value
+    }
+  ]
+})
+
+useHead({
+  htmlAttrs: {
+    lang: locale.value
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png'
     }
   ]
 })

@@ -102,6 +102,9 @@ export default defineNuxtConfig({
         'tailwind-merge',
         'primevue/button',
         '@unhead/bundler',
+        'reka-ui',
+        'clsx',
+        'primevue/skeleton',
       ]
     }
   },
