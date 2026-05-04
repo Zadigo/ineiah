@@ -234,7 +234,7 @@ export const galleryImages: Arrayable<GalleryImage> = [
     alt: 'Styling XL',
     image: [
       '/images/gallery/customer29.jpg',
-      '/images/gallery/customer30.jpg',
+      '/images/gallery/customer30.jpg'
     ],
     category: 'image',
     url: null,
@@ -255,7 +255,7 @@ export const galleryImages: Arrayable<GalleryImage> = [
     alt: 'Coloration repousse longueur cheveux mi-longs',
     image: [
       '/images/gallery/customer24.jpg',
-      '/images/gallery/customer25.jpg',
+      '/images/gallery/customer25.jpg'
     ],
     category: 'image',
     url: null,
@@ -331,9 +331,10 @@ export const galleryImages: Arrayable<GalleryImage> = [
     image: [
       '/images/kira/photoshoot46-small.webp',
       '/images/kira/photoshoot45.jpg',
-      '/images/kira/photoshoot46.jpg',
       '/images/kira/photoshoot19.jpg',
       '/images/kira/photoshoot20.jpg',
+      '/images/kira/photoshoot33.jpg',
+      '/images/kira/photoshoot34.jpg',
       '/images/kira/photoshoot2.jpg',
       '/images/kira/photoshoot1.jpg'
     ],
@@ -357,7 +358,7 @@ export const galleryImages: Arrayable<GalleryImage> = [
     image: [
       '/images/gallery/customer36-small.webp',
       '/images/gallery/customer37-small.webp',
-      '/images/gallery/customer38-small.webp',
+      '/images/gallery/customer38-small.webp'
     ],
     category: 'image',
     url: null,
@@ -453,6 +454,27 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Mise en forme boucles',
     alt: 'Mise en forme boucles',
     image: '/images/gallery/customer72-small.webp',
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
+    image: [
+      '/images/gallery/customer80.jpg',
+      '/images/gallery/customer81.jpg'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
