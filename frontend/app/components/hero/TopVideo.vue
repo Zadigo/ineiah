@@ -12,13 +12,13 @@
       <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
         <volt-button id="link-offer-hero"  size="xl" class=" mt-10 md:mt-5 w-full md:w-auto" rounded>
           <nuxt-link-locale to="/nos-prestations">
-            Prestations
+            {{ $t("Prestations") }}
           </nuxt-link-locale>
         </volt-button>
 
         <volt-button id="tel-hero" size="xl" class="mt-5 w-full md:w-auto" rounded>
           <base-telephone-link with-icon>
-            Nous appeller
+            {{ $t("Me contacter") }}
           </base-telephone-link>
         </volt-button>
       </div>

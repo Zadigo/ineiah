@@ -1,23 +1,27 @@
 <template>
   <footer class="relative bg-primary-800 dark:bg-primary-900 w-full">
-    <div class="w-full px-8 mx-auto max-w-7xl">
+    <div class="w-full mx-auto max-w-7xl">
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
         <div class="mb-5 md:mb-0">
           <nuxt-link-locale to="/">
-            <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
-              {{ businessDetails.legalName }}
-            </h5>
+            <h4 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+              {{ get('legalName') }}
+            </h4>
           </nuxt-link-locale>
-          
-          <div class="flex gap-2">
+
+          <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
+            chez 70's coiffure
+          </a>
+
+          <div class="flex gap-2 mt-5">
             <nuxt-link-locale to="/" locale="fr">
-              <volt-secondary-button>
+              <volt-secondary-button aria-label="Français">
                 <icon name="i-circle-flags:fr" />
               </volt-secondary-button>
             </nuxt-link-locale>
-  
+
             <nuxt-link-locale to="/" locale="en">
-              <volt-secondary-button>
+              <volt-secondary-button aria-label="English">
                 <icon name="i-circle-flags:uk" />
               </volt-secondary-button>
             </nuxt-link-locale>
@@ -42,13 +46,13 @@
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
         <client-only>
           <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
-            © {{ currentYear }} <nuxt-link-locale to="/">{{ businessDetails.legalName }}</nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
+            © <nuxt-time :datetime="Date.now()" year="numeric" /> <nuxt-link-locale to="/">{{ get('legalName') }}</nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="get('websiteProvider').url">{{ get('websiteProvider').legalName }}</a>
           </p>
         </client-only>
 
         <div class="flex gap-4 text-primary-200 sm:justify-center">
-          <a v-for="social in footer.socials" :id="`footer-social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" class="block transition-opacity text-inherit hover:opacity-80">
-            <Icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name.toLowerCase()}`" />
+          <a v-for="social in activeSocials" :id="`footer-social-${social}`" :key="social" :href="getSocial(social)?.url" :aria-label="social" class="block transition-opacity text-inherit hover:opacity-80">
+            <icon :name="getSocialIcon(social)" :alt="`${get('name')} - ${social}`" />
           </a>
         </div>
       </div>
@@ -57,9 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, footer } from '~/data'
+import { footer } from '~/data'
 
-const { $dayjs } = useNuxtApp()
-
-const currentYear = ref($dayjs().year())
+const { getSocial, getSocialIcon, activeSocials, get } = useBusinessDetails()
 </script>

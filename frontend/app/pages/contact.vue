@@ -1,7 +1,6 @@
 <template>
   <section id="contact">
-    <base-jumbotron src="/hero/hair4.jpg" lead="Contact" subtitle="Toutes nos informations de contact" />
-
+    <base-jumbotron src="/images/banners/banner1-small.webp" lead="Contact" subtitle="Toutes mes informations de contact" />
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-4xl mx-auto">
         <volt-card class="bg-surface-100 shadow-none">
@@ -17,7 +16,7 @@
 
               <div class="flex justify-end">
                 <volt-button id="submit-contact-us" :disabled="true" class="my-10 place-self-start" rounded @click="handleSendMessage">
-                  Soumettre
+                  {{ $t("Soumettre") }}
                 </volt-button>
               </div>
             </form>
@@ -27,37 +26,36 @@
         <div class="grid grid-rows-2 gap-2 md:grid-rows-none md:grid-cols-2 md:gap-8">
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <nuxt-img src="/map.jpg" class="rounded-lg" alt="" />
+              <nuxt-img src="/images/dev/map.jpg" class="rounded-lg" alt="" />
             </template>
           </volt-card>
 
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">Natasha Morel</p>
-              <p>{{ businessDetails.address }}</p>
+              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">
+                {{ get('legalName') }}
+              </p>
+              <p>{{ address }}</p>
 
-              <p class="font-light mt-5 italic">Du Lundi au Vendredi - Déplacement à domicile</p>
+              <p class="font-light mt-5 italic">
+                {{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}
+              </p>
 
-              <div class="space-x-2">
-                <a href="tel:+33">
-                  <volt-button id="tel-contact-us" class="mt-5" rounded>
-                    <Icon name="fa-solid:phone" />
-                    Téléphone
-                  </volt-button>
-                </a>
+              <div class="space-x- flex gap-2 mt-5">
+                <base-telephone-button id="tel-call-us-contact" size="large" />
 
-                <a href="mail:example@gmail.com">
-                  <volt-button id="email-contact-us" class="mt-5" rounded>
-                    <Icon name="fa-solid:envelope" />
-                    Email
+                <a :href="`mailto:${get('contact').email}`">
+                  <volt-button id="email-contact-us" size="large" class="mt-5" rounded>
+                    <icon name="fa-solid:envelope" />
+                    {{ $t("Email") }}
                   </volt-button>
                 </a>
               </div>
 
               <div class="inline-flex gap-2 mt-5 shadow-none">
-                <a v-for="social in footer.socials" :id="`social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" target="_blank">
+                <a v-for="social in activeSocials" :id="`social-${social}`" :key="social" :href="getSocial(social)?.url" target="_blank">
                   <volt-secondary-button size="small" rounded>
-                    <icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name}`" class="text-brand-500" size="20" />
+                    <icon :name="getSocialIcon(social)" :alt="`${get('legalName')} - ${social}`" class="text-brand-500" size="20" />
                   </volt-secondary-button>
                 </a>
               </div>
@@ -71,11 +69,13 @@
 
 <script setup lang="ts">
 import { doc, setDoc } from 'firebase/firestore'
-import { businessDetails, footer } from '~/data'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  title: 'Contact'
+  label: 'Contact'
 })
+
+const { get, activeSocials, getSocialIcon, getSocial, address } = useBusinessDetails()
 
 /**
  * Contact form
@@ -94,7 +94,7 @@ async function _sendMessage() {
     email: email.value,
     telephone: telephone.value,
     message: message.value,
-    timestamp: new Date().toISOString(),
+    timestamp: new Date().toISOString()
   }
 
   try {
@@ -106,7 +106,7 @@ async function _sendMessage() {
 
   email.value = ''
   telephone.value = ''
-  message.value  = ''
+  message.value = ''
 }
 
 const handleSendMessage = useThrottleFn(_sendMessage, 5000)
@@ -117,27 +117,34 @@ const handleSendMessage = useThrottleFn(_sendMessage, 5000)
 
 const i18n = useI18n()
 
-const titles: Record<typeof i18n.locale.value, string> = {
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
   fr: 'Contact',
   en: 'Contact us'
 }
 
-const descriptions: Record<typeof i18n.locale.value, string> = {
-  fr: 'Sublime ta singularité',
-  en: 'Sublime your uniqueness'
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Contactez-moi pour toute question ou demande de rendez-vous',
+  en: 'Contact us for any questions or appointment requests'
 }
+
+const url = useRuntimeConfig().public.siteUrl
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  author: get('legalName'),
+  twitterDescription: descriptions[i18n.locale.value],
+  twitterCard: 'summary_large_image',
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
-defineOgImageComponent('NuxtSeo', {
+defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark',
+  author: get('legalName')
 })
+
+useBreadcrumb(titles[i18n.locale.value])
 </script>

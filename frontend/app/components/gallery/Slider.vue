@@ -1,14 +1,22 @@
 <template>
-  <div ref="sliderEl" id="slider" class="relative w-full min-h-[223px] xl:min-h-[420px] overflow-hidden rounded-xl">
-    <nuxt-img :src="images[index]" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover w-full transition-all duration-300" alt="" />
+  <div ref="sliderEl" id="slider" class="relative w-full min-h-55.75 xl:min-h-105 overflow-hidden rounded-xl">
+    <nuxt-img :src="images[index]" :alt="alt" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover transition-all duration-300 w-full" />
 
-    <transition mode="out-in" enter-active-class="transition-all animate-ease-in-out duration-500" enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown" leave-from-class="opacity-100" leave-to-class="opacity-0">
-      <div v-if="isHovered && !isMobile" class="absolute top-0 left-0 w-full h-full flex items-center justify-between p-5">
-        <volt-button variant="link" severity="info" rounded @click="() => prev()">
+    <transition 
+      mode="out-in" 
+      enter-active-class="transition-all ease-in-out duration-500" 
+      enter-from-class="opacity-0" 
+      enter-to-class="opacity-100 animate-fadeindown"
+      leave-active-class="transition-all ease-in-out duration-500"
+      leave-from-class="opacity-100" 
+      leave-to-class="opacity-0"
+    >
+      <div v-if="isHovered" class="absolute top-0 left-0 w-full h-full flex items-center justify-between p-5">
+        <volt-button rounded @click="() => prev()">
           <icon name="i-fa6-solid:arrow-left" />
         </volt-button>
 
-        <volt-button variant="link" severity="info" rounded @click="() => next()">
+        <volt-button rounded @click="() => next()">
           <icon name="i-fa6-solid:arrow-right" />
         </volt-button>
       </div>
@@ -16,7 +24,7 @@
 
     <!-- Indicators -->
     <div v-if="images.length > 1" class="absolute top-5 left-1/2 -translate-x-1/2 flex gap-2">
-      <span v-for="(image, i) in images" :key="i" :class="['w-3 h-3 rounded-full transition-all duration-300', i === index ? 'bg-primary-100' : 'bg-primary-50/50']" />
+      <span v-for="(_, i) in images" :key="i" :class="['w-3 h-3 rounded-full transition-all duration-300', i === index ? 'bg-primary-100' : 'bg-primary-50/50']" />
     </div>
   </div>
 </template>
@@ -24,14 +32,35 @@
 <script setup lang="ts">
 import type { GalleryImage } from '~/types';
 
-const props = defineProps<{ images: GalleryImage['image'] }>()
+const props = defineProps<{ images: GalleryImage['image'], alt: string | null }>()
 const sliderEl = useTemplateRef('sliderEl')
+
+/**
+ * Analytics
+ */
+
+const { sendEvent } = useAnalyticsEvent()
 
 /**
  * Cycle
  */
 
-const { index, next, prev } = useCycleList(props.images)
+const _images = computed(() => Array.isArray(props.images) ? props.images : [])
+const { index, next, prev } = useCycleList(_images)
+
+watchDebounced(index, (newValue, oldValue) => {
+  if (newValue != oldValue) {
+    sendEvent(
+      defineAnalyticsEvent(
+        'cycle_slider',
+        {
+          slideIndex: index.value,
+          imageItems: props.images
+        }
+      )
+    )
+  }
+}, { debounce: 2000 })
 
 /**
  * Mobile
@@ -60,5 +89,4 @@ watch(isSwiping, (newValue) => {
  */
 
 const isHovered = useElementHover(sliderEl)
-
 </script>

@@ -2,20 +2,20 @@
   <section id="site">
     <base-navbar @mobile-menu="() => toggleMobileMenu(true)" />
 
-    <div id="main">
+    <main>
       <slot />
-    </div>
+    </main>
 
     <!-- Modals -->
     <client-only>
-      <modals-mobile v-model:show="showMobileMenu" />
+      <lazy-modals-mobile v-model:show="showMobileMenu" hydrate-on-visible />
     </client-only>
 
     <!-- Reassurance -->
-    <base-reassurance />
+    <lazy-base-reassurance hydrate-on-idle />
 
     <!-- Footer -->
-    <base-footer />
+    <lazy-base-footer hydrate-on-idle />
   </section>
 </template>
 

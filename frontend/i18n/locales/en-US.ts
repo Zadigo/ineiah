@@ -1,4 +1,4 @@
-export default defineI18nLocale(async _locale => {
+export default defineI18nLocale(async () => {
   return {
 
   }

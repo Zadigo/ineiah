@@ -18,13 +18,13 @@
               <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
                 <volt-button id="link-offer-hero"  size="xl" class="rounded-full mt-10 md:mt-5 w-full md:w-auto">
                   <nuxt-link-locale to="/nos-prestations">
-                    Prestations
+                    {{ $t("Prestations") }}
                   </nuxt-link-locale>
                 </volt-button>
 
                 <volt-button id="tel-hero" size="xl" class="rounded-full mt-5 w-full md:w-auto">
                   <base-telephone-link with-icon>
-                    Nous appeller
+                    {{ $t("Me contacter") }}
                   </base-telephone-link>
                 </volt-button>
               </div>
@@ -45,19 +45,19 @@ const items = [
   {
     leadTitle: 'Sublime ta singularité',
     leadDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore',
-    image: '/hero/hair1.jpg',
+    image: '/images/dev/hair1.jpg',
     alt: ''
   },
   {
     leadTitle: 'Sublime ta singularité 2',
     leadDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore',
-    image: '/hero/hair2.jpg',
+    image: '/images/dev/hair2.jpg',
     alt: ''
   },
   {
     leadTitle: 'Sublime ta singularité 3',
     leadDescription: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore',
-    image: '/hero/hair3.jpg',
+    image: '/images/dev/hair3.jpg',
     alt: ''
   }
 ]

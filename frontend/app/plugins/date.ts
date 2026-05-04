@@ -6,17 +6,21 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 
-export default defineNuxtPlugin(_nuxtApp => {
-  dayjs.extend(calendar)
-  dayjs.extend(duration)
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-  dayjs.extend(relativeTime)
+export default defineNuxtPlugin({
+  parallel: true,
+  name: 'dayjs',
+  setup() {
+    dayjs.extend(calendar)
+    dayjs.extend(duration)
+    dayjs.extend(utc)
+    dayjs.extend(timezone)
+    dayjs.extend(relativeTime)
 
-  return {
-    provide: {
-      dayjs,
-      estimatedTimezone: dayjs.tz.guess()
+    return {
+      provide: {
+        dayjs,
+        estimatedTimezone: dayjs.tz.guess()
+      }
     }
   }
 })

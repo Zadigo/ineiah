@@ -13,12 +13,14 @@
             </p>
 
             <div class="my-2 has-[p]:mb-5">
-              <p class="uppercase mt-3 mb-1 font-bold">{{ $t('Personne morale') }}</p>
+              <p class="uppercase mt-3 mb-1 font-bold">
+                {{ $t('Personne morale') }}
+              </p>
 
-              <p>{{ $t('Dénomination ou raison sociale') }} : {{ businessDetails.legalName }}</p>
-              <p>{{ $t('Adresse du siège social') }} : {{ businessDetails.address }}</p>
-              <p>{{ $t('Capital social') }} : {{ businessDetails.shareCapital || '-' }}</p>
-              <p>{{ $t("Numéro d'identification au Registre du Commerce et des Sociétés (RCS)") }} : {{ businessDetails.rcs || '-' }}</p>
+              <p>{{ $t('Dénomination ou raison sociale') }} {{ businessDetails.legalName }}</p>
+              <p>{{ $t('Adresse du siège social') }} {{ address }}</p>
+              <p>{{ $t('Capital social') }} {{ businessDetails.shareCapital || '-' }}</p>
+              <p>{{ $t("Numéro d'identification au Registre du Commerce et des Sociétés (RCS)") }} {{ businessDetails.rcs || '-' }}</p>
             </div>
 
             <div class="my-2 has-[p]:mb-5">
@@ -87,6 +89,9 @@
               </p>
 
               <p>
+                Les photographies présentes sur ce site ont été réalisées par <a :href="instagram('_khreate_')" target="_blank" class="underline text-secondary underline-offset-4">@_khreate_</a>.
+                Leur utilisation sur ce site a été autorisée dans le cadre d'un accord entre <a :href="instagram('_khreate_')" target="_blank" class="underline text-secondary underline-offset-4">@_khreate_</a> et la société La beauté d'Inéïah.
+
                 {{ $t("Les copyright des photos présents sur le site sont la propriété exclusive de la société {businessName}", { businessName: businessDetails.legalName }) }}
               </p>
             </div>
@@ -98,7 +103,7 @@
 
               <p>
                 Cette politique de confidentialité a été mise à jour pour la dernière
-                fois le 7 novembre 2021. En cas de mise à jour ou de modification des mentions
+                fois le 1 mars 2026. En cas de mise à jour ou de modification des mentions
                 légales, celles-ci seront publiées sur cette page.
               </p>
             </div>
@@ -110,11 +115,23 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails } from '~/data/constants/business'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
-  name: 'privacy'
+  label: 'Privacy'
 })
+
+/**
+ * Business details
+ */
+
+const { businessDetails, address, get } = useBusinessDetails()
+
+/**
+ * Utils
+ */
+
+const { instagram } = useSocialLinks()
 
 /**
  * SEO
@@ -122,27 +139,27 @@ definePageMeta({
 
 const i18n = useI18n()
 
-const titles: Record<typeof i18n.locale.value, string> = {
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
   fr: 'Mentions légales',
   en: 'Legal Notice'
 }
 
-const descriptions: Record<typeof i18n.locale.value, string> = {
-  fr: 'Sublime ta singularité',
-  en: 'Sublime your uniqueness'
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Découvrez les mentions légales de notre salon de coiffure, qui fournissent des informations importantes sur l\'éditeur du site, l\'hébergeur, et les droits de propriété intellectuelle.',
+  en: 'Discover the legal notice of our hair salon, which provides important information about the site publisher, the host, and intellectual property rights.'
 }
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  titleTemplate: `%s | ${businessDetails.legalName}`,
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  ogLocale: i18n.locale.value
 })
 
-defineOgImageComponent('NuxtSeo', {
+defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark',
+  author: get('legalName')
 })
+
+useBreadcrumb(titles[i18n.locale.value])
 </script>

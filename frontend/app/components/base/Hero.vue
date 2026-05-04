@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  lead: string
-  subtitle: string
+  lead: string,
+  subtitle: string,
   src: string
 }>()
 

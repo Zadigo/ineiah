@@ -1,17 +1,22 @@
 <template>
   <section class="font-sans bg-primary-100 dark:bg-primary-800 relative">
     <nuxt-layout>
+      <!-- <analytics />
+      <speed-insights /> -->
+      
       <nuxt-page />
 
       <dev-only>
         <cookie-banner />
-        <cookie-options :show="showOptions" />
+        <lazy-cookie-options :show="showOptions" :hydrate-when="showOptions" />
       </dev-only>
     </nuxt-layout>
   </section>
 </template>
 
 <script setup lang="ts">
+// import { Analytics } from '@vercel/analytics/nuxt'
+// import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 import { provideSSRWidth } from '@vueuse/core'
 
 const nuxtApp = useNuxtApp()
@@ -22,6 +27,9 @@ const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 
 useState('isMobile', () => isMobile)
 useState('isLargeScreen', () => isLargeScreen)
+
+const { locales, locale } = useI18n()
+useState('ogLocaleAlternate', () => locales.value.filter(l => l.code !== locale.value).map(l => l.code))
 
 /**
  * Cookie
@@ -44,14 +52,28 @@ onUnmounted(() => {
 })
 
 /**
- * SEO
+ * General SEO Tags
  */
 
+const { get } = useBusinessDetails()
+
 useHead({
-  link: [
+  meta: [
     {
-      rel: 'canonical',
-      href: useRuntimeConfig().public.prodDomain
+      name: 'geo.region',
+      content: 'FR-HDF'
+    },
+    {
+      name: 'geo.placename',
+      content: get('address').city
+    },
+    {
+      name: 'geo.position',
+      content: `${get('address').lat},${get('address').lng}`
+    },
+    {
+      name: 'ICBM',
+      content: `${get('address').lat},${get('address').lng}`
     }
   ]
 })

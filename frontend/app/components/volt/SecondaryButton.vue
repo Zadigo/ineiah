@@ -8,13 +8,12 @@
 
 <script setup lang="ts">
 import Button, { type ButtonPassThroughOptions, type ButtonProps } from 'primevue/button'
-import { ref } from 'vue'
 import { ptViewMerge } from './utils'
 
 interface Props extends /* @vue-ignore */ ButtonProps { }
 defineProps<Props>()
 
-const theme = ref<ButtonPassThroughOptions>({
+const theme: ButtonPassThroughOptions = {
   root: `inline-flex cursor-pointer select-none items-center justify-center overflow-hidden relative
         px-3 py-2 gap-2 rounded-md disabled:pointer-events-none disabled:opacity-60 transition-colors duration-200
         bg-surface-100 enabled:hover:bg-surface-200 enabled:active:bg-surface-300
@@ -51,5 +50,5 @@ const theme = ref<ButtonPassThroughOptions>({
   pcBadge: {
     root: `min-w-4 h-4 leading-4`
   }
-})
+}
 </script>

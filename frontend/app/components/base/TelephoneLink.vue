@@ -1,5 +1,5 @@
 <template>
-  <a :href="`tel:${telephone}`">
+  <a :href="`tel:${fallbackTelephone}`">
     <icon v-if="withIcon" name="i-fa7-solid:phone" />
 
     <slot>
@@ -9,11 +9,16 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails } from '~/data'
+/**
+ * Business details
+ */
+
+const { businessDetails } = useBusinessDetails()
 
 const {
-  telephone = businessDetails.contact.telephone, 
-  text = 'Nous appeler',
+  text = 'Me contacter',
   withIcon = true
-} = defineProps<{ telephone?: string, text?: string, withIcon?: boolean }>()
+} = defineProps<{ text?: string, withIcon?: boolean }>()
+
+const fallbackTelephone = businessDetails.contact.telephone
 </script>

@@ -1,5 +1,4 @@
 import tailwindcss from '@tailwindcss/vite'
-import { defineOrganization } from 'nuxt-schema-org/schema'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -13,32 +12,28 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/eslint',
     '@nuxt/fonts',
-    '@nuxt/hints',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils',
     '@nuxt/test-utils/module',
     '@nuxtjs/seo',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
+    '@nuxt/eslint',
     'nuxt-vuefire',
-    'nuxt-schema-org',
-    'nuxt-og-image',
-    'nuxt-vuefire',
-    // 'nuxt-gtag',
-    'nuxt-ganalytics',
-    'nuxt-link-checker',
-    // '@nuxtjs/mcp-toolkit'
+    'nuxt-ganalytics'
   ],
+
+  ogImage: {
+    componentDirs: [ 'og-image' ]
+  },
 
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-    name: "La Beauté d'Inéïah"
+    name: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah"
   },
 
   seo: {
@@ -49,16 +44,35 @@ export default defineNuxtConfig({
     pageTransition: {
       name: 'page',
       mode: 'out-in'
+    },
+
+    head: {
+      titleTemplate: "%s %separator %siteName",
+      templateParams: {
+        separator: '-',
+        siteName: "La Beauté D'Inéïah",
+        meta: [
+          { 
+            name: 'theme-color', 
+            content: '#96726a'
+          },
+          {
+            name: 'theme-color',
+            content: '#5e4842',
+            media: '(prefers-color-scheme: dark)'
+          }
+        ]
+      }
     }
   },
 
   routeRules: {
-    '/': { swr: 16*60 },
-    '/faq': { swr: 30*60 },
+    '/': { prerender: true },
+    '/faq': { prerender: true },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { prerender: true },
     '/legal/**': { prerender: true },
-    '/contact': { swr: true },
+    '/contact': { prerender: true },
     '/galerie': { ssr: false },
     '/sitemap': { prerender: true },
     '/admin/**': { ssr: false }
@@ -70,8 +84,26 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [
-      tailwindcss()
-    ]
+      tailwindcss({
+        optimize: false
+      })
+    ],
+    optimizeDeps: {
+      include: [
+        'vuefire',
+        'dayjs', // CJS
+        'dayjs/plugin/calendar', // CJS
+        'dayjs/plugin/duration', // CJS
+        'dayjs/plugin/relativeTime', // CJS
+        'dayjs/plugin/timezone', // CJS
+        'dayjs/plugin/utc', // CJS
+        'primevue/config',
+        'primevue/card',
+        'tailwind-merge',
+        'primevue/button',
+        '@unhead/bundler',
+      ]
+    }
   },
 
   vuefire: {
@@ -89,7 +121,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      prodDomain: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah",
 
       // Stripe
       stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,
@@ -131,11 +164,14 @@ export default defineNuxtConfig({
 
   ganalytics: {
     ga4: {
-      id: 'G-CVKFG2XPVG',
+      id: [
+        'G-LK89FQLZWP',
+        'G-769ND3ZXSC'
+      ],
       enableDebug: true
     },
     gtm: {
-      id: 'GTM-TGZCVB2G'
+      id: 'GTM-KDXJQZCF'
     }
   },
 
@@ -172,143 +208,47 @@ export default defineNuxtConfig({
     ]
   },
 
-  image: {
-    // TODO: Activate when the project images backend
-    // is set correctly to cloudefare/aws
-    // https://image.nuxt.com/providers/cloudflare
-    provider: 'none'
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never'
+      },
+      typescript: {
+        tsconfigPath: './tsconfig.json'
+      },
+    }
+  },
 
-    // provider: 'cloudfront',
+  image: {
+    provider: 'none'
+    // https://image.nuxt.com/providers/cloudflare
+    // provider: process.env.NODE_ENV === 'production' ? 'cloudfront' : 'none',
     // providers: {
-    //   cloudfront: {}
+    //   cloudfront: {
+    //     baseURL: process.env.NUXT_PUBLIC_CLOUDFRONT_URL
+    //   },
+
+    //   formats: ['webp', 'avif', 'jpeg'],
+
+    //   // screens: {
+    //   //   xs: 320,
+    //   //   sm: 640,
+    //   //   md: 768,
+    //   //   lg: 1024,
+    //   //   xl: 1280,
+    //   //   xxl: 1536,
+    //   // },
+
+    //   // quality: 80,
+
+    //   // ...(process.env.NODE_ENV === 'production' && {
+    //   //   modifiers: {
+    //   //     format: 'webp',
+    //   //     fit: 'cover',
+    //   //   }
+    //   // })
     // }
   },
-
-  schemaOrg: {
-    identity: defineOrganization({
-      '@type': 'HairSalon',
-      name: "La beauté d'Inéïah",
-      legalName: 'Société Morel',
-      alternateName: 'Inéïah Beauté',
-      description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure.',
-      logo: 'https://example.com/logo.png',
-      sameAs: [
-        'https://www.facebook.com/ineiah',
-        'https://www.instagram.com/ineiah',
-        'https://www.linkedin.com/company/ineiah'
-      ],
-      image: [
-        'https://yourdomain.com/images/service-haircut.jpg',
-        'https://yourdomain.com/images/service-coloring.jpg'
-      ],
-      priceRange: '$$',
-      foundingDate: '2013-01-28',
-      foundingLocation: {
-        '@type': 'Place',
-        name: 'Lille, France'
-      },
-      founder: {
-        '@type': 'Person',
-        name: 'Natacha Morel',
-        jobTitle: 'Founder & CEO',
-        description: "Natacha Morel est une coiffeuse certifiée et experte en bien-être avec plus de 10 ans d'expérience dans l'industrie de la beauté.",
-        image: 'https://yourdomain.com/images/founder-natacha.jpg',
-        url: 'https://yourdomain.com/about',
-        sameAs: [
-          'https://www.linkedin.com/in/natachamorel',
-          'https://www.instagram.com/natacha.morel'
-        ],
-        worksFor: {
-          '@type': 'Organization',
-          name: "La beauté d'Inéïah"
-        }
-      },
-      numberOfEmployees: {
-        '@type': 'QuantitativeValue',
-        value: 1
-      },
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Services',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Haircut',
-              description: 'Professional haircut tailored to your style.'
-            }
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Hair Coloring',
-              description: 'Full or partial hair coloring services.'
-            }
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Hair Styling',
-              description: 'Styling services for special occasions.'
-            }
-          }
-        ]
-      },
-      taxId: null,
-      vatId: null,
-      address: {},
-      currenciesAccepted: 'EUR',
-      areaServed: {
-        '@type': 'Place',
-        name: 'Lille, France'
-      },
-      paymentAccepted: [
-        'Credit Card',
-        'Apple Pay',
-        'Google Pay'
-      ],
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '09:00:00',
-          closes: '18:00:00'
-        }
-      ],
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          contactType: 'customer service',
-          telephone: '+1-888-555-0123',
-          email: 'support@modernhome.com',
-          availableLanguage: ['English', 'French'],
-          hoursAvailable: {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '09:00:00',
-            closes: '18:00:00'
-          }
-        }
-      ]
-    })
-  },
-
-  // gtag: {
-  //   id: 'G-CVKFG2XPVG',
-  //   initCommands: [
-  //     ['config', 'default', {
-  //       debug: 'true',
-  //       currency: 'EUR',
-  //       ad_storage: 'denied',
-  //       ad_user_data: 'denied',
-  //       ad_personalization: 'denied',
-  //       analytics_storage: 'denied'
-  //     }]
-  //   ]
-  // },
 
   nitro: {
     storage: {

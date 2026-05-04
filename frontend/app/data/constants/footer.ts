@@ -1,4 +1,4 @@
-import type { Nullable } from "~/types"
+import type { Nullable } from '~/types'
 
 export interface FooterLinks {
   name: string
@@ -17,7 +17,6 @@ export interface FooterSection {
     title: string
     links: FooterLinks[]
   }[]
-  socials: SocialLinks[]
 }
 
 export const footer: FooterSection = {
@@ -91,23 +90,6 @@ export const footer: FooterSection = {
           linkPosition: 4
         }
       ]
-    }
-  ],
-  socials: [
-    {
-      name: 'Facebook',
-      url: 'https://example.com',
-      icon: 'facebook-f'
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/ineiah/',
-      icon: 'instagram'
-    },
-    {
-      name: 'Pinterest',
-      url: 'https://www.instagram.com/ineiah/',
-      icon: 'pinterest'
     }
   ]
 }

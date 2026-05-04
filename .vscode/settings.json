@@ -1,6 +1,4 @@
 {
-    // Required in vscode-eslint < v3.0.10 only
-    "eslint.useFlatConfig": true,
     "tailwindCSS.experimental.classRegex": [
         [
             "cva\\(((?:[^()]|\\([^()]*\\))*)\\)",
@@ -11,5 +9,10 @@
             "(?:'|\"|`)([^']*)(?:'|\"|`)"
         ]
     ],
-    "tailwind-fold.autoFold": false
+    "tailwind-fold.autoFold": false,
+    "oxc.enable.oxfmt": true,
+    "eslint.enable": true,
+    "eslint.workingDirectories": [
+        "${workspaceFolder}/frontend"
+    ]
 }

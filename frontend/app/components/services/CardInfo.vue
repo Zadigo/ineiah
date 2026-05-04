@@ -1,28 +1,26 @@
 <template>
-  <div class="service h-[300px] w-[300px] overflow-x-hidden text-wrap text-lightp p-8 text-sm bg-primary-300 dark:bg-primary-900 rounded-lg">
+  <div class="service h-75 w-75 overflow-x-hidden text-wrap text-lightp p-8 text-sm bg-primary-300 dark:bg-primary-900 rounded-lg">
     <p class="mb-5 font-light">
-      {{ service.description }}
+      {{ service.description || serviceSection.globalDescription }}
     </p>
 
-    <h4 class="font-bold mb-5">Contenu de la prestation</h4>
+    <h4 class="font-bold mb-5">{{ $t('Contenu de la prestation') }}</h4>
     <ul class="has-[li]:space-y-1">
       <li v-for="(step, contentIdx) in serviceIncludes" :key="contentIdx" class="list-disc list-inside">
-        {{ step }}
+        {{ $t(step) }}
       </li>
     </ul>
 
-    <nuxt-analytics event="generate_lead" :params="{ event_label: service.name, event_category: 'telephone' }">
+    <nuxt-analytics event="generate_lead" :params="{ event_label: `${serviceSection.name} - ${service.name}`, event_category: 'telephone', value: service.price || 0 }">
       <template #default="{ attrs }">
-        <volt-button :id="`tel-service-${index + 1}`" class="mt-3 rounded-full" size="sm" @click="() => attrs.sendTemplateEvent()">
-          <base-telephone-link :with-icon="true" text="Réserver" />
-        </volt-button>
+        <base-telephone-button :id="`tel-service-${props.index + 1}`" button-class="mt-5" @click="async () => await attrs.sendTemplateEvent()" />
       </template>
     </nuxt-analytics>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Service, ServiceSection } from '~/data'
+import type { Service, ServiceSection } from '~/types'
 
 const props = defineProps<{ index: number, service: Service, serviceSection: ServiceSection }>()
 

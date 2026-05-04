@@ -5,8 +5,8 @@
         <div class="mx-auto md:max-w-2xl">
           <volt-card>
             <template #content>
-              <h1 class="font-5xl">{{ error?.statusCode }}</h1>
-              <p class="font-2xl font-light">{{ error?.message }}</p>
+              <h1 class="text-5xl">{{ error?.status }}</h1>
+              <p class="text-2xl font-light">{{ error?.message }}</p>
 
               <nuxt-link-locale id="link-error" to="/" aria-label="Accueil" @click="handleError">
                 {{ 'Accueil' }}
@@ -15,8 +15,12 @@
           </volt-card>
 
           <dev-only>
-            <div class="text-wrap overflow-y-scroll pa-10 rounded-3xl bg-primary-500 mt-10">
-              {{ error }}
+            <div class="p-5 rounded-3xl bg-primary-100 mt-10">
+              <div class="bg-primary-200 rounded-3xl p-10 max-w-4xl overflow-x-scroll">
+                <pre>
+                  {{ JSON.stringify(error, null, 2) }}
+                </pre>
+              </div>
             </div>
           </dev-only>
         </div>
@@ -26,11 +30,14 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * Utils
+ */
+
 const error = useError()
 
-useHead({
-  title: "La page n'existe pas"
-})
+preloadRouteComponents('/')
+
 /**
  * A function that handles the
  * redirect to the home page

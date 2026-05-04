@@ -19,8 +19,66 @@
 
 <script setup lang="ts">
 import { footer } from '~/data'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   name: 'sitemap'
 })
+
+/**
+ * SEO
+ */
+
+const { get } = useBusinessDetails()
+const i18n = useI18n()
+
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Plan du site',
+  en: 'Sitemap'
+}
+
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Découvrez la structure de notre site et accédez facilement à toutes les pages importantes.',
+  en: 'Discover the structure of our site and easily access all important pages.'
+}
+
+const url = useRuntimeConfig().public.siteUrl
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+
+useSeoMeta({
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  author: get('legalName'),
+  twitterTitle: titles[i18n.locale.value],
+  twitterDescription: descriptions[i18n.locale.value],
+  twitterImage: shareImage,
+  twitterCard: 'summary_large_image',
+  ogImage: shareImage,
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path,
+  ogLocale: i18n.locale.value,
+})
+
+defineOgImage('NuxtSeoTakumi', {
+  title: titles[i18n.locale.value] || undefined,
+  description: descriptions[i18n.locale.value] || undefined,
+  author: get('legalName')
+})
+
+useSchemaOrg(
+  [
+    defineBreadcrumb({
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          '@id': `${useBrowserLocation().value.origin}/`,
+          position: 2,
+          name: titles[i18n.locale.value],
+          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+        }
+      ]
+    })
+  ]
+)
 </script>
