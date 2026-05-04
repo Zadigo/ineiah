@@ -1,5 +1,3 @@
-import type { Arrayable } from "~/types"
-
 /**
  * Helper function to resolve an array of objects into an array of SearchItems 
  * using a provided mapping function.
@@ -17,7 +15,7 @@ export function objectResolver<T extends Record<string, unknown>>(objs: T[], map
   return resolveditems
 }
 
-export function useGoogleSearchItems<S extends SearchItem>(items: ReturnType<typeof objectResolver>, searchFunc: (item: S, searchValue: string) => boolean) {
+export function useGoogleSearchItems(items: ReturnType<typeof objectResolver>, searchFunc: (item: SearchItem, searchValue: string) => boolean) {
   const allItems = computed(() => {
     const _items = toValue(items)
     return _items.flatMap(item => item)
@@ -34,6 +32,10 @@ export function useGoogleSearchItems<S extends SearchItem>(items: ReturnType<typ
   }
 
   return {
+    /**
+     * A function that resolves the provided items based on the search query. 
+     * It returns all items if the query is empty, or filters the items using the provided search function.
+     */
     resolve
   }
 }
@@ -62,7 +64,14 @@ export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType
   })
 
   return {
+    /**
+     * The search query entered by the user. This is synchronized with the URL's
+     * search parameters, allowing for easy sharing and bookmarking of search results.
+     */
     query,
+    /**
+     * A computed property that returns all items from the provided resolvers based on the current search query.
+     */
     allItems
   }
 }
