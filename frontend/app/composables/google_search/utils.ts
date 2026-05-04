@@ -17,38 +17,42 @@ export function objectResolver<T extends Record<string, unknown>>(objs: T[], map
   return resolveditems
 }
 
-export function useGoogleSearchItems<S extends SearchItem>(items: ReturnType<typeof objectResolver>, query: MaybeRefOrGetter<string>, searchFunc: (item: S, searchValue: string) => boolean) {
+export function useGoogleSearchItems<S extends SearchItem>(items: ReturnType<typeof objectResolver>, searchFunc: (item: S, searchValue: string) => boolean) {
   const allItems = computed(() => {
     const _items = toValue(items)
     return _items.flatMap(item => item)
   })
 
-  const _query = toValue(query)
+  function resolve(query?: string) {
+    const _query = toValue(query)
 
-  const searchedItems = computed(() => {
-    if (_query === '') {
+    if (!isDefined(_query) || _query === '') {
       return allItems.value
     }
 
-    const loweredQuery = _query.toLowerCase()
-    return items.filter(item => searchFunc(item, loweredQuery))
-  })
+    return items.filter(item => searchFunc(item, _query.toLowerCase()))
+  }
 
-  return searchedItems
+  return {
+    resolve
+  }
 }
 
-type ActiveType = 'all' | 'product' | 'page' | 'content'
+export type ActiveType = 'all' | 'product' | 'page' | 'content'
 
 export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType>, resolvers: ReturnType<typeof useGoogleSearchItems>[] }>(options: T) {
   const query = ref<string>('')
   const searchParams = useUrlSearchParams('history') as { q: string }
+
+  const loweredQuery = computed(() => query.value.toLowerCase())
 
   watch(query, (newValue) => {
     searchParams.q = newValue
   })
 
   const allItems = computed(() => {
-    const items = options.resolvers.flatMap(resolver => toValue(resolver))
+    const items = options.resolvers.flatMap(resolver => resolver.resolve(loweredQuery.value))
+    // const items = options.resolvers.flatMap(resolver => resolver.resolve(toValue(loweredQuery)))
 
     if (options.activeType.value === 'all') {
       return items
@@ -57,5 +61,8 @@ export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType
     }
   })
 
-  return allItems
+  return {
+    query,
+    allItems
+  }
 }
