@@ -99,7 +99,7 @@ const { darkMode } = useDarkModeComposable(false)
 
 /**
  * SEO
- */   
+ */
 
 const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
   fr: 'Coupe et coiffures tout type de cheveux',

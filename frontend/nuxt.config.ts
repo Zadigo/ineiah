@@ -66,6 +66,10 @@ export default defineNuxtConfig({
     }
   },
 
+  css: [
+    '~/assets/css/tailwind.css'
+  ],
+
   routeRules: {
     '/': { prerender: true },
     '/faq': { prerender: true },
@@ -77,10 +81,6 @@ export default defineNuxtConfig({
     '/sitemap': { prerender: true },
     '/admin/**': { ssr: false }
   },
-
-  css: [
-    '~/assets/css/tailwind.css'
-  ],
 
   vite: {
     plugins: [
@@ -211,7 +211,8 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: {
-        commaDangle: 'never'
+        commaDangle: 'never',
+        braceStyle: '1tbs'
       },
       typescript: {
         tsconfigPath: './tsconfig.json'

@@ -4,7 +4,9 @@
       <volt-card v-for="section in footer.sections" :key="section.title">
         <template #content>
           <ul>
-            <h2 v-motion-fade class="text-2xl mb-5 text-secondary-700 dark:text-secondary-900">{{ $t(section.title) }}</h2>
+            <h2 v-motion-fade class="text-2xl mb-5 text-secondary-700 dark:text-secondary-900">
+              {{ $t(section.title) }}
+            </h2>
             <li v-for="link in section.links" :key="link.name" class="py-1">
               <nuxt-link-locale :to="link.to" class="text-lg text-secondary-500 underline">
                 {{ $t(link.name) }}
@@ -57,7 +59,7 @@ useSeoMeta({
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
   ogUrl: url + useRoute().path,
-  ogLocale: i18n.locale.value,
+  ogLocale: i18n.locale.value
 })
 
 defineOgImage('NuxtSeoTakumi', {
@@ -66,16 +68,18 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
+const origin = useBrowserLocation().value.origin || ''
+
 useSchemaOrg(
   [
     defineBreadcrumb({
       itemListElement: [
         {
           '@type': 'ListItem',
-          '@id': `${useBrowserLocation().value.origin}/`,
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+          '@id': `${origin}/`,
+          'position': 2,
+          'name': titles[i18n.locale.value],
+          'item': `${origin}${useRoute().fullPath}`
         }
       ]
     })

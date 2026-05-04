@@ -10,7 +10,7 @@
 
           <!-- Type filters -->
           <div class="flex gap-2 mb-8 flex-wrap">
-            <volt-button v-for="type in (['all', 'product', 'page', 'content'] as const)" :key="type" @click="activeType = type" >
+            <volt-button v-for="type in (['all', 'product', 'page', 'content'] as const)" :key="type" @click="activeType = type">
               {{ type }}
             </volt-button>
           </div>

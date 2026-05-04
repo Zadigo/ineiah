@@ -108,15 +108,17 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName'),
 })
 
+const origin = useBrowserLocation().value.origin || ''
+
 useSchemaOrg(
   [
     defineBreadcrumb({
       itemListElement: [
         {
           '@type': 'ListItem',
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+          'position': 2,
+          'name': titles[i18n.locale.value],
+          'item': `${origin}${useRoute().fullPath}`
         }
       ]
     })

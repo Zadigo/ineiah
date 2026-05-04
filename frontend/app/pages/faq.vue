@@ -92,6 +92,8 @@ useSeoMeta({
 
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
 
+const origin = useBrowserLocation().value.origin || ''
+
 useSchemaOrg([
   computed(() => ({
     '@type': 'FAQPage',
@@ -110,7 +112,7 @@ useSchemaOrg([
         '@type': 'ListItem',
         'position': 2,
         'name': titles[i18n.locale.value],
-        'item': `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+        'item': `${origin}${useRoute().fullPath}`
       }
     ]
   })
