@@ -1,5 +1,5 @@
 /**
- * Helper function to resolve an array of objects into an array of SearchItems 
+ * Helper function to resolve an array of objects into an array of SearchItems
  * using a provided mapping function.
  * @param obj The array of objects to be resolved.
  * @param mapper A function that maps each object to a SearchItem.
@@ -44,7 +44,7 @@ export type ActiveType = 'all' | 'product' | 'page' | 'content'
 
 export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType>, resolvers: ReturnType<typeof useGoogleSearchItems>[] }>(options: T) {
   const query = ref<string>('')
-  const searchParams = useUrlSearchParams('history') as { q: string }
+  const searchParams = useUrlSearchParams('history').params as { q: string }
 
   const loweredQuery = computed(() => query.value.toLowerCase())
 
