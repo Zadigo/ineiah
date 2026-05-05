@@ -28,23 +28,17 @@
 
 <script setup lang="ts">
 const {
-  colorMode = 'light',
   title = 'title',
   description,
-  isPro,
-  width = 1200,
-  height = 600,
-  author,
+  // width = 1200,
+  // height = 600,
   image = '/images/hero/customer18-small.webp'
 } = defineProps<{
-  colorMode?: string
   title?: string
   description?: string
-  isPro?: boolean
-  width?: number
-  height?: number
+  // width?: number
+  // height?: number
   image?: string
-  author: string | null
 }>()
 
 /**
