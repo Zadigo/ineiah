@@ -93,5 +93,17 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
-useBreadcrumb(titles[i18n.locale.value])
+const url = useRequestURL()
+
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        'name': titles[i18n.locale.value],
+        'item': url.href
+      }
+    ]
+  })
+])
 </script>

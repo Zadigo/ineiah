@@ -98,21 +98,9 @@ useSchemaOrg(
       }))
     },
     defineBreadcrumb({
-      '@type': 'BreadcrumbList',
-      'itemListElement': [
-        {
-          '@type': 'ListItem',
-          'position': 1,
-          'name': titles[i18n.locale.value],
-          'item': `${origin}/`
-        }
-      ]
-    }),
-    defineBreadcrumb({
       itemListElement: [
         {
           '@type': 'ListItem',
-          'position': 2,
           'name': titles[i18n.locale.value],
           'item': url.href
         }
@@ -120,6 +108,4 @@ useSchemaOrg(
     })
   ]
 )
-
-useBreadcrumb(titles[i18n.locale.value])
 </script>
