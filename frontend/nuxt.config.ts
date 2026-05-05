@@ -63,26 +63,27 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
-      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+      // Site
+      siteUrl: '',
+      siteName: '',
 
       // Stripe
-      stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,
-      stripeTestPublishableKey: process.env.NUXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY,
+      stripeTestSecretKey: '',
+      stripeTestPublishableKey: '',
       stripeApiVersion: '2024-06-20',
       stripeLocale: 'fr',
 
       // What's App
-      whatsAppUrl: process.env.NUXT_PUBLIC_WHATS_APP_URL,
+      whatsAppUrl: '',
 
       // Cloudfront
-      cdnBaseUrl: process.env.NUXT_PUBLIC_CLOUDFRONT_URL,
+      cdnBaseUrl: '',
 
       // Twilio
-      twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,
-      twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
-      twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
-      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
+      twilioAccountSid: '',
+      twilioAuthToken: '',
+      twilioPhoneNumber: '',
+      twilioToPhoneNumber: ''
     }
   },
 
