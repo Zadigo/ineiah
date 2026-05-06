@@ -15,8 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { mobileLinks } from '~/data'
-
 const show = defineModel<boolean>('show', { default: false })
 </script>
 

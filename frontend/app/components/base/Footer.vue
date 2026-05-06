@@ -63,7 +63,5 @@
 </template>
 
 <script setup lang="ts">
-import { footer } from '~/data'
-
 const { getSocial, getSocialIcon, activeSocials, get } = useBusinessDetails()
 </script>

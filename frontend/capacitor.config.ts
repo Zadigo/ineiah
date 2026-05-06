@@ -1,9 +1,9 @@
-import type { CapacitorConfig } from '@capacitor/cli'
+import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'la.beaute.ineah',
-  appName: 'la-beaute-ineah',
+  appId: 'com.frontend',
+  appName: 'La Beauté D\'Inéïah',
   webDir: 'dist'
 };
 
-export default config
+export default config;

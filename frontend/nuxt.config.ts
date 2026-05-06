@@ -1,36 +1,35 @@
-import tailwindcss from '@tailwindcss/vite'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
-  modules: [
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/scripts',
-    '@nuxt/test-utils/module',
-    '@nuxtjs/seo',
-    '@nuxtjs/i18n',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@vueuse/motion/nuxt',
-    '@nuxt/eslint',
-    'nuxt-vuefire',
-    'nuxt-ganalytics',
-    'nuxt-ai-ready',
-    'nuxt-skew-protection',
-    'nuxt-schema-org'
-  ],
-
-  ssr: true,
-
+  compatibilityDate: '2025-07-15',
   devtools: {
     enabled: true,
-
     timeline: {
       enabled: true
     }
   },
+
+  modules: [
+    '@nuxt/a11y',
+    '@nuxt/eslint',
+    '@nuxt/hints',
+    '@nuxt/image',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/scripts',
+    '@nuxt/test-utils/module',
+    '@nuxt/ui',
+    '@nuxtjs/seo',
+    '@pinia/nuxt',
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
+    'nuxt-vuefire',
+    'nuxt-ganalytics',
+    'nuxt-ai-ready',
+    'nuxt-skew-protection',
+  ],
+
+  ssr: true,
 
   app: {
     pageTransition: {
@@ -116,7 +115,6 @@ export default defineNuxtConfig({
     '/en/gallery': { ssr: true },
     '/en/sitemap': { prerender: true }
   },
-  compatibilityDate: '2026-03-11',
 
   nitro: {
     // storage: {
@@ -137,11 +135,11 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    plugins: [
-      tailwindcss({
-        optimize: false
-      })
-    ],
+    // plugins: [
+    //   tailwindcss({
+    //     optimize: false
+    //   })
+    // ],
     optimizeDeps: {
       include: [
         'vuefire',
