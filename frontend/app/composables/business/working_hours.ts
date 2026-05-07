@@ -1,12 +1,12 @@
-type Days = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'
+export type Days = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday'
 
-type WorkingDay = {
+export type WorkingDay = {
   day: Days
   startTime?: string
   endTime?: string
 }
 
-type WorkingDaysOptions = {
+export type WorkingDaysOptions = {
   /**
    * Apply the same working hours to all days.
    */

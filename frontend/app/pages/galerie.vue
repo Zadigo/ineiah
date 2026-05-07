@@ -1,7 +1,7 @@
 <template>
   <section id="gallery">
     <div class="max-w-7xl mx-auto mb-5 px-5 md:px-10 xl:px-0">
-      <div class="mb-5 bg-secondary-100 dark:bg-secondary-800 p-20 py-40 rounded-xl shadow-md bg-center bg-cover" :style="{ backgroundImage: 'url(/images/dev/hair11.jpg)' }">
+      <div class="mb-5 bg-primary-200 dark:bg-secondary-800 p-20 py-40 rounded-xl shadow-md bg-center bg-cover" :style="{ backgroundImage: 'url(/images/dev/hair11.jpg)' }">
         <div>
           <h2 class="text-3xl font-extrabold text-primary-50 dark:text-primary-100">
             {{ $t('Galerie') }}

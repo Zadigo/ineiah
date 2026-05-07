@@ -54,7 +54,6 @@ export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType
 
   const allItems = computed(() => {
     const items = options.resolvers.flatMap(resolver => resolver.resolve(loweredQuery.value))
-    // const items = options.resolvers.flatMap(resolver => resolver.resolve(toValue(loweredQuery)))
 
     if (options.activeType.value === 'all') {
       return items

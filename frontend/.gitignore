@@ -23,4 +23,7 @@ logs
 .env.*
 !.env.example
 
-/app/lib
+/lib
+
+*.mp4
+*.mov
