@@ -1,3 +1,10 @@
 allowBuilds:
   '@firebase/util': true
+  '@parcel/watcher': true
+  '@sentry/cli': true
+  better-sqlite3: true
+  esbuild: true
   protobufjs: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: true
