@@ -17,6 +17,9 @@
     "builtin": true,
     "browser": true
   },
+  "ignorePatterns": [
+    "/tests/**"
+  ],
   "options": {
     "typeAware": true,
     "typeCheck": true

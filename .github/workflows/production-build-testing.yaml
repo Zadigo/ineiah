@@ -1,24 +1,12 @@
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       environment:
-#         description: 'Deploy application to the specified environment'
-#         required: true
-#         default: 'production'
-#         type: choice
-#         options:
-#           - production
-#           - staging
-
 on:
   push:
     branches:
       - develop
-  pull_request:
+  merge_group:
     branches:
-      - seo
       - develop
-      
+      - main
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -33,7 +21,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./frontend
+        working-directory: frontend
 
     steps:
       - name: Checkout
@@ -41,6 +29,8 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
+        with:
+          version: 11.x
 
       - name: Install node
         uses: actions/setup-node@v6
@@ -50,32 +40,10 @@ jobs:
           cache-dependency-path: frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
         run: pnpm run lint
 
-      # - name: Test
-      #   run: pnpm run test
-
       - name: Build
         run: pnpm run build
-        
-      # - uses: actions/checkout@v4
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ${{ matrix.node }}
-                  
-      # - run: npm i -g --force corepack@latest && corepack enable
-          
-      # - name: "Install dependencies"
-      #   run: npx nypm@latest i
-
-      # - name: Install Nuxt
-      #   run: pnpm install
-
-      # - name: Lint
-      #   run: pnpm run lint
-      
-      # - name: Build
-      #   run: pnpm run build
