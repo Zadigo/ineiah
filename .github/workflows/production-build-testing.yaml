@@ -18,11 +18,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [24]
-
-    defaults:
-      run:
-        working-directory: ../frontend
-
+        
     steps:
       - name: Check current dir
         run: pwd && ls -la && ls -la ..
