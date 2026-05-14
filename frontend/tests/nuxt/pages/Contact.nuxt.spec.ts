@@ -12,7 +12,7 @@ describe.skip('Nos Préférences Page', () => {
     const component = await mountSuspended(Contact)
     expect(component.text()).toContain('Toutes nos informations de contact')
 
-    const expectedComponents = [BaseJumbotron]
+    const expectedComponents = [ BaseJumbotron ]
 
     expectedComponents.forEach(item => {
       expect(component.findComponent(item).exists()).toBeTruthy()

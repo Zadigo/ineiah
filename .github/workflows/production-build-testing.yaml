@@ -14,34 +14,67 @@ on:
   push:
     branches:
       - develop
+  pull_request:
+    branches:
+      - seo
+      - develop
       
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [24]
 
     defaults:
       run:
         working-directory: ./frontend
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '>=24'
-                  
-      - run: npm i -g --force corepack@latest && corepack enable
-          
-      - name: "Install dependencies"
-        run: npx nypm@latest i
+      - name: Checkout
+        uses: actions/checkout@v6
 
-      - name: Install Nuxt
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Install node
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - name: Install dependencies
         run: pnpm install
 
       - name: Lint
         run: pnpm run lint
-      
+
+      # - name: Test
+      #   run: pnpm run test
+
       - name: Build
         run: pnpm run build
+        
+      # - uses: actions/checkout@v4
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: ${{ matrix.node }}
+                  
+      # - run: npm i -g --force corepack@latest && corepack enable
+          
+      # - name: "Install dependencies"
+      #   run: npx nypm@latest i
+
+      # - name: Install Nuxt
+      #   run: pnpm install
+
+      # - name: Lint
+      #   run: pnpm run lint
+      
+      # - name: Build
+      #   run: pnpm run build

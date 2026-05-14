@@ -4,20 +4,18 @@
     "typescript",
     "unicorn",
     "oxc",
-    "typescript",
+    "vue",
     "eslint",
     "node",
-    "vue"
+    "typescript"
   ],
   "categories": {
     "correctness": "error"
   },
-  "ignorePatterns": [
-    "/tests/**"
-  ],
   "rules": {},
   "env": {
-    "builtin": true
+    "builtin": true,
+    "browser": true
   },
   "options": {
     "typeAware": true,

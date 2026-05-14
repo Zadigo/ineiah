@@ -29,16 +29,16 @@ export const faqList: FAQSection[] = [
     title: 'Paiement & Acompte',
     questions: [
       {
-        question: "Dois-je payer à l'avance ?",
-        answer: "Oui. Le paiement à l'avance est requis pour confirmer votre rendez-vous. Le montant de l'acompte sera déduit du total de votre service le jour du rendez-vous et s'élève à 30€."
+        question: 'Dois-je payer à l\'avance ?',
+        answer: 'Oui. Le paiement à l\'avance est requis pour confirmer votre rendez-vous. Le montant de l\'acompte sera déduit du total de votre service le jour du rendez-vous et s\'élève à 30€.'
       },
       {
-        question: "Proposez-vous le paiement en plusieurs fois ?",
+        question: 'Proposez-vous le paiement en plusieurs fois ?',
         answer: 'Oui, nous proposons le paiement en 3 fois sans frais pour les services supérieurs à 150€. Veuillez nous contacter pour plus de détails.'
       },
       {
-        question: "J’ai payé mon acompte, mais je dois annuler. Est-ce remboursable ?",
-        answer: "L'acompte n'est généralement pas remboursable en cas d'annulation. Veuillez consulter nos conditions d'annulation pour plus de détails."
+        question: 'J’ai payé mon acompte, mais je dois annuler. Est-ce remboursable ?',
+        answer: 'L\'acompte n\'est généralement pas remboursable en cas d\'annulation. Veuillez consulter nos conditions d\'annulation pour plus de détails.'
       }
     ]
   },
@@ -56,13 +56,13 @@ export const faqList: FAQSection[] = [
       },
       {
         question: 'Dois-je arriver les cheveux attaché ?',
-        answer: "Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu'ils soient bien démêlés et propres."
+        answer: 'Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu\'ils soient bien démêlés et propres.'
       }
     ]
   },
   {
     id: 'age-restrictions',
-    title: "Conditions d'âge",
+    title: 'Conditions d\'âge',
     questions: [
       {
         question: 'Prenez-vous les mineur(e)s ?',
@@ -75,7 +75,7 @@ export const faqList: FAQSection[] = [
     title: 'Valeurs & Engagements',
     questions: [
       {
-        question: "Utilisez-vous des produits respectueux de l'environnement ?",
+        question: 'Utilisez-vous des produits respectueux de l\'environnement ?',
         answer: `L'éco-responsabilité fait partie intégrante de ma façon de travailler. Je sélectionne avec soin des produits capillaires naturels et respectueux de 
         l'environnement — des marques comme Végétalement Provence ou Les Secrets de Loly, reconnues pour leur formulation saine, sans sulfates ni silicones agressifs, 
         et engagées dans une démarche durable. Au-delà des produits, j'applique des pratiques responsables au quotidien : réduction des déchets, utilisation raisonnée 

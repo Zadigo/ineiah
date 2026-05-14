@@ -11,7 +11,7 @@ import type { HTMLAttributes } from 'vue'
 import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<ScrollAreaScrollbarProps & { class?: HTMLAttributes['class'] }>(), {
-  orientation: 'vertical',
+  orientation: 'vertical'
 })
 
 const delegatedProps = reactiveOmit(props, 'class')

@@ -77,7 +77,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Find answers to your most frequently asked questions'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -87,7 +87,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
@@ -95,12 +95,12 @@ const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
 useSchemaOrg([
   computed(() => ({
     '@type': 'FAQPage',
-    mainEntity: questionsList.value.map(item => ({
+    'mainEntity': questionsList.value.map(item => ({
       '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
+      'name': item.question,
+      'acceptedAnswer': {
         '@type': 'Answer',
-        text: item.answer
+        'text': item.answer
       }
     }))
   })),
@@ -108,9 +108,8 @@ useSchemaOrg([
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 2,
-        name: titles[i18n.locale.value],
-        item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+        'name': titles[i18n.locale.value],
+        'item': url.href
       }
     ]
   })
@@ -121,6 +120,4 @@ defineOgImage('NuxtSeoTakumi', {
   description: descriptions[i18n.locale.value],
   author: get('legalName')
 })
-
-useBreadcrumb(titles[i18n.locale.value])
 </script>

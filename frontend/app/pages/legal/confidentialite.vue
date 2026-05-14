@@ -10,7 +10,7 @@
 
             <template v-for="(item, idx) in policy.content" :key="idx">
               <p v-if="item.type === 'paragraph'">
-                {{  $i18n.locale === 'en' ? item.textEn || item.text : item.text }}
+                {{ $i18n.locale === 'en' ? item.textEn || item.text : item.text }}
               </p>
 
               <ul v-else-if="item.type === 'list'" class="list-disc list-inside my-4 leading-7">
@@ -26,7 +26,9 @@
       <volt-card>
         <template #content>
           <div class="rounded-md bg-secondary-100 p-10 space-y-3">
-            <p class="font-bold text-lg">Formulaire de rétractation</p>
+            <p class="font-bold text-lg">
+              Formulaire de rétractation
+            </p>
 
             <p>A l'attention de : {{ get('legalName') }}</p>
             <p>situé au : {{ get('address') }},</p>
@@ -38,7 +40,9 @@
             <client-only>
               <p>Le <nuxt-time :datetime="Date.now()" :format="'DD/MM/YYYY'" /></p>
             </client-only>
-            <p class="italic">Signature du consommateur</p>
+            <p class="italic">
+              Signature du consommateur
+            </p>
           </div>
         </template>
       </volt-card>
@@ -52,7 +56,6 @@ import type { PageTitleOrDescription } from '~/types'
 definePageMeta({
   label: 'Privacy'
 })
-
 
 /**
  * Website Policies
@@ -76,7 +79,6 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover our privacy policy, which explains how we collect, use, and protect our clients\' data.'
 }
 
-const url = useRuntimeConfig().public.siteUrl
 const { get } = useBusinessDetails()
 
 useSeoMeta({
@@ -91,5 +93,17 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
-useBreadcrumb(titles[i18n.locale.value])
+const url = useRequestURL()
+
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        'name': titles[i18n.locale.value],
+        'item': url.href
+      }
+    ]
+  })
+])
 </script>

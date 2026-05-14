@@ -13,8 +13,8 @@ export function useBreadcrumb(title: string, position: number = 2) {
           {
             '@type': 'ListItem',
             position,
-            name: title,
-            item: url + useRoute().path
+            'name': title,
+            'item': url + useRoute().path
           }
         ]
       })

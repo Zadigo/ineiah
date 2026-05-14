@@ -1,6 +1,7 @@
 import type { Nullable } from '~/types'
 
 export * from './base'
+export * from './working_hours'
 
 export interface WebsiteProvider {
   legalName: string
@@ -66,5 +67,5 @@ export interface BusinessDetails {
 export type BusinessDetailsKeys = keyof BusinessDetails
 
 export type BusinessDetailsKeyValue = {
-  [ K in BusinessDetailsKeys ]: BusinessDetails[ K ]
+  [ K in BusinessDetailsKeys ]: BusinessDetails[K]
 }

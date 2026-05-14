@@ -1,14 +1,14 @@
 <template>
-  <div ref="sliderEl" id="slider" class="relative w-full min-h-55.75 xl:min-h-105 overflow-hidden rounded-xl">
+  <div id="slider" ref="sliderEl" class="relative w-full min-h-55.75 xl:min-h-105 overflow-hidden rounded-xl">
     <nuxt-img :src="images[index]" :alt="alt" :class="{ 'zoom-in-10': isHovered }" class="aspect-square object-cover transition-all duration-300 w-full" />
 
-    <transition 
-      mode="out-in" 
-      enter-active-class="transition-all ease-in-out duration-500" 
-      enter-from-class="opacity-0" 
+    <transition
+      mode="out-in"
+      enter-active-class="transition-all ease-in-out duration-500"
+      enter-from-class="opacity-0"
       enter-to-class="opacity-100 animate-fadeindown"
       leave-active-class="transition-all ease-in-out duration-500"
-      leave-from-class="opacity-100" 
+      leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
       <div v-if="isHovered" class="absolute top-0 left-0 w-full h-full flex items-center justify-between p-5">
@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import type { GalleryImage } from '~/types';
+import type { GalleryImage } from '~/types'
 
 const props = defineProps<{ images: GalleryImage['image'], alt: string | null }>()
 const sliderEl = useTemplateRef('sliderEl')
@@ -66,7 +66,7 @@ watchDebounced(index, (newValue, oldValue) => {
  * Mobile
  */
 
-const isMobile = useMediaQuery('(max-width: 768px)')
+useMediaQuery('(max-width: 768px)')
 
 /**
  * Swiping
@@ -75,10 +75,11 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 const { isSwiping, direction } = useSwipe(sliderEl)
 
 watch(isSwiping, (newValue) => {
-  if (newValue === false) {
+  if (!newValue) {
     if (direction.value === 'left') {
       next()
-    } else if (direction.value === 'right') {
+    }
+    else if (direction.value === 'right') {
       prev()
     }
   }

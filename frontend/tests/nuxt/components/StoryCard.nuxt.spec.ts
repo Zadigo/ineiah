@@ -27,7 +27,7 @@ describe.concurrent('Story Card', () => {
         image: '/images/story-1.jpg'
       }
     })
-    
+
     const invertedImage = content.get('#inverted-image')
     expect(invertedImage).toBeDefined()
   })

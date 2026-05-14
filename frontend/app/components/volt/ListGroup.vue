@@ -23,7 +23,7 @@ interface ListGroupProps extends Partial<OptionalProps> {
 }
 
 interface Props {
-  items: ListGroupProps[],
+  items: ListGroupProps[]
   variant?: 'default' | 'flush' | 'flat'
 }
 

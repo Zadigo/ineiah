@@ -1,7 +1,7 @@
 <template>
   <section id="gallery">
     <div class="max-w-7xl mx-auto mb-5 px-5 md:px-10 xl:px-0">
-      <div class="mb-5 bg-secondary-100 dark:bg-secondary-800 p-20 py-40 rounded-xl shadow-md bg-center bg-cover" :style="{ backgroundImage: 'url(/images/dev/hair11.jpg)' }">
+      <div class="mb-5 bg-primary-200 dark:bg-secondary-800 p-20 py-40 rounded-xl shadow-md bg-center bg-cover" :style="{ backgroundImage: 'url(/images/dev/hair11.jpg)' }">
         <div>
           <h2 class="text-3xl font-extrabold text-primary-50 dark:text-primary-100">
             {{ $t('Galerie') }}
@@ -12,14 +12,14 @@
 
           <div class="mt-5 flex justify-start gap-5 flex-wrap md:flex-nowrap">
             <volt-input-text v-model="search" :placeholder="$t('Rechercher une coupe ou un style')" class="w-full md:w-100" />
-            
+
             <div class="hidden justify-start gap-2 xl:flex">
               <volt-tag v-for="keyword in keywords" :key="keyword" :value="keyword" class="cursor-pointer" severity="contrast" @click="() => search = keyword" />
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Images -->
       <gallery-base :images="filteredImages" />
     </div>
@@ -56,7 +56,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover my collection of cuts and styles.'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -66,7 +66,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 defineOgImage('NuxtSeoTakumi', {
@@ -75,30 +75,37 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
+const origin = useBrowserLocation().value.origin || ''
+
 useSchemaOrg(
   [
     {
-      '@type': 'ImageGallery',
-      name: titles[i18n.locale.value],
-      description: descriptions[i18n.locale.value],
-      image: images.value.map(img => ({
+      '@type': 'CollectionPage',
+      'name': titles[i18n.locale.value],
+      'description': descriptions[i18n.locale.value],
+      'hasPart': images.value.map(img => ({
         '@type': 'ImageObject',
-        url: img.image,
-        name: img.name
+        'url': img.image,
+        'contentUrl': img.image,
+        'name': img.name,
+        'description': '',
+        'license': origin + '/legal/mentions-legales/',
+        'acquireLicensePage': origin + '/contact/',
+        'creator': {
+          '@type': 'Organization',
+          'name': get('legalName')
+        }
       }))
     },
     defineBreadcrumb({
       itemListElement: [
         {
           '@type': 'ListItem',
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+          'name': titles[i18n.locale.value],
+          'item': url.href
         }
       ]
     })
   ]
 )
-
-useBreadcrumb(titles[i18n.locale.value])
 </script>

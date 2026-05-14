@@ -12,7 +12,7 @@ export const servicesFixtures: Arrayable<Service> = [
     name: 'Très court',
     gender: 'Femme',
     price: 25,
-    description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
+    description: 'Un soin profond pour revitaliser et renforcer vos cheveux.',
     includes: serviceIncludes,
     duration: 60,
     illustration: '/testimages/jpeg/customer18.jpg',
@@ -24,7 +24,7 @@ export const servicesFixtures: Arrayable<Service> = [
     name: 'Court',
     gender: 'Femme',
     price: 35,
-    description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
+    description: 'Un soin profond pour revitaliser et renforcer vos cheveux.',
     includes: serviceIncludes,
     duration: 60,
     illustration: '/testimages/jpeg/customer17.jpg',
@@ -36,7 +36,7 @@ export const servicesFixtures: Arrayable<Service> = [
     name: 'Mi-long',
     gender: 'Femme',
     price: 45,
-    description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
+    description: 'Un soin profond pour revitaliser et renforcer vos cheveux.',
     includes: serviceIncludes,
     duration: 60,
     illustration: '/testimages/jpeg/customer16.jpg',
@@ -48,7 +48,7 @@ export const servicesFixtures: Arrayable<Service> = [
     name: 'Long',
     gender: 'Femme',
     price: 55,
-    description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
+    description: 'Un soin profond pour revitaliser et renforcer vos cheveux.',
     includes: serviceIncludes,
     duration: 60,
     illustration: '/testimages/jpeg/customer15.jpg',
@@ -60,7 +60,7 @@ export const servicesFixtures: Arrayable<Service> = [
     name: 'XL',
     gender: 'Femme',
     price: 65,
-    description: "Un soin profond pour revitaliser et renforcer vos cheveux.",
+    description: 'Un soin profond pour revitaliser et renforcer vos cheveux.',
     includes: serviceIncludes,
     duration: 60,
     illustration: '/testimages/jpeg/customer14.jpg',
@@ -73,13 +73,13 @@ export const servicesFixtures: Arrayable<Service> = [
 export const serviceSectionFixtures: Arrayable<ServiceSection> = [
   {
     name: 'Shampoings • Coupes • Mise en forme',
-    globalDescription: "Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
+    globalDescription: 'Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.',
     includes: serviceIncludes,
     services: servicesFixtures
   },
   {
     name: 'Shampoings • Coupes • Mise en forme',
-    globalDescription: "Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
+    globalDescription: 'Découvrez nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.',
     includes: serviceIncludes,
     services: servicesFixtures
   }

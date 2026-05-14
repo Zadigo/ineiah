@@ -1,5 +1,5 @@
 <template>
-  <article ref="imageEl" :id="createElementId('gallery-image', null, image.name)" :class ="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
+  <article :id="createElementId('gallery-image', null, image.name)" ref="imageEl" :class="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
     <!-- Image -->
     <gallery-slider v-if="isSlider" :alt="suffixLegalName(image.alt)" :images="image.image" />
     <!-- <lazy-gallery-video-block v-else-if="image.category === 'video'" :image="image" hydrate-on-idle /> -->
@@ -7,7 +7,9 @@
 
     <!-- Infos -->
     <div class="absolute left-5 bottom-5 space-y-1">
-      <h3 class="text-primary-100 text-xl font-semibold">{{ image.name }}</h3>
+      <h3 class="text-primary-100 text-xl font-semibold">
+        {{ image.name }}
+      </h3>
       <lazy-gallery-info-block v-if="!isMobile" :is-hovered="isHovered" :is-selected="isSelected" :image="image" hydrate-on-idle />
       <gallery-mobile-info-block v-else :image="image" />
 
@@ -25,7 +27,7 @@
 
 <script setup lang="ts">
 import { Share } from '@capacitor/share'
-import type { GalleryImage, Nullable } from '~/types'
+import type { GalleryImage } from '~/types'
 
 const props = defineProps<{ image: GalleryImage }>()
 
@@ -33,7 +35,7 @@ const props = defineProps<{ image: GalleryImage }>()
  * Utils
  */
 
-const { instagram } = useSocialLinks()
+useSocialLinks()
 
 const { get, suffixLegalName } = useBusinessDetails()
 

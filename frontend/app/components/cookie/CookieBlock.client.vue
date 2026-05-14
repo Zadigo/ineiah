@@ -1,6 +1,8 @@
 <template>
   <div class="my-5">
-    <p class="font-bold">{{ cookieValue.name }}</p>
+    <p class="font-bold">
+      {{ cookieValue.name }}
+    </p>
 
     <div class="grid grid-cols-8 items-center py-5">
       <div class="col-span-6">
@@ -27,8 +29,8 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'update:cookieValue': [{
-    name: string,
-    description: string,
+    name: string
+    description: string
     required: boolean
   }]
 }>()

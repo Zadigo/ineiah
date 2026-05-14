@@ -1,45 +1,35 @@
-import tailwindcss from '@tailwindcss/vite'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: {
     enabled: true,
-
     timeline: {
       enabled: true
     }
   },
 
   modules: [
+    // '@nuxt/a11y',
     '@nuxt/eslint',
-    '@nuxt/fonts',
     // '@nuxt/hints',
-    '@nuxt/icon',
     '@nuxt/image',
+    '@nuxt/fonts',
+    '@nuxt/icon',
     '@nuxt/scripts',
     '@nuxt/test-utils/module',
+    '@nuxt/ui',
     '@nuxtjs/seo',
-    '@nuxtjs/i18n',
     '@pinia/nuxt',
+    '@nuxtjs/i18n',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
     'nuxt-vuefire',
     'nuxt-ganalytics'
+    // 'nuxt-ai-ready'
+    // 'nuxt-skew-protection'
   ],
 
-  ogImage: {
-    componentDirs: [ 'og-image' ]
-  },
-
-  site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-    name: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah"
-  },
-
-  seo: {
-    fallbackTitle: true
-  },
+  ssr: true,
 
   app: {
     pageTransition: {
@@ -48,13 +38,13 @@ export default defineNuxtConfig({
     },
 
     head: {
-      titleTemplate: "%s %separator %siteName",
+      titleTemplate: '%s %separator %siteName',
       templateParams: {
         separator: '-',
-        siteName: "La Beauté D'Inéïah",
+        siteName: 'La Beauté D\'Inéïah',
         meta: [
-          { 
-            name: 'theme-color', 
+          {
+            name: 'theme-color',
             content: '#96726a'
           },
           {
@@ -67,31 +57,91 @@ export default defineNuxtConfig({
     }
   },
 
-  routeRules: {
-    '/': { prerender: true },
-    '/faq': { prerender: true },
-    '/nos-prestations': { swr: 15*60 },
-    '/notre-histoire': { prerender: true },
-    '/legal/**': { prerender: true },
-    '/contact': { prerender: true },
-    '/galerie': { ssr: false },
-    '/sitemap': { prerender: true },
-    '/admin/**': { ssr: false }
-  },
-
   css: [
     '~/assets/css/tailwind.css'
   ],
 
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL,
+    name: process.env.NUXT_PUBLIC_SITE_NAME,
+    description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure',
+    defaultLocale: 'fr',
+    trailingSlash: true
+  },
+
+  runtimeConfig: {
+    public: {
+      // Site
+      siteUrl: '',
+      siteName: '',
+
+      // Stripe
+      stripeTestSecretKey: '',
+      stripeTestPublishableKey: '',
+      stripeApiVersion: '2024-06-20',
+      stripeLocale: 'fr',
+
+      // What's App
+      whatsAppUrl: '',
+
+      // Cloudfront
+      cdnBaseUrl: '',
+
+      // Twilio
+      twilioAccountSid: '',
+      twilioAuthToken: '',
+      twilioPhoneNumber: '',
+      twilioToPhoneNumber: ''
+    }
+  },
+
+  routeRules: {
+    '/': { prerender: true },
+    '/faq': { prerender: true },
+    '/nos-prestations': { ssr: true },
+    '/notre-histoire': { prerender: true },
+    '/legal/**': { prerender: true },
+    '/contact': { prerender: true },
+    '/galerie': { ssr: true },
+    '/sitemap': { prerender: true },
+
+    // Route rules for English pages
+    '/en/': { prerender: true },
+    '/en/faq': { prerender: true },
+    '/en/our-services': { ssr: true },
+    '/en/our-story': { prerender: true },
+    '/en/legal/**': { prerender: true },
+    '/en/contact': { prerender: true },
+    '/en/gallery': { ssr: true },
+    '/en/sitemap': { prerender: true }
+  },
+
+  nitro: {
+    // storage: {
+    //   redis: {
+    //     driver: 'redis',
+    //     host: process.env.NUXT_PUBLIC_REDIS_HOST,
+    //     port: 6379,
+    //     username: '',
+    //     password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
+    //   }
+    // },
+    // devStorage: {
+    //   file: {
+    //     driver: 'fs',
+    //     base: './data/storage'
+    //   }
+    // }
+  },
+
   vite: {
-    plugins: [
-      tailwindcss({
-        optimize: false
-      })
-    ],
+    // plugins: [
+    //   tailwindcss({
+    //     optimize: false
+    //   })
+    // ],
     optimizeDeps: {
       include: [
-        'vuefire',
         'dayjs', // CJS
         'dayjs/plugin/calendar', // CJS
         'dayjs/plugin/duration', // CJS
@@ -102,46 +152,28 @@ export default defineNuxtConfig({
         'primevue/card',
         'tailwind-merge',
         'primevue/button',
-        '@unhead/bundler',
+        'reka-ui',
+        'clsx',
+        'primevue/skeleton',
+        'primevue/toggleswitch',
+        'primevue/divider',
+        'primevue/drawer',
+        'primevue/dialog',
+        'primevue/inputtext',
+        'primevue/tag',
+        '@capacitor/share'
       ]
     }
   },
 
-  vuefire: {
+  debug: false,
+
+  eslint: {
     config: {
-      apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
-      authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-      dbUrl: process.env.NUXT_PUBLIC_FIREBASE_DB_URL,
-      storageBucket: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-      appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
-      measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-      messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
-      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
-    }
-  },
-
-  runtimeConfig: {
-    public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-      siteName: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah",
-
-      // Stripe
-      stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,
-      stripeTestPublishableKey: process.env.NUXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY,
-      stripeApiVersion: '2024-06-20',
-      stripeLocale: 'fr',
-
-      // What's App
-      whatsAppUrl: process.env.NUXT_PUBLIC_WHATS_APP_URL,
-
-      // Cloudfront
-      cdnBaseUrl: process.env.NUXT_PUBLIC_CLOUDFRONT_URL || '',
-
-      // Twilio
-      twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,
-      twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
-      twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
-      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
     }
   },
 
@@ -182,6 +214,16 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     vueI18n: './i18n.config.ts',
     customRoutes: 'config',
+    experimental: { localeDetector: './local_detector.ts' },
+    strategy: 'prefix_except_default',
+    seo: true,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: true,
+      fallbackLocale: 'fr',
+      redirectOn: 'root'
+    },
     pages: {
       'faq': { fr: '/faq', en: '/faq' },
       'galerie': { fr: '/galerie', en: '/gallery' },
@@ -189,7 +231,7 @@ export default defineNuxtConfig({
       'nos-prestations': { fr: '/nos-prestations', en: '/our-services' },
       'notre-histoire': { fr: '/notre-histoire', en: '/our-story' },
       'legal/confidentialite': { fr: '/legal/confidentialite', en: '/legal/privacy-policy' },
-      'legal/mentions-legales': { fr: '/legal/mentions-legales', en: '/legal/legal-notices' },
+      'legal/mentions-legales': { fr: '/legal/mentions-legales', en: '/legal/legal-notices' }
     },
     locales: [
       {
@@ -240,21 +282,31 @@ export default defineNuxtConfig({
     // }
   },
 
-  nitro: {
-    storage: {
-      redis: {
-        driver: 'redis',
-        host: process.env.NUXT_PUBLIC_REDIS_HOST,
-        port: 6379,
-        username: '',
-        password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
-      }
+  linkChecker: {
+    report: {
+      html: true,
+      publish: true
     }
-    // devStorage: {
-    //   file: {
-    //     driver: 'fs',
-    //     base: './data/storage'
-    //   }
-    // }
+  },
+
+  ogImage: {
+    componentDirs: ['og-image']
+  },
+
+  seo: {
+    fallbackTitle: true
+  },
+
+  vuefire: {
+    config: {
+      apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
+      authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+      dbUrl: process.env.NUXT_PUBLIC_FIREBASE_DB_URL,
+      storageBucket: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+      appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
+      measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+      messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
+      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
+    }
   }
 })

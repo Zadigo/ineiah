@@ -1,7 +1,8 @@
 <template>
   <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
     <div v-if="isHovered" class="text-primary-50 text-sm font-thin">
-      <p v-if="!isSelected" class="flex items-center gap-2">{{ $t("En savoir plus") }}
+      <p v-if="!isSelected" class="flex items-center gap-2">
+        {{ $t("En savoir plus") }}
         <icon name="lucide:fullscreen" />
       </p>
 
@@ -35,5 +36,4 @@ defineProps<{
  */
 
 const { instagram } = useSocialLinks()
-
 </script>

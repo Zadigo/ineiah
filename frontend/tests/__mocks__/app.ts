@@ -1,7 +1,7 @@
 import { vi } from 'vitest'
 
 // Minimal mock for firebase/app
-export function initializeApp(config?: any) {
+export function initializeApp(config?: unknown) {
   // Return a fake Firebase app instance
   return {
     name: '[DEFAULT]',
@@ -11,7 +11,7 @@ export function initializeApp(config?: any) {
 }
 
 // Mock getAuth if used
-export function getAuth(app?: any) {
+export function getAuth(app?: unknown) {
   return {
     currentUser: null,
     signInWithEmailAndPassword: vi.fn(),
@@ -20,5 +20,5 @@ export function getAuth(app?: any) {
 }
 
 // Other firebase/app exports
-export const apps: any[] = []
+export const apps: unknown[] = []
 export const SDK_VERSION = '0.0.0-mock'

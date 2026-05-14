@@ -32,7 +32,9 @@
     <dev-only>
       <!-- Template Settings -->
       <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
-        <p class="font-bold mb-4">Template settings</p>
+        <p class="font-bold mb-4">
+          Template settings
+        </p>
 
         <volt-label label-for="dark-mode" label="Dark mode">
           <client-only>
@@ -97,7 +99,7 @@ const { darkMode } = useDarkModeComposable(false)
 
 /**
  * SEO
- */   
+ */
 
 const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
   fr: 'Coupe et coiffures tout type de cheveux',
@@ -105,11 +107,11 @@ const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
-  fr: "Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure",
-  en: "Multicultural hair salon specializing in all hair types: kinky, curly, straight. Custom care, cuts and styles"
+  fr: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure',
+  en: 'Multicultural hair salon specializing in all hair types: kinky, curly, straight. Custom care, cuts and styles'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -119,7 +121,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 defineOgImage('NuxtSeoTakumi', {

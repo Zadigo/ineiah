@@ -46,7 +46,9 @@
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
         <client-only>
           <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
-            © <nuxt-time :datetime="Date.now()" year="numeric" /> <nuxt-link-locale to="/">{{ get('legalName') }}</nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="get('websiteProvider').url">{{ get('websiteProvider').legalName }}</a>
+            © <nuxt-time :datetime="Date.now()" year="numeric" /> <nuxt-link-locale to="/">
+              {{ get('legalName') }}
+            </nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="get('websiteProvider').url">{{ get('websiteProvider').legalName }}</a>
           </p>
         </client-only>
 
@@ -61,7 +63,5 @@
 </template>
 
 <script setup lang="ts">
-import { footer } from '~/data'
-
 const { getSocial, getSocialIcon, activeSocials, get } = useBusinessDetails()
 </script>

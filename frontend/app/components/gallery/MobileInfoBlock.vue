@@ -1,6 +1,7 @@
 <template>
   <div id="partners" class="text-sm text-primary-50 font-thin">
-    <p class="flex items-center gap-2">{{ $t("En savoir plus") }}
+    <p class="flex items-center gap-2">
+      {{ $t("En savoir plus") }}
       <icon name="lucide:fullscreen" />
     </p>
 

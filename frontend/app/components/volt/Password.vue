@@ -1,10 +1,10 @@
 <template>
   <Password unstyled :pt="theme" :pt-options="{ mergeProps: ptViewMerge }">
     <template #maskicon="{ toggleCallback }">
-      <EyeSlashIcon @click="toggleCallback" class="end-3 text-surface-500 dark:text-surface-400 absolute top-1/2 -mt-2 w-4 h-4" />
+      <EyeSlashIcon class="end-3 text-surface-500 dark:text-surface-400 absolute top-1/2 -mt-2 w-4 h-4" @click="toggleCallback" />
     </template>
     <template #unmaskicon="{ toggleCallback }">
-      <EyeIcon @click="toggleCallback" class="end-3 text-surface-500 dark:text-surface-400 absolute top-1/2 -mt-2 w-4 h-4" />
+      <EyeIcon class="end-3 text-surface-500 dark:text-surface-400 absolute top-1/2 -mt-2 w-4 h-4" @click="toggleCallback" />
     </template>
     <template v-for="(_, slotName) in $slots" #[slotName]="slotProps">
       <slot :name="slotName" v-bind="slotProps ?? {}" />

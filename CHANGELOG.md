@@ -1,3 +1,10 @@
+## v1.3.0
+
+* Fix all SEO related issues raised by Lighthouse, including:
+* Adding missing meta tags for description and viewport
+* Adding alt attributes to all images
+* Improving the structure of the HTML document for better SEO performance
+
 ## v1.2.0
 
 * Various type fixing raised by Eslint

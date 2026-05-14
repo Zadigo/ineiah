@@ -81,17 +81,17 @@ const routes: BaseRoute[] = [
   {
     id: 'offers',
     title: 'Prestations',
-    path: '/nos-prestations'
+    path: '/nos-prestations/'
   },
   {
     id: 'about us',
     title: 'Notre histoire',
-    path: '/notre-histoire'
+    path: '/notre-histoire/'
   },
   {
     id: 'gallery',
     title: 'Galerie',
-    path: '/galerie'
+    path: '/galerie/'
   }
 ]
 

@@ -1,3 +1,4 @@
+<!-- eslint-disable @stylistic/quotes -->
 <template>
   <div>
     Nuxt
@@ -25,11 +26,9 @@ const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
 }
 
 const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
-  fr: "Découvrez les conditions générales de notre salon de coiffure, qui régissent l'utilisation de nos services et les relations entre notre entreprise et nos clients.",
+  fr: 'Découvrez les conditions générales de notre salon de coiffure, qui régissent l\'utilisation de nos services et les relations entre notre entreprise et nos clients.',
   en: 'Discover the terms and conditions of our hair salon, which govern the use of our services and the relationship between our business and our clients.'
 }
-
-const url = useRuntimeConfig().public.siteUrl
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -43,5 +42,17 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
-useBreadcrumb(titles[i18n.locale.value])
+const url = useRequestURL()
+
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        'name': titles[i18n.locale.value],
+        'item': url.href
+      }
+    ]
+  })
+])
 </script>

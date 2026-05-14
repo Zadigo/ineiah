@@ -4,13 +4,21 @@
       <nuxt-img :src="service.image || '/images/dev/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-75" :alt="`${service.category} - ${service.name} - ${service.gender} - ${get('legalName')}`" />
 
       <div class="absolute bottom-0 left-0 p-5 text-primary-50">
-        <p v-if="service.category === 'Coupe'" class="font-light text-sm">{{ $t('Coupe sur cheveux') }}</p>
-        <p v-else-if="service.category === 'Soin'" class="font-light text-sm">{{ $t('Soin sur cheveux') }}</p>
-        <p v-else-if="service.category === 'Coloration'" class="font-light text-sm">{{ $t('Coloration sur cheveux') }}</p>
+        <p v-if="service.category === 'Coupe'" class="font-light text-sm">
+          {{ $t('Coupe sur cheveux') }}
+        </p>
+        <p v-else-if="service.category === 'Soin'" class="font-light text-sm">
+          {{ $t('Soin sur cheveux') }}
+        </p>
+        <p v-else-if="service.category === 'Coloration'" class="font-light text-sm">
+          {{ $t('Coloration sur cheveux') }}
+        </p>
 
-        <p class="font-semibold uppercase">{{ $t(service.name || '') }} • <span v-if="service.price" class="font-bold">{{ $n(service.price, 'currency') }}</span> <span v-else="service.priceText">{{ $t(service.priceText || '') }}</span> • <span>{{ $t(service.gender) }}</span></p>
+        <p class="font-semibold uppercase">
+          {{ $t(service.name || '') }} • <span v-if="service.price" class="font-bold">{{ $n(service.price, 'currency') }}</span> <span v-else>{{ $t(service.priceText || '') }}</span> • <span>{{ $t(service.gender) }}</span>
+        </p>
 
-        <transition 
+        <transition
           enter-active-class="transition-all duration-300"
           enter-from-class="opacity-0 scale-95"
           enter-to-class="opacity-100 scale-100"
@@ -34,7 +42,6 @@
 </template>
 
 <script setup lang="ts">
-import { serviceSectionKey } from '~/data'
 import type { Service, ServiceSection } from '~/types'
 
 const props = defineProps<{ index: number, service: Service }>()
@@ -82,12 +89,12 @@ whenever(showServiceDetails, () => {
 const serviceEl = useTemplateRef('serviceEl')
 const isHovered = ref(false)
 
- if (import.meta.client) {
+if (import.meta.client) {
   onClickOutside(serviceEl, () => toggleServiceDetails(false))
 
   const _isHovered = useElementHover(serviceEl)
   syncRef(isHovered, _isHovered, { direction: 'rtl' })
- }
+}
 
 /**
  * Global Services

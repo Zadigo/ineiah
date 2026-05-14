@@ -16,52 +16,52 @@ import type { Arrayable, Photocall } from '~/types'
 const { get } = useBusinessDetails()
 const items: Arrayable<Photocall> = [
   {
-    src: "/images/photocall/customer20-small.webp",
-    alt: "",
-    subtitle: "Coupe",
-    title: "Homme"
+    src: '/images/photocall/customer20-small.webp',
+    alt: '',
+    subtitle: 'Coupe',
+    title: 'Homme'
   },
   {
-    src: "/images/photocall/customer22-small.webp",
-    alt: "",
-    subtitle: "Coupe",
-    title: "Cheveux courts"
+    src: '/images/photocall/customer22-small.webp',
+    alt: '',
+    subtitle: 'Coupe',
+    title: 'Cheveux courts'
   },
   {
-    src: "/images/photocall/customer23-small.webp",
-    alt: "",
-    subtitle: "Coupe",
-    title: "Cheveux mi-longs"
+    src: '/images/photocall/customer23-small.webp',
+    alt: '',
+    subtitle: 'Coupe',
+    title: 'Cheveux mi-longs'
   },
   {
-    src: "/images/photocall/customer24-small.webp",
-    alt: "",
-    subtitle: "Coupe",
-    title: "Cheveux longs"
+    src: '/images/photocall/customer24-small.webp',
+    alt: '',
+    subtitle: 'Coupe',
+    title: 'Cheveux longs'
   },
   {
-    src: "/images/photocall/customer25.jpg",
-    alt: "",
-    subtitle: "Coupe",
-    title: "Cheveux XL"
+    src: '/images/photocall/customer25.jpg',
+    alt: '',
+    subtitle: 'Coupe',
+    title: 'Cheveux XL'
   },
   {
-    src: "/images/photocall/customer23-small.webp",
-    alt: "",
-    subtitle: "Soin",
-    title: "Homme"
+    src: '/images/photocall/customer23-small.webp',
+    alt: '',
+    subtitle: 'Soin',
+    title: 'Homme'
   },
   {
-    src: "/images/photocall/customer23-small.webp ",
-    alt: "",
-    subtitle: "Soin",
-    title: "Femme"
+    src: '/images/photocall/customer23-small.webp ',
+    alt: '',
+    subtitle: 'Soin',
+    title: 'Femme'
   },
   {
-    src: "/images/photocall/customer21-small.webp",
-    alt: "",
-    subtitle: "Soin",
-    title: "Cheveux homme"
+    src: '/images/photocall/customer21-small.webp',
+    alt: '',
+    subtitle: 'Soin',
+    title: 'Cheveux homme'
   }
 ]
 </script>

@@ -1,9 +1,9 @@
 import AccordionContent from '../../../app/components/volt/AccordionContent.vue'
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
-import { fireEvent, within } from '@testing-library/vue'
+// import { fireEvent, within } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
-import {  useFaq } from '../../../app/composables'
-import Faq from '../../../app/pages/Faq.vue'
+import { useFaq } from '../../../app/composables'
+import Faq from '../../../app/pages/faq.vue'
 
 describe.skip('FAQ Page', () => {
   it('should render page', async () => {
@@ -17,12 +17,12 @@ describe.skip('FAQ Page', () => {
     expect(pageTitleEl).toBeDefined()
   })
 
-  it('should contain required components', async() => {
+  it('should contain required components', async () => {
     const component = await mountSuspended(Faq)
 
-    const requiredComponents = ['CardCTA', 'BaseJumbotron']
-    
-    requiredComponents.forEach(item => {
+    const requiredComponents = [ 'CardCTA', 'BaseJumbotron' ]
+
+    requiredComponents.forEach((item) => {
       const el = component.findComponent(item)
       expect(el).toBeDefined()
     })
@@ -32,7 +32,7 @@ describe.skip('FAQ Page', () => {
     const wrapper = await mountSuspended(Faq)
     const { faqList } = useFaq()
 
-    faqList.forEach(section => {
+    faqList.forEach((section) => {
       const sectionEl = wrapper.find(`#faq-${section.id}`)
       expect(sectionEl.exists()).toBe(true)
       expect(sectionEl.text()).toContain(section.title)
@@ -41,17 +41,17 @@ describe.skip('FAQ Page', () => {
       expect(accordionItems).toHaveLength(section.questions.length)
     })
   })
-  
+
   it('should match snapshot', async () => {
     const component = await mountSuspended(Faq)
     expect(component.html()).toMatchSnapshot()
   })
 
-  describe('accordion', async () => {
+  describe('accordion', () => {
     it.todo('toggles accordion content when trigger is clicked', async () => {
       const wrapper = await mountSuspended(Faq)
       const { faqList } = useFaq()
-      const firstTrigger = wrapper.find(`[id="faq-${faqList[0].id}-0"]`)
+      const firstTrigger = wrapper.find(`[id="faq-${faqList[ 0 ].id}-0"]`)
       const firstContent = wrapper.findComponent(AccordionContent)
       expect(firstContent.isVisible()).toBe(false)
 
@@ -70,7 +70,7 @@ describe.skip('FAQ Page', () => {
 
       expect(ctaButton.exists()).toBeTruthy()
       expect(ctaButton.attributes('href')).toContain('tel:')
-      
+
       await ctaButton.trigger('click')
     })
   })

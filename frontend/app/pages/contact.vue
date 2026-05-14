@@ -32,10 +32,14 @@
 
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">{{ get('legalName') }}</p>
+              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">
+                {{ get('legalName') }}
+              </p>
               <p>{{ address }}</p>
 
-              <p class="font-light mt-5 italic">{{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}</p>
+              <p class="font-light mt-5 italic">
+                {{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}
+              </p>
 
               <div class="space-x- flex gap-2 mt-5">
                 <base-telephone-button id="tel-call-us-contact" size="large" />
@@ -90,7 +94,7 @@ async function _sendMessage() {
     email: email.value,
     telephone: telephone.value,
     message: message.value,
-    timestamp: new Date().toISOString(),
+    timestamp: new Date().toISOString()
   }
 
   try {
@@ -102,7 +106,7 @@ async function _sendMessage() {
 
   email.value = ''
   telephone.value = ''
-  message.value  = ''
+  message.value = ''
 }
 
 const handleSendMessage = useThrottleFn(_sendMessage, 5000)
@@ -123,7 +127,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Contact us for any questions or appointment requests'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -133,7 +137,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 defineOgImage('NuxtSeoTakumi', {
@@ -142,5 +146,15 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
-useBreadcrumb(titles[i18n.locale.value])
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        'name': titles[i18n.locale.value],
+        'item': url.href
+      }
+    ]
+  })
+])
 </script>

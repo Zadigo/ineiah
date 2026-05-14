@@ -13,7 +13,9 @@
             </p>
 
             <div class="my-2 has-[p]:mb-5">
-              <p class="uppercase mt-3 mb-1 font-bold">{{ $t('Personne morale') }}</p>
+              <p class="uppercase mt-3 mb-1 font-bold">
+                {{ $t('Personne morale') }}
+              </p>
 
               <p>{{ $t('Dénomination ou raison sociale') }} {{ businessDetails.legalName }}</p>
               <p>{{ $t('Adresse du siège social') }} {{ address }}</p>
@@ -87,7 +89,7 @@
               </p>
 
               <p>
-                Les photographies présentes sur ce site ont été réalisées par <a :href="instagram('_khreate_')" target="_blank" class="underline text-secondary underline-offset-4">@_khreate_</a>. 
+                Les photographies présentes sur ce site ont été réalisées par <a :href="instagram('_khreate_')" target="_blank" class="underline text-secondary underline-offset-4">@_khreate_</a>.
                 Leur utilisation sur ce site a été autorisée dans le cadre d'un accord entre <a :href="instagram('_khreate_')" target="_blank" class="underline text-secondary underline-offset-4">@_khreate_</a> et la société La beauté d'Inéïah.
 
                 {{ $t("Les copyright des photos présents sur le site sont la propriété exclusive de la société {businessName}", { businessName: businessDetails.legalName }) }}
@@ -147,12 +149,10 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover the legal notice of our hair salon, which provides important information about the site publisher, the host, and intellectual property rights.'
 }
 
-const url = useRuntimeConfig().public.siteUrl
-
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  ogLocale: i18n.locale.value,
+  ogLocale: i18n.locale.value
 })
 
 defineOgImage('NuxtSeoTakumi', {
@@ -161,5 +161,17 @@ defineOgImage('NuxtSeoTakumi', {
   author: get('legalName')
 })
 
-useBreadcrumb(titles[i18n.locale.value])
+const url = useRequestURL()
+
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        'name': titles[i18n.locale.value],
+        'item': url.href
+      }
+    ]
+  })
+])
 </script>
