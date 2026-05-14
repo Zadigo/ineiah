@@ -214,6 +214,16 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     vueI18n: './i18n.config.ts',
     customRoutes: 'config',
+    experimental: { localeDetector: './local_detector.ts' },
+    strategy: 'prefix_except_default',
+    seo: true,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: true,
+      fallbackLocale: 'fr',
+      redirectOn: 'root'
+    },
     pages: {
       'faq': { fr: '/faq', en: '/faq' },
       'galerie': { fr: '/galerie', en: '/gallery' },

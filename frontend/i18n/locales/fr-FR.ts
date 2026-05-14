@@ -132,6 +132,7 @@ export default defineI18nLocale(() => {
     'Cheveux homme': 'Cheveux homme',
     'Cheveux femme': 'Cheveux femme',
     'Cheveux XL': 'Cheveux XL',
+    'Cheveux mi-longs': 'Cheveux mi-longs',
     'Mes prestations': 'Mes prestations',
     'Cheveux courts': 'Cheveux courts',
     'Découvrez ma collection de coupes et de styles.': 'Découvrez ma collection de coupes et de styles.',

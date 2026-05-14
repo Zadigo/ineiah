@@ -198,6 +198,21 @@ useSchemaOrg(
     })
   ]
 )
+
+/**
+ * Href Lang
+ */
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+  addSeoAttributes: true
+})
+
+useHead({
+  htmlAttrs: { lang: head.value.htmlAttrs?.lang },
+  link: [...(head.value.link || [])],
+  meta: [...(head.value.meta || [])]
+})
 </script>
 
 <style lang="scss">

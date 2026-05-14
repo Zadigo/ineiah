@@ -130,6 +130,7 @@ export default defineI18nLocale(() => {
     'Cheveux homme': 'Men\'s Hair',
     'Cheveux femme': 'Women\'s Hair',
     'Cheveux XL': 'XL Hair',
+    'Cheveux mi-longs': 'Medium-length Hair',
     'Mes prestations': 'My Services',
     'Cheveux courts': 'Cheveux courts',
     'Découvrez ma collection de coupes et de styles.': 'Discover my collection of cuts and styles.',
