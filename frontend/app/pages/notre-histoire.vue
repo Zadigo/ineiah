@@ -113,6 +113,7 @@ useSchemaOrg(
       itemListElement: [
         {
           '@type': 'ListItem',
+          '@id': url.href,
           'name': titles[i18n.locale.value],
           'item': url.href
         }
