@@ -18,14 +18,18 @@
                   </a>
                 </template>
               </nuxt-analytics>
-  
+
               <div class="flex-row content-center">
-                <h4 class="font-semibold truncate" :title="recommendation.name">{{ recommendation.name }}</h4>
-                
+                <h4 class="font-semibold truncate" :title="recommendation.name">
+                  {{ recommendation.name }}
+                </h4>
+
                 <client-only>
-                  <p :title="recommendation.description" class="font-light text-sm overflow-hidden text-ellipsis max-h-10">{{ recommendation.description }}</p>
+                  <p :title="recommendation.description" class="font-light text-sm overflow-hidden text-ellipsis max-h-10">
+                    {{ recommendation.description }}
+                  </p>
                 </client-only>
-  
+
                 <nuxt-analytics event="view_item_list" :params="{ items: _analyticsItems }">
                   <template #default="{ attrs }">
                     <a :id="`link-product-recommendation-link-${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" class="text-primary-500 underline underline-offset-2 text-sm mt-2 inline-block" @click="attrs.sendTemplateEvent">
@@ -85,44 +89,44 @@ const recommendations: Recommendation[] = [
     url: 'https://bonosante.fr/olaplex-salon-intro-kit'
   },
   {
-    name: "Bond Maintenance No.4C Bond Maintenance™ Clarifying Shampoo",
+    name: 'Bond Maintenance No.4C Bond Maintenance™ Clarifying Shampoo',
     brand: 'Olaplex',
-    description: "Formule nettoyante clarifiante pour des cheveux parfaitement soignés. Élimine la saleté, l'excès de graisse, les dépôts de produits & les résidus minéraux. Prépare parfaitement les cheveux à l'étape suivante Pflege",
+    description: 'Formule nettoyante clarifiante pour des cheveux parfaitement soignés. Élimine la saleté, l\'excès de graisse, les dépôts de produits & les résidus minéraux. Prépare parfaitement les cheveux à l\'étape suivante Pflege',
     image: '/products/product7.webp',
     url: 'https://www.nocibe.fr/fr/p/5010837003'
   },
   {
-    name: "Bond Maintenance No. 7 Bonding Oil",
+    name: 'Bond Maintenance No. 7 Bonding Oil',
     brand: 'Olaplex',
-    description: "Donne de la brillance, de la souplesse et de l'éclat aux couleurs. Maîtrise les frisottis et les cheveux rebelles. Protection contre les UV et la chaleur jusqu'à 232 °C. Styling et protection en un",
+    description: 'Donne de la brillance, de la souplesse et de l\'éclat aux couleurs. Maîtrise les frisottis et les cheveux rebelles. Protection contre les UV et la chaleur jusqu\'à 232 °C. Styling et protection en un',
     image: '/products/product4.webp',
     url: 'https://briogeohair.com/products/dont-despair-repair-deep-conditioning-mask'
   },
   {
-    name: "Olaplex - No. 6 Bond - Lissant",
+    name: 'Olaplex - No. 6 Bond - Lissant',
     brand: 'Olaplex',
-    description: "Crème capillaire par OLAPLEX. Prenez soin de vos boucles. Soin sans rinçage. Conçu pour renforcer, hydrater et minimiser les frisottis jusqu'à 72 heures.",
+    description: 'Crème capillaire par OLAPLEX. Prenez soin de vos boucles. Soin sans rinçage. Conçu pour renforcer, hydrater et minimiser les frisottis jusqu\'à 72 heures.',
     image: '/products/product8.webp',
     url: 'https://fr.olaplex.com/products/olaplex-n-6-bond-smoother-eu'
   },
   {
-    name: "Duo Blonde Enhancer Olaplex",
+    name: 'Duo Blonde Enhancer Olaplex',
     brand: 'Olaplex',
-    description: "Ce pack fera briller vos cheveux blonds, gris, éclaircis ou méchés. Lavez et hydratez vos cheveux avec le shampooing et l'après-shampooing revitalisants mauves pour obtenir un ton uniforme, neutraliser les tons cuivrés et jaunes, et laisser les cheveux forts, hydratés et sains.",
+    description: 'Ce pack fera briller vos cheveux blonds, gris, éclaircis ou méchés. Lavez et hydratez vos cheveux avec le shampooing et l\'après-shampooing revitalisants mauves pour obtenir un ton uniforme, neutraliser les tons cuivrés et jaunes, et laisser les cheveux forts, hydratés et sains.',
     image: '/products/product6.webp',
     url: 'https://www.beautycoiffure.com/olaplex/127534-duo-blonde-enhancer-olaplex.html'
   },
   {
-    name: "Duo Blonde Enhancer Olaplex",
+    name: 'Duo Blonde Enhancer Olaplex',
     brand: 'Olaplex',
-    description: "Ce pack fera briller vos cheveux blonds, gris, éclaircis ou méchés. Lavez et hydratez vos cheveux avec le shampooing et l'après-shampooing revitalisants mauves pour obtenir un ton uniforme, neutraliser les tons cuivrés et jaunes, et laisser les cheveux forts, hydratés et sains.",
+    description: 'Ce pack fera briller vos cheveux blonds, gris, éclaircis ou méchés. Lavez et hydratez vos cheveux avec le shampooing et l\'après-shampooing revitalisants mauves pour obtenir un ton uniforme, neutraliser les tons cuivrés et jaunes, et laisser les cheveux forts, hydratés et sains.',
     image: '/products/product6.webp',
     url: 'https://www.beautycoiffure.com/olaplex/127534-duo-blonde-enhancer-olaplex.html'
   },
   {
-    name: "Duo Blonde Enhancer Olaplex",
+    name: 'Duo Blonde Enhancer Olaplex',
     brand: 'Olaplex',
-    description: "Ce pack fera briller vos cheveux blonds, gris, éclaircis ou méchés. Lavez et hydratez vos cheveux avec le shampooing et l'après-shampooing revitalisants mauves pour obtenir un ton uniforme, neutraliser les tons cuivrés et jaunes, et laisser les cheveux forts, hydratés et sains.",
+    description: 'Ce pack fera briller vos cheveux blonds, gris, éclaircis ou méchés. Lavez et hydratez vos cheveux avec le shampooing et l\'après-shampooing revitalisants mauves pour obtenir un ton uniforme, neutraliser les tons cuivrés et jaunes, et laisser les cheveux forts, hydratés et sains.',
     image: '/products/product6.webp',
     url: 'https://www.beautycoiffure.com/olaplex/127534-duo-blonde-enhancer-olaplex.html'
   }

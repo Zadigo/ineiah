@@ -127,7 +127,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Contact us for any questions or appointment requests'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -137,14 +137,26 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
-defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  author: get('legalName')
-})
+if (import.meta.env.NODE_ENV !== 'test') {
+  defineOgImage('NuxtSeoTakumi', {
+    title: titles[i18n.locale.value],
+    description: descriptions[i18n.locale.value]
+  })
+}
 
-useBreadcrumb(titles[i18n.locale.value])
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        '@id': url.href,
+        'name': titles[i18n.locale.value],
+        'item': url.href
+      }
+    ]
+  })
+])
 </script>

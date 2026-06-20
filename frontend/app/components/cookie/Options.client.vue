@@ -40,9 +40,9 @@ const { acceptAll, denyAll } = useConsent()
 function updateCookieValue(value: CookieValue) {
   if (value.name === 'Analytics Cookies') {
     if (value.required) {
-      acceptAll()
+      void acceptAll()
     } else {
-      denyAll()
+      void denyAll()
     }
   }
 }

@@ -4,18 +4,19 @@
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
           <div class="xl:hidden absolute inset-y-0 left-0 flex items-center">
-            <volt-secondary-button id="mobile-menu" aria-label="Open mobile menu" @click="$emit('mobile-menu')">
+            <volt-secondary-button id="mobile-menu" aria-label="Open mobile menu" aria-controls="mobile-menu" @click="$emit('mobile-menu')">
               <icon name="i-fa7-solid:bars" />
             </volt-secondary-button>
           </div>
-
+  
           <div class="hidden xl:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
             <div class="flex shrink-0 items-center">
               <nuxt-link-locale id="link-home-nav" to="/" aria-label="Go to homepage">
-                <nuxt-img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="get('legalName')" />
+                <nuxt-img v-if="showBackground" class="h-8 w-auto" src="logos/ineiah-light-small.png" :alt="get('legalName')" />
+                <nuxt-img v-else class="h-8 w-auto" src="logos/ineiah-dark-small.png" :alt="get('legalName')" />
               </nuxt-link-locale>
             </div>
-
+  
             <div class="hidden sm:ml-6 sm:block md:mx-auto">
               <ul class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
                 <li v-for="item in routes" :id="create(item.id, 'link-nav')" :key="item.path" class="p-2 rounded-xl has-[.router-link-exact-active]:bg-primary-100/30">
@@ -25,7 +26,7 @@
                 </li>
               </ul>
             </div>
-
+  
             <base-telephone-button id="tel-call-us-navbar" class="hidden md:flex ml-auto" />
           </div>
         </div>
@@ -35,7 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import { useScroll } from '@vueuse/core'
 import type { BaseRoute } from '~/types'
 
 defineEmits<{ 'mobile-menu': [] }>()
@@ -81,17 +81,17 @@ const routes: BaseRoute[] = [
   {
     id: 'offers',
     title: 'Prestations',
-    path: '/nos-prestations'
+    path: '/nos-prestations/'
   },
   {
     id: 'about us',
     title: 'Notre histoire',
-    path: '/notre-histoire'
+    path: '/notre-histoire/'
   },
   {
     id: 'gallery',
     title: 'Galerie',
-    path: '/galerie'
+    path: '/galerie/'
   }
 ]
 

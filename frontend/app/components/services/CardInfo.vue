@@ -4,7 +4,9 @@
       {{ service.description || serviceSection.globalDescription }}
     </p>
 
-    <h4 class="font-bold mb-5">{{ $t('Contenu de la prestation') }}</h4>
+    <h4 class="font-bold mb-5">
+      {{ $t('Contenu de la prestation') }}
+    </h4>
     <ul class="has-[li]:space-y-1">
       <li v-for="(step, contentIdx) in serviceIncludes" :key="contentIdx" class="list-disc list-inside">
         {{ $t(step) }}
@@ -28,9 +30,9 @@ const props = defineProps<{ index: number, service: Service, serviceSection: Ser
  * Services
  */
 
-// Merge includes from the specificservice and
+// Merge includes from the specific service and
 // with the ones from the service section
 const serviceIncludes = computed(() => {
-  return [...props.service.includes, ...props.serviceSection.includes || []]
+  return [...props.service.includes, ...props.serviceSection.includes]
 })
 </script>

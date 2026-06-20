@@ -20,8 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import { scrollLevelKey } from '~/data'
-
 const scrollLevel = ref<number>(0)
 provide(scrollLevelKey, scrollLevel)
 

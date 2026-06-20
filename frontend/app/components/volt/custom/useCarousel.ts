@@ -7,11 +7,11 @@ const [useProvideCarousel, useInjectCarousel] = createInjectionState(
   ({
     opts,
     orientation,
-    plugins,
+    plugins
   }: CarouselProps, emits: CarouselEmits) => {
     const [emblaNode, emblaApi] = emblaCarouselVue({
       ...opts,
-      axis: orientation === 'horizontal' ? 'x' : 'y',
+      axis: orientation === 'horizontal' ? 'x' : 'y'
     }, plugins)
 
     function scrollPrev() {
@@ -41,7 +41,7 @@ const [useProvideCarousel, useInjectCarousel] = createInjectionState(
     })
 
     return { carouselRef: emblaNode, carouselApi: emblaApi, canScrollPrev, canScrollNext, scrollPrev, scrollNext, orientation }
-  },
+  }
 )
 
 function useCarousel() {

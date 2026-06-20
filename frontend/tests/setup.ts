@@ -5,15 +5,33 @@ vi.mock('@vueuse/core', async () => {
   return {
     ...actual,
     useScroll: vi.fn().mockReturnValue({ y: 0 }),
-    useIntersectionObserver: vi.fn()
+    useIntersectionObserver: vi.fn(),
+  }
+})
+
+// vi.mock('#imports', async () => {
+//   return {
+//     toValue: vi.fn().mockImplementation((value) => {
+//       if (typeof value === 'function') {
+//         return value()
+//       }
+//       return value
+//     })
+//   }
+// })
+
+vi.mock('#imports', async () => {
+  const vue = await vi.importActual<typeof import('vue')>('vue')
+  return {
+    ...vue,
+    toValue: vi.fn().mockImplementation((value) => {
+      return typeof value === 'function' ? value() : value
+    })
   }
 })
 
 vi.mock('#app', async () => {
-  const actual = await vi.importActual<typeof import('#app')>('#app')
-
   return {
-    ...actual,
     useCookie: vi.fn().mockReturnValue({
       value: 'mocked-cookie',
       set: vi.fn(),
@@ -27,7 +45,7 @@ vi.mock('#app/composables/head', async () => {
 
   return {
     ...actual,
-    
+
     useSeoMeta: vi.fn(),
     useHead: vi.fn()
   }

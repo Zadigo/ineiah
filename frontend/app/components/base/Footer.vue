@@ -3,13 +3,14 @@
     <div class="w-full mx-auto max-w-7xl">
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
         <div class="mb-5 md:mb-0">
-          <nuxt-link-locale to="/">
-            <h4 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+          <nuxt-link-locale to="/" aria-label="Go to homepage">
+            <!-- <h4 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
               {{ get('legalName') }}
-            </h4>
+            </h4> -->
+            <nuxt-img class="h-8 w-auto mb-2" src="logos/ineiah-light-small.png" :alt="get('legalName')" />
           </nuxt-link-locale>
 
-          <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
+          <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm font-light text-primary-100 dark:text-primary-200 underline underline-offset-4">
             chez 70's coiffure
           </a>
 
@@ -46,7 +47,9 @@
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
         <client-only>
           <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
-            © <nuxt-time :datetime="Date.now()" year="numeric" /> <nuxt-link-locale to="/">{{ get('legalName') }}</nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="get('websiteProvider').url">{{ get('websiteProvider').legalName }}</a>
+            © <nuxt-time :datetime="Date.now()" year="numeric" /> <nuxt-link-locale to="/">
+              {{ get('legalName') }}
+            </nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="get('websiteProvider').url">{{ get('websiteProvider').legalName }}</a>
           </p>
         </client-only>
 
@@ -61,7 +64,5 @@
 </template>
 
 <script setup lang="ts">
-import { footer } from '~/data'
-
 const { getSocial, getSocialIcon, activeSocials, get } = useBusinessDetails()
 </script>

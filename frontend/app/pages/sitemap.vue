@@ -4,7 +4,9 @@
       <volt-card v-for="section in footer.sections" :key="section.title">
         <template #content>
           <ul>
-            <h2 v-motion-fade class="text-2xl mb-5 text-secondary-700 dark:text-secondary-900">{{ $t(section.title) }}</h2>
+            <h2 v-motion-fade class="text-2xl mb-5 text-secondary-700 dark:text-secondary-900">
+              {{ $t(section.title) }}
+            </h2>
             <li v-for="link in section.links" :key="link.name" class="py-1">
               <nuxt-link-locale :to="link.to" class="text-lg text-secondary-500 underline">
                 {{ $t(link.name) }}
@@ -18,7 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import { footer } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
@@ -42,7 +43,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Discover the structure of our site and easily access all important pages.'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
 
 useSeoMeta({
@@ -56,14 +57,13 @@ useSeoMeta({
   ogImage: shareImage,
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path,
-  ogLocale: i18n.locale.value,
+  ogUrl: url.href,
+  ogLocale: i18n.locale.value
 })
 
 defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
-  author: get('legalName')
+  description: descriptions[i18n.locale.value] || undefined
 })
 
 useSchemaOrg(
@@ -72,10 +72,10 @@ useSchemaOrg(
       itemListElement: [
         {
           '@type': 'ListItem',
-          '@id': `${useBrowserLocation().value.origin}/`,
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+          '@id': url.href,
+          'position': 2,
+          'name': titles[i18n.locale.value],
+          'item': url.href
         }
       ]
     })

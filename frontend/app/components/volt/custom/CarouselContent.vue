@@ -4,7 +4,7 @@ import { cn } from '~/lib/utils'
 import { useCarousel } from './useCarousel'
 
 defineOptions({
-  inheritAttrs: false,
+  inheritAttrs: false
 })
 
 const props = defineProps<WithClassAsProps>()
@@ -23,7 +23,7 @@ const { carouselRef, orientation } = useCarousel()
         cn(
           'flex',
           orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
-          props.class,
+          props.class
         )"
       v-bind="$attrs"
     >

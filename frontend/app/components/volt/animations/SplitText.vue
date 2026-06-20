@@ -90,6 +90,7 @@ const initAnimation = () => {
     if (props.splitType.includes('chars') && self.chars?.length)
       targets = self.chars
     if (!targets.length && props.splitType.includes('words') && self.words.length)
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       targets = self.words
     if (!targets.length && props.splitType.includes('lines') && self.lines.length)
       targets = self.lines

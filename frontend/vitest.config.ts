@@ -26,24 +26,24 @@ export default defineConfig({
       await defineVitestProject({
         test: {
           name: 'e2e',
-          include: ['test/e2e/*.{test,spec}.ts'],
-          environment: 'node',
+          include: ['tests/e2e/*.{test,spec}.ts'],
+          environment: 'node'
         }
       }),
       await defineVitestProject({
         test: {
           name: 'unit',
           include: ['tests/unit/*.{test,spec}.ts'],
-          environment: 'node',
+          environment: 'node'
         }
       })
     ]
   },
-  resolve: {
-    alias: {
-      'firebase/firestore': path.resolve(__dirname, 'tests/__mocks__/firebase/firestore.ts'),
-      'firebase/app': path.resolve(__dirname, 'tests/__mocks__/firebase/app.ts'),
-      'firebase/database': path.resolve(__dirname, 'tests/__mocks__/firebase/database.ts')
-    }
-  }
+  // resolve: {
+  //   alias: {
+  //     'firebase/firestore': path.resolve(__dirname, 'tests/__mocks__/firebase/firestore.ts'),
+  //     'firebase/app': path.resolve(__dirname, 'tests/__mocks__/firebase/app.ts'),
+  //     'firebase/database': path.resolve(__dirname, 'tests/__mocks__/firebase/database.ts')
+  //   }
+  // }
 })

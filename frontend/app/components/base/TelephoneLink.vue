@@ -17,7 +17,7 @@ const { businessDetails } = useBusinessDetails()
 
 const {
   text = 'Me contacter',
-  withIcon = true
+  withIcon
 } = defineProps<{ text?: string, withIcon?: boolean }>()
 
 const fallbackTelephone = businessDetails.contact.telephone

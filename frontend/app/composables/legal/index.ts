@@ -7,6 +7,6 @@ export interface Policy {
     type: 'paragraph' | 'list' | 'subtitle'
     text?: string
     textEn?: string
-    items?: { text: string; textEn?: string }[]
+    items?: { text: string, textEn?: string }[]
   }[]
 }

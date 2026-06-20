@@ -1,4 +1,4 @@
-import type { Nullable } from "."
+import type { Nullable } from '.'
 
 export type ServiceNames = 'Shampoings • Coupes • Mise en forme' | 'Shampoings • Mise en forme' | 'Soins et traitements' | 'Soins Olaplex' | 'Soins Kératine Végétale / Botox Naturel' | 'Hair Contouring' | 'Couleurs' | 'Coupe seule' | 'Tarifs enfants'
 
@@ -61,13 +61,13 @@ export interface ServiceSection {
   services: Service[]
   /**
    * A global description that can be used to provide more context for all the
-   * services within the package. This is a global attribute that can be used to provide 
-   * more context for all the services within the package, and can be used to highlight common 
+   * services within the package. This is a global attribute that can be used to provide
+   * more context for all the services within the package, and can be used to highlight common
    * features or benefits of the services included in the package.
-    For example, if the package includes several hair care services, the global description could 
-    emphasize the use of high-quality products, personalized consultations, 
-    or a relaxing salon environment. This helps potential customers understand the 
-    overall value and experience they can expect from the package, beyond just the 
+    For example, if the package includes several hair care services, the global description could
+    emphasize the use of high-quality products, personalized consultations,
+    or a relaxing salon environment. This helps potential customers understand the
+    overall value and experience they can expect from the package, beyond just the
     individual services offered.
    */
   globalDescription: Nullable<string>

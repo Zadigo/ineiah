@@ -16,16 +16,16 @@
 
         <div class="space-y-3">
           <p class="font-light">
-            Notre histoire, c'est avant tout une histoire humaine. Une histoire de passion, de transmission et 
-            d'amour du cheveu sous toutes ses formes. Née d'un désir profond de rendre la coiffure professionnelle accessible 
-            à toutes les textures — cheveux afros, bouclés, ondulés, caucasiens — La Beauté D'Inéïah s'est imposée comme la référence 
+            Notre histoire, c'est avant tout une histoire humaine. Une histoire de passion, de transmission et
+            d'amour du cheveu sous toutes ses formes. Née d'un désir profond de rendre la coiffure professionnelle accessible
+            à toutes les textures — cheveux afros, bouclés, ondulés, caucasiens — La Beauté D'Inéïah s'est imposée comme la référence
             de la coiffure multiculturelle à Lille et dans le Nord.
           </p>
-  
+
           <p>
-            Derrière chaque coupe, chaque soin, chaque séance de kératine végétale ou chaque balayage se cache un parcours exigeant 
-            et passionné. Formée auprès des plus grands noms de la coiffure professionnelle, Inéïah met plus de 25 ans d'expertise au 
-            service de ta chevelure, avec une attention particulière portée aux cheveux texturés si souvent mal compris. Découvre l'histoire 
+            Derrière chaque coupe, chaque soin, chaque séance de kératine végétale ou chaque balayage se cache un parcours exigeant
+            et passionné. Formée auprès des plus grands noms de la coiffure professionnelle, Inéïah met plus de 25 ans d'expertise au
+            service de ta chevelure, avec une attention particulière portée aux cheveux texturés si souvent mal compris. Découvre l'histoire
             de cette aventure et la vision qui anime chaque rendez-vous.
           </p>
         </div>

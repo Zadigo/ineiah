@@ -23,8 +23,12 @@
 
     <div role="contentinfo">
       <div class="p-20 text-center text-primary-500 dark:text-primary-200">
-        <p class="font-bold mb-3 text-4xl">Rejoint le <span class="text-primary-800 dark:text-primary-400">#curlymouvement</span></p>
-        <p class="text-md">Retrouvez-nous sur instagram <a :href="getSocial('instagram')?.url" :title="getSocial('instagram')?.url">{{ getSocial('instagram')?.handle }}</a></p>
+        <p class="font-bold mb-3 text-4xl">
+          Rejoint le <span class="text-primary-800 dark:text-primary-400">#curlymouvement</span>
+        </p>
+        <p class="text-md">
+          Retrouvez-nous sur instagram <a :href="getSocial('instagram')?.url" :title="getSocial('instagram')?.url">{{ getSocial('instagram')?.handle }}</a>
+        </p>
       </div>
     </div>
   </div>

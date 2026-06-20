@@ -6,7 +6,7 @@ name: Deploy Images to S3
 #       - main  # change to your default branch
 
 on:
-  workflow_dispatch: # 👈 makes it manual
+  workflow_dispatch:
     inputs:
       environment:
         description: "Environment to deploy images"

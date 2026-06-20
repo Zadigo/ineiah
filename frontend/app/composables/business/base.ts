@@ -1,27 +1,31 @@
 import type { Nullable } from '~/types'
 
 export const businessDetails: BusinessDetails = {
-  name: "La beauté d'Inéïah",
-  legalName: "La beauté d'Inéïah",
+  name: 'La beauté d\'Inéïah',
+  legalName: 'La beauté d\'Inéïah',
   alternateName: [
-    "La beauté d'Ineiah",
-    "Inéïah",
-    "Ineiah",
-    "Ineiah Coiffure"
+    'La beauté d\'Ineiah',
+    'Inéïah',
+    'Ineiah',
+    'Ineiah Coiffure'
   ],
   siren: '790 849 574',
   siret: '790 849 574 00039',
   numberoTVA: 'FR29790849574',
   creationDate: '2024-12-14',
   description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure',
-  logo: '',
+  logo: '/logos/ineiah-dark-small.png',
   sameAs: [
     'https://fr.pinterest.com/labeautedineiah',
     'https://facebook.com/labeautedineiah',
     'https://www.instagram.com/ineiah'
   ],
   image: [
-
+    '/images/natachamorel/natacha-morel-coiffure.jpg',
+    '/logos/ineiah-dark-small.png',
+    '/logos/ineiah-light-small.png',
+    '/images/kira/photoshoot46-small.webp',
+    '/images/gallery/customer41-small.webp'
   ],
   rcs: '',
   address: {
@@ -34,10 +38,10 @@ export const businessDetails: BusinessDetails = {
   priceRange: '$$',
   foundingDate: '2024-12-14',
   foundingLocation: 'Lille, France',
-  founderImage: null,
+  founderImage: '/images/natachamorel/natacha-morel-coiffure.jpg',
   shareCapital: null,
   founder: 'Natacha Morel',
-  founderDescription: "Natacha Morel est une coiffeuse certifiée et experte en bien-être avec plus de 20 ans d'expérience dans l'industrie de la beauté.",
+  founderDescription: 'Natacha Morel est une coiffeuse certifiée et experte en bien-être avec plus de 20 ans d\'expérience dans l\'industrie de la beauté.',
   founderKnowsAbout: [
     'Cheveux crépus',
     'Cheveux bouclés',
@@ -62,7 +66,7 @@ export const businessDetails: BusinessDetails = {
   cloudProvider: {
     legalName: 'SAS OVH',
     url: 'http://www.ovhcloud.com/fr/',
-    description: "OVH SAS est une filiale de la société OVH Groupe SA, société immatriculée au RCS de Lille",
+    description: 'OVH SAS est une filiale de la société OVH Groupe SA, société immatriculée au RCS de Lille',
     address: '2 rue Kellermann - 59100 Roubaix - France',
     rcs: '424 761 419 00045'
   },
@@ -122,29 +126,81 @@ export function useBusinessDetails() {
     return `${address.street}, ${address.postalCode} ${address.city}`
   })
 
+  const geoLocation = computed(() => {
+    const address = get('address')
+    if (isDefined(address.lat) && isDefined(address.lng)) {
+      return `${address.lat.toString()},${address.lng.toString()}`
+    } else {
+      return '0,0'
+    }
+  })
+
   function suffixLegalName(name: Nullable<string>, separator: string = ' - '): string {
     const legalName = get('legalName')
     return `${name ?? ''}${separator}${legalName}`
   }
 
+  function _buildPath(path: Nullable<string>): Nullable<string> {
+    if (!isDefined(path)) {
+      return null
+    } else {
+      const rootUrl = useRuntimeConfig().public.siteUrl
+      return new URL(path, rootUrl).toString()
+    }
+  }
+
+  const founderImage = computed(() => {
+    return _buildPath(get('founderImage'))
+  })
+
+  const organizationLogo = computed(() => {
+    return _buildPath(get('logo'))
+  })
+
+  const organizationImages = computed(() => {
+    return get('image').map((image: string) => _buildPath(image))
+  })
+
   return {
     /**
-     * The business details object containing all relevant information about the business, 
+     * The business details object containing all relevant information about the business,
      * including contact details, social media links, and more.
      */
     businessDetails,
     /**
-     * A computed property that returns an array of active social media 
+     * A computed property that returns an array of active social media
      * platforms based on the provided socials in the business details.
      */
     activeSocials,
     /**
-     * A computed property that returns the full address of the business 
+     * A computed property that returns the full address of the business
      * as a formatted string, combining the street, postal code, and city.
      */
     address,
     /**
-     * A function that appends the legal name of the business to a given name, 
+     * A computed property that returns the geographical location of the business
+     * in the format "latitude,longitude". If latitude or longitude is not defined.
+     * @default
+     * "0,0"
+     */
+    geoLocation,
+    /**
+     * A computed property that returns the full URL of the founder's 
+     * image, constructed from the base site URL and the relative path provided in the business details.
+     */
+    founderImage,
+    /**
+     * A computed property that returns the full URL of the organization's logo,
+     * constructed from the base site URL and the relative path provided in the business details.
+     */
+    organizationLogo,
+    /**
+     * A computed property that returns an array of full URLs for the organization's images,
+     * constructed from the base site URL and the relative paths provided in the business details.
+     */
+    organizationImages,
+    /**
+     * A function that appends the legal name of the business to a given name,
      * separated by a specified separator (default is ' - ').
      */
     suffixLegalName,
@@ -167,6 +223,6 @@ export function useBusinessDetails() {
      * A function to retrieve the icon name for a specific social media platform.
      * @param platform - The social media platform to retrieve the icon for (e.g., 'instagram', 'facebook').
      */
-    getSocialIcon,
+    getSocialIcon
   }
 }

@@ -10,7 +10,7 @@
       </p>
 
       <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
-        <volt-button id="link-offer-hero"  size="xl" class=" mt-10 md:mt-5 w-full md:w-auto" rounded>
+        <volt-button id="link-offer-hero" size="xl" class=" mt-10 md:mt-5 w-full md:w-auto" rounded>
           <nuxt-link-locale to="/nos-prestations">
             {{ $t("Prestations") }}
           </nuxt-link-locale>
@@ -26,7 +26,7 @@
 
     <div class="absolute inset-0 z-5">
       <video ref="videoEl" class="w-full h-full object-cover" autoplay loop muted playsinline>
-        <source src="https://freelance-data-storage.s3.us-east-1.amazonaws.com/hair.mp4" type="video/mp4" />
+        <source src="https://freelance-data-storage.s3.us-east-1.amazonaws.com/hair.mp4" type="video/mp4">
       </video>
     </div>
   </div>

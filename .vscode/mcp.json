@@ -1,0 +1,23 @@
+{
+	"servers": {
+		"nuxt-seo": {
+			"type": "http",
+			"url": "https://nuxtseo.com/mcp"
+		},
+		"nuxt": {
+			"command": "npx",
+			"args": [
+				"mcp-remote",
+				"https://nuxt.com/mcp"
+			],
+			"type": "stdio"
+		},
+		"com.vercel/vercel-mcp": {
+			"type": "http",
+			"url": "https://mcp.vercel.com",
+			"gallery": "https://api.mcp.github.com",
+			"version": "0.0.3"
+		}
+	},
+	"inputs": []
+}

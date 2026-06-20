@@ -1,10 +1,10 @@
 <template>
   <Rating unstyled :pt="theme" :pt-options="{ mergeProps: ptViewMerge }">
     <template #onicon="{ toggleCallback }">
-      <StarFillIcon @click="toggleCallback" class="text-base w-4 h-4 transition-colors duration-200 text-primary" />
+      <StarFillIcon class="text-base w-4 h-4 transition-colors duration-200 text-primary" @click="toggleCallback" />
     </template>
     <template #officon="{ toggleCallback }">
-      <StarIcon @click="toggleCallback" class="text-surface-500 dark:text-surface-400 text-base w-4 h-4 transition-colors duration-200" />
+      <StarIcon class="text-surface-500 dark:text-surface-400 text-base w-4 h-4 transition-colors duration-200" @click="toggleCallback" />
     </template>
     <template v-for="(_, slotName) in $slots" #[slotName]="slotProps">
       <slot :name="slotName" v-bind="slotProps ?? {}" />

@@ -9,14 +9,12 @@
       </div>
 
       <!-- Socials -->
-      <base-socials />
+      <lazy-base-socials hydrate-on-visible />
     </div>
   </volt-drawer>
 </template>
 
 <script setup lang="ts">
-import { mobileLinks } from '~/data'
-
 const show = defineModel<boolean>('show', { default: false })
 </script>
 

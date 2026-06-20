@@ -42,7 +42,7 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'The list of my hairdressing and hair care services, tailored to your needs and desires.'
 }
 
-const url = useRuntimeConfig().public.siteUrl
+const url = useRequestURL()
 
 useSeoMeta({
   title: titles[i18n.locale.value],
@@ -52,13 +52,12 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   ogTitle: titles[i18n.locale.value],
   ogDescription: descriptions[i18n.locale.value],
-  ogUrl: url + useRoute().path
+  ogUrl: url.href
 })
 
 defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined,
-  author: get('legalName')
+  description: descriptions[i18n.locale.value] || undefined
 })
 
 useSchemaOrg(
@@ -67,14 +66,12 @@ useSchemaOrg(
       itemListElement: [
         {
           '@type': 'ListItem',
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+          '@id': url.href,
+          'name': titles[i18n.locale.value],
+          'item': url.href
         }
       ]
     })
   ]
 )
-
-useBreadcrumb(titles[i18n.locale.value])
 </script>

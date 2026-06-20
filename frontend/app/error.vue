@@ -5,8 +5,12 @@
         <div class="mx-auto md:max-w-2xl">
           <volt-card>
             <template #content>
-              <h1 class="text-5xl">{{ error?.status }}</h1>
-              <p class="text-2xl font-light">{{ error?.message }}</p>
+              <h1 class="text-5xl">
+                {{ error?.status }}
+              </h1>
+              <p class="text-2xl font-light">
+                {{ error?.message }}
+              </p>
 
               <nuxt-link-locale id="link-error" to="/" aria-label="Accueil" @click="handleError">
                 {{ 'Accueil' }}
@@ -36,13 +40,13 @@
 
 const error = useError()
 
-preloadRouteComponents('/')
+await preloadRouteComponents('/')
 
 /**
  * A function that handles the
  * redirect to the home page
  */
 function handleError() {
-  clearError({ redirect: '/' })
+  void clearError({ redirect: '/' })
 }
 </script>

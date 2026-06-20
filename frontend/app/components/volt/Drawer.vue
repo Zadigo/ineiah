@@ -1,11 +1,11 @@
 <template>
   <Drawer unstyled :pt="theme" :pt-options="{ mergeProps: ptViewMerge }">
     <template #closebutton="{ closeCallback }">
-      <SecondaryButton variant="text" rounded @click="closeCallback" autofocus>
+      <secondary-button variant="text" rounded autofocus @click="closeCallback">
         <template #icon>
           <TimesIcon />
         </template>
-      </SecondaryButton>
+      </secondary-button>
     </template>
     <template v-for="(_, slotName) in $slots" #[slotName]="slotProps">
       <slot :name="slotName" v-bind="slotProps ?? {}" />
@@ -17,11 +17,12 @@
 import TimesIcon from '@primevue/icons/times'
 import Drawer, { type DrawerPassThroughOptions, type DrawerProps } from 'primevue/drawer'
 import { ref } from 'vue'
-import SecondaryButton from './SecondaryButton.vue'
 import { ptViewMerge } from './utils'
 
 interface Props extends /* @vue-ignore */ DrawerProps { }
 defineProps<Props>()
+
+const SecondaryButton = defineLazyHydrationComponent('visible', () => import('./SecondaryButton.vue'))
 
 const theme = ref<DrawerPassThroughOptions>({
   root: `flex flex-col pointer-events-auto relative

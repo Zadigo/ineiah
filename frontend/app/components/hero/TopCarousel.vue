@@ -16,7 +16,7 @@
               </p>
 
               <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
-                <volt-button id="link-offer-hero"  size="xl" class="rounded-full mt-10 md:mt-5 w-full md:w-auto">
+                <volt-button id="link-offer-hero" size="xl" class="rounded-full mt-10 md:mt-5 w-full md:w-auto">
                   <nuxt-link-locale to="/nos-prestations">
                     {{ $t("Prestations") }}
                   </nuxt-link-locale>

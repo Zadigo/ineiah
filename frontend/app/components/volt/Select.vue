@@ -10,7 +10,7 @@
       <SearchIcon class="text-surface-400" />
     </template>
     <template #clearicon="{ clearCallback }">
-      <TimesIcon @click="clearCallback" class="text-surface-400 absolute top-1/2 -mt-2 end-10" />
+      <TimesIcon class="text-surface-400 absolute top-1/2 -mt-2 end-10" @click="clearCallback" />
     </template>
     <template v-for="(_, slotName) in $slots" #[slotName]="slotProps">
       <slot :name="slotName" v-bind="slotProps ?? {}" />

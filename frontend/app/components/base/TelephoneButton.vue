@@ -34,10 +34,10 @@ const {
   buttonClass,
   telephone = null,
   text = 'Me contacter',
-  withIcon = true,
+  withIcon,
   size = 'small'
 } = defineProps<{ id?: string, buttonClass?: string, telephone?: Nullable<string>, text?: string, withIcon?: boolean, size?: ButtonProps['size'] }>()
 
-const fallbackTelephone  = businessDetails.contact.telephone
+const fallbackTelephone = businessDetails.contact.telephone
 const resolvedTelephone = computed(() => telephone || fallbackTelephone)
 </script>

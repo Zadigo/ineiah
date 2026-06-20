@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-const { alt = `Logo de la marque Bouclème`, src } = defineProps<{
-  src: string,
+const { alt, src } = defineProps<{
+  src: string
   alt: string
 }>()
 </script>

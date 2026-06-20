@@ -32,8 +32,12 @@
           <div class="flex items-center space-x-5 mt-5">
             <nuxt-img :src="review.reviewer.avatar || '/placeholder2.svg'" size="large" class="w-10 h-10 rounded-full" />
             <div class="space-y-0">
-              <h2 class="font-bold">{{ review.reviewer.name }}</h2>
-              <p v-if="review.reviewer.title" class="text-sm font-thin">{{ review.reviewer.title }}</p>
+              <h2 class="font-bold">
+                {{ review.reviewer.name }}
+              </h2>
+              <p v-if="review.reviewer.title" class="text-sm font-thin">
+                {{ review.reviewer.title }}
+              </p>
             </div>
           </div>
         </div>
@@ -49,38 +53,30 @@
 
 const { reviews, selectedReview, selectReview } = useReviewsComposable()
 
-// const reviewEls = useTemplateRefsList()
-
-// reviewEls.value.forEach((el) => {
-//   onClickOutside(el, () => {
-//     selectReview(null)
-//   })
-// })
-
 /**
  * SEO
  */
 
-const { get } = useBusinessDetails()
- 
-useSchemaOrg(
-  reviews.map(review => defineReview({
-    author: {
-      '@type': "Person",
-      givenName: review.reviewer.givenName,
-      familyName: review.reviewer.familyName,
-      name: review.reviewer.name
-    },
-    itemReviewed: {
-      "@type": "BeautySalon",
-      name: get('legalName')
-    },
-    reviewBody: review.comment,
-    reviewRating: {
-      ratingValue: review.rating.toString(),
-      bestRating: review.rating.toString(),
-      worstRating: "1"
-    }
-  }))
-)
+// const { get } = useBusinessDetails()
+
+// useSchemaOrg(
+//   reviews.map(review => defineReview({
+//     author: {
+//       '@type': 'Person',
+//       'givenName': review.reviewer.givenName,
+//       'familyName': review.reviewer.familyName,
+//       'name': review.reviewer.name
+//     },
+//     itemReviewed: {
+//       '@type': 'BeautySalon',
+//       'name': get('legalName')
+//     },
+//     reviewBody: review.comment,
+//     reviewRating: {
+//       ratingValue: review.rating.toString(),
+//       bestRating: review.rating.toString(),
+//       worstRating: '1'
+//     }
+//   }))
+// )
 </script>
