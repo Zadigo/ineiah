@@ -164,11 +164,8 @@ useSchemaOrg(
       'currenciesAccepted': 'EUR',
       'areaServed': {
         '@type': 'Place',
-        'name': {
-          '@type': 'City',
-          'name': get('address').city,
-          'addressCountry': 'FR'
-        }
+        'name': get('address').city,
+        'sameAs': `https://fr.wikipedia.org/wiki/${get('address').city}`
       },
       'paymentAccepted': [
         'Credit Card',
