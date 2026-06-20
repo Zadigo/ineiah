@@ -29,7 +29,7 @@ env:
 
 defaults:
   run:
-    working-directory: frontend/
+    working-directory: frontend/frontend
 
 jobs:
   lint:
