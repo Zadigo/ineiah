@@ -39,4 +39,13 @@
         "typescript",
         "typescriptreact"
     ],
+    "files.watcherExclude": {
+        "**/node_modules/**": true,
+        "**/.git/refs/**": true,
+        "**/.nuxt/**": true,
+        "**/.output/**": true,
+        "**/dist/**": true
+    },
+    "vue.suggest.componentNameCasing": "alwaysKebabCase",
+    "vue.suggest.propNameCasing": "alwaysKebabCase"
 }
