@@ -41,6 +41,9 @@ jobs:
         uses: actions/setup-node@v6
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache-dependency-path: frontend/pnpm-lock.yaml
       - name: Lint
         run: |
           npx nuxt prepare
