@@ -39,15 +39,14 @@
 </template>
 
 <script setup lang="ts">
-import AngleDoubleLeftIcon from '@primevue/icons/angledoubleleft'
-import AngleDoubleRightIcon from '@primevue/icons/angledoubleright'
-import AngleLeftIcon from '@primevue/icons/angleleft'
-import AngleRightIcon from '@primevue/icons/angleright'
-import SpinnerIcon from '@primevue/icons/spinner'
+import AngleDoubleLeftIcon from '@primeicons/vue/angle-double-left'
+import AngleDoubleRightIcon from '@primeicons/vue/angle-double-right'
+import AngleLeftIcon from '@primeicons/vue/angle-left'
+import AngleRightIcon from '@primeicons/vue/angle-right'
+import SpinnerIcon from '@primeicons/vue/spinner'
 import DataTable, { type DataTablePassThroughOptions, type DataTableProps } from 'primevue/datatable'
-import { ref } from 'vue'
-import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import SecondaryButton from '~/components/volt/SecondaryButton.vue'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ DataTableProps { }
 defineProps<Props>()

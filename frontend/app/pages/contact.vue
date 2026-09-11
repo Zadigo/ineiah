@@ -1,6 +1,11 @@
 <template>
   <section id="contact">
+    {{ bannerImage }}
+    
+    <!-- Jumbotron -->
     <base-jumbotron src="/images/banners/banner1-small.webp" lead="Contact" subtitle="Toutes mes informations de contact" />
+    
+    <!-- Content -->
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-4xl mx-auto">
         <volt-card class="bg-surface-100 shadow-none">
@@ -44,7 +49,7 @@
               <div class="space-x- flex gap-2 mt-5">
                 <base-telephone-button id="tel-call-us-contact" size="large" />
 
-                <a :href="`mailto:${get('contact').email}`">
+                <a :id="createElementId('cta', 'content', 'contact', 'email')" :href="`mailto:${get('contact').email}`">
                   <volt-button id="email-contact-us" size="large" class="mt-5" rounded>
                     <icon name="fa-solid:envelope" />
                     {{ $t("Email") }}
@@ -76,6 +81,12 @@ definePageMeta({
 })
 
 const { get, activeSocials, getSocialIcon, getSocial, address } = useBusinessDetails()
+
+/**
+ * Image
+ */
+
+const bannerImage = useGalleryImage('banner1-small.webp', 'banners')
 
 /**
  * Contact form

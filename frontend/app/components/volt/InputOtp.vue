@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import InputOtp, { type InputOtpPassThroughOptions, type InputOtpProps } from 'primevue/inputotp'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ InputOtpProps { }
 defineProps<Props>()

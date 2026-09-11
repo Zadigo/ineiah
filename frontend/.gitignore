@@ -31,3 +31,5 @@ logs
 __snapshots__
 
 coverage/
+playwright-*
+e2e-results/

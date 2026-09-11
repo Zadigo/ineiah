@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import ToggleSwitch, { type ToggleSwitchPassThroughOptions, type ToggleSwitchProps } from 'primevue/toggleswitch'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ ToggleSwitchProps { }
 defineProps<Props>()

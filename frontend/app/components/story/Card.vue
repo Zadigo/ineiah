@@ -32,5 +32,8 @@
 </template>
 
 <script setup lang="ts">
-const { invert, image } = defineProps<{ invert: boolean, image: string }>()
+const { invert, image } = defineProps<{ 
+  invert: boolean, 
+  image: string
+}>()
 </script>

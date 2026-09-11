@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import Popover, { type PopoverPassThroughOptions, type PopoverProps } from 'primevue/popover'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ PopoverProps { }
 defineProps<Props>()
@@ -37,8 +37,8 @@ const theme = ref<PopoverPassThroughOptions>({
 
 const el = ref()
 defineExpose({
-  toggle: (event, target) => el.value.toggle(event, target),
-  show: (event, target) => el.value.show(event, target),
-  hide: () => el.value.toggle()
+  toggle: (event: Event, target: HTMLElement) => el.value.toggle(event, target),
+  show: (event: Event, target: HTMLElement) => el.value.show(event, target),
+  hide: () => el.value.hide()
 })
 </script>

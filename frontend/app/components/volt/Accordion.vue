@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import Accordion, { type AccordionPassThroughOptions, type AccordionProps } from 'primevue/accordion'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ AccordionProps { }
 defineProps<Props>()

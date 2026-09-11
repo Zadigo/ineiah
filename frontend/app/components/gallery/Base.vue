@@ -9,7 +9,9 @@
 <script setup lang="ts">
 import type { GalleryImage, Arrayable } from '~/types'
 
-const props = defineProps<{ images: Arrayable<GalleryImage> }>()
+const props = defineProps<{
+  images: Arrayable<GalleryImage>
+  }>()
 
 /**
  * Images

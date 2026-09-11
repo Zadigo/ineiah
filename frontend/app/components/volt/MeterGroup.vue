@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import MeterGroup, { type MeterGroupPassThroughOptions, type MeterGroupProps } from 'primevue/metergroup'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ MeterGroupProps { }
 defineProps<Props>()

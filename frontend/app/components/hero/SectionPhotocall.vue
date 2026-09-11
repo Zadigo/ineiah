@@ -13,8 +13,6 @@
 <script setup lang="ts">
 import type { Arrayable, Photocall } from '~/types'
 
-console.log('Mocked', randomMotionDelays)
-
 const { get } = useBusinessDetails()
 const items: Arrayable<Photocall> = [
   {

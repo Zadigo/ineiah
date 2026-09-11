@@ -8,11 +8,11 @@
 </template>
 
 <script setup lang="ts">
-import CheckIcon from '@primevue/icons/check'
-import MinusIcon from '@primevue/icons/minus'
+import CheckIcon from '@primeicons/vue/check'
+import MinusIcon from '@primeicons/vue/minus'
 import Checkbox, { type CheckboxPassThroughOptions, type CheckboxProps } from 'primevue/checkbox'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ CheckboxProps { }
 defineProps<Props>()

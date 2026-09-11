@@ -11,11 +11,16 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
 import { reactiveOmit } from '@vueuse/core'
-import { ScrollAreaCorner, ScrollAreaRoot, type ScrollAreaRootProps, ScrollAreaViewport } from 'reka-ui'
+import { ScrollAreaCorner, ScrollAreaRoot, ScrollAreaViewport } from 'reka-ui'
+import type { ScrollAreaRootProps } from 'reka-ui'
 import { cn } from '~/lib/utils'
-import ScrollBar from './ScrollBar.vue'
+import ScrollBar from '~/components/volt/custom/ScrollBar.vue'
 
-const props = defineProps<ScrollAreaRootProps & { class?: HTMLAttributes['class'] }>()
+interface Props extends ScrollAreaRootProps {
+  class?: HTMLAttributes['class']
+}
+
+const props = defineProps<Props>()
 
 const delegatedProps = reactiveOmit(props, 'class')
 </script>

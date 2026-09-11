@@ -11,9 +11,9 @@
                 {{ $t(section.title) }}
               </h3>
 
-              <volt-accordion class="w-full mt-5" default-value="0" collapsible>
+              <volt-accordion id="faq-accordion" class="w-full mt-5" default-value="0" collapsible>
                 <volt-accordion-panel v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
-                  <volt-accordion-header :id="`faq-${section.id}-${i}`" class="text-primary-800 bg-surface-200 text-md cursor-pointer">
+                  <volt-accordion-header :id="createElementId('action', 'faq', section.id, i)" class="text-primary-800 bg-surface-200 text-md cursor-pointer">
                     {{ $t(item.question) }}
                   </volt-accordion-header>
 
@@ -116,8 +116,10 @@ useSchemaOrg([
   })
 ])
 
-defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value]
-})
+if (import.meta.env.PROD) {
+  defineOgImage('NuxtSeoTakumi', {
+    title: titles[i18n.locale.value],
+    description: descriptions[i18n.locale.value]
+  })
+}
 </script>

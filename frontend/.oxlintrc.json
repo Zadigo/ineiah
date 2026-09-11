@@ -18,7 +18,7 @@
     "browser": true
   },
   "ignorePatterns": [
-    "/tests/**"
+    "/test/**"
   ],
   "options": {
     "typeAware": true,

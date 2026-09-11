@@ -54,8 +54,6 @@
 </template>
 
 <script setup lang="ts">
-import type { ServiceSection, GalleryImage } from '~/types'
-
 definePageMeta({
   label: 'Search'
 })
@@ -66,7 +64,7 @@ definePageMeta({
 
 const { services } = useServices()
 
-const resolvedServices = objectResolver<ServiceSection>(services, (item) => {
+const resolvedServices = objectResolver(services, (item) => {
   return {
     id: item.name,
     title: item.name,
@@ -82,9 +80,9 @@ const resolvedServices = objectResolver<ServiceSection>(services, (item) => {
  * Gallery
  */
 
-const { images } = useImageGallery()
+const { images } = useGalleryImages()
 
-const resolvedGallery = objectResolver<GalleryImage>(images, (item) => {
+const resolvedGallery = objectResolver(images, (item) => {
   return {
     id: item.name,
     title: item.name,
@@ -102,7 +100,7 @@ const resolvedGallery = objectResolver<GalleryImage>(images, (item) => {
 
 const { defaultPolicies } = useWebsitePolicies()
 
-const resolvedPolicies = objectResolver<Policy>(defaultPolicies, (item) => {
+const resolvedPolicies = objectResolver(defaultPolicies, (item) => {
   const description = item.content.reduce((acc, block) => {
     if (block.type == 'paragraph') {
       return acc + (block.text || '') + ' '
@@ -133,13 +131,9 @@ const activeType = ref<ActiveType>('all')
 const { query, allItems } = useGoogleSearchComposable({
   activeType,
   resolvers: [
-    useGoogleSearchItems(resolvedServices, (item, searchValue) => {
-      return item.title.toLowerCase().includes(searchValue)
-    }),
-    useGoogleSearchItems(resolvedGallery, (item, searchValue) => {
-      return item.title.toLowerCase().includes(searchValue)
-    }),
-    useGoogleSearchItems(resolvedPolicies, (item, searchValue) => {
+    defineSearchResolver(resolvedServices, googleSearchTitleHelper),
+    defineSearchResolver(resolvedGallery, googleSearchTitleHelper),
+    defineSearchResolver(resolvedPolicies, (item, searchValue) => {
       return item.title.toLowerCase().includes(searchValue) || (item.description || '').toLowerCase().includes(searchValue)
     })
   ]

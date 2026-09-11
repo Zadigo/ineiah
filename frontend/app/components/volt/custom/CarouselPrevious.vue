@@ -19,8 +19,8 @@
 import { ArrowLeft } from 'lucide-vue-next'
 import Button from '~/components/volt/Button.vue'
 import { cn } from '~/lib/utils'
-import type { WithClassAsProps } from './interface'
-import { useCarousel } from './useCarousel'
+import type { WithClassAsProps } from '~/components/volt/custom/interface'
+import { useCarousel } from '~/components/volt/custom/useCarousel'
 
 const props = withDefaults(defineProps<{
   variant?: ButtonVariants['variant']

@@ -3,7 +3,7 @@
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
       <client-only>
         <div class="group">
-          <nuxt-img v-motion-slide-visible-once-left :delay="200" :alt="`Coiffure femme cheveux bouclés par ${get('legalName')}`" src="/images/kira/photoshoot46-small.webp" class="rounded-lg aspect-square object-cover w-full" />
+          <nuxt-img v-motion-slide-visible-once-left :delay="200" :alt="`Coiffure femme cheveux bouclés par ${get('legalName')}`" src="/images/gallery/photoshoots/khreate/photoshoot46.jpg" class="rounded-lg aspect-square object-cover w-full" />
         </div>
 
         <template #fallback>

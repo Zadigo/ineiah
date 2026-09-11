@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import TimesIcon from '@primevue/icons/times'
+import TimesIcon from '@primeicons/vue/times'
 import Toast, { type ToastPassThroughOptions, type ToastProps } from 'primevue/toast'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ ToastProps { }
 defineProps<Props>()

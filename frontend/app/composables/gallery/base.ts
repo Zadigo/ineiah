@@ -1,13 +1,20 @@
 import type { Arrayable } from '~/types'
-import { galleryImages } from './images'
+import { galleryImages } from  './images'
 
 /**
  * Custom composable to manage the image gallery state and filtering logic.
  * Currently, it returns all images without filtering, but it can be extended to implement search functionality.
  */
-export function useImageGallery() {
-  const _images = ref(galleryImages)
-  const images = refDefault(_images, []) // Ensure images is always an array
+export function useGalleryImages(rootDir = '/images/gallery') {
+  const _images = computed(() => {
+    return galleryImages.map(img => {
+      const newImg = { ...img }
+      newImg.image = img.image.map(imagePath => `${rootDir}/${imagePath}`)
+      return newImg
+    })
+  })
+
+  const images = useCached(_images, (newValue, oldValue) => newValue === oldValue)
 
   const search = ref<string>('')
   const query = useUrlSearchParams()
@@ -74,4 +81,24 @@ export function useImageGallery() {
      */
     isVideo
   }
+}
+
+/**
+ * A composable function that retrieves a specific image from the gallery based on its name.
+ * @param name The name of the image to return
+ * @param rootDir The root directory where the images are stored. Defaults to '/images/gallery'.
+ */
+export function useGalleryImage(name: string, rootDir = '/images/gallery') {
+  const { images } = useGalleryImages(rootDir)
+
+  const image = computed(() => {
+    const items = images.value.filter(img => {
+      return img.image.some(imagePath => imagePath.endsWith(name))
+    }).flatMap(img => {
+      return img.image
+    })
+    return items[0] || ''
+  })
+
+  return image
 }

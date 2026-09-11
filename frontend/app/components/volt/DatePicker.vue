@@ -89,15 +89,15 @@
 </template>
 
 <script setup>
-import CalendarIcon from '@primevue/icons/calendar'
-import ChevronDownIcon from '@primevue/icons/chevrondown'
-import ChevronLeftIcon from '@primevue/icons/chevronleft'
-import ChevronRightIcon from '@primevue/icons/chevronright'
-import ChevronUpIcon from '@primevue/icons/chevronup'
+import CalendarIcon from '@primeicons/vue/calendar'
+import ChevronDownIcon from '@primeicons/vue/chevron-down'
+import ChevronLeftIcon from '@primeicons/vue/chevronleft'
+import ChevronRightIcon from '@primeicons/vue/chevronright'
+import ChevronUpIcon from '@primeicons/vue/chevron-up'
 import DatePicker from 'primevue/datepicker'
 import { ref } from 'vue'
-import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import SecondaryButton from '~/components/volt/SecondaryButton.vue'
+import { ptViewMerge } from '~/components/volt/utils'
 
 const theme = ref({
   root: `inline-flex max-w-full relative p-fluid:flex`,

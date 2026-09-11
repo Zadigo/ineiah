@@ -1,7 +1,7 @@
 <template>
-  <article :id="createElementId('service', null, service.gender, service.category, service.name || `${index + 1}`)" class="relative bg-surface-200 cursor-pointer rounded-lg" @click="() => toggleServiceDetails()">
+  <article :id="createElementId('service', 'content', service.gender, service.category, service.name || `${index + 1}`)" class="relative cursor-pointer rounded-lg" @click="() => toggleServiceDetails()">
     <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg overflow-hidden">
-      <nuxt-img :src="service.image || '/images/dev/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-75" :alt="`${service.category} - ${service.name} - ${service.gender} - ${get('legalName')}`" />
+      <nuxt-img :src="service.image || '/images/dev/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-60 md:w-70 max-w-70" :alt="`${service.category} - ${service.name} - ${service.gender} - ${get('legalName')}`" />
 
       <div class="absolute bottom-0 left-0 p-5 text-primary-50">
         <p v-if="service.category === 'Coupe'" class="font-light text-sm">
@@ -43,6 +43,7 @@
 
 <script setup lang="ts">
 import type { Service, ServiceSection } from '~/types'
+import { serviceSectionKey } from '~/constants/symbols'
 
 const props = defineProps<{ index: number, service: Service }>()
 

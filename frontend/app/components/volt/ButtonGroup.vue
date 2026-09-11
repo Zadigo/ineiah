@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import ButtonGroup, { type ButtonGroupPassThroughOptions, type ButtonGroupProps } from 'primevue/buttongroup'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ ButtonGroupProps { }
 defineProps<Props>()

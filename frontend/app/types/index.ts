@@ -1,4 +1,5 @@
 export type * from './services'
+export type * from './gallery'
 
 export type Undefineable<T> = T | undefined
 
@@ -11,32 +12,6 @@ export type Arrayable<T> = T[]
 export type StringInterface<T extends string> = { [K in T]: string }
 
 export type BaseRoute = StringInterface<'id' | 'title' | 'path'>
-
-type BaseUserInfo = {
-  name: string
-  website: string | null
-  instagram: string
-}
-
-type GalleryImageAuthor = BaseUserInfo & {
-  username: string | null
-}
-
-type GalleryImageModel = Pick<BaseUserInfo, 'instagram'>
-
-type GalleryImageBrands = Pick<BaseUserInfo, 'name' | 'website'>
-
-export interface GalleryImage {
-  name: string
-  image: string | Arrayable<string>
-  category: 'image' | 'video'
-  url: string | null
-  alt: string | null
-  isVisible: boolean
-  author: GalleryImageAuthor
-  model: GalleryImageModel
-  brands: Arrayable<GalleryImageBrands>
-}
 
 export type Locale = 'fr' | 'en'
 

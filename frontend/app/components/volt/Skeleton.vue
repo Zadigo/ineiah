@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import Skeleton, { type SkeletonPassThroughOptions, type SkeletonProps } from 'primevue/skeleton'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ SkeletonProps { }
 defineProps<Props>()

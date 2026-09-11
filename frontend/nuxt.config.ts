@@ -70,6 +70,10 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    firebaseProjectId: '',
+    firebaseClientEmail: process.env.NUXT_FIREBASE_CLIENT_EMAIL,
+    firebasePrivateKey: process.env.NUXT_FIREBASE_PRIVATE_KEY,
+
     public: {
       // Site
       siteUrl: '',
@@ -91,7 +95,10 @@ export default defineNuxtConfig({
       twilioAccountSid: '',
       twilioAuthToken: '',
       twilioPhoneNumber: '',
-      twilioToPhoneNumber: ''
+      twilioToPhoneNumber: '',
+
+      // Primevue
+      primeVueLicenseKey: process.env.NUXT_PRIME_VUE_LICENSE_KEY
     }
   },
 
@@ -298,14 +305,20 @@ export default defineNuxtConfig({
 
   vuefire: {
     config: {
-      apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
-      authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-      dbUrl: process.env.NUXT_PUBLIC_FIREBASE_DB_URL,
-      storageBucket: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-      appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
-      measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-      messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
-      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
+      apiKey: process.env.NUXT_FIREBASE_API_KEY,
+      authDomain: process.env.NUXT_FIREBASE_AUTH_DOMAIN,
+      dbUrl: process.env.NUXT_FIREBASE_DB_URL,
+      storageBucket: process.env.NUXT_FIREBASE_STORAGE_BUCKET,
+      appId: process.env.NUXT_FIREBASE_APP_ID,
+      measurementId: process.env.NUXT_FIREBASE_MEASUREMENT_ID,
+      messageSenderId: process.env.NUXT_FIREBASE_MESSAGE_SENDER_ID,
+      projectId: process.env.NUXT_FIREBASE_PROJECT_ID
     }
+  },
+
+  imports: {
+    dirs: [
+      '~/constants/**'
+    ]
   }
 })

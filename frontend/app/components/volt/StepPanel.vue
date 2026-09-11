@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import StepPanel, { type StepPanelPassThroughOptions, type StepPanelProps } from 'primevue/steppanel'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ StepPanelProps { }
 defineProps<Props>()

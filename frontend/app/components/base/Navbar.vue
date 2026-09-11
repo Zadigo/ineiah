@@ -11,7 +11,7 @@
   
           <div class="hidden xl:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
             <div class="flex shrink-0 items-center">
-              <nuxt-link-locale id="link-home-nav" to="/" aria-label="Go to homepage">
+              <nuxt-link-locale :id="createElementId('link', 'navbar', 'home')" to="/" aria-label="Go to homepage">
                 <nuxt-img v-if="showBackground" class="h-8 w-auto" src="logos/ineiah-light-small.png" :alt="get('legalName')" />
                 <nuxt-img v-else class="h-8 w-auto" src="logos/ineiah-dark-small.png" :alt="get('legalName')" />
               </nuxt-link-locale>
@@ -19,15 +19,15 @@
   
             <div class="hidden sm:ml-6 sm:block md:mx-auto">
               <ul class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
-                <li v-for="item in routes" :id="create(item.id, 'link-nav')" :key="item.path" class="p-2 rounded-xl has-[.router-link-exact-active]:bg-primary-100/30">
-                  <nuxt-link-locale :to="item.path" :class="linkTheme" :aria-label="`Go to ${$t(item.title)} page`">
+                <li v-for="item in routes" :id="createElementId('link', 'navbar', item.id)" :key="item.path" class="p-2 rounded-xl has-[.router-link-exact-active]:bg-primary-100/30">
+                  <nuxt-link-locale :id="createElementId('link', 'navbar', item.id)" :to="item.path" :class="linkTheme" :aria-label="`Go to ${$t(item.title)} page`">
                     {{ $t(item.title) }}
                   </nuxt-link-locale>
                 </li>
               </ul>
             </div>
   
-            <base-telephone-button id="tel-call-us-navbar" class="hidden md:flex ml-auto" />
+            <base-telephone-button :id="createElementId('tel', 'navbar', 'call-us')" class="md:flex ml-auto" />
           </div>
         </div>
       </div>
@@ -103,8 +103,6 @@ const linkTheme = ref(`
   px-3 py-2 text-lg font-semibold uppercase 
   text-primary-50 hover:text-primary-400 relative
 `)
-
-const { create } = useDynamicId()
 </script>
 
 <style lang="css">

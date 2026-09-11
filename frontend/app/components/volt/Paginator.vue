@@ -36,14 +36,13 @@
 </template>
 
 <script setup lang="ts">
-import AngleDoubleLeftIcon from '@primevue/icons/angledoubleleft'
-import AngleDoubleRightIcon from '@primevue/icons/angledoubleright'
-import AngleLeftIcon from '@primevue/icons/angleleft'
-import AngleRightIcon from '@primevue/icons/angleright'
+import AngleDoubleLeftIcon from '@primeicons/vue/angle-double-left';
+import AngleDoubleRightIcon from '@primeicons/vue/angle-double-right'
+import AngleLeftIcon from '@primeicons/vue/angle-left'
+import AngleRightIcon from '@primeicons/vue/angle-right'
 import Paginator, { type PaginatorPassThroughOptions, type PaginatorProps } from 'primevue/paginator'
-import { ref } from 'vue'
-import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import SecondaryButton from '~/components/volt/SecondaryButton.vue'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ PaginatorProps { }
 defineProps<Props>()

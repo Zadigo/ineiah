@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import Avatar, { type AvatarPassThroughOptions, type AvatarProps } from 'primevue/avatar'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ AvatarProps { }
 defineProps<Props>()

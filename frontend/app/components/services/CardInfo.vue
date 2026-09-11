@@ -7,6 +7,7 @@
     <h4 class="font-bold mb-5">
       {{ $t('Contenu de la prestation') }}
     </h4>
+    
     <ul class="has-[li]:space-y-1">
       <li v-for="(step, contentIdx) in serviceIncludes" :key="contentIdx" class="list-disc list-inside">
         {{ $t(step) }}
@@ -24,7 +25,11 @@
 <script setup lang="ts">
 import type { Service, ServiceSection } from '~/types'
 
-const props = defineProps<{ index: number, service: Service, serviceSection: ServiceSection }>()
+const props = defineProps<{ 
+  index: number, 
+  service: Service, 
+  serviceSection: ServiceSection
+}>()
 
 /**
  * Services

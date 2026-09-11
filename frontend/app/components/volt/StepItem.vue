@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import StepItem, { type StepItemPassThroughOptions, type StepItemProps } from 'primevue/stepitem'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ StepItemProps { }
 defineProps<Props>()

@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import Splitter, { type SplitterPassThroughOptions, type SplitterProps } from 'primevue/splitter'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ SplitterProps { }
 defineProps<Props>()

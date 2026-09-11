@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import TabList, { type TabListPassThroughOptions, type TabListProps } from 'primevue/tablist'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ TabListProps { }
 defineProps<Props>()

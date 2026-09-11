@@ -155,23 +155,25 @@ useSeoMeta({
   ogLocale: i18n.locale.value
 })
 
-defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value]
-})
-
-const url = useRequestURL()
-
-useSchemaOrg([
-  defineBreadcrumb({
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        '@id': url.href,
-        'name': titles[i18n.locale.value],
-        'item': url.href
-      }
-    ]
+if (import.meta.env.PROD) {
+  defineOgImage('NuxtSeoTakumi', {
+    title: titles[i18n.locale.value],
+    description: descriptions[i18n.locale.value]
   })
-])
+  
+  const url = useRequestURL()
+  
+  useSchemaOrg([
+    defineBreadcrumb({
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          '@id': url.href,
+          'name': titles[i18n.locale.value],
+          'item': url.href
+        }
+      ]
+    })
+  ])
+}
 </script>

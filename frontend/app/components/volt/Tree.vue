@@ -14,12 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import ChevronDownIcon from '@primevue/icons/chevrondown'
-import ChevronRightIcon from '@primevue/icons/chevronright'
-import SearchIcon from '@primevue/icons/search'
+import ChevronDownIcon from '@primeicons/vue/chevron-down'
+import ChevronRightIcon from '@primeicons/vue/chevron-right'
+import SearchIcon from '@primeicons/vue/search'
 import Tree, { type TreePassThroughOptions, type TreeProps } from 'primevue/tree'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ TreeProps { }
 defineProps<Props>()

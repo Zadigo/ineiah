@@ -10,8 +10,8 @@
             <nuxt-img class="h-8 w-auto mb-2" src="logos/ineiah-light-small.png" :alt="get('legalName')" />
           </nuxt-link-locale>
 
-          <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm font-light text-primary-100 dark:text-primary-200 underline underline-offset-4">
-            chez 70's coiffure
+          <a href="https://www.google.com/maps/place/LA+PETITE+COIFFERIE/@50.6142716,3.1108275,17z/data=!3m1!4b1!4m6!3m5!1s0x47c2d73d8e82900f:0x894ee552caafc4b8!8m2!3d50.6142682!4d3.1134024!16s%2Fg%2F11nhl9st7v?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="text-sm font-light text-primary-100 dark:text-primary-200 underline underline-offset-4">
+            chez La Petite Coifferie
           </a>
 
           <div class="flex gap-2 mt-5">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="grid justify-between grid-rows-2 grid-cols-none gap-4 md:grid-cols-2 md:grid-rows-none">
-          <ul v-for="(section, idx) in footer.sections" :id="`footer-section-${idx + 1}`" :key="section.title">
+          <ul v-for="(section, idx) in FOOTER_LINKS.sections" :id="`footer-section-${idx + 1}`" :key="section.title">
             <p class="block mb-1 text-lg font-bold text-primary-100 dark:text-primary-300 uppercase">
               {{ $t(section.title) }}
             </p>

@@ -22,13 +22,13 @@
 </template>
 
 <script setup lang="ts">
-import ExclamationTriangeIcon from '@primevue/icons/exclamationtriangle'
-import TimesIcon from '@primevue/icons/times'
+import ExclamationTriangleIcon from '@primeicons/vue/exclamation-triangle';
+import TimesIcon from '@primeicons/vue/times'
 import ConfirmDialog, { type ConfirmDialogPassThroughOptions, type ConfirmDialogProps } from 'primevue/confirmdialog'
 import { ref } from 'vue'
-import Button from './Button.vue'
-import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import Button from '~/components/volt/Button.vue'
+import SecondaryButton from '~/components/volt/SecondaryButton.vue'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ ConfirmDialogProps { }
 defineProps<Props>()

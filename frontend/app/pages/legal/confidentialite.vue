@@ -4,7 +4,7 @@
       <volt-card v-for="policy in defaultPolicies" :key="policy.title">
         <template #content>
           <div class="has-[p]:leading-8">
-            <h1 class="uppercase text-primary-500 text-3xl font-bold mb-2">
+            <h1 :id="useSlug(policy.title)" class="uppercase text-primary-500 text-3xl font-bold mb-2">
               <span>{{ $i18n.locale === 'en' ? policy.titleEn || policy.title : policy.title }}</span>
             </h1>
 
@@ -87,23 +87,25 @@ useSeoMeta({
   ogLocale: i18n.locale.value
 })
 
-defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value]
-})
-
-const url = useRequestURL()
-
-useSchemaOrg([
-  defineBreadcrumb({
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        '@id': url.href,
-        'name': titles[i18n.locale.value],
-        'item': url.href
-      }
-    ]
+if (import.meta.env.PROD === true) {
+  defineOgImage('NuxtSeoTakumi', {
+    title: titles[i18n.locale.value],
+    description: descriptions[i18n.locale.value]
   })
-])
+  
+  const url = useRequestURL()
+  
+  useSchemaOrg([
+    defineBreadcrumb({
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          '@id': url.href,
+          'name': titles[i18n.locale.value],
+          'item': url.href
+        }
+      ]
+    })
+  ])
+}
 </script>

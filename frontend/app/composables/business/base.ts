@@ -29,11 +29,11 @@ export const businessDetails: BusinessDetails = {
   ],
   rcs: '',
   address: {
-    street: '13 Place Nouvelle Aventure',
-    postalCode: '59000',
-    city: 'Lille',
-    lat: 50.626999404132064,
-    lng: 3.0499777837365993
+    street: '17 Rue Sadi Carnot',
+    postalCode: '59260',
+    city: 'Lezennes',
+    lat: 50.61429474530949,
+    lng: 3.113395081236185
   },
   priceRange: '$$',
   foundingDate: '2024-12-14',
@@ -73,7 +73,7 @@ export const businessDetails: BusinessDetails = {
   contact: {
     telephone: '+33 07 86 20 94 59',
     email: 'labeautedineiah@gmail.com',
-    address: '13 Place Nouvelle Aventure, 59000 Lille'
+    address: '17 Rue Sadi Carnot, 59260 Lezennes'
   },
   socials: {
     instagram: {
@@ -144,8 +144,12 @@ export function useBusinessDetails() {
     if (!isDefined(path)) {
       return null
     } else {
-      const rootUrl = useRuntimeConfig().public.siteUrl
-      return new URL(path, rootUrl).toString()
+      try {
+        const rootUrl = useRuntimeConfig().public.siteUrl
+        return new URL(path, rootUrl).toString()
+      } catch {
+        return path
+      }
     }
   }
 

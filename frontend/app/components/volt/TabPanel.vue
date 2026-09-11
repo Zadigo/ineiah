@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import TabPanel, { type TabPanelPassThroughOptions, type TabPanelProps } from 'primevue/tabpanel'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ TabPanelProps { }
 const props = defineProps<Props>()

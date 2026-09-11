@@ -15,12 +15,12 @@
 </template>
 
 <script setup lang="ts">
-import MinusIcon from '@primevue/icons/minus'
-import PlusIcon from '@primevue/icons/plus'
+import MinusIcon from '@primeicons/vue/minus'
+import PlusIcon from '@primeicons/vue/plus'
 import Panel, { type PanelPassThroughOptions, type PanelProps } from 'primevue/panel'
 import { ref } from 'vue'
-import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import SecondaryButton from '~/components/volt/SecondaryButton.vue'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ PanelProps { }
 defineProps<Props>()

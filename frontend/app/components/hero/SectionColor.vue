@@ -41,7 +41,7 @@
 
     <div class="h-auto">
       <client-only>
-        <nuxt-img v-motion-fade-visible-once :delay="600" :alt="`Hair Artist - ${get('founder')}`" src="/images/kira/photoshoot40-small.webp" class="aspect-square object-cover h-full xl:w-full" />
+        <nuxt-img v-motion-fade-visible-once :delay="600" :alt="`Hair Artist - ${get('founder')}`" src="/images/natachamorel/natacha-morel-coiffure-2.webp" class="aspect-square object-cover h-full xl:w-full" />
       </client-only>
     </div>
   </div>

@@ -13,11 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import AngleDownIcon from '@primevue/icons/angledown'
-import AngleUpIcon from '@primevue/icons/angleup'
+import AngleDownIcon from '@primeicons/vue/angle-down'
+import AngleUpIcon from '@primeicons/vue/angle-up'
 import InputNumber, { type InputNumberPassThroughOptions, type InputNumberProps } from 'primevue/inputnumber'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ InputNumberProps { }
 defineProps<Props>()

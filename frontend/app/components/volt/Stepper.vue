@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import Stepper, { type StepperPassThroughOptions, type StepperProps } from 'primevue/stepper'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ StepperProps { }
 defineProps<Props>()

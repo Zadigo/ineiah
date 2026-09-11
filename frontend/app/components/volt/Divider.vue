@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import Divider, { type DividerPassThroughOptions, type DividerProps } from 'primevue/divider'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ DividerProps { }
 defineProps<Props>()

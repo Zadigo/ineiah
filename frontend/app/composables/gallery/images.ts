@@ -5,8 +5,8 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Coupe styling mi-long',
     alt: 'Coupe styling mi-long',
     image: [
-      '/images/gallery/customer1.jpg',
-      '/images/gallery/customer2.jpg'
+      'coupe-styling-mi-long-1.jpg',
+      'coupe-styling-mi-long-2.jpg'
     ],
     category: 'image',
     url: null,
@@ -26,8 +26,8 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Brushing volumineux',
     alt: 'Brushing volumineux',
     image: [
-      '/images/gallery/customer18.jpg',
-      '/images/gallery/customer71.jpeg'
+      'brushing-volumineux-1.jpg',
+      'brushing-volumineux-2.jpeg'
     ],
     category: 'image',
     url: null,
@@ -47,8 +47,8 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Hair contouring cheveux longs',
     alt: 'Hair contouring cheveux longs',
     image: [
-      '/images/gallery/customer32.jpg',
-      '/images/gallery/customer33.jpg'
+      'hair-contouring-cheveux-long-1.jpg',
+      'hair-contouring-cheveux-long-2.jpg'
     ],
     category: 'image',
     url: null,
@@ -67,7 +67,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Soin à la Kératine et couleur',
     alt: 'Soin à la Kératine et couleur',
-    image: '/images/gallery/customer3.jpg',
+    image: [
+      'soin-a-la-keratine-et-couleur-1.jpg',
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -85,7 +87,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Coupe dégradée',
     alt: 'Coupe dégradée',
-    image: '/images/gallery/customer6.jpg',
+    image: [
+      'coupe-degradee.jpg'
+    ],
     category: 'image',
     url: null,
     isVisible: false,
@@ -103,7 +107,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Brushing Wavy cheveux XL',
     alt: 'Brushing Wavy cheveux XL',
-    image: '/images/gallery/customer7.jpg',
+    image: [
+      'brushing-wavy-cheveux-xl.jpg',
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -121,7 +127,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Coupe coiffage cheveux courts',
     alt: 'Coupe coiffage cheveux courts',
-    image: '/images/gallery/customer8.jpg',
+    image: [
+      'coupe-coiffage-cheveux-courts.jpg'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -139,7 +147,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Chignon élégant',
     alt: 'Chignon élégant',
-    image: '/images/gallery/customer9.jpg',
+    image: [
+      'chignon-elegant.jpg'
+      ],
     category: 'image',
     url: null,
     isVisible: false,
@@ -157,7 +167,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Shampoing coupe brushing wavy cheveux longs',
     alt: 'Shampoing coupe brushing wavy cheveux longs',
-    image: '/images/gallery/customer19.jpg',
+    image: [
+      'shampoing-coupe-brushing-wavy-cheveux-longs-1.jpg'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -175,7 +187,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Shampoing coupe styling',
     alt: 'Shampoing coupe styling',
-    image: '/images/gallery/customer23.jpg',
+    image: [
+      'shampoing-coupe-styling-1.jpg',
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -193,7 +207,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Couleur coupe brushing wavy cheveux longs',
     alt: 'Couleur coupe brushing wavy cheveux longs',
-    image: '/images/gallery/customer11.jpg',
+    image: [
+      'couleur-coupe-brushing-wavy-cheveux-longs-1.jpg',
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -212,8 +228,8 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Coupe frange rideau cheveux mi-longs',
     alt: 'Coupe frange rideau cheveux mi-longs',
     image: [
-      '/images/gallery/customer13.jpg',
-      '/images/gallery/customer14.jpg'
+      'coupe-frange-rideau-cheveux-mi-longs-1.jpg',
+      'coupe-frange-rideau-cheveux-mi-longs-2.jpg'
     ],
     category: 'image',
     url: null,
@@ -233,8 +249,7 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Styling XL',
     alt: 'Styling XL',
     image: [
-      '/images/gallery/customer29.jpg',
-      '/images/gallery/customer30.jpg'
+      'styling-xl-3.jpg',
     ],
     category: 'image',
     url: null,
@@ -254,8 +269,8 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Coloration repousse longueur cheveux mi-longs',
     alt: 'Coloration repousse longueur cheveux mi-longs',
     image: [
-      '/images/gallery/customer24.jpg',
-      '/images/gallery/customer25.jpg'
+      'coloration-repousse-longueur-cheveux-mi-longs-1.jpg',
+      'coloration-repousse-longueur-cheveux-mi-longs-2.jpg'
     ],
     category: 'image',
     url: null,
@@ -274,7 +289,10 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Styling XL',
     alt: 'Styling XL',
-    image: '/images/gallery/customer34.jpg',
+    image: [
+      'styling-xl-1.jpg',
+      'styling-xl-2.jpg'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -292,7 +310,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Chignon',
     alt: 'Chignon',
-    image: '/images/gallery/customer35.jpg',
+    image: [
+      'chignon.jpg',
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -307,35 +327,36 @@ export const galleryImages: Arrayable<GalleryImage> = [
     },
     brands: []
   },
-  {
-    name: 'Test Video',
-    alt: 'Test Video',
-    image: '/vid1.mov',
-    category: 'video',
-    url: null,
-    isVisible: false,
-    author: {
-      name: '',
-      username: '',
-      website: '',
-      instagram: ''
-    },
-    model: {
-      instagram: ''
-    },
-    brands: []
-  },
+  // {
+  //   name: 'Test Video',
+  //   alt: 'Test Video',
+  //   image: '/vid1.mov',
+  //   category: 'video',
+  //   url: null,
+  //   isVisible: false,
+  //   author: {
+  //     name: '',
+  //     username: '',
+  //     website: '',
+  //     instagram: ''
+  //   },
+  //   model: {
+  //     instagram: ''
+  //   },
+  //   brands: []
+  // },
   {
     name: 'Soin Kératine Végétale',
     alt: 'Soin Kératine Végétale',
     image: [
-      '/images/kira/photoshoot46-small.webp',
-      '/images/kira/photoshoot45.jpg',
-      '/images/kira/photoshoot46.jpg',
-      '/images/kira/photoshoot19.jpg',
-      '/images/kira/photoshoot20.jpg',
-      '/images/kira/photoshoot2.jpg',
-      '/images/kira/photoshoot1.jpg'
+      'photoshoots/khreate/photoshoot46.jpg',
+      'photoshoots/khreate/photoshoot45.jpg',
+      'photoshoots/khreate/photoshoot19.jpg',
+      'photoshoots/khreate/photoshoot20.jpg',
+      'photoshoots/khreate/photoshoot33.jpg',
+      'photoshoots/khreate/photoshoot34.jpg',
+      'photoshoots/khreate/photoshoot2.jpg',
+      'photoshoots/khreate/photoshoot1.jpg'
     ],
     category: 'image',
     url: null,
@@ -355,9 +376,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
     name: 'Soin Kératine Végétale',
     alt: 'Soin Kératine Végétale',
     image: [
-      '/images/gallery/customer36-small.webp',
-      '/images/gallery/customer37-small.webp',
-      '/images/gallery/customer38-small.webp'
+      'soin-keratine-vegetale-1.webp',
+      'soin-keratine-vegetale-2.webp',
+      'soin-keratine-vegetale-3.webp'
     ],
     category: 'image',
     url: null,
@@ -376,7 +397,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Mise en forme boucles',
     alt: 'Mise en forme boucles',
-    image: '/images/gallery/customer39-small.webp',
+    image: [
+      'mise-en-forme-boucles-1.webp'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -394,7 +417,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Mise en forme boucles',
     alt: 'Mise en forme boucles',
-    image: '/images/gallery/customer40-small.webp',
+    image: [
+     'mise-en-forme-boucles-2.webp'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -410,12 +435,12 @@ export const galleryImages: Arrayable<GalleryImage> = [
     brands: []
   },
   {
-    name: 'Mise en forme boucles 3',
-    alt: 'Mise en forme boucles 3',
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
     image: [
-      '/images/gallery/customer41-small.webp',
-      '/images/gallery/customer42.jpg',
-      '/images/gallery/customer44-small.webp'
+      'photoshoots/other/styling-1.jpg',
+      'photoshoots/other/styling-2.webp',
+      'photoshoots/other/styling-3.jpg',
     ],
     category: 'image',
     url: null,
@@ -434,7 +459,9 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Mise en forme boucles',
     alt: 'Mise en forme boucles',
-    image: '/images/gallery/customer62-small.webp',
+    image: [
+      'mise-en-forme-boucles-6.webp'
+    ],
     category: 'image',
     url: null,
     isVisible: true,
@@ -452,7 +479,30 @@ export const galleryImages: Arrayable<GalleryImage> = [
   {
     name: 'Mise en forme boucles',
     alt: 'Mise en forme boucles',
-    image: '/images/gallery/customer72-small.webp',
+    image: [
+      'mise-en-forme-boucles-9.webp',
+    ],
+    category: 'image',
+    url: null,
+    isVisible: true,
+    author: {
+      name: '',
+      username: '',
+      website: '',
+      instagram: ''
+    },
+    model: {
+      instagram: ''
+    },
+    brands: []
+  },
+  {
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
+    image: [
+      'mise-en-forme-boucles-7.jpg',
+      'mise-en-forme-boucles-8.jpg'
+    ],
     category: 'image',
     url: null,
     isVisible: true,

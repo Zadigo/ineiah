@@ -14,15 +14,15 @@
 </template>
 
 <script setup lang="ts">
-import TimesIcon from '@primevue/icons/times'
+import TimesIcon from '@primeicons/vue/times'
 import Drawer, { type DrawerPassThroughOptions, type DrawerProps } from 'primevue/drawer'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ DrawerProps { }
 defineProps<Props>()
 
-const SecondaryButton = defineLazyHydrationComponent('visible', () => import('./SecondaryButton.vue'))
+const SecondaryButton = defineLazyHydrationComponent('visible', () => import('~/components/volt/SecondaryButton.vue'))
 
 const theme = ref<DrawerPassThroughOptions>({
   root: `flex flex-col pointer-events-auto relative

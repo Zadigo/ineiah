@@ -13,11 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import StarIcon from '@primevue/icons/star'
-import StarFillIcon from '@primevue/icons/starfill'
+import StarIcon from '@primeicons/vue/star'
+import StarFillIcon from '@primeicons/vue/star-fill'
 import Rating, { type RatingPassThroughOptions, type RatingProps } from 'primevue/rating'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ RatingProps { }
 defineProps<Props>()

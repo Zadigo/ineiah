@@ -19,13 +19,13 @@
 </template>
 
 <script setup lang="ts">
-import ChevronDownIcon from '@primevue/icons/chevrondown'
-import SearchIcon from '@primevue/icons/search'
-import SpinnerIcon from '@primevue/icons/spinner'
-import TimesIcon from '@primevue/icons/times'
+import ChevronDownIcon from '@primeicons/vue/chevron-down'
+import SearchIcon from '@primeicons/vue/search'
+import SpinnerIcon from '@primeicons/vue/spinner'
+import TimesIcon from '@primeicons/vue/times'
 import MultiSelect, { type MultiSelectPassThroughOptions, type MultiSelectProps } from 'primevue/multiselect'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ MultiSelectProps { }
 defineProps<Props>()
