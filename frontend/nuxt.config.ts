@@ -149,26 +149,27 @@ export default defineNuxtConfig({
     // ],
     optimizeDeps: {
       include: [
+        '@capacitor/share',
+        'clsx',
         'dayjs', // CJS
         'dayjs/plugin/calendar', // CJS
         'dayjs/plugin/duration', // CJS
         'dayjs/plugin/relativeTime', // CJS
         'dayjs/plugin/timezone', // CJS
         'dayjs/plugin/utc', // CJS
-        'primevue/config',
-        'primevue/card',
-        'tailwind-merge',
         'primevue/button',
-        'reka-ui',
-        'clsx',
-        'primevue/skeleton',
-        'primevue/toggleswitch',
+        'primevue/card',
+        'primevue/config',
+        'primevue/dialog',
         'primevue/divider',
         'primevue/drawer',
-        'primevue/dialog',
         'primevue/inputtext',
+        'primevue/skeleton',
         'primevue/tag',
-        '@capacitor/share'
+        'primevue/toggleswitch',
+        'reka-ui',
+        'tailwind-merge',
+        'vuefire',
       ]
     }
   },

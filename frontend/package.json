@@ -32,6 +32,7 @@
     "@capacitor/haptics": "8.0.2",
     "@capacitor/keyboard": "8.0.6",
     "@capacitor/status-bar": "8.0.4",
+    "@nuxt/fonts": "^1.1.0",
     "@nuxtjs/seo": "6.0.1",
     "@unhead/vue": "^3.4.3",
     "dayjs": "^1.11.23",
@@ -116,5 +117,5 @@
     "vuefire": "^3.2.3",
     "zod": "^4.6.7"
   },
-  "packageManager": "pnpm@11.20.0+sha512.9a6f330a95b66446ea088faf1521405a8a01f07fde7124cc9958dfed52d4bb436737e65b08f85f37b46fcba375092558ac51262b816844b22f63406ed166bfee"
+  "packageManager": "pnpm@12.15.0+sha512.b3951d6d6ff4a9f13dc7cf56cd28d2b8eb37dbcc9c68e52e1e1191873ea9f82a017287ab50baadc5ccc494f036c67c0e47eb13608c2fa36f47711b61ea128e61"
 }
