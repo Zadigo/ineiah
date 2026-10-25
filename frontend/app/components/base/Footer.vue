@@ -10,9 +10,9 @@
             <nuxt-img class="h-8 w-auto mb-2" src="logos/ineiah-light-small.png" :alt="get('legalName')" />
           </nuxt-link-locale>
 
-          <a href="https://www.google.com/maps/place/LA+PETITE+COIFFERIE/@50.6142716,3.1108275,17z/data=!3m1!4b1!4m6!3m5!1s0x47c2d73d8e82900f:0x894ee552caafc4b8!8m2!3d50.6142682!4d3.1134024!16s%2Fg%2F11nhl9st7v?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="text-sm font-light text-primary-100 dark:text-primary-200 underline underline-offset-4">
+          <!-- <a href="https://www.google.com/maps/place/LA+PETITE+COIFFERIE/@50.6142716,3.1108275,17z/data=!3m1!4b1!4m6!3m5!1s0x47c2d73d8e82900f:0x894ee552caafc4b8!8m2!3d50.6142682!4d3.1134024!16s%2Fg%2F11nhl9st7v?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="text-sm font-light text-primary-100 dark:text-primary-200 underline underline-offset-4">
             chez La Petite Coifferie
-          </a>
+          </a> -->
 
           <div class="flex gap-2 mt-5">
             <nuxt-link-locale to="/" locale="fr">

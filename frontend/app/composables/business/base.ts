@@ -123,6 +123,7 @@ export function useBusinessDetails() {
 
   const address = computed(() => {
     const address = get('address')
+    if (!address.street) return `${address.city}` + (', ' + (address.postalCode || ''))
     return `${address.street}, ${address.postalCode} ${address.city}`
   })
 

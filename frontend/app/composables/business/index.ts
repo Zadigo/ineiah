@@ -41,8 +41,8 @@ export interface BusinessDetails {
   image: string[]
   rcs: string
   address: {
-    street: string
-    postalCode: string
+    street: string | null
+    postalCode: string | null
     city: string
     lat: number | null
     lng: number | null
